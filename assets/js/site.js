@@ -9,8 +9,25 @@ if (configNode) {
     /* Private mode can block storage. The page still works. */
   }
 
+  const menuButton = document.querySelector(".fold-button");
+  const header = document.querySelector(".top");
+  if (menuButton && header) {
+    menuButton.addEventListener("click", () => {
+      const open = header.classList.toggle("menu-open");
+      menuButton.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    header.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        header.classList.remove("menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
   const countrySelect = document.getElementById("country");
   const cards = [...document.querySelectorAll("[data-countries]")];
+  const emptyNote = document.getElementById("filter-empty");
+  let view = "all";
 
   function readCountry() {
     const fromUrl = new URL(location.href).searchParams.get("country");
@@ -25,29 +42,50 @@ if (configNode) {
     return allowed.has(value) ? value : "all";
   }
 
-  function applyCountry(value, persist) {
+  function applyFilters(persistCountry) {
+    const country = countrySelect ? countrySelect.value : "all";
+    let shown = 0;
     cards.forEach((card) => {
       const list = card.dataset.countries.split(",");
-      card.hidden = !(value === "all" || list.includes("*") || list.includes(value));
+      const countryOk = country === "all" || list.includes("*") || list.includes(country);
+      const viewOk =
+        view === "all" ||
+        (view === "open" && card.dataset.status === "open") ||
+        (view === "planned" && card.dataset.status === "planned") ||
+        (view === "country" && card.dataset.category === "country");
+      const visible = countryOk && viewOk;
+      card.hidden = !visible;
+      if (visible) shown += 1;
     });
-    if (countrySelect) countrySelect.value = value;
-    if (!persist) return;
+    if (emptyNote) emptyNote.hidden = shown !== 0;
+    if (!persistCountry) return;
     try {
-      localStorage.setItem("cp-country", value);
+      localStorage.setItem("cp-country", country);
     } catch (error) {
       /* Ignore storage failures. */
     }
     const url = new URL(location.href);
-    if (value === "all") url.searchParams.delete("country");
-    else url.searchParams.set("country", value);
+    if (country === "all") url.searchParams.delete("country");
+    else url.searchParams.set("country", country);
     history.replaceState(null, "", url.pathname + url.search + url.hash);
-    track("country_change", { country: value });
+    track("country_change", { country });
   }
 
   if (countrySelect) {
-    applyCountry(readCountry(), false);
-    countrySelect.addEventListener("change", () => applyCountry(countrySelect.value, true));
+    countrySelect.value = readCountry();
+    applyFilters(false);
+    countrySelect.addEventListener("change", () => applyFilters(true));
   }
+
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      view = button.dataset.view || "all";
+      document.querySelectorAll("[data-view]").forEach((item) => {
+        item.setAttribute("aria-pressed", item === button ? "true" : "false");
+      });
+      applyFilters(false);
+    });
+  });
 
   document.querySelectorAll("[data-lang-switch]").forEach((link) => {
     link.addEventListener("click", () => {

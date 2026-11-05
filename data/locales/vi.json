@@ -2,7 +2,7 @@
   "metaTitle": "CROSSING PROXY｜越境代辦｜Việc đời sống tại Đài Loan",
   "metaDescription": "CROSSING PROXY (越境代辦) hỗ trợ người nước ngoài tại Đài Loan về dịch Trung–Việt, giấy tờ đời sống, mua bán xe máy, hòa mạng, gửi hàng và câu hỏi hằng ngày. Ngôn ngữ và quốc gia chọn riêng. Giá, địa bàn và giấy phép chưa xác nhận đều ghi là đang chờ.",
   "position": "CROSSING PROXY là người bạn đồng hành, lo việc đời sống cho người nước ngoài tại Đài Loan ở một nơi.",
-  "heroLead": "Chọn ngôn ngữ và quốc gia, xem dịch vụ đã mở hay chưa và giới hạn là gì, rồi nhắn LINE. Trang này không bịa giá, địa chỉ hay lời nhận xét.",
+  "heroLead": "Xem dịch vụ đã mở chưa và giới hạn là gì, rồi nhắn LINE. Giá, địa chỉ và nhận xét chưa xác nhận sẽ không xuất hiện ở đây.",
   "heroPoints": [
     "Chúng tôi là ai: 越境代辦 CROSSING PROXY.",
     "Có thể hỗ trợ: dịch, giấy tờ, mua bán xe máy, hòa mạng, gửi hàng và việc đời sống. Thuê xe, thuê đồ và gói doanh nghiệp chưa mở.",
@@ -81,7 +81,7 @@
     "paused": "Tạm ngưng"
   },
   "card": {
-    "details": "Xem chi tiết",
+    "details": "Chi tiết",
     "ask": "Hỏi ngay",
     "audience": "Phù hợp với ai",
     "scope": "Phạm vi",
@@ -90,22 +90,23 @@
     "steps": "Các bước",
     "limits": "Lưu ý",
     "where": "Huyện thị",
-    "applies": "Áp dụng"
+    "applies": "Áp dụng",
+    "askPlanned": "Ghi nhu cầu"
   },
   "appliesAll": "Không giới hạn một quốc gia",
   "areaPending": "Chờ người phụ trách xác nhận",
   "steps": [
     {
-      "title": "Chọn ngôn ngữ và quốc gia",
-      "body": "Đổi ngôn ngữ lúc nào cũng được. Quốc gia chỉ dùng để lọc dịch vụ riêng. Hai thứ không buộc phải đi cùng nhau."
+      "title": "Chọn dịch vụ",
+      "body": "Chọn một dịch vụ và xem trạng thái trước. Ngôn ngữ và quốc gia đặt riêng, không buộc đi cùng nhau."
     },
     {
-      "title": "Đọc trạng thái và giới hạn",
-      "body": "Đã mở thì mới hỏi cách làm tiếp. Đang chuẩn bị thì chưa đặt lịch và chưa có giá."
+      "title": "Xác nhận nhu cầu và phạm vi",
+      "body": "Mở chi tiết để xem đối tượng, giấy tờ, cách tính phí và giới hạn. Đang chuẩn bị thì chưa đặt được và chưa có giá."
     },
     {
-      "title": "Sao chép nội dung sang LINE",
-      "body": "Sao chép mẫu ngắn và dán vào LINE @681ydjcz. Đừng gửi số căn cước, hộ chiếu hay thẻ cư trú."
+      "title": "Xác nhận qua LINE",
+      "body": "Sao chép nội dung hỏi, dán vào LINE @681ydjcz. Đừng gửi số căn cước, hộ chiếu hay thẻ cư trú."
     }
   ],
   "trustItems": [
@@ -186,74 +187,186 @@
       "general": {
         "intro": "Nói ngắn bạn cần gì.",
         "fields": [
-          { "id": "city", "label": "Huyện thị", "placeholder": "Bạn đang ở đâu tại Đài Loan" },
-          { "id": "need", "label": "Việc muốn hỏi", "placeholder": "Một hoặc hai câu" }
+          {
+            "id": "city",
+            "label": "Huyện thị",
+            "placeholder": "Bạn đang ở đâu tại Đài Loan"
+          },
+          {
+            "id": "need",
+            "label": "Việc muốn hỏi",
+            "placeholder": "Một hoặc hai câu"
+          }
         ]
       },
       "shipping": {
         "intro": "Nếu dịch vụ vẫn đang chuẩn bị, nội dung này chỉ là nhu cầu, không phải phiếu gửi.",
         "fields": [
-          { "id": "destination", "label": "Nơi nhận", "placeholder": "Thành phố hoặc nước. Không ghi số giấy tờ." },
-          { "id": "item", "label": "Loại đồ", "placeholder": "Ví dụ quần áo hoặc giấy tờ" },
-          { "id": "pickup", "label": "Có cần đến lấy không", "placeholder": "Cần / Không / Chưa chắc" }
+          {
+            "id": "destination",
+            "label": "Nơi nhận",
+            "placeholder": "Thành phố hoặc nước. Không ghi số giấy tờ."
+          },
+          {
+            "id": "item",
+            "label": "Loại đồ",
+            "placeholder": "Ví dụ quần áo hoặc giấy tờ"
+          },
+          {
+            "id": "pickup",
+            "label": "Có cần đến lấy không",
+            "placeholder": "Cần / Không / Chưa chắc"
+          }
         ]
       },
       "moto": {
         "intro": "Đây là hỏi mua hoặc bán, không phải thuê xe. Thuê xe chưa mở.",
         "fields": [
-          { "id": "city", "label": "Huyện thị", "placeholder": "Nơi xem xe hoặc giao dịch" },
-          { "id": "side", "label": "Muốn mua hay bán", "placeholder": "Mua / Bán / Chưa chắc" },
-          { "id": "when", "label": "Thời gian dự kiến", "placeholder": "Ví dụ trong tháng này" }
+          {
+            "id": "city",
+            "label": "Huyện thị",
+            "placeholder": "Nơi xem xe hoặc giao dịch"
+          },
+          {
+            "id": "side",
+            "label": "Muốn mua hay bán",
+            "placeholder": "Mua / Bán / Chưa chắc"
+          },
+          {
+            "id": "when",
+            "label": "Thời gian dự kiến",
+            "placeholder": "Ví dụ trong tháng này"
+          }
         ]
       },
       "rental": {
         "intro": "Dịch vụ chưa mở. Sao chép đoạn này chỉ để báo nhu cầu, không phát sinh hợp đồng thuê.",
         "fields": [
-          { "id": "city", "label": "Huyện thị", "placeholder": "Nơi sử dụng" },
-          { "id": "term", "label": "Thời gian muốn thuê", "placeholder": "Ví dụ hai tuần hoặc một tháng" },
-          { "id": "start", "label": "Ngày muốn bắt đầu", "placeholder": "Ngày tương đối là đủ" }
+          {
+            "id": "city",
+            "label": "Huyện thị",
+            "placeholder": "Nơi sử dụng"
+          },
+          {
+            "id": "term",
+            "label": "Thời gian muốn thuê",
+            "placeholder": "Ví dụ hai tuần hoặc một tháng"
+          },
+          {
+            "id": "start",
+            "label": "Ngày muốn bắt đầu",
+            "placeholder": "Ngày tương đối là đủ"
+          }
         ]
       },
       "sim": {
         "intro": "Hợp đồng số điện thoại là giữa bạn và nhà mạng.",
         "fields": [
-          { "id": "city", "label": "Huyện thị", "placeholder": "Bạn đang ở đâu" },
-          { "id": "need", "label": "Dùng số để làm gì", "placeholder": "Liên lạc hằng ngày. Không ghi số giấy tờ." }
+          {
+            "id": "city",
+            "label": "Huyện thị",
+            "placeholder": "Bạn đang ở đâu"
+          },
+          {
+            "id": "need",
+            "label": "Dùng số để làm gì",
+            "placeholder": "Liên lạc hằng ngày. Không ghi số giấy tờ."
+          }
         ]
       },
       "documents": {
         "intro": "Nói tên giấy tờ và chỗ bạn đang vướng. Đừng dán số giấy tờ.",
         "fields": [
-          { "id": "city", "label": "Huyện thị", "placeholder": "Bạn đang ở đâu" },
-          { "id": "paper", "label": "Tên giấy tờ", "placeholder": "Loại mẫu nào. Không ghi số." },
-          { "id": "need", "label": "Cần hỗ trợ gì", "placeholder": "Đọc hiểu, dịch hoặc sắp xếp" }
+          {
+            "id": "city",
+            "label": "Huyện thị",
+            "placeholder": "Bạn đang ở đâu"
+          },
+          {
+            "id": "paper",
+            "label": "Tên giấy tờ",
+            "placeholder": "Loại mẫu nào. Không ghi số."
+          },
+          {
+            "id": "need",
+            "label": "Cần hỗ trợ gì",
+            "placeholder": "Đọc hiểu, dịch hoặc sắp xếp"
+          }
         ]
       },
       "translate": {
         "intro": "Nói chiều ngôn ngữ và mục đích. Ngôn ngữ chưa mở thì chưa nhận việc.",
         "fields": [
-          { "id": "direction", "label": "Chiều ngôn ngữ", "placeholder": "Ví dụ tiếng Trung sang tiếng Việt" },
-          { "id": "use", "label": "Mục đích", "placeholder": "Nói chuyện hằng ngày hoặc tên giấy tờ" },
-          { "id": "city", "label": "Huyện thị", "placeholder": "Nếu cần gặp" }
+          {
+            "id": "direction",
+            "label": "Chiều ngôn ngữ",
+            "placeholder": "Ví dụ tiếng Trung sang tiếng Việt"
+          },
+          {
+            "id": "use",
+            "label": "Mục đích",
+            "placeholder": "Nói chuyện hằng ngày hoặc tên giấy tờ"
+          },
+          {
+            "id": "city",
+            "label": "Huyện thị",
+            "placeholder": "Nếu cần gặp"
+          }
         ]
       },
       "pickup": {
         "intro": "Huyện thị chưa công bố. Chúng tôi xác nhận có đến được không.",
         "fields": [
-          { "id": "city", "label": "Huyện thị", "placeholder": "Nơi lấy hàng" },
-          { "id": "when", "label": "Khung giờ", "placeholder": "Ngày tương đối, buổi sáng hoặc chiều" },
-          { "id": "item", "label": "Loại đồ", "placeholder": "Không ghi nội dung nhạy cảm" }
+          {
+            "id": "city",
+            "label": "Huyện thị",
+            "placeholder": "Nơi lấy hàng"
+          },
+          {
+            "id": "when",
+            "label": "Khung giờ",
+            "placeholder": "Ngày tương đối, buổi sáng hoặc chiều"
+          },
+          {
+            "id": "item",
+            "label": "Loại đồ",
+            "placeholder": "Không ghi nội dung nhạy cảm"
+          }
         ]
       },
       "enterprise": {
         "intro": "Đây là nhu cầu của công ty, chưa phải hợp tác đã có hiệu lực. Câu hỏi cá nhân dùng mẫu khác.",
         "fields": [
-          { "id": "company", "label": "Tên công ty", "placeholder": "Công ty hoặc bộ phận" },
-          { "id": "contact", "label": "Người liên hệ", "placeholder": "Tên" },
-          { "id": "method", "label": "Cách liên hệ", "placeholder": "LINE, điện thoại hoặc email" },
-          { "id": "city", "label": "Huyện thị", "placeholder": "Nhân viên đang ở đâu" },
-          { "id": "headcount", "label": "Số người ước tính", "placeholder": "Con số tương đối" },
-          { "id": "items", "label": "Hạng mục muốn bàn", "placeholder": "Đời sống, đi lại, dịch hoặc việc khác" }
+          {
+            "id": "company",
+            "label": "Tên công ty",
+            "placeholder": "Công ty hoặc bộ phận"
+          },
+          {
+            "id": "contact",
+            "label": "Người liên hệ",
+            "placeholder": "Tên"
+          },
+          {
+            "id": "method",
+            "label": "Cách liên hệ",
+            "placeholder": "LINE, điện thoại hoặc email"
+          },
+          {
+            "id": "city",
+            "label": "Huyện thị",
+            "placeholder": "Nhân viên đang ở đâu"
+          },
+          {
+            "id": "headcount",
+            "label": "Số người ước tính",
+            "placeholder": "Con số tương đối"
+          },
+          {
+            "id": "items",
+            "label": "Hạng mục muốn bàn",
+            "placeholder": "Đời sống, đi lại, dịch hoặc việc khác"
+          }
         ]
       }
     }
@@ -284,7 +397,11 @@
       "scope": "Hỗ trợ nói và bản chữ Trung–Việt. Không gồm làm visa.",
       "documents": "Trước hết nói loại giấy tờ trên LINE. Đừng ghi số giấy tờ vào biểu mẫu. Bản gốc bạn tự giữ.",
       "pricing": "Chưa công bố giá và không có giá sàn. Làm sau khi bạn đồng ý báo giá trên LINE.",
-      "steps": ["Nói chiều ngôn ngữ và loại giấy tờ", "Chúng tôi xác nhận có hỗ trợ được không", "Bắt đầu sau khi bạn đồng ý giá"],
+      "steps": [
+        "Nói chiều ngôn ngữ và loại giấy tờ",
+        "Chúng tôi xác nhận có hỗ trợ được không",
+        "Bắt đầu sau khi bạn đồng ý giá"
+      ],
       "limits": "Bản dịch không bảo đảm cơ quan nhận giấy tờ. Dịch ngôn ngữ khác chưa mở."
     },
     "documents": {
@@ -294,7 +411,11 @@
       "scope": "Giải thích từng ô, sắp giấy bạn đang có, và cùng xem nên hỏi quầy nào. Danh sách giấy tờ có thể làm thay từng loại vẫn đang chờ, nên chưa liệt kê như đã nhận.",
       "documents": "Lúc đầu chỉ cần tên giấy tờ và huyện thị. Đừng gửi số căn cước, hộ chiếu hoặc thẻ cư trú.",
       "pricing": "Nhắn để được báo giá. Site không đăng phí.",
-      "steps": ["Nói tên giấy tờ và bước bạn đang kẹt", "Chúng tôi tách phần làm được và phần không làm", "Hẹn sau khi bạn đồng ý giá"],
+      "steps": [
+        "Nói tên giấy tờ và bước bạn đang kẹt",
+        "Chúng tôi tách phần làm được và phần không làm",
+        "Hẹn sau khi bạn đồng ý giá"
+      ],
       "limits": "Không cam kết đậu visa, có việc làm hoặc được cơ quan duyệt. Việc cần giấy phép sẽ không ghi là giới thiệu đối tác khi chưa có đối tác hợp pháp."
     },
     "moto-sale": {
@@ -304,7 +425,11 @@
       "scope": "Câu hỏi trước khi xem xe, giải thích các bước và đi cùng để nói chuyện. Chúng tôi có giấy phép cửa hàng xe hay không vẫn đang chờ xác nhận. Trang không tuyên bố đã có giấy phép.",
       "documents": "Sang tên, bảo hiểm và đăng ký theo quy định của cơ quan giám lý. Đừng ghi số giấy tờ hoặc biển số vào biểu mẫu.",
       "pricing": "Giá xe và phí dịch vụ đều chưa công bố. Hãy hỏi trên LINE.",
-      "steps": ["Nói huyện thị và muốn mua hay bán", "Chúng tôi nói phạm vi có thể hỗ trợ", "Sắp xếp sau khi có báo giá"],
+      "steps": [
+        "Nói huyện thị và muốn mua hay bán",
+        "Chúng tôi nói phạm vi có thể hỗ trợ",
+        "Sắp xếp sau khi có báo giá"
+      ],
       "limits": "Thuê ngắn và trung hạn là dịch vụ khác, hiện đang chuẩn bị. Khi chạy xe vẫn phải theo luật giao thông Đài Loan."
     },
     "sim": {
@@ -314,7 +439,11 @@
       "scope": "Giải thích trước và đi cùng để trao đổi. Hợp đồng là giữa bạn và nhà mạng. Chúng tôi không phải nhà mạng.",
       "documents": "Nhà mạng có thể cần xem hộ chiếu hoặc giấy cư trú. Đưa trực tiếp cho nhà mạng, đừng gõ số vào website này.",
       "pricing": "Giá gói cước theo nhà mạng. Phí hỗ trợ của chúng tôi chưa công bố. Hãy hỏi LINE.",
-      "steps": ["Nói huyện thị và mục đích dùng số", "Chúng tôi nói phần hỗ trợ được", "Hẹn sau khi có báo giá"],
+      "steps": [
+        "Nói huyện thị và mục đích dùng số",
+        "Chúng tôi nói phần hỗ trợ được",
+        "Hẹn sau khi có báo giá"
+      ],
       "limits": "Nhà mạng quyết định có cấp số hay không. Chúng tôi không cam kết làm thành công."
     },
     "life-help": {
@@ -324,7 +453,11 @@
       "scope": "Giúp đọc thông báo, chuẩn bị câu hỏi, và những việc đời sống được phép hỗ trợ. Việc cụ thể chưa xác nhận thì chúng tôi nói trước là không làm.",
       "documents": "Tùy việc. Đừng gửi ảnh hoặc số giấy tờ tùy thân ngay từ đầu.",
       "pricing": "Có phí hay không sẽ nói trước khi làm. Site không có bảng giá.",
-      "steps": ["Mô tả việc và huyện thị", "Chúng tôi nói có hỗ trợ được không", "Nếu có phí thì báo giá trước"],
+      "steps": [
+        "Mô tả việc và huyện thị",
+        "Chúng tôi nói có hỗ trợ được không",
+        "Nếu có phí thì báo giá trước"
+      ],
       "limits": "Không chẩn đoán y khoa, không tư vấn kiện tụng, và không đứng ra chuyển tiền."
     },
     "pickup": {
@@ -334,7 +467,11 @@
       "scope": "Chỉ ở những huyện thị người phụ trách xác nhận. Chưa xác nhận thì hãy hỏi trước, đừng mặc định phủ toàn Đài Loan.",
       "documents": "Địa chỉ chi tiết nói sau trên LINE. Đừng đưa địa chỉ vào đường dẫn công khai.",
       "pricing": "Lấy hàng có tính riêng hay không sẽ nói trong báo giá. Site không ghi giá.",
-      "steps": ["Nói huyện thị và khung giờ tương đối", "Chúng tôi xác nhận có đến được không", "Hẹn sau khi có báo giá"],
+      "steps": [
+        "Nói huyện thị và khung giờ tương đối",
+        "Chúng tôi xác nhận có đến được không",
+        "Hẹn sau khi có báo giá"
+      ],
       "limits": "Không nhận hàng nguy hiểm. Danh sách huyện thị đang chờ xác nhận."
     },
     "ship-vn": {
@@ -344,7 +481,11 @@
       "scope": "Tư vấn trước khi gửi, kiểm tra loại đồ, và đến lấy sau khi huyện thị được xác nhận.",
       "documents": "Thường cần thông tin liên hệ người gửi và người nhận. Đừng ghi số giấy tờ vào biểu mẫu.",
       "pricing": "Báo theo cân nặng, thể tích và cách vận chuyển. Site không có giá sàn. Hãy lấy báo giá trên LINE trước khi giao hàng.",
-      "steps": ["Nói nơi nhận, loại đồ, có cần đến lấy không", "Chúng tôi xác nhận có nhận không và báo giá", "Giao hàng sau khi bạn đồng ý"],
+      "steps": [
+        "Nói nơi nhận, loại đồ, có cần đến lấy không",
+        "Chúng tôi xác nhận có nhận không và báo giá",
+        "Giao hàng sau khi bạn đồng ý"
+      ],
       "limits": "Không nhận thịt và sản phẩm từ thịt. Pin và sạc dự phòng bị hạn chế. Chất lỏng và thuốc thường cũng bị hạn chế. Quy định sẽ đổi, phải hỏi lại trước khi gửi. Nguyên văn danh sách cấm của website cũ chưa tìm lại được, nên đoạn này không phải bản cũ. Giấy phép vận chuyển đã đủ hay chưa vẫn đang chờ người phụ trách xác nhận."
     },
     "vn-papers": {
@@ -354,7 +495,11 @@
       "scope": "Giải thích, sắp xếp và dịch. Không làm thay visa hay giấy cư trú.",
       "documents": "Bắt đầu bằng tên giấy tờ. Đừng ghi số vào biểu mẫu.",
       "pricing": "Nhắn để báo giá. Không có giá sàn.",
-      "steps": ["Nói tên giấy tờ và mục đích", "Xác nhận có xử lý được không", "Làm sau khi bạn đồng ý giá"],
+      "steps": [
+        "Nói tên giấy tờ và mục đích",
+        "Xác nhận có xử lý được không",
+        "Làm sau khi bạn đồng ý giá"
+      ],
       "limits": "Không cam kết cơ quan Đài Loan hoặc Việt Nam nhận giấy tờ đó."
     },
     "ship-other": {
@@ -364,7 +509,11 @@
       "scope": "Hiện chỉ nghe nhu cầu, không nhận hàng.",
       "documents": "Trước khi mở không thu số giấy tờ của người nhận.",
       "pricing": "Chưa mở, không có giá.",
-      "steps": ["Để lại nơi nhận và loại đồ", "Chúng tôi chỉ ghi nhu cầu", "Chưa mở thì không bảo bạn giao hàng"],
+      "steps": [
+        "Để lại nơi nhận và loại đồ",
+        "Chúng tôi chỉ ghi nhu cầu",
+        "Chưa mở thì không bảo bạn giao hàng"
+      ],
       "limits": "Không ghi là đã mở. Mỗi nước một kiểu hạn chế, khi mở sẽ nói riêng. Bây giờ đừng gửi đồ đến."
     },
     "translate-more": {
@@ -374,7 +523,11 @@
       "scope": "Hiện chỉ xác nhận dịch Trung–Việt là đang có. Mục này đang chuẩn bị.",
       "documents": "Chưa mở thì chưa cần gửi tài liệu.",
       "pricing": "Chưa mở, không có giá.",
-      "steps": ["Nói chiều ngôn ngữ", "Chúng tôi ghi nhu cầu", "Chưa mở thì không nhận việc"],
+      "steps": [
+        "Nói chiều ngôn ngữ",
+        "Chúng tôi ghi nhu cầu",
+        "Chưa mở thì không nhận việc"
+      ],
       "limits": "Sáu ngôn ngữ trên giao diện không có nghĩa là sáu dịch vụ dịch thuật đã mở."
     },
     "moto-rental": {
@@ -384,7 +537,11 @@
       "scope": "Chưa cung cấp xe, hợp đồng hoặc bảo hiểm.",
       "documents": "Chưa mở thì không thu số bằng lái hoặc hộ chiếu.",
       "pricing": "Không có giá ngày, giá tuần hay giá sàn.",
-      "steps": ["Có thể để lại huyện thị, thời gian thuê và ngày muốn bắt đầu", "Đó chỉ là nhu cầu", "Không thành đơn hàng"],
+      "steps": [
+        "Có thể để lại huyện thị, thời gian thuê và ngày muốn bắt đầu",
+        "Đó chỉ là nhu cầu",
+        "Không thành đơn hàng"
+      ],
       "limits": "Khi hợp đồng thuê, bảo hiểm và giấy phép chưa xong thì không được xem là đã mở. Nếu muốn mua hoặc bán xe cũ, hãy xem mục mua bán đang mở."
     },
     "goods-rental": {
@@ -394,7 +551,11 @@
       "scope": "Chưa mở cho thuê.",
       "documents": "Chưa mở thì không ký hợp đồng và không thu số giấy tờ.",
       "pricing": "Không có giá.",
-      "steps": ["Có thể nói huyện thị và loại đồ cần", "Chúng tôi chỉ ghi nhu cầu", "Chưa mở thì không hẹn giao"],
+      "steps": [
+        "Có thể nói huyện thị và loại đồ cần",
+        "Chúng tôi chỉ ghi nhu cầu",
+        "Chưa mở thì không hẹn giao"
+      ],
       "limits": "Chưa chính thức mở. Câu hỏi không phải đơn hàng."
     },
     "b2b-life": {
@@ -404,8 +565,41 @@
       "scope": "Chỉ ghi nhận ý định. Nếu một dịch vụ cá nhân đã mở thì vẫn theo giới hạn của dịch vụ đó.",
       "documents": "Để lại công ty và người liên hệ. Đừng gửi số giấy tờ của nhân viên.",
       "pricing": "Không có bảng giá doanh nghiệp. Nếu sau này làm được, sẽ báo giá riêng trước.",
-      "steps": ["Ghi công ty, người liên hệ, huyện thị, số người và hạng mục", "Sao chép sang LINE", "Chúng tôi kiểm tra rồi mới nói có bàn tiếp được không"],
+      "steps": [
+        "Ghi công ty, người liên hệ, huyện thị, số người và hạng mục",
+        "Sao chép sang LINE",
+        "Chúng tôi kiểm tra rồi mới nói có bàn tiếp được không"
+      ],
       "limits": "Không ghi là đã mở hoặc giới thiệu đối tác. Chưa có tên công ty đối tác được xác nhận nên không liệt kê."
     }
-  }
+  },
+  "primaryNav": {
+    "services": "Dịch vụ",
+    "steps": "Quy trình",
+    "about": "Về chúng tôi",
+    "faq": "FAQ",
+    "menu": "Menu"
+  },
+  "filters": {
+    "label": "Lọc dịch vụ",
+    "all": "Tất cả",
+    "open": "Đã mở",
+    "country": "Theo quốc gia",
+    "planned": "Đang chuẩn bị",
+    "empty": "Không có dịch vụ khớp với bộ lọc này."
+  },
+  "principles": [
+    {
+      "title": "Nói rõ",
+      "body": "Mỗi dịch vụ đều ghi đã mở, giới thiệu đối tác, đang chuẩn bị hoặc tạm ngưng. Chúng tôi không cam kết visa, việc làm hay phê duyệt của cơ quan."
+    },
+    {
+      "title": "Quy trình rõ",
+      "body": "Phí chưa công bố và không có giá sàn. Trước khi làm, phạm vi và báo giá được nói trên LINE."
+    },
+    {
+      "title": "Tôn trọng riêng tư",
+      "body": "Nội dung hỏi chỉ nằm trên máy của bạn, không tải lên website. Đừng điền số căn cước, hộ chiếu hoặc thẻ cư trú."
+    }
+  ]
 }
