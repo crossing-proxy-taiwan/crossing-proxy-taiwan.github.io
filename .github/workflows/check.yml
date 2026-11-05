@@ -1,0 +1,17 @@
+name: Check site
+on:
+  pull_request:
+  push:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Rebuild and confirm the committed pages match
+        run: |
+          node scripts/build.mjs
+          git diff --exit-code
+          node scripts/check.mjs
