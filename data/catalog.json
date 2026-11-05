@@ -1,0 +1,158 @@
+{
+  "siteUrl": "https://crossing-proxy-taiwan.github.io",
+  "brand": {
+    "zh": "越境代辦",
+    "en": "CROSSING PROXY"
+  },
+  "tagline": "Your Life in Taiwan, Made Easier.",
+  "line": {
+    "id": "@681ydjcz",
+    "url": "https://lin.ee/SQbAREU"
+  },
+  "socials": [
+    {
+      "id": "facebook",
+      "url": "https://www.facebook.com/profile.php?id=61595889143256"
+    },
+    {
+      "id": "instagram",
+      "url": "https://www.instagram.com/crossing_proxy/"
+    },
+    {
+      "id": "threads",
+      "url": "https://www.threads.net/@crossing_proxy"
+    },
+    {
+      "id": "tiktok",
+      "url": "https://www.tiktok.com/@crossingproxy"
+    }
+  ],
+  "langs": [
+    { "id": "zh", "html": "zh-Hant", "og": "zh_TW", "native": "繁體中文" },
+    { "id": "en", "html": "en", "og": "en_US", "native": "English" },
+    { "id": "vi", "html": "vi", "og": "vi_VN", "native": "Tiếng Việt" },
+    { "id": "id", "html": "id", "og": "id_ID", "native": "Bahasa Indonesia" },
+    { "id": "th", "html": "th", "og": "th_TH", "native": "ไทย" },
+    { "id": "fil", "html": "fil", "og": "fil_PH", "native": "Filipino" }
+  ],
+  "countries": ["VN", "ID", "TH", "PH"],
+  "services": [
+    {
+      "id": "translate-vi",
+      "category": "common",
+      "countries": ["VN"],
+      "status": "open",
+      "home": true,
+      "icon": "translate",
+      "inquiry": "translate"
+    },
+    {
+      "id": "documents",
+      "category": "common",
+      "countries": ["*"],
+      "status": "open",
+      "home": true,
+      "icon": "file",
+      "inquiry": "documents"
+    },
+    {
+      "id": "moto-sale",
+      "category": "common",
+      "countries": ["*"],
+      "status": "open",
+      "home": true,
+      "icon": "scooter",
+      "inquiry": "moto"
+    },
+    {
+      "id": "sim",
+      "category": "common",
+      "countries": ["*"],
+      "status": "open",
+      "home": true,
+      "icon": "sim",
+      "inquiry": "sim"
+    },
+    {
+      "id": "life-help",
+      "category": "common",
+      "countries": ["*"],
+      "status": "open",
+      "home": true,
+      "icon": "life",
+      "inquiry": "general"
+    },
+    {
+      "id": "pickup",
+      "category": "common",
+      "countries": ["*"],
+      "status": "open",
+      "home": true,
+      "icon": "pickup",
+      "inquiry": "pickup"
+    },
+    {
+      "id": "ship-vn",
+      "category": "country",
+      "countries": ["VN"],
+      "status": "open",
+      "home": true,
+      "icon": "parcel",
+      "inquiry": "shipping"
+    },
+    {
+      "id": "vn-papers",
+      "category": "country",
+      "countries": ["VN"],
+      "status": "open",
+      "home": true,
+      "icon": "file",
+      "inquiry": "documents"
+    },
+    {
+      "id": "ship-other",
+      "category": "country",
+      "countries": ["ID", "TH", "PH"],
+      "status": "planned",
+      "home": true,
+      "icon": "parcel",
+      "inquiry": "shipping"
+    },
+    {
+      "id": "translate-more",
+      "category": "expansion",
+      "countries": ["*"],
+      "status": "planned",
+      "home": true,
+      "icon": "translate",
+      "inquiry": "translate"
+    },
+    {
+      "id": "moto-rental",
+      "category": "expansion",
+      "countries": ["*"],
+      "status": "planned",
+      "home": true,
+      "icon": "scooter",
+      "inquiry": "rental"
+    },
+    {
+      "id": "goods-rental",
+      "category": "expansion",
+      "countries": ["*"],
+      "status": "planned",
+      "home": true,
+      "icon": "sofa",
+      "inquiry": "rental"
+    },
+    {
+      "id": "b2b-life",
+      "category": "expansion",
+      "countries": ["*"],
+      "status": "planned",
+      "home": true,
+      "icon": "building",
+      "inquiry": "enterprise"
+    }
+  ]
+}

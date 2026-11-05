@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>選擇語言｜CROSSING PROXY</title>
+<meta name="description" content="CROSSING PROXY｜越境代辦。六種語言都是完整的一頁。我們不會依瀏覽器語言強迫跳轉。">
+<link rel="canonical" href="https://crossing-proxy-taiwan.github.io/">
+<link rel="alternate" hreflang="zh-Hant" href="https://crossing-proxy-taiwan.github.io/zh/">
+<link rel="alternate" hreflang="en" href="https://crossing-proxy-taiwan.github.io/en/">
+<link rel="alternate" hreflang="vi" href="https://crossing-proxy-taiwan.github.io/vi/">
+<link rel="alternate" hreflang="id" href="https://crossing-proxy-taiwan.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://crossing-proxy-taiwan.github.io/th/">
+<link rel="alternate" hreflang="fil" href="https://crossing-proxy-taiwan.github.io/fil/">
+<link rel="alternate" hreflang="x-default" href="https://crossing-proxy-taiwan.github.io/">
+<meta property="og:title" content="選擇語言｜CROSSING PROXY">
+<meta property="og:description" content="CROSSING PROXY｜越境代辦。六種語言都是完整的一頁。我們不會依瀏覽器語言強迫跳轉。">
+<meta property="og:url" content="https://crossing-proxy-taiwan.github.io/">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/site.css">
+<meta name="theme-color" content="#1E3A5F">
+</head>
+<body class="gate-body">
+<main class="gate">
+  <p class="mark mark-lg">CP</p>
+  <p class="eyebrow">CROSSING PROXY</p>
+  <h1>選擇語言</h1>
+  
+  <p class="lead">CROSSING PROXY｜越境代辦。六種語言都是完整的一頁。我們不會依瀏覽器語言強迫跳轉。</p>
+  <p class="tagline">Your Life in Taiwan, Made Easier.</p>
+  <p id="suggest" class="suggest" hidden></p>
+  <div class="gate-links"><a class="gate-link" href="/zh/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a class="gate-link" href="/en/" hreflang="en" lang="en">English</a><a class="gate-link" href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a class="gate-link" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a class="gate-link" href="/th/" hreflang="th" lang="th">ไทย</a><a class="gate-link" href="/fil/" hreflang="fil" lang="fil">Filipino</a></div>
+</main>
+<script type="application/json" id="cp-langs">[{"id":"zh","html":"zh-Hant","native":"繁體中文"},{"id":"en","html":"en","native":"English"},{"id":"vi","html":"vi","native":"Tiếng Việt"},{"id":"id","html":"id","native":"Bahasa Indonesia"},{"id":"th","html":"th","native":"ไทย"},{"id":"fil","html":"fil","native":"Filipino"}]</script>
+<script>
+const langs = JSON.parse(document.getElementById("cp-langs").textContent);
+const box = document.getElementById("suggest");
+let saved = "";
+try { saved = localStorage.getItem("cp-lang") || ""; } catch (error) { saved = ""; }
+const browser = (navigator.languages && navigator.languages[0] || navigator.language || "").toLowerCase();
+function match(code) {
+  const value = code.toLowerCase();
+  return langs.find((lang) => value === lang.id || value === lang.html.toLowerCase() || value.startsWith(lang.id) || value.startsWith(lang.html.toLowerCase().slice(0, 2)));
+}
+const savedLang = langs.find((lang) => lang.id === saved);
+const browserLang = match(browser);
+const parts = [];
+if (savedLang) parts.push("你上次使用的是" + " " + savedLang.native + ".");
+if (browserLang && (!savedLang || browserLang.id !== savedLang.id)) parts.push("瀏覽器語言可能比較接近" + " " + browserLang.native + ".");
+if (parts.length) {
+  box.hidden = false;
+  box.textContent = parts.join(" ");
+}
+</script>
+</body>
+</html>
