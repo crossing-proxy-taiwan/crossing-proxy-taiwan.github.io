@@ -2,7 +2,7 @@
   "metaTitle": "CROSSING PROXY｜越境代辦｜Buhay sa Taiwan",
   "metaDescription": "Tinutulungan ng CROSSING PROXY (越境代辦) ang mga dayuhan sa Taiwan sa pagsasalin, dokumento sa araw-araw, pagbili at pagbenta ng motorsiklo, SIM, padala, at mga tanong sa buhay. Hiwalay ang wika at bansa. Ang presyo, lungsod, at lisensyang hindi pa kumpirmado ay nananatiling nakabinbin.",
   "position": "Ang CROSSING PROXY ay kapareha sa pang-araw-araw na buhay ng mga dayuhan sa Taiwan.",
-  "heroLead": "Pumili ng wika at bansa, tingnan kung bukas na ang serbisyo at ano ang limitasyon, saka magtanong sa LINE. Hindi imbento ng site na ito ang presyo, address, o review.",
+  "heroLead": "Tingnan kung ano ang bukas at ang limitasyon, saka magtanong sa LINE. Ang presyo, address, at review na hindi pa kumpirmado ay wala rito.",
   "heroPoints": [
     "Sino kami: 越境代辦 CROSSING PROXY.",
     "Ano ang matutulungan: pagsasalin, dokumento, pagbili at pagbenta ng motorsiklo, SIM, padala, at usaping pang-araw-araw. Hindi pa bukas ang upa at ang plano para sa kumpanya.",
@@ -81,7 +81,7 @@
     "paused": "Pansamantalang itinigil"
   },
   "card": {
-    "details": "Tingnan ang detalye",
+    "details": "Detalye",
     "ask": "Magtanong ngayon",
     "audience": "Para kanino",
     "scope": "Saklaw",
@@ -90,22 +90,23 @@
     "steps": "Mga hakbang",
     "limits": "Limitasyon",
     "where": "Mga lungsod",
-    "applies": "Angkop sa"
+    "applies": "Angkop sa",
+    "askPlanned": "Itala ang hiling"
   },
   "appliesAll": "Hindi limitado sa isang bansa",
   "areaPending": "Hinihintay ang kumpirmasyon ng may-ari",
   "steps": [
     {
-      "title": "Piliin ang wika at bansa",
-      "body": "Puwedeng palitan ang wika anumang oras. Ang bansa ay pansala lang ng espesyal na serbisyo. Hindi sila magkadikit."
+      "title": "Piliin ang serbisyo",
+      "body": "Pumili ng serbisyo at basahin muna ang status. Hiwalay ang wika at bansa."
     },
     {
-      "title": "Basahin ang status at limitasyon",
-      "body": "Kapag bukas na, puwede mong itanong ang susunod na hakbang. Kapag nakaplano, walang reserbasyon at walang presyo."
+      "title": "Kumpirmahin ang kailangan at ang saklaw",
+      "body": "Buksan ang detalye: para kanino, mga papel, paraan ng bayad, at limitasyon. Ang nakaplano ay hindi reserbasyon at walang presyo."
     },
     {
-      "title": "Kopyahin ang tanong papuntang LINE",
-      "body": "Kopyahin ang maikling form at idikit sa LINE @681ydjcz. Huwag maglakip ng ID, pasaporte, o numero ng ARC."
+      "title": "Kumpirmahin sa LINE",
+      "body": "Kopyahin ang tanong sa LINE @681ydjcz. Huwag ilagay ang ID, pasaporte, o numero ng ARC."
     }
   ],
   "trustItems": [
@@ -186,74 +187,186 @@
       "general": {
         "intro": "Sabihin nang maikli kung ano ang kailangan.",
         "fields": [
-          { "id": "city", "label": "Lungsod o county", "placeholder": "Nasaan ka sa Taiwan" },
-          { "id": "need", "label": "Ang gustong itanong", "placeholder": "Isa o dalawang pangungusap" }
+          {
+            "id": "city",
+            "label": "Lungsod o county",
+            "placeholder": "Nasaan ka sa Taiwan"
+          },
+          {
+            "id": "need",
+            "label": "Ang gustong itanong",
+            "placeholder": "Isa o dalawang pangungusap"
+          }
         ]
       },
       "shipping": {
         "intro": "Kung nakaplano pa ang serbisyo, tala lang ito ng hiling, hindi waybill.",
         "fields": [
-          { "id": "destination", "label": "Destinasyon", "placeholder": "Lungsod o bansa. Walang numero ng ID." },
-          { "id": "item", "label": "Uri ng bagay", "placeholder": "Halimbawa damit o dokumento" },
-          { "id": "pickup", "label": "Kailangan bang sunduin?", "placeholder": "Oo / Hindi / Hindi pa sigurado" }
+          {
+            "id": "destination",
+            "label": "Destinasyon",
+            "placeholder": "Lungsod o bansa. Walang numero ng ID."
+          },
+          {
+            "id": "item",
+            "label": "Uri ng bagay",
+            "placeholder": "Halimbawa damit o dokumento"
+          },
+          {
+            "id": "pickup",
+            "label": "Kailangan bang sunduin?",
+            "placeholder": "Oo / Hindi / Hindi pa sigurado"
+          }
         ]
       },
       "moto": {
         "intro": "Tungkol ito sa bili o benta, hindi sa upa. Hindi pa bukas ang upa.",
         "fields": [
-          { "id": "city", "label": "Lungsod o county", "placeholder": "Nasaan ang motorsiklo" },
-          { "id": "side", "label": "Bibili o magbenta", "placeholder": "Bili / Benta / Hindi pa sigurado" },
-          { "id": "when", "label": "Mga tantiyang petsa", "placeholder": "Halimbawa ngayong buwan" }
+          {
+            "id": "city",
+            "label": "Lungsod o county",
+            "placeholder": "Nasaan ang motorsiklo"
+          },
+          {
+            "id": "side",
+            "label": "Bibili o magbenta",
+            "placeholder": "Bili / Benta / Hindi pa sigurado"
+          },
+          {
+            "id": "when",
+            "label": "Mga tantiyang petsa",
+            "placeholder": "Halimbawa ngayong buwan"
+          }
         ]
       },
       "rental": {
         "intro": "Hindi pa bukas ang serbisyong ito. Ang pagkopya ay tala lang ng pangangailangan. Hindi ito kontrata ng upa.",
         "fields": [
-          { "id": "city", "label": "Lungsod o county", "placeholder": "Saan gagamitin" },
-          { "id": "term", "label": "Haba ng upa", "placeholder": "Halimbawa dalawang linggo o isang buwan" },
-          { "id": "start", "label": "Petsang gustong magsimula", "placeholder": "Sapat na ang tantiyang petsa" }
+          {
+            "id": "city",
+            "label": "Lungsod o county",
+            "placeholder": "Saan gagamitin"
+          },
+          {
+            "id": "term",
+            "label": "Haba ng upa",
+            "placeholder": "Halimbawa dalawang linggo o isang buwan"
+          },
+          {
+            "id": "start",
+            "label": "Petsang gustong magsimula",
+            "placeholder": "Sapat na ang tantiyang petsa"
+          }
         ]
       },
       "sim": {
         "intro": "Ang kontrata ng numero ay sa iyo at sa carrier.",
         "fields": [
-          { "id": "city", "label": "Lungsod o county", "placeholder": "Nasaan ka" },
-          { "id": "need", "label": "Para saan ang numero", "placeholder": "Pang-araw-araw na ugnayan. Walang numero ng dokumento." }
+          {
+            "id": "city",
+            "label": "Lungsod o county",
+            "placeholder": "Nasaan ka"
+          },
+          {
+            "id": "need",
+            "label": "Para saan ang numero",
+            "placeholder": "Pang-araw-araw na ugnayan. Walang numero ng dokumento."
+          }
         ]
       },
       "documents": {
         "intro": "Sabihin ang pangalan ng papel at kung saan ka natigil. Huwag idikit ang numero.",
         "fields": [
-          { "id": "city", "label": "Lungsod o county", "placeholder": "Nasaan ka" },
-          { "id": "paper", "label": "Pangalan ng papel", "placeholder": "Aling form. Walang numero." },
-          { "id": "need", "label": "Anong tulong", "placeholder": "Unawain, isalin, o ayusin" }
+          {
+            "id": "city",
+            "label": "Lungsod o county",
+            "placeholder": "Nasaan ka"
+          },
+          {
+            "id": "paper",
+            "label": "Pangalan ng papel",
+            "placeholder": "Aling form. Walang numero."
+          },
+          {
+            "id": "need",
+            "label": "Anong tulong",
+            "placeholder": "Unawain, isalin, o ayusin"
+          }
         ]
       },
       "translate": {
         "intro": "Sabihin ang direksyon ng wika at ang layunin. Ang wikang hindi pa bukas ay hindi tinanggap na trabaho.",
         "fields": [
-          { "id": "direction", "label": "Direksyon ng wika", "placeholder": "Halimbawa Chinese papuntang Vietnamese" },
-          { "id": "use", "label": "Layunin", "placeholder": "Usapang araw-araw o pangalan ng papel" },
-          { "id": "city", "label": "Lungsod o county", "placeholder": "Kung kailangang magkita" }
+          {
+            "id": "direction",
+            "label": "Direksyon ng wika",
+            "placeholder": "Halimbawa Chinese papuntang Vietnamese"
+          },
+          {
+            "id": "use",
+            "label": "Layunin",
+            "placeholder": "Usapang araw-araw o pangalan ng papel"
+          },
+          {
+            "id": "city",
+            "label": "Lungsod o county",
+            "placeholder": "Kung kailangang magkita"
+          }
         ]
       },
       "pickup": {
         "intro": "Hindi pa nailalathala ang mga lungsod. Kinukumpirma muna namin kung abot.",
         "fields": [
-          { "id": "city", "label": "Lungsod o county", "placeholder": "Saan susunduin" },
-          { "id": "when", "label": "Oras", "placeholder": "Tantiyang araw, umaga o hapon" },
-          { "id": "item", "label": "Uri ng bagay", "placeholder": "Walang sensitibong detalye" }
+          {
+            "id": "city",
+            "label": "Lungsod o county",
+            "placeholder": "Saan susunduin"
+          },
+          {
+            "id": "when",
+            "label": "Oras",
+            "placeholder": "Tantiyang araw, umaga o hapon"
+          },
+          {
+            "id": "item",
+            "label": "Uri ng bagay",
+            "placeholder": "Walang sensitibong detalye"
+          }
         ]
       },
       "enterprise": {
         "intro": "Hiling ito ng kumpanya, hindi kasunduang may bisa na. Ang personal na tanong ay ibang form.",
         "fields": [
-          { "id": "company", "label": "Pangalan ng kumpanya", "placeholder": "Kumpanya o koponan" },
-          { "id": "contact", "label": "Contact person", "placeholder": "Pangalan" },
-          { "id": "method", "label": "Paano ka makokontak", "placeholder": "LINE, telepono, o email" },
-          { "id": "city", "label": "Lungsod o county", "placeholder": "Nasaan ang mga empleyado" },
-          { "id": "headcount", "label": "Tantiyang bilang ng tao", "placeholder": "Magaspang na bilang" },
-          { "id": "items", "label": "Ang gustong pag-usapan", "placeholder": "Tulong sa buhay, sakay, pagsasalin, o iba pa" }
+          {
+            "id": "company",
+            "label": "Pangalan ng kumpanya",
+            "placeholder": "Kumpanya o koponan"
+          },
+          {
+            "id": "contact",
+            "label": "Contact person",
+            "placeholder": "Pangalan"
+          },
+          {
+            "id": "method",
+            "label": "Paano ka makokontak",
+            "placeholder": "LINE, telepono, o email"
+          },
+          {
+            "id": "city",
+            "label": "Lungsod o county",
+            "placeholder": "Nasaan ang mga empleyado"
+          },
+          {
+            "id": "headcount",
+            "label": "Tantiyang bilang ng tao",
+            "placeholder": "Magaspang na bilang"
+          },
+          {
+            "id": "items",
+            "label": "Ang gustong pag-usapan",
+            "placeholder": "Tulong sa buhay, sakay, pagsasalin, o iba pa"
+          }
         ]
       }
     }
@@ -284,7 +397,11 @@
       "scope": "Tulad sa pagsasalita at sa sulat na Chinese–Vietnamese. Hindi ito serbisyo ng visa.",
       "documents": "Ilarawan muna sa LINE ang uri ng papel. Huwag ilagay ang numero ng dokumento sa form. Ikaw ang may hawak ng orihinal.",
       "pricing": "Walang nailathalang presyo at walang panimulang presyo. Magsisimula pagkatapos mong tanggapin ang presyo sa LINE.",
-      "steps": ["Sabihin ang direksyon at ang uri ng papel", "Kinukumpirma namin kung matutulungan", "Magsisimula pagkatapos mong tanggapin ang presyo"],
+      "steps": [
+        "Sabihin ang direksyon at ang uri ng papel",
+        "Kinukumpirma namin kung matutulungan",
+        "Magsisimula pagkatapos mong tanggapin ang presyo"
+      ],
       "limits": "Ang salin ay hindi nangangahulugang tatanggapin ng opisina ang papel. Hindi pa bukas ang pagsasalin sa ibang wika."
     },
     "documents": {
@@ -294,7 +411,11 @@
       "scope": "Ipaliwanag ang mga patlang, ayusin ang hawak mo nang papeles, at alamin kung aling bintana ang tatanungin. Nakabinbin ang listahan ng papel na puwedeng asikasuhin isa-isa, kaya hindi pa inaangkin ang bawat uri.",
       "documents": "Sa una, pangalan lang ng papel at lungsod ang kailangan. Huwag magpadala ng ID, pasaporte, o numero ng ARC.",
       "pricing": "Humingi ng presyo. Walang bayad na nakapaskil sa site na ito.",
-      "steps": ["Pangalanan ang papel at ang hakbang na natigil", "Pinaghihiwalay namin ang kaya at ang hindi kaya", "Magkikita pagkatapos mong tanggapin ang presyo"],
+      "steps": [
+        "Pangalanan ang papel at ang hakbang na natigil",
+        "Pinaghihiwalay namin ang kaya at ang hindi kaya",
+        "Magkikita pagkatapos mong tanggapin ang presyo"
+      ],
       "limits": "Hindi kami nangangako ng visa, trabaho, o pag-apruba ng gobyerno. Ang gawaing kailangan ng lisensya ay hindi itatak bilang referral hanggang may lisensyadong kapareha."
     },
     "moto-sale": {
@@ -304,7 +425,11 @@
       "scope": "Mga tanong bago tingnan ang motor, payak na paliwanag ng hakbang, at tulong sa usapan. Nakabinbin kung may dealer permit kami. Hindi inaangkin ng pahinang ito ang lisensya.",
       "documents": "Ang transfer, insurance, at rehistrasyon ay ayon sa tanggapan ng sasakyan. Huwag ilagay ang ID o plaka sa form.",
       "pricing": "Hindi nailathala ang presyo ng motor o ang bayad namin. Magtanong sa LINE.",
-      "steps": ["Sabihin ang lungsod at kung bibili o magbebenta", "Ipapaliwanag namin ang bahaging matutulungan", "Magsasaayos pagkatapos ng presyo"],
+      "steps": [
+        "Sabihin ang lungsod at kung bibili o magbebenta",
+        "Ipapaliwanag namin ang bahaging matutulungan",
+        "Magsasaayos pagkatapos ng presyo"
+      ],
       "limits": "Ang panandalian at katamtamang upa ay ibang serbisyo at nakaplano pa. Ang pagmamaneho ay kailangan pa ring sumunod sa batas-trapiko ng Taiwan."
     },
     "sim": {
@@ -314,7 +439,11 @@
       "scope": "Paliwanag nang maaga at tulong sa usapan. Ang kontrata ay sa iyo at sa carrier. Hindi kami carrier.",
       "documents": "Maaaring kailangang tingnan ng carrier ang pasaporte o papel ng paninirahan. Ipakita ito sa carrier. Huwag i-type ang numero sa website na ito.",
       "pricing": "Ang presyo ng plano ay sa carrier. Hindi nailathala ang bayad sa tulong namin. Magtanong sa LINE.",
-      "steps": ["Sabihin ang lungsod at kung para saan ang numero", "Ipapaliwanag namin ang matutulungan", "Magkikita pagkatapos ng presyo"],
+      "steps": [
+        "Sabihin ang lungsod at kung para saan ang numero",
+        "Ipapaliwanag namin ang matutulungan",
+        "Magkikita pagkatapos ng presyo"
+      ],
       "limits": "Ang carrier ang magpapasya kung maglalabas ng numero. Hindi kami nangangako ng pag-apruba."
     },
     "life-help": {
@@ -324,7 +453,11 @@
       "scope": "Tulong sa pagbabasa ng abiso, paghahanda ng tanong, at ibang usaping pang-araw-araw na puwede naming tulungan. Kung hindi pa kumpirmado ang isang gawain, sasabihin muna namin.",
       "documents": "Depende. Huwag magpadala ng larawan o numero ng pagkakakilanlan sa simula.",
       "pricing": "Kung may bayad, sasabihin bago magsimula. Walang listahan ng presyo sa site.",
-      "steps": ["Ilarawan ang tanong at ang lungsod", "Sasabihin namin kung matutulungan", "Kung may bayad, presyo muna"],
+      "steps": [
+        "Ilarawan ang tanong at ang lungsod",
+        "Sasabihin namin kung matutulungan",
+        "Kung may bayad, presyo muna"
+      ],
       "limits": "Hindi kami nagbibigay ng medikal na diagnosis o payo sa kaso, at hindi kami humahawak ng remittance."
     },
     "pickup": {
@@ -334,7 +467,11 @@
       "scope": "Sa mga lungsod lang na kinukumpirma ng may-ari. Hanggang noon, magtanong muna. Huwag ipagpalagay na buong Taiwan ang sakop.",
       "documents": "Ibigay ang address sa LINE mamaya. Huwag ilagay sa pampublikong URL.",
       "pricing": "Kung may hiwalay na bayad ang sundo, nasa presyo ang paliwanag. Walang presyo rito.",
-      "steps": ["Sabihin ang lungsod at ang tantiyang oras", "Kinukumpirma namin kung abot", "Magbu-book pagkatapos ng presyo"],
+      "steps": [
+        "Sabihin ang lungsod at ang tantiyang oras",
+        "Kinukumpirma namin kung abot",
+        "Magbu-book pagkatapos ng presyo"
+      ],
       "limits": "Hindi tinatanggap ang mapanganib na bagay. Nakabinbin ang listahan ng lungsod."
     },
     "ship-vn": {
@@ -344,7 +481,11 @@
       "scope": "Mga tanong bago mag-empake, pagsuri sa uri ng bagay, at sundo sa bahay pagkatapos makumpirma ang lungsod.",
       "documents": "Karaniwang kailangan ang contact ng nagpadala at tatanggap. Huwag ilagay ang numero ng ID sa form.",
       "pricing": "Ang presyo ay ayon sa timbang, laki, at paraan ng biyahe. Walang panimulang presyo rito. Kumuha ng presyo sa LINE bago ibigay ang bagay.",
-      "steps": ["Sabihin ang destinasyon, uri ng bagay, at kung kailangan ng sundo", "Kinukumpirma namin kung tatanggapin at magpapadala ng presyo", "Ibibigay mo lang pagkatapos mong pumayag"],
+      "steps": [
+        "Sabihin ang destinasyon, uri ng bagay, at kung kailangan ng sundo",
+        "Kinukumpirma namin kung tatanggapin at magpapadala ng presyo",
+        "Ibibigay mo lang pagkatapos mong pumayag"
+      ],
       "limits": "Hindi tinatanggap ang karne at produktong karne. Limitado ang baterya at power bank. Karaniwan ding limitado ang likido at gamot. Nagbabago ang patakaran, kaya kumpirmahin muli bago magpadala. Hindi pa na-recover ang buong tekstong bawal mula sa lumang site, kaya hindi ito ang orihinal na listahan. Nakabinbin kung kumpleto ang kinakailangang permiso sa transport."
     },
     "vn-papers": {
@@ -354,7 +495,11 @@
       "scope": "Magpaliwanag, mag-ayos, at magsalin. Hindi kami naghahain ng visa o residence permit.",
       "documents": "Magsimula sa pangalan ng papel. Huwag maglagay ng numero sa form.",
       "pricing": "Humingi ng presyo. Walang panimulang presyo.",
-      "steps": ["Pangalanan ang papel at kung bakit kailangan", "Kinukumpirma namin kung kaya", "Tutuloy pagkatapos mong tanggapin ang presyo"],
+      "steps": [
+        "Pangalanan ang papel at kung bakit kailangan",
+        "Kinukumpirma namin kung kaya",
+        "Tutuloy pagkatapos mong tanggapin ang presyo"
+      ],
       "limits": "Hindi kami nangangako na tatanggapin ng opisina sa Taiwan o Vietnam ang papel."
     },
     "ship-other": {
@@ -364,7 +509,11 @@
       "scope": "Maririnig namin ang hiling. Hindi kami tumatanggap ng parsela.",
       "documents": "Hindi kami kumukuha ng numero ng pagkakakilanlan ng tatanggap bago ito bumukas.",
       "pricing": "Hindi pa bukas. Walang presyo.",
-      "steps": ["Iwan ang destinasyon at ang uri ng bagay", "Tala lang namin ang hiling", "Hindi ka namin papapadalhan ng parsela bago ito bumukas"],
+      "steps": [
+        "Iwan ang destinasyon at ang uri ng bagay",
+        "Tala lang namin ang hiling",
+        "Hindi ka namin papapadalhan ng parsela bago ito bumukas"
+      ],
       "limits": "Hindi ito minarkahang bukas. Iba-iba ang limitasyon ng bawat bansa, at sasabihin kung bubukas ang serbisyo. Huwag magpadala ng bagay ngayon."
     },
     "translate-more": {
@@ -374,7 +523,11 @@
       "scope": "Ang Chinese–Vietnamese lang ang kumpirmadong available. Nakaplano ang item na ito.",
       "documents": "Huwag magpadala ng papel bago ito bumukas.",
       "pricing": "Hindi pa bukas. Walang presyo.",
-      "steps": ["Sabihin ang direksyon ng wika", "Itatala namin ang hiling", "Hindi kami tumatanggap ng trabaho bago ito bumukas"],
+      "steps": [
+        "Sabihin ang direksyon ng wika",
+        "Itatala namin ang hiling",
+        "Hindi kami tumatanggap ng trabaho bago ito bumukas"
+      ],
       "limits": "Ang anim na wika ng interface ay hindi nangangahulugang bukas na ang anim na serbisyo ng pagsasalin."
     },
     "moto-rental": {
@@ -384,7 +537,11 @@
       "scope": "Wala pang motorsiklo, kontrata, o insurance na inaalok.",
       "documents": "Hindi kami kumukuha ng numero ng lisensya o pasaporte bago ito bumukas.",
       "pricing": "Walang arawan, lingguhan, o panimulang presyo.",
-      "steps": ["Maaari kang mag-iwan ng lungsod, haba, at inaasahang petsa ng simula", "Hiling lang iyon", "Hindi ito nagiging order"],
+      "steps": [
+        "Maaari kang mag-iwan ng lungsod, haba, at inaasahang petsa ng simula",
+        "Hiling lang iyon",
+        "Hindi ito nagiging order"
+      ],
       "limits": "Hanggang hindi tapos ang kontrata ng upa, insurance, at permiso, hindi ito bukas. Para bumili o magbenta ng gamit na motorsiklo, gamitin ang bukas na serbisyo ng pagbili at pagbenta."
     },
     "goods-rental": {
@@ -394,7 +551,11 @@
       "scope": "Hindi pa bukas ang upa.",
       "documents": "Walang kontratang pipirmahan bago ito bumukas, at hindi kami kumukuha ng numero ng ID.",
       "pricing": "Walang presyo.",
-      "steps": ["Maaari mong sabihin ang lungsod at ang uri ng gamit", "Tala lang namin ang hiling", "Hindi maiiskedyul ang delivery bago ito bumukas"],
+      "steps": [
+        "Maaari mong sabihin ang lungsod at ang uri ng gamit",
+        "Tala lang namin ang hiling",
+        "Hindi maiiskedyul ang delivery bago ito bumukas"
+      ],
       "limits": "Hindi pa opisyal na bukas. Ang tanong ay hindi order."
     },
     "b2b-life": {
@@ -404,8 +565,41 @@
       "scope": "Kinokolekta lang namin ang hiling. Kung bukas na ang isang personal na serbisyo, mananatili ang limitasyon nito.",
       "documents": "Iwan ang kumpanya at ang contact person. Huwag magpadala ng numero ng ID ng empleyado.",
       "pricing": "Walang listahan ng presyo para sa kumpanya. Kung maaari itong kunin sa hinaharap, hiwalay muna kaming magbibigay ng presyo.",
-      "steps": ["Iwan ang kumpanya, contact, lungsod, bilang, at paksa", "Kopyahin sa LINE", "Sasabihin namin kung puwedeng magpatuloy ang usapan pagkatapos suriin"],
+      "steps": [
+        "Iwan ang kumpanya, contact, lungsod, bilang, at paksa",
+        "Kopyahin sa LINE",
+        "Sasabihin namin kung puwedeng magpatuloy ang usapan pagkatapos suriin"
+      ],
       "limits": "Hindi ito minarkahang bukas o referral. Walang kumpirmadong kaparehang kumpanya, kaya walang pinangalanan."
     }
-  }
+  },
+  "primaryNav": {
+    "services": "Serbisyo",
+    "steps": "Proseso",
+    "about": "Tungkol",
+    "faq": "FAQ",
+    "menu": "Menu"
+  },
+  "filters": {
+    "label": "Salain ang serbisyo",
+    "all": "Lahat",
+    "open": "Bukas na",
+    "country": "Ayon sa bansa",
+    "planned": "Inihahanda",
+    "empty": "Walang serbisyong tumutugma sa salaan na ito."
+  },
+  "principles": [
+    {
+      "title": "Malinaw na usapan",
+      "body": "Bawat serbisyo ay minarkahang bukas, ni-refer, nakaplano, o pansamantalang itinigil. Hindi kami nangangako ng visa, trabaho, o pag-apruba ng gobyerno."
+    },
+    {
+      "title": "Malinaw na proseso",
+      "body": "Hindi pa nailalathala ang bayad at walang panimulang presyo. Bago magsimula, ipapaliwanag sa LINE ang saklaw at ang presyo."
+    },
+    {
+      "title": "Paggalang sa privacy",
+      "body": "Ang tanong ay nananatili sa device mo at hindi ina-upload. Huwag ilagay ang ID, pasaporte, o numero ng ARC."
+    }
+  ]
 }

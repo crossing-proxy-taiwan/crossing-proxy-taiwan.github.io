@@ -2,7 +2,7 @@
   "metaTitle": "CROSSING PROXY｜越境代辦｜Urusan hidup di Taiwan",
   "metaDescription": "CROSSING PROXY (越境代辦) membantu warga asing di Taiwan untuk urusan terjemahan, dokumen harian, jual-beli sepeda motor, kartu SIM, pengiriman, dan pertanyaan sehari-hari. Bahasa dan negara dipilih terpisah. Harga, kota, dan izin yang belum dikonfirmasi tetap ditandai menunggu.",
   "position": "CROSSING PROXY adalah mitra layanan hidup sehari-hari bagi warga asing di Taiwan.",
-  "heroLead": "Pilih bahasa dan negara, lihat apakah layanan sudah dibuka dan apa batasnya, lalu tanya lewat LINE. Situs ini tidak mengarang harga, alamat, atau ulasan.",
+  "heroLead": "Lihat layanan yang sudah dibuka dan batasannya, lalu tanya lewat LINE. Harga, alamat, dan ulasan yang belum dikonfirmasi tidak ditampilkan di sini.",
   "heroPoints": [
     "Siapa kami: 越境代辦 CROSSING PROXY.",
     "Yang bisa dibantu: terjemahan, dokumen, jual-beli motor, SIM, kirim barang, dan urusan harian. Sewa dan paket perusahaan belum dibuka.",
@@ -81,7 +81,7 @@
     "paused": "Ditunda"
   },
   "card": {
-    "details": "Lihat rincian",
+    "details": "Rincian",
     "ask": "Tanya sekarang",
     "audience": "Untuk siapa",
     "scope": "Cakupan",
@@ -90,22 +90,23 @@
     "steps": "Langkah",
     "limits": "Batasan",
     "where": "Kota",
-    "applies": "Berlaku untuk"
+    "applies": "Berlaku untuk",
+    "askPlanned": "Catat kebutuhan"
   },
   "appliesAll": "Tidak terbatas pada satu negara",
   "areaPending": "Menunggu konfirmasi pemilik",
   "steps": [
     {
-      "title": "Pilih bahasa dan negara",
-      "body": "Bahasa bisa diganti kapan saja. Negara hanya menyaring layanan khusus. Keduanya tidak saling mengunci."
+      "title": "Pilih layanan",
+      "body": "Pilih satu layanan dan baca statusnya dulu. Bahasa dan negara tetap terpisah."
     },
     {
-      "title": "Baca status dan batasan",
-      "body": "Sudah dibuka berarti Anda boleh bertanya langkah berikutnya. Direncanakan berarti belum bisa dipesan dan belum ada harga."
+      "title": "Konfirmasi kebutuhan dan cakupan",
+      "body": "Buka rincian: untuk siapa, dokumen, cara biaya, dan batasan. Yang masih disiapkan tidak bisa dipesan dan belum ada harga."
     },
     {
-      "title": "Salin pertanyaan ke LINE",
-      "body": "Salin formulir singkat dan tempel ke LINE @681ydjcz. Jangan lampirkan nomor identitas, paspor, atau ARC."
+      "title": "Konfirmasi lewat LINE",
+      "body": "Salin pertanyaan ke LINE @681ydjcz. Jangan sertakan nomor identitas, paspor, atau ARC."
     }
   ],
   "trustItems": [
@@ -186,74 +187,186 @@
       "general": {
         "intro": "Jelaskan kebutuhan sesingkat mungkin.",
         "fields": [
-          { "id": "city", "label": "Kota atau kabupaten", "placeholder": "Anda di mana di Taiwan" },
-          { "id": "need", "label": "Yang ingin ditanyakan", "placeholder": "Satu atau dua kalimat" }
+          {
+            "id": "city",
+            "label": "Kota atau kabupaten",
+            "placeholder": "Anda di mana di Taiwan"
+          },
+          {
+            "id": "need",
+            "label": "Yang ingin ditanyakan",
+            "placeholder": "Satu atau dua kalimat"
+          }
         ]
       },
       "shipping": {
         "intro": "Jika layanan ini masih direncanakan, catatan ini hanya permintaan, bukan resi.",
         "fields": [
-          { "id": "destination", "label": "Tujuan", "placeholder": "Kota atau negara. Jangan tulis nomor identitas." },
-          { "id": "item", "label": "Jenis barang", "placeholder": "Misalnya pakaian atau dokumen" },
-          { "id": "pickup", "label": "Perlu dijemput?", "placeholder": "Ya / Tidak / Belum tentu" }
+          {
+            "id": "destination",
+            "label": "Tujuan",
+            "placeholder": "Kota atau negara. Jangan tulis nomor identitas."
+          },
+          {
+            "id": "item",
+            "label": "Jenis barang",
+            "placeholder": "Misalnya pakaian atau dokumen"
+          },
+          {
+            "id": "pickup",
+            "label": "Perlu dijemput?",
+            "placeholder": "Ya / Tidak / Belum tentu"
+          }
         ]
       },
       "moto": {
         "intro": "Ini soal beli atau jual, bukan sewa. Sewa belum dibuka.",
         "fields": [
-          { "id": "city", "label": "Kota atau kabupaten", "placeholder": "Lokasi motor" },
-          { "id": "side", "label": "Beli atau jual", "placeholder": "Beli / Jual / Belum tentu" },
-          { "id": "when", "label": "Perkiraan waktu", "placeholder": "Misalnya bulan ini" }
+          {
+            "id": "city",
+            "label": "Kota atau kabupaten",
+            "placeholder": "Lokasi motor"
+          },
+          {
+            "id": "side",
+            "label": "Beli atau jual",
+            "placeholder": "Beli / Jual / Belum tentu"
+          },
+          {
+            "id": "when",
+            "label": "Perkiraan waktu",
+            "placeholder": "Misalnya bulan ini"
+          }
         ]
       },
       "rental": {
         "intro": "Layanan ini belum dibuka. Menyalin teks hanya mencatat kebutuhan, tidak membuat kontrak sewa.",
         "fields": [
-          { "id": "city", "label": "Kota atau kabupaten", "placeholder": "Tempat pemakaian" },
-          { "id": "term", "label": "Lama sewa yang diinginkan", "placeholder": "Misalnya dua minggu atau satu bulan" },
-          { "id": "start", "label": "Tanggal mulai yang diinginkan", "placeholder": "Tanggal perkiraan cukup" }
+          {
+            "id": "city",
+            "label": "Kota atau kabupaten",
+            "placeholder": "Tempat pemakaian"
+          },
+          {
+            "id": "term",
+            "label": "Lama sewa yang diinginkan",
+            "placeholder": "Misalnya dua minggu atau satu bulan"
+          },
+          {
+            "id": "start",
+            "label": "Tanggal mulai yang diinginkan",
+            "placeholder": "Tanggal perkiraan cukup"
+          }
         ]
       },
       "sim": {
         "intro": "Kontrak nomor ada antara Anda dan operator.",
         "fields": [
-          { "id": "city", "label": "Kota atau kabupaten", "placeholder": "Anda di mana" },
-          { "id": "need", "label": "Nomor dipakai untuk apa", "placeholder": "Kontak harian. Jangan tulis nomor dokumen." }
+          {
+            "id": "city",
+            "label": "Kota atau kabupaten",
+            "placeholder": "Anda di mana"
+          },
+          {
+            "id": "need",
+            "label": "Nomor dipakai untuk apa",
+            "placeholder": "Kontak harian. Jangan tulis nomor dokumen."
+          }
         ]
       },
       "documents": {
         "intro": "Sebut nama dokumen dan bagian yang macet. Jangan tempel nomor dokumen.",
         "fields": [
-          { "id": "city", "label": "Kota atau kabupaten", "placeholder": "Anda di mana" },
-          { "id": "paper", "label": "Nama dokumen", "placeholder": "Formulir yang mana. Jangan tulis nomor." },
-          { "id": "need", "label": "Bantuan yang dibutuhkan", "placeholder": "Memahami, menerjemahkan, atau merapikan" }
+          {
+            "id": "city",
+            "label": "Kota atau kabupaten",
+            "placeholder": "Anda di mana"
+          },
+          {
+            "id": "paper",
+            "label": "Nama dokumen",
+            "placeholder": "Formulir yang mana. Jangan tulis nomor."
+          },
+          {
+            "id": "need",
+            "label": "Bantuan yang dibutuhkan",
+            "placeholder": "Memahami, menerjemahkan, atau merapikan"
+          }
         ]
       },
       "translate": {
         "intro": "Sebut arah bahasa dan tujuannya. Bahasa yang belum dibuka bukan pekerjaan yang sudah diterima.",
         "fields": [
-          { "id": "direction", "label": "Arah bahasa", "placeholder": "Misalnya Mandarin ke Vietnam" },
-          { "id": "use", "label": "Tujuan", "placeholder": "Percakapan harian atau nama dokumen" },
-          { "id": "city", "label": "Kota atau kabupaten", "placeholder": "Jika perlu bertemu" }
+          {
+            "id": "direction",
+            "label": "Arah bahasa",
+            "placeholder": "Misalnya Mandarin ke Vietnam"
+          },
+          {
+            "id": "use",
+            "label": "Tujuan",
+            "placeholder": "Percakapan harian atau nama dokumen"
+          },
+          {
+            "id": "city",
+            "label": "Kota atau kabupaten",
+            "placeholder": "Jika perlu bertemu"
+          }
         ]
       },
       "pickup": {
         "intro": "Daftar kota belum diumumkan. Kami cek dulu apakah bisa datang.",
         "fields": [
-          { "id": "city", "label": "Kota atau kabupaten", "placeholder": "Lokasi jemput" },
-          { "id": "when", "label": "Perkiraan waktu", "placeholder": "Hari perkiraan, pagi atau sore" },
-          { "id": "item", "label": "Jenis barang", "placeholder": "Jangan tulis data sensitif" }
+          {
+            "id": "city",
+            "label": "Kota atau kabupaten",
+            "placeholder": "Lokasi jemput"
+          },
+          {
+            "id": "when",
+            "label": "Perkiraan waktu",
+            "placeholder": "Hari perkiraan, pagi atau sore"
+          },
+          {
+            "id": "item",
+            "label": "Jenis barang",
+            "placeholder": "Jangan tulis data sensitif"
+          }
         ]
       },
       "enterprise": {
         "intro": "Ini permintaan perusahaan, bukan kerja sama yang sudah berlaku. Pertanyaan pribadi memakai formulir lain.",
         "fields": [
-          { "id": "company", "label": "Nama perusahaan", "placeholder": "Perusahaan atau tim" },
-          { "id": "contact", "label": "Narahubung", "placeholder": "Nama" },
-          { "id": "method", "label": "Cara dihubungi", "placeholder": "LINE, telepon, atau email" },
-          { "id": "city", "label": "Kota atau kabupaten", "placeholder": "Karyawan berada di mana" },
-          { "id": "headcount", "label": "Perkiraan jumlah orang", "placeholder": "Angka kasar" },
-          { "id": "items", "label": "Yang ingin dibahas", "placeholder": "Dukungan hidup, transport, terjemahan, atau lainnya" }
+          {
+            "id": "company",
+            "label": "Nama perusahaan",
+            "placeholder": "Perusahaan atau tim"
+          },
+          {
+            "id": "contact",
+            "label": "Narahubung",
+            "placeholder": "Nama"
+          },
+          {
+            "id": "method",
+            "label": "Cara dihubungi",
+            "placeholder": "LINE, telepon, atau email"
+          },
+          {
+            "id": "city",
+            "label": "Kota atau kabupaten",
+            "placeholder": "Karyawan berada di mana"
+          },
+          {
+            "id": "headcount",
+            "label": "Perkiraan jumlah orang",
+            "placeholder": "Angka kasar"
+          },
+          {
+            "id": "items",
+            "label": "Yang ingin dibahas",
+            "placeholder": "Dukungan hidup, transport, terjemahan, atau lainnya"
+          }
         ]
       }
     }
@@ -284,7 +397,11 @@
       "scope": "Bantuan lisan dan teks Mandarin–Vietnam. Ini bukan layanan visa.",
       "documents": "Sebutkan jenis dokumen di LINE dulu. Jangan menulis nomor dokumen di formulir situs. Dokumen asli tetap di Anda.",
       "pricing": "Tidak ada harga yang diumumkan dan tidak ada harga mulai. Mulai setelah Anda menyetujui penawaran di LINE.",
-      "steps": ["Sebut arah bahasa dan jenis dokumen", "Kami pastikan apakah bisa membantu", "Mulai setelah Anda setuju dengan harga"],
+      "steps": [
+        "Sebut arah bahasa dan jenis dokumen",
+        "Kami pastikan apakah bisa membantu",
+        "Mulai setelah Anda setuju dengan harga"
+      ],
       "limits": "Terjemahan tidak berarti instansi akan menerima dokumen itu. Terjemahan bahasa lain belum dibuka."
     },
     "documents": {
@@ -294,7 +411,11 @@
       "scope": "Menjelaskan kolom, merapikan berkas yang sudah Anda punya, dan mencari loket yang tepat. Daftar dokumen yang bisa diurus satu per satu masih menunggu, jadi tidak diklaim lebih dulu.",
       "documents": "Awalnya cukup nama dokumen dan kota. Jangan kirim nomor identitas, paspor, atau ARC.",
       "pricing": "Minta penawaran. Tidak ada biaya yang dipasang di situs ini.",
-      "steps": ["Sebut nama dokumen dan langkah yang macet", "Kami pisahkan yang bisa dan yang tidak bisa", "Bertemu setelah Anda setuju dengan harga"],
+      "steps": [
+        "Sebut nama dokumen dan langkah yang macet",
+        "Kami pisahkan yang bisa dan yang tidak bisa",
+        "Bertemu setelah Anda setuju dengan harga"
+      ],
       "limits": "Kami tidak menjanjikan visa, pekerjaan, atau persetujuan instansi. Urusan yang butuh izin tidak ditandai sebagai rujukan mitra sebelum ada mitra berizin."
     },
     "moto-sale": {
@@ -304,7 +425,11 @@
       "scope": "Pertanyaan sebelum melihat motor, penjelasan langkah, dan dampingan saat berbicara. Apakah kami punya izin dealer masih menunggu konfirmasi. Halaman ini tidak mengklaim punya izin.",
       "documents": "Balik nama, asuransi, dan registrasi mengikuti kantor kendaraan. Jangan tulis nomor identitas atau plat di formulir.",
       "pricing": "Harga motor dan biaya layanan tidak diumumkan. Tanya di LINE.",
-      "steps": ["Sebut kota dan apakah ingin beli atau jual", "Kami jelaskan bagian yang bisa dibantu", "Atur setelah ada penawaran"],
+      "steps": [
+        "Sebut kota dan apakah ingin beli atau jual",
+        "Kami jelaskan bagian yang bisa dibantu",
+        "Atur setelah ada penawaran"
+      ],
       "limits": "Sewa jangka pendek dan menengah adalah layanan lain dan baru direncanakan. Berkendara tetap harus mengikuti aturan lalu lintas Taiwan."
     },
     "sim": {
@@ -314,7 +439,11 @@
       "scope": "Penjelasan di depan dan dampingan saat berbicara. Kontrak ada antara Anda dan operator. Kami bukan operator.",
       "documents": "Operator mungkin perlu melihat paspor atau dokumen tinggal. Tunjukkan langsung ke operator. Jangan ketik nomornya di situs ini.",
       "pricing": "Harga paket mengikuti operator. Biaya bantuan kami tidak diumumkan. Tanya di LINE.",
-      "steps": ["Sebut kota dan kegunaan nomor", "Kami jelaskan bagian yang bisa dibantu", "Bertemu setelah ada penawaran"],
+      "steps": [
+        "Sebut kota dan kegunaan nomor",
+        "Kami jelaskan bagian yang bisa dibantu",
+        "Bertemu setelah ada penawaran"
+      ],
       "limits": "Operator yang memutuskan nomor diterbitkan atau tidak. Kami tidak menjanjikan berhasil."
     },
     "life-help": {
@@ -324,7 +453,11 @@
       "scope": "Membantu membaca pemberitahuan, menyiapkan pertanyaan, dan urusan harian yang boleh dibantu. Jika tugas tertentu belum dikonfirmasi, kami katakan lebih dulu.",
       "documents": "Tergantung urusannya. Jangan kirim foto atau nomor identitas di awal.",
       "pricing": "Jika ada biaya, kami beri tahu sebelum mulai. Tidak ada daftar harga di situs.",
-      "steps": ["Jelaskan pertanyaan dan kota", "Kami beri tahu apakah bisa membantu", "Jika berbayar, penawaran lebih dulu"],
+      "steps": [
+        "Jelaskan pertanyaan dan kota",
+        "Kami beri tahu apakah bisa membantu",
+        "Jika berbayar, penawaran lebih dulu"
+      ],
       "limits": "Kami tidak memberi diagnosis medis atau nasihat perkara, dan tidak mengurus transfer uang."
     },
     "pickup": {
@@ -334,7 +467,11 @@
       "scope": "Hanya di kota yang dikonfirmasi pemilik. Sebelum itu, tanya dulu. Jangan menganggap seluruh Taiwan tercakup.",
       "documents": "Alamat jalan disampaikan nanti di LINE. Jangan menaruhnya di URL publik.",
       "pricing": "Apakah jemput punya biaya sendiri dijelaskan di penawaran. Tidak ada harga di sini.",
-      "steps": ["Sebut kota dan perkiraan waktu", "Kami pastikan bisa datang atau tidak", "Jadwal setelah penawaran"],
+      "steps": [
+        "Sebut kota dan perkiraan waktu",
+        "Kami pastikan bisa datang atau tidak",
+        "Jadwal setelah penawaran"
+      ],
       "limits": "Barang berbahaya tidak diterima. Daftar kota masih menunggu."
     },
     "ship-vn": {
@@ -344,7 +481,11 @@
       "scope": "Konsultasi sebelum kirim, cek jenis barang, dan jemput di rumah setelah kota dikonfirmasi.",
       "documents": "Biasanya perlu data kontak pengirim dan penerima. Jangan tulis nomor identitas di formulir situs.",
       "pricing": "Penawaran tergantung berat, volume, dan cara kirim. Tidak ada harga mulai di sini. Minta penawaran LINE sebelum menyerahkan barang.",
-      "steps": ["Sebut tujuan, jenis barang, dan apakah perlu dijemput", "Kami pastikan bisa diterima dan kirim penawaran", "Serahkan barang setelah Anda setuju"],
+      "steps": [
+        "Sebut tujuan, jenis barang, dan apakah perlu dijemput",
+        "Kami pastikan bisa diterima dan kirim penawaran",
+        "Serahkan barang setelah Anda setuju"
+      ],
       "limits": "Daging dan olahan daging tidak diterima. Baterai dan power bank dibatasi. Cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim. Naskah larangan lengkap dari situs lama belum ditemukan, jadi paragraf ini bukan naskah itu. Apakah izin angkut yang diperlukan sudah ada masih menunggu konfirmasi pemilik."
     },
     "vn-papers": {
@@ -354,7 +495,11 @@
       "scope": "Menjelaskan, merapikan, dan menerjemahkan. Kami tidak mengurus visa atau izin tinggal.",
       "documents": "Mulai dari nama dokumen. Jangan tulis nomor di formulir.",
       "pricing": "Minta penawaran. Tidak ada harga mulai.",
-      "steps": ["Sebut nama dokumen dan tujuannya", "Kami pastikan bisa ditangani atau tidak", "Lanjut setelah Anda setuju dengan harga"],
+      "steps": [
+        "Sebut nama dokumen dan tujuannya",
+        "Kami pastikan bisa ditangani atau tidak",
+        "Lanjut setelah Anda setuju dengan harga"
+      ],
       "limits": "Kami tidak menjanjikan instansi di Taiwan atau Vietnam akan menerima dokumen itu."
     },
     "ship-other": {
@@ -364,7 +509,11 @@
       "scope": "Saat ini kami hanya mendengar permintaan, tidak menerima paket.",
       "documents": "Sebelum dibuka kami tidak mengumpulkan nomor identitas penerima.",
       "pricing": "Belum dibuka. Tidak ada harga.",
-      "steps": ["Tinggalkan tujuan dan jenis barang", "Kami hanya mencatat permintaan", "Sebelum dibuka kami tidak meminta Anda menyerahkan paket"],
+      "steps": [
+        "Tinggalkan tujuan dan jenis barang",
+        "Kami hanya mencatat permintaan",
+        "Sebelum dibuka kami tidak meminta Anda menyerahkan paket"
+      ],
       "limits": "Ini tidak ditandai sudah dibuka. Setiap negara punya batasan sendiri, yang akan dijelaskan jika layanan dibuka. Jangan kirim barang sekarang."
     },
     "translate-more": {
@@ -374,7 +523,11 @@
       "scope": "Yang dikonfirmasi tersedia saat ini hanya terjemahan Mandarin–Vietnam. Item ini direncanakan.",
       "documents": "Jangan kirim dokumen sebelum ini dibuka.",
       "pricing": "Belum dibuka. Tidak ada harga.",
-      "steps": ["Sebut arah bahasa", "Kami catat permintaan", "Kami tidak menerima pekerjaan sebelum ini dibuka"],
+      "steps": [
+        "Sebut arah bahasa",
+        "Kami catat permintaan",
+        "Kami tidak menerima pekerjaan sebelum ini dibuka"
+      ],
       "limits": "Enam bahasa tampilan bukan berarti enam layanan terjemahan sudah dibuka."
     },
     "moto-rental": {
@@ -384,7 +537,11 @@
       "scope": "Belum ada motor, kontrak, atau asuransi yang ditawarkan.",
       "documents": "Kami tidak mengumpulkan nomor SIM atau paspor sebelum ini dibuka.",
       "pricing": "Tidak ada tarif harian, mingguan, atau harga mulai.",
-      "steps": ["Anda boleh meninggalkan kota, lama sewa, dan tanggal mulai yang diinginkan", "Itu hanya permintaan", "Tidak menjadi pesanan"],
+      "steps": [
+        "Anda boleh meninggalkan kota, lama sewa, dan tanggal mulai yang diinginkan",
+        "Itu hanya permintaan",
+        "Tidak menjadi pesanan"
+      ],
       "limits": "Sebelum kontrak sewa, asuransi, dan izin selesai, ini belum dibuka. Untuk beli atau jual motor bekas, gunakan layanan jual-beli yang sudah dibuka."
     },
     "goods-rental": {
@@ -394,7 +551,11 @@
       "scope": "Sewa belum dibuka.",
       "documents": "Tidak ada kontrak sebelum ini dibuka, dan kami tidak mengumpulkan nomor identitas.",
       "pricing": "Tidak ada harga.",
-      "steps": ["Anda boleh menyebut kota dan jenis barang", "Kami hanya mencatat permintaan", "Pengantaran belum bisa dijadwalkan sebelum ini dibuka"],
+      "steps": [
+        "Anda boleh menyebut kota dan jenis barang",
+        "Kami hanya mencatat permintaan",
+        "Pengantaran belum bisa dijadwalkan sebelum ini dibuka"
+      ],
       "limits": "Belum resmi dibuka. Pertanyaan bukan pesanan."
     },
     "b2b-life": {
@@ -404,8 +565,41 @@
       "scope": "Kami hanya mengumpulkan permintaan. Jika suatu layanan pribadi sudah dibuka, batas layanan itu tetap berlaku.",
       "documents": "Tinggalkan nama perusahaan dan narahubung. Jangan kirim nomor identitas karyawan.",
       "pricing": "Tidak ada daftar harga perusahaan. Jika nanti bisa dikerjakan, kami menawarkan harga satu per satu lebih dulu.",
-      "steps": ["Tinggalkan perusahaan, narahubung, kota, jumlah orang, dan topik", "Salin ke LINE", "Kami baru menjelaskan apakah pembicaraan bisa dilanjutkan setelah dicek"],
+      "steps": [
+        "Tinggalkan perusahaan, narahubung, kota, jumlah orang, dan topik",
+        "Salin ke LINE",
+        "Kami baru menjelaskan apakah pembicaraan bisa dilanjutkan setelah dicek"
+      ],
       "limits": "Ini tidak ditandai sudah dibuka atau sebagai rujukan mitra. Belum ada nama perusahaan mitra yang dikonfirmasi, jadi tidak ada yang dicantumkan."
     }
-  }
+  },
+  "primaryNav": {
+    "services": "Layanan",
+    "steps": "Proses",
+    "about": "Tentang",
+    "faq": "FAQ",
+    "menu": "Menu"
+  },
+  "filters": {
+    "label": "Saring layanan",
+    "all": "Semua",
+    "open": "Sudah dibuka",
+    "country": "Khusus negara",
+    "planned": "Sedang disiapkan",
+    "empty": "Tidak ada layanan yang cocok dengan saringan ini."
+  },
+  "principles": [
+    {
+      "title": "Komunikasi jelas",
+      "body": "Setiap layanan ditandai sudah dibuka, dirujuk, direncanakan, atau ditunda. Kami tidak menjanjikan visa, pekerjaan, atau persetujuan instansi."
+    },
+    {
+      "title": "Proses transparan",
+      "body": "Biaya belum diumumkan dan tidak ada harga mulai. Sebelum mulai, cakupan dan penawaran dijelaskan di LINE."
+    },
+    {
+      "title": "Menghargai privasi",
+      "body": "Pertanyaan tetap di perangkat Anda dan tidak diunggah. Jangan mengisi nomor identitas, paspor, atau ARC."
+    }
+  ]
 }

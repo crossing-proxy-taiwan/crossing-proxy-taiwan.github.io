@@ -12,23 +12,23 @@ const locales = Object.fromEntries(
 
 const icons = {
   translate:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h18M17 12c0 10-6 16-14 20M14 20c2 4 6 8 12 10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M26 28h14l-7 10h-8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M30 28c1.5 3 3 5 6 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h18M17 12c0 10-6 16-14 20M14 20c2 4 6 8 12 10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M26 28h14l-7 10h-8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M30 28c1.5 3 3 5 6 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>',
   file:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 8h12l8 8v24H16V8z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M28 8v8h8M20 24h12M20 30h12M20 36h8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 8h12l8 8v24H16V8z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M28 8v8h8M20 24h12M20 30h12M20 36h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>',
   scooter:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="34" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M14 34h8l4-10h8l4 10M22 24l4-8h8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="34" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M14 34h8l4-10h8l4 10M22 24l4-8h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   sim:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 8h12l8 8v24H16V8z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><rect x="20" y="22" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 8h12l8 8v24H16V8z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><rect x="20" y="22" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>',
   life:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40s-12-7.2-12-16a7 7 0 0 1 12-4 7 7 0 0 1 12 4c0 8.8-12 16-12 16z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40s-12-7.2-12-16a7 7 0 0 1 12-4 7 7 0 0 1 12 4c0 8.8-12 16-12 16z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>',
   pickup:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 20l16-10 16 10v18H8V20z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M20 38V26h8v12" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 20l16-10 16 10v18H8V20z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M20 38V26h8v12" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>',
   parcel:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16l16-8 16 8-16 8-16-8z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 16v16l16 8 16-8V16M24 24v16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16l16-8 16 8-16 8-16-8z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M8 16v16l16 8 16-8V16M24 24v16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>',
   sofa:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 28v-6a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v6M8 28h32v8H8v-8zM12 36v4M36 36v4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 28v-6a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v6M8 28h32v8H8v-8zM12 36v4M36 36v4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>',
   building:
-    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V14l14-6 14 6v26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M18 40v-8h12v8M18 20h4M26 20h4M18 26h4M26 26h4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>',
+    '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V14l14-6 14 6v26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M18 40v-8h12v8M18 20h4M26 20h4M18 26h4M26 26h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>',
 };
 
 function esc(value) {
@@ -83,47 +83,63 @@ const skipText = {
 function nav(ui) {
   const items = [
     ["services", "services"],
-    ["countries", "countries"],
-    ["planned", "planned"],
     ["steps", "steps"],
-    ["trust", "trust"],
-    ["cases", "cases"],
-    ["business", "business"],
+    ["about", "about"],
     ["faq", "faq"],
-    ["contact", "contact"],
   ];
-  return `<nav class="nav" aria-label="${esc(ui.nav.services)}">
-    ${items.map(([key, id]) => `<a href="#${id}">${esc(ui.nav[key])}</a>`).join("")}
+  return `<nav class="nav" aria-label="${esc(ui.primaryNav.menu)}">
+    ${items.map(([key, id]) => `<a href="#${id}">${esc(ui.primaryNav[key])}</a>`).join("")}
   </nav>`;
+}
+
+function heroArt() {
+  const tile = (x, y, paths) => `<g transform="translate(${x} ${y})">
+    <rect width="92" height="92" rx="22" fill="#ffffff" stroke="#133447" stroke-opacity="0.14"/>
+    <g transform="translate(22 22)" fill="none" stroke="#167C83" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${paths}</g>
+  </g>`;
+  return `<svg class="hero-svg" viewBox="0 0 640 520" aria-hidden="true">
+    <rect x="24" y="28" width="592" height="464" rx="32" fill="#F5F7F5" stroke="#133447" stroke-opacity="0.1"/>
+    <circle cx="492" cy="132" r="72" fill="#167C83" fill-opacity="0.08"/>
+    <circle cx="150" cy="392" r="58" fill="#E5AD69" fill-opacity="0.18"/>
+    <path d="M118 188 C 210 120, 250 250, 340 210 S 470 150, 530 250" fill="none" stroke="#167C83" stroke-width="1.75"/>
+    <circle cx="118" cy="188" r="5" fill="#E5AD69"/>
+    <circle cx="340" cy="210" r="5" fill="#133447"/>
+    <circle cx="530" cy="250" r="5" fill="#167C83"/>
+    ${tile(72, 210, '<path d="M6 4h12l6 6v22H6z"/><path d="M18 4v6h6M10 16h12M10 22h12M10 28h8"/>')}
+    ${tile(286, 78, '<rect x="8" y="2" width="20" height="36" rx="4"/><path d="M16 32h4"/>')}
+    ${tile(430, 268, '<circle cx="10" cy="30" r="4"/><circle cx="28" cy="30" r="4"/><path d="M10 30h6l4-10h8l4 10M16 20l4-8h8"/>')}
+    ${tile(500, 96, '<path d="M8 16l16-8 16 8-16 8z"/><path d="M8 16v14l16 8 16-8V16M24 24v14"/>')}
+  </svg>`;
 }
 
 function card(ui, service) {
   const copy = ui.services[service.id];
   const steps = copy.steps.map((step) => `<li>${esc(step)}</li>`).join("");
-  return `<article class="card" id="service-${esc(service.id)}" data-countries="${esc(service.countries.join(","))}" data-service="${esc(service.id)}" data-status="${esc(service.status)}" data-inquiry="${esc(service.inquiry)}">
-    <div class="card-icon">${icons[service.icon] || ""}</div>
-    <div class="card-body">
+  const askLabel = service.status === "planned" ? ui.card.askPlanned : ui.card.ask;
+  const askClass = service.status === "planned" ? "button button-quiet" : "button button-quiet";
+  return `<article class="card${service.status === "planned" ? " is-planned" : ""}" id="service-${esc(service.id)}" data-category="${esc(service.category)}" data-countries="${esc(service.countries.join(","))}" data-service="${esc(service.id)}" data-status="${esc(service.status)}" data-inquiry="${esc(service.inquiry)}">
+    <div class="card-top">
+      <div class="card-icon">${icons[service.icon] || ""}</div>
       <p class="status status-${esc(service.status)}">${esc(ui.status[service.status])}</p>
-      <h3>${esc(copy.title)}</h3>
-      <p>${esc(copy.summary)}</p>
-      <p class="meta"><span>${esc(ui.card.applies)}</span> ${esc(applies(ui, service))}</p>
-      <p class="meta"><span>${esc(ui.card.where)}</span> ${esc(ui.areaPending)}</p>
-      <div class="card-actions">
-        <a class="text-link" href="#service-${esc(service.id)}">${esc(ui.card.details)}</a>
-        <button type="button" class="button button-small" data-open-inquiry="${esc(service.id)}">${esc(ui.card.ask)}</button>
-      </div>
-      <details class="more">
-        <summary>${esc(ui.card.details)}</summary>
-        <dl>
-          <dt>${esc(ui.card.audience)}</dt><dd>${esc(copy.audience)}</dd>
-          <dt>${esc(ui.card.scope)}</dt><dd>${esc(copy.scope)}</dd>
-          <dt>${esc(ui.card.documents)}</dt><dd>${esc(copy.documents)}</dd>
-          <dt>${esc(ui.card.pricing)}</dt><dd>${esc(copy.pricing)}</dd>
-          <dt>${esc(ui.card.steps)}</dt><dd><ol>${steps}</ol></dd>
-          <dt>${esc(ui.card.limits)}</dt><dd>${esc(copy.limits)}</dd>
-        </dl>
-      </details>
     </div>
+    <h3>${esc(copy.title)}</h3>
+    <p class="summary-line">${esc(copy.summary)}</p>
+    <details class="more">
+      <summary>${esc(ui.card.details)}</summary>
+      <dl>
+        <dt>${esc(ui.card.applies)}</dt><dd>${esc(applies(ui, service))}</dd>
+        <dt>${esc(ui.card.where)}</dt><dd>${esc(ui.areaPending)}</dd>
+        <dt>${esc(ui.card.audience)}</dt><dd>${esc(copy.audience)}</dd>
+        <dt>${esc(ui.card.scope)}</dt><dd>${esc(copy.scope)}</dd>
+        <dt>${esc(ui.card.documents)}</dt><dd>${esc(copy.documents)}</dd>
+        <dt>${esc(ui.card.pricing)}</dt><dd>${esc(copy.pricing)}</dd>
+        <dt>${esc(ui.card.steps)}</dt><dd><ol>${steps}</ol></dd>
+        <dt>${esc(ui.card.limits)}</dt><dd>${esc(copy.limits)}</dd>
+      </dl>
+      <div class="card-actions">
+        <button type="button" class="${askClass}" data-open-inquiry="${esc(service.id)}">${esc(askLabel)}</button>
+      </div>
+    </details>
   </article>`;
 }
 
@@ -190,7 +206,7 @@ function page(lang) {
     .map((item) => `<article class="trust"><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></article>`)
     .join("");
   const steps = ui.steps
-    .map((item, index) => `<li><span>${index + 1}</span><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></li>`)
+    .map((item, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(item.title)}</h3><p>${esc(item.body)}</p></li>`)
     .join("");
   const faq = ui.faq
     .map(
@@ -219,97 +235,147 @@ ${hreflangLinks()}
 <meta property="og:description" content="${esc(ui.metaDescription)}">
 <meta property="og:url" content="${canonical}">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#1E3A5F">
+<meta name="theme-color" content="#133447">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Noto+Sans+TC:wght@400;600;700&family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body>
 <a class="skip" href="#main">${esc(skipText[lang.id])}</a>
 <header class="top">
-  <div class="top-bar">
-    <a class="brand" href="/${lang.id}/#top">
-      <span class="mark">CP</span>
-      <span>
-        <strong>${esc(catalog.brand.zh)}</strong>
-        <em>${esc(catalog.brand.en)}</em>
-      </span>
-    </a>
-    ${langMenu(lang.id, ui)}
+  <a class="brand" href="/${lang.id}/#top">
+    <span class="mark">CP</span>
+    <span>
+      <strong>${esc(catalog.brand.zh)}</strong>
+      <em>${esc(catalog.brand.en)}</em>
+    </span>
+  </a>
+  <button type="button" class="fold-button" aria-expanded="false" aria-controls="menu"><span></span><span class="visually-hidden">${esc(ui.primaryNav.menu)}</span></button>
+  <a class="line-link line-pin" href="${esc(catalog.line.url)}" data-channel="line">LINE</a>
+  <div id="menu" class="menu">
+    ${nav(ui)}
+    <div class="tools">
+      ${langMenu(lang.id, ui)}
+      <label class="country-field">
+        <span>${esc(ui.countryLabel)}</span>
+        <select id="country" aria-label="${esc(ui.countryLabel)}">${countryOptions}</select>
+      </label>
+      <a class="line-link" href="${esc(catalog.line.url)}" data-channel="line">LINE</a>
+    </div>
   </div>
-  ${nav(ui)}
 </header>
-<p class="pending">${esc(ui.pendingStrip)}</p>
 <main id="main">
   <section class="hero" id="top">
-    <p class="eyebrow">${esc(catalog.tagline)}</p>
-    <h1>${esc(ui.position)}</h1>
-    <p class="lead">${esc(ui.heroLead)}</p>
-    <ul class="points">${points}</ul>
-    <div class="hero-actions">
-      <button type="button" class="button" data-open-inquiry="general">${esc(ui.ctaAsk)}</button>
-      <a class="button button-ghost" href="#services">${esc(ui.ctaServices)}</a>
+    <div class="hero-copy">
+      <p class="eyebrow">${esc(catalog.theme)}</p>
+      <h1>${esc(ui.position)}</h1>
+      <p class="lead">${esc(ui.heroLead)}</p>
+      <div class="hero-actions">
+        <a class="button" href="#services">${esc(ui.ctaServices)}</a>
+        <a class="button button-line" href="${esc(catalog.line.url)}" data-channel="line">LINE</a>
+      </div>
     </div>
+    <div class="hero-art">${heroArt()}</div>
   </section>
-  ${section("services", ui.sections.common.title, ui.sections.common.lead, `<div class="cards">${cardsFor(ui, "common")}</div>`)}
-  ${section(
-    "countries",
-    ui.sections.country.title,
-    ui.sections.country.lead,
-    `<div class="country-box">
-      <label for="country">${esc(ui.countryLabel)}</label>
-      <select id="country">${countryOptions}</select>
-      <p>${esc(ui.countryHelp)}</p>
+  <section class="principles" aria-label="${esc(ui.primaryNav.about)}">
+    ${ui.principles
+      .map(
+        (item, index) => `<article class="principle">
+          <span>0${index + 1}</span>
+          <h2>${esc(item.title)}</h2>
+          <p>${esc(item.body)}</p>
+        </article>`,
+      )
+      .join("")}
+  </section>
+  <section id="services" class="section">
+    <div class="section-head">
+      <h2>${esc(ui.sections.common.title)}</h2>
+      <p>${esc(ui.sections.common.lead)}</p>
     </div>
-    <div class="cards">${cardsFor(ui, "country")}</div>`,
-  )}
-  ${section("planned", ui.sections.expansion.title, ui.sections.expansion.lead, `<div class="cards">${cardsFor(ui, "expansion")}</div>`)}
-  ${section("steps", ui.sections.steps.title, ui.sections.steps.lead, `<ol class="steps">${steps}</ol>`)}
-  ${section("trust", ui.sections.trust.title, ui.sections.trust.lead, `<div class="trust-grid">${trust}</div>`)}
-  ${section(
-    "cases",
-    ui.sections.cases.title,
-    ui.sections.cases.lead,
-    `<article class="empty"><h3>${esc(ui.casesEmptyTitle)}</h3><p>${esc(ui.casesEmptyBody)}</p></article>`,
-  )}
-  ${section(
-    "business",
-    ui.sections.business.title,
-    ui.sections.business.lead,
-    `<article class="panel">
-      <p>${esc(ui.businessNote)}</p>
-      <button type="button" class="button" data-open-inquiry="b2b-life">${esc(ui.ctaAsk)}</button>
-    </article>`,
-  )}
-  ${section("faq", ui.sections.faq.title, ui.sections.faq.lead, faq)}
-  ${section(
-    "contact",
-    ui.sections.contact.title,
-    ui.sections.contact.lead,
-    `<div class="contact-grid">
-      <article class="panel line-panel">
-        <h3>LINE ${esc(catalog.line.id)}</h3>
-        <p><a class="button" href="${esc(catalog.line.url)}" data-channel="line">${esc(ui.inquiry.line)}</a></p>
-        <p>${esc(ui.contactHours)}</p>
+    <div id="countries">
+      <p>${esc(ui.countryHelp)} ${esc(ui.sections.country.lead)}</p>
+      <div class="filters" role="group" aria-label="${esc(ui.filters.label)}">
+        <button type="button" class="chip" data-view="all" aria-pressed="true">${esc(ui.filters.all)}</button>
+        <button type="button" class="chip" data-view="open" aria-pressed="false">${esc(ui.filters.open)}</button>
+        <button type="button" class="chip" data-view="country" aria-pressed="false">${esc(ui.filters.country)}</button>
+        <button type="button" class="chip" data-view="planned" aria-pressed="false">${esc(ui.filters.planned)}</button>
+      </div>
+    </div>
+    <p id="filter-empty" class="empty-note" hidden>${esc(ui.filters.empty)}</p>
+    <div class="cards">
+      ${cardsFor(ui, "common")}
+      ${cardsFor(ui, "country")}
+      <div id="planned"></div>
+      ${cardsFor(ui, "expansion")}
+    </div>
+    <p class="empty-note">${esc(ui.sections.expansion.lead)}</p>
+  </section>
+  <section id="steps" class="section">
+    <div class="section-head">
+      <h2>${esc(ui.sections.steps.title)}</h2>
+      <p>${esc(ui.sections.steps.lead)}</p>
+    </div>
+    <ol class="steps">${steps}</ol>
+  </section>
+  <section id="about" class="section">
+    <div class="about-grid">
+      <article class="about-block">
+        <h2>${esc(ui.primaryNav.about)}</h2>
+        <p>${esc(ui.position)}</p>
+        <p>${esc(ui.pendingStrip)}</p>
+        <ul class="points">${points}</ul>
       </article>
-      <article class="panel">
-        <h3>${esc(ui.nav.contact)}</h3>
+      <div id="trust" class="about-block">
+        <h2>${esc(ui.sections.trust.title)}</h2>
+        <p>${esc(ui.sections.trust.lead)}</p>
+        ${trust}
+      </div>
+    </div>
+    <article id="cases" class="about-block quiet">
+      <h2>${esc(ui.sections.cases.title)}</h2>
+      <p>${esc(ui.casesEmptyTitle)} ${esc(ui.casesEmptyBody)}</p>
+    </article>
+    <article id="business" class="about-block quiet">
+      <h2>${esc(ui.sections.business.title)}</h2>
+      <p>${esc(ui.sections.business.lead)}</p>
+      <p>${esc(ui.businessNote)}</p>
+      <button type="button" class="button button-quiet" data-open-inquiry="b2b-life">${esc(ui.card.askPlanned)}</button>
+    </article>
+  </section>
+  <section id="faq" class="section">
+    <div class="section-head">
+      <h2>${esc(ui.sections.faq.title)}</h2>
+      <p>${esc(ui.sections.faq.lead)}</p>
+    </div>
+    ${faq}
+  </section>
+  <section id="contact" class="cta-band">
+    <div class="contact-row">
+      <div>
+        <h2>${esc(ui.sections.contact.title)}</h2>
+        <p>${esc(ui.sections.contact.lead)}</p>
+        <p>${esc(ui.contactHours)}</p>
+        <p><a class="button button-line" href="${esc(catalog.line.url)}" data-channel="line">LINE ${esc(catalog.line.id)}</a></p>
+      </div>
+      <div>
         <ul class="socials">${socials}</ul>
         <p>${esc(ui.contactSocialNote)}</p>
-      </article>
-    </div>`,
-  )}
+      </div>
+    </div>
+  </section>
 </main>
 <footer class="foot" id="legal">
   <h2>${esc(ui.sections.legal.title)}</h2>
   ${legal}
-  <p class="fine">${esc(catalog.brand.zh)} · ${esc(catalog.brand.en)} · ${esc(ui.footerNote)}</p>
+  <p class="fine">${esc(catalog.brand.zh)} · ${esc(catalog.brand.en)} · ${esc(catalog.tagline)}</p>
+  <p class="fine">${esc(ui.footerNote)}</p>
 </footer>
 <div class="dock">
-  <button type="button" class="button button-dock" data-open-inquiry="general">${esc(ui.dock)}</button>
+  <a class="button button-line button-dock" href="${esc(catalog.line.url)}" data-channel="line">LINE ${esc(catalog.line.id)}</a>
 </div>
 <dialog id="inquiry" aria-labelledby="inquiry-title">
   <form method="dialog">
@@ -360,7 +426,7 @@ ${hreflangLinks()}
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/site.css">
-<meta name="theme-color" content="#1E3A5F">
+<meta name="theme-color" content="#133447">
 </head>
 <body class="gate-body">
 <main class="gate">
@@ -419,7 +485,7 @@ writeFileSync(
 writeFileSync(join(root, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${catalog.siteUrl}/sitemap.xml\n`);
 writeFileSync(
   join(root, "favicon.svg"),
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#1E3A5F"/><text x="16" y="21" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#FFD278">CP</text></svg>\n`,
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#133447"/><text x="16" y="21" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#E5AD69">CP</text></svg>\n`,
 );
 
 console.log(`Built ${catalog.langs.length} language pages plus the language gate.`);
