@@ -260,6 +260,15 @@ h1 { margin: 0 0 0.7rem; font-size: clamp(1.85rem, 4.4vw, 3.35rem); max-width: 1
 .card { display: flex; flex-direction: column; padding: 1rem; min-height: 100%; }
 .card[hidden] { display: none; }
 .card.is-planned { background: var(--planned); box-shadow: none; }
+/* Planned / coming-soon services. Hidden while data-show-planned="false".
+   Show again: set "showPlannedServices" to true in data/catalog.json, then npm run build.
+   Cards, the 籌備中 filter, the #planned anchor, and the note stay in the HTML. */
+html[data-show-planned="false"] [data-view="planned"],
+html[data-show-planned="false"] #planned,
+html[data-show-planned="false"] .card.is-planned,
+html[data-show-planned="false"] .planned-note {
+  display: none !important;
+}
 .card-top { display: flex; justify-content: space-between; gap: 0.6rem; align-items: flex-start; }
 .card-icon {
   width: 2.75rem;

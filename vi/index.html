@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" data-lang="vi">
+<html lang="vi" data-lang="vi" data-show-planned="false">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,7 +120,7 @@
         <button type="button" class="chip" data-view="all" aria-pressed="true">Tất cả</button>
         <button type="button" class="chip" data-view="open" aria-pressed="false">Đã mở</button>
         <button type="button" class="chip" data-view="country" aria-pressed="false">Theo quốc gia</button>
-        <button type="button" class="chip" data-view="planned" aria-pressed="false">Đang chuẩn bị</button>
+        <button type="button" class="chip" data-view="planned" aria-pressed="false" hidden>Đang chuẩn bị</button>
       </div>
     </div>
     <p id="filter-empty" class="empty-note" hidden>Không có dịch vụ khớp với bộ lọc này.</p>
@@ -317,7 +317,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-ship-other" data-category="country" data-countries="ID,TH,PH" data-service="ship-other" data-status="planned" data-inquiry="shipping">
+<article class="card is-planned" hidden id="service-ship-other" data-category="country" data-countries="ID,TH,PH" data-service="ship-other" data-status="planned" data-inquiry="shipping">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16l16-8 16 8-16 8-16-8z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M8 16v16l16 8 16-8V16M24 24v16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">Đang chuẩn bị</p>
@@ -341,8 +341,8 @@
       </div>
     </details>
   </article>
-      <div id="planned"></div>
-      <article class="card is-planned" id="service-translate-more" data-category="expansion" data-countries="*" data-service="translate-more" data-status="planned" data-inquiry="translate">
+      <div id="planned" hidden></div>
+      <article class="card is-planned" hidden id="service-translate-more" data-category="expansion" data-countries="*" data-service="translate-more" data-status="planned" data-inquiry="translate">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h18M17 12c0 10-6 16-14 20M14 20c2 4 6 8 12 10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M26 28h14l-7 10h-8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M30 28c1.5 3 3 5 6 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
       <p class="status status-planned">Đang chuẩn bị</p>
@@ -366,7 +366,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-moto-rental" data-category="expansion" data-countries="*" data-service="moto-rental" data-status="planned" data-inquiry="rental">
+<article class="card is-planned" hidden id="service-moto-rental" data-category="expansion" data-countries="*" data-service="moto-rental" data-status="planned" data-inquiry="rental">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="34" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M14 34h8l4-10h8l4 10M22 24l4-8h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">Đang chuẩn bị</p>
@@ -390,7 +390,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-goods-rental" data-category="expansion" data-countries="*" data-service="goods-rental" data-status="planned" data-inquiry="rental">
+<article class="card is-planned" hidden id="service-goods-rental" data-category="expansion" data-countries="*" data-service="goods-rental" data-status="planned" data-inquiry="rental">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 28v-6a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v6M8 28h32v8H8v-8zM12 36v4M36 36v4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">Đang chuẩn bị</p>
@@ -414,7 +414,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-b2b-life" data-category="expansion" data-countries="*" data-service="b2b-life" data-status="planned" data-inquiry="enterprise">
+<article class="card is-planned" hidden id="service-b2b-life" data-category="expansion" data-countries="*" data-service="b2b-life" data-status="planned" data-inquiry="enterprise">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V14l14-6 14 6v26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M18 40v-8h12v8M18 20h4M26 20h4M18 26h4M26 26h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
       <p class="status status-planned">Đang chuẩn bị</p>
@@ -439,7 +439,7 @@
     </details>
   </article>
     </div>
-    <p class="empty-note">Bạn có thể mô tả nhu cầu. Chưa đặt được, chưa có giá, và tin nhắn không phải là lịch hẹn.</p>
+    <p class="empty-note planned-note" hidden>Bạn có thể mô tả nhu cầu. Chưa đặt được, chưa có giá, và tin nhắn không phải là lịch hẹn.</p>
   </section>
   <section id="steps" class="section">
     <div class="section-head">
@@ -543,7 +543,7 @@
     <p id="inquiry-status" role="status"></p>
   </form>
 </dialog>
-<script type="application/json" id="cp-config">{"lang":"vi","langNative":"Tiếng Việt","lineUrl":"https://lin.ee/SQbAREU","lineId":"@681ydjcz","inquiry":{"title":"Soạn nội dung hỏi","privacy":"Đừng điền số căn cước, hộ chiếu, thẻ cư trú, ngày sinh đầy đủ hoặc ảnh giấy tờ. Biểu mẫu này không tải lên website.","copy":"Sao chép nội dung hỏi","copied":"Đã sao chép. Hãy dán vào LINE.","copyFailed":"Không tự sao chép được. Hãy chọn chữ bằng tay.","line":"Mở LINE","close":"Đóng","service":"Dịch vụ","language":"Ngôn ngữ","status":"Trạng thái","profiles":{"general":{"intro":"Nói ngắn bạn cần gì.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Bạn đang ở đâu tại Đài Loan"},{"id":"need","label":"Việc muốn hỏi","placeholder":"Một hoặc hai câu"}]},"shipping":{"intro":"Nếu dịch vụ vẫn đang chuẩn bị, nội dung này chỉ là nhu cầu, không phải phiếu gửi.","fields":[{"id":"destination","label":"Nơi nhận","placeholder":"Thành phố hoặc nước. Không ghi số giấy tờ."},{"id":"item","label":"Loại đồ","placeholder":"Ví dụ quần áo hoặc giấy tờ"},{"id":"pickup","label":"Có cần đến lấy không","placeholder":"Cần / Không / Chưa chắc"}]},"moto":{"intro":"Đây là hỏi mua hoặc bán, không phải thuê xe. Thuê xe chưa mở.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Nơi xem xe hoặc giao dịch"},{"id":"side","label":"Muốn mua hay bán","placeholder":"Mua / Bán / Chưa chắc"},{"id":"when","label":"Thời gian dự kiến","placeholder":"Ví dụ trong tháng này"}]},"rental":{"intro":"Dịch vụ chưa mở. Sao chép đoạn này chỉ để báo nhu cầu, không phát sinh hợp đồng thuê.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Nơi sử dụng"},{"id":"term","label":"Thời gian muốn thuê","placeholder":"Ví dụ hai tuần hoặc một tháng"},{"id":"start","label":"Ngày muốn bắt đầu","placeholder":"Ngày tương đối là đủ"}]},"sim":{"intro":"Hợp đồng số điện thoại là giữa bạn và nhà mạng.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Bạn đang ở đâu"},{"id":"need","label":"Dùng số để làm gì","placeholder":"Liên lạc hằng ngày. Không ghi số giấy tờ."}]},"documents":{"intro":"Nói tên giấy tờ và chỗ bạn đang vướng. Đừng dán số giấy tờ.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Bạn đang ở đâu"},{"id":"paper","label":"Tên giấy tờ","placeholder":"Loại mẫu nào. Không ghi số."},{"id":"need","label":"Cần hỗ trợ gì","placeholder":"Đọc hiểu, dịch hoặc sắp xếp"}]},"translate":{"intro":"Nói chiều ngôn ngữ và mục đích. Ngôn ngữ chưa mở thì chưa nhận việc.","fields":[{"id":"direction","label":"Chiều ngôn ngữ","placeholder":"Ví dụ tiếng Trung sang tiếng Việt"},{"id":"use","label":"Mục đích","placeholder":"Nói chuyện hằng ngày hoặc tên giấy tờ"},{"id":"city","label":"Huyện thị","placeholder":"Nếu cần gặp"}]},"pickup":{"intro":"Huyện thị chưa công bố. Chúng tôi xác nhận có đến được không.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Nơi lấy hàng"},{"id":"when","label":"Khung giờ","placeholder":"Ngày tương đối, buổi sáng hoặc chiều"},{"id":"item","label":"Loại đồ","placeholder":"Không ghi nội dung nhạy cảm"}]},"enterprise":{"intro":"Đây là nhu cầu của công ty, chưa phải hợp tác đã có hiệu lực. Câu hỏi cá nhân dùng mẫu khác.","fields":[{"id":"company","label":"Tên công ty","placeholder":"Công ty hoặc bộ phận"},{"id":"contact","label":"Người liên hệ","placeholder":"Tên"},{"id":"method","label":"Cách liên hệ","placeholder":"LINE, điện thoại hoặc email"},{"id":"city","label":"Huyện thị","placeholder":"Nhân viên đang ở đâu"},{"id":"headcount","label":"Số người ước tính","placeholder":"Con số tương đối"},{"id":"items","label":"Hạng mục muốn bàn","placeholder":"Đời sống, đi lại, dịch hoặc việc khác"}]}}},"services":{"translate-vi":{"title":"Dịch Trung–Việt","status":"Đã mở","inquiry":"translate"},"documents":{"title":"Hỗ trợ giấy tờ đời sống","status":"Đã mở","inquiry":"documents"},"moto-sale":{"title":"Mua bán xe máy","status":"Đã mở","inquiry":"moto"},"sim":{"title":"Hòa mạng và liên lạc","status":"Đã mở","inquiry":"sim"},"life-help":{"title":"Hỗ trợ câu hỏi đời sống","status":"Đã mở","inquiry":"general"},"pickup":{"title":"Đến nhà lấy hàng","status":"Đã mở","inquiry":"pickup"},"ship-vn":{"title":"Gửi hàng về Việt Nam","status":"Đã mở","inquiry":"shipping"},"vn-papers":{"title":"Giấy tờ liên quan Việt Nam và dịch thuật","status":"Đã mở","inquiry":"documents"},"ship-other":{"title":"Gửi sang nước khác","status":"Đang chuẩn bị","inquiry":"shipping"},"translate-more":{"title":"Dịch các ngôn ngữ khác","status":"Đang chuẩn bị","inquiry":"translate"},"moto-rental":{"title":"Thuê xe máy ngắn và trung hạn","status":"Đang chuẩn bị","inquiry":"rental"},"goods-rental":{"title":"Thuê đồ dùng và nội thất","status":"Đang chuẩn bị","inquiry":"rental"},"b2b-life":{"title":"Hợp tác đời sống và đi lại cho doanh nghiệp","status":"Đang chuẩn bị","inquiry":"enterprise"}}}</script>
+<script type="application/json" id="cp-config">{"lang":"vi","langNative":"Tiếng Việt","lineUrl":"https://lin.ee/SQbAREU","lineId":"@681ydjcz","showPlannedServices":false,"inquiry":{"title":"Soạn nội dung hỏi","privacy":"Đừng điền số căn cước, hộ chiếu, thẻ cư trú, ngày sinh đầy đủ hoặc ảnh giấy tờ. Biểu mẫu này không tải lên website.","copy":"Sao chép nội dung hỏi","copied":"Đã sao chép. Hãy dán vào LINE.","copyFailed":"Không tự sao chép được. Hãy chọn chữ bằng tay.","line":"Mở LINE","close":"Đóng","service":"Dịch vụ","language":"Ngôn ngữ","status":"Trạng thái","profiles":{"general":{"intro":"Nói ngắn bạn cần gì.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Bạn đang ở đâu tại Đài Loan"},{"id":"need","label":"Việc muốn hỏi","placeholder":"Một hoặc hai câu"}]},"shipping":{"intro":"Nếu dịch vụ vẫn đang chuẩn bị, nội dung này chỉ là nhu cầu, không phải phiếu gửi.","fields":[{"id":"destination","label":"Nơi nhận","placeholder":"Thành phố hoặc nước. Không ghi số giấy tờ."},{"id":"item","label":"Loại đồ","placeholder":"Ví dụ quần áo hoặc giấy tờ"},{"id":"pickup","label":"Có cần đến lấy không","placeholder":"Cần / Không / Chưa chắc"}]},"moto":{"intro":"Đây là hỏi mua hoặc bán, không phải thuê xe. Thuê xe chưa mở.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Nơi xem xe hoặc giao dịch"},{"id":"side","label":"Muốn mua hay bán","placeholder":"Mua / Bán / Chưa chắc"},{"id":"when","label":"Thời gian dự kiến","placeholder":"Ví dụ trong tháng này"}]},"rental":{"intro":"Dịch vụ chưa mở. Sao chép đoạn này chỉ để báo nhu cầu, không phát sinh hợp đồng thuê.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Nơi sử dụng"},{"id":"term","label":"Thời gian muốn thuê","placeholder":"Ví dụ hai tuần hoặc một tháng"},{"id":"start","label":"Ngày muốn bắt đầu","placeholder":"Ngày tương đối là đủ"}]},"sim":{"intro":"Hợp đồng số điện thoại là giữa bạn và nhà mạng.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Bạn đang ở đâu"},{"id":"need","label":"Dùng số để làm gì","placeholder":"Liên lạc hằng ngày. Không ghi số giấy tờ."}]},"documents":{"intro":"Nói tên giấy tờ và chỗ bạn đang vướng. Đừng dán số giấy tờ.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Bạn đang ở đâu"},{"id":"paper","label":"Tên giấy tờ","placeholder":"Loại mẫu nào. Không ghi số."},{"id":"need","label":"Cần hỗ trợ gì","placeholder":"Đọc hiểu, dịch hoặc sắp xếp"}]},"translate":{"intro":"Nói chiều ngôn ngữ và mục đích. Ngôn ngữ chưa mở thì chưa nhận việc.","fields":[{"id":"direction","label":"Chiều ngôn ngữ","placeholder":"Ví dụ tiếng Trung sang tiếng Việt"},{"id":"use","label":"Mục đích","placeholder":"Nói chuyện hằng ngày hoặc tên giấy tờ"},{"id":"city","label":"Huyện thị","placeholder":"Nếu cần gặp"}]},"pickup":{"intro":"Huyện thị chưa công bố. Chúng tôi xác nhận có đến được không.","fields":[{"id":"city","label":"Huyện thị","placeholder":"Nơi lấy hàng"},{"id":"when","label":"Khung giờ","placeholder":"Ngày tương đối, buổi sáng hoặc chiều"},{"id":"item","label":"Loại đồ","placeholder":"Không ghi nội dung nhạy cảm"}]},"enterprise":{"intro":"Đây là nhu cầu của công ty, chưa phải hợp tác đã có hiệu lực. Câu hỏi cá nhân dùng mẫu khác.","fields":[{"id":"company","label":"Tên công ty","placeholder":"Công ty hoặc bộ phận"},{"id":"contact","label":"Người liên hệ","placeholder":"Tên"},{"id":"method","label":"Cách liên hệ","placeholder":"LINE, điện thoại hoặc email"},{"id":"city","label":"Huyện thị","placeholder":"Nhân viên đang ở đâu"},{"id":"headcount","label":"Số người ước tính","placeholder":"Con số tương đối"},{"id":"items","label":"Hạng mục muốn bàn","placeholder":"Đời sống, đi lại, dịch hoặc việc khác"}]}}},"services":{"translate-vi":{"title":"Dịch Trung–Việt","status":"Đã mở","inquiry":"translate"},"documents":{"title":"Hỗ trợ giấy tờ đời sống","status":"Đã mở","inquiry":"documents"},"moto-sale":{"title":"Mua bán xe máy","status":"Đã mở","inquiry":"moto"},"sim":{"title":"Hòa mạng và liên lạc","status":"Đã mở","inquiry":"sim"},"life-help":{"title":"Hỗ trợ câu hỏi đời sống","status":"Đã mở","inquiry":"general"},"pickup":{"title":"Đến nhà lấy hàng","status":"Đã mở","inquiry":"pickup"},"ship-vn":{"title":"Gửi hàng về Việt Nam","status":"Đã mở","inquiry":"shipping"},"vn-papers":{"title":"Giấy tờ liên quan Việt Nam và dịch thuật","status":"Đã mở","inquiry":"documents"},"ship-other":{"title":"Gửi sang nước khác","status":"Đang chuẩn bị","inquiry":"shipping"},"translate-more":{"title":"Dịch các ngôn ngữ khác","status":"Đang chuẩn bị","inquiry":"translate"},"moto-rental":{"title":"Thuê xe máy ngắn và trung hạn","status":"Đang chuẩn bị","inquiry":"rental"},"goods-rental":{"title":"Thuê đồ dùng và nội thất","status":"Đang chuẩn bị","inquiry":"rental"},"b2b-life":{"title":"Hợp tác đời sống và đi lại cho doanh nghiệp","status":"Đang chuẩn bị","inquiry":"enterprise"}}}</script>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

@@ -64,6 +64,25 @@ for (const lang of catalog.langs) {
   if (!html.includes('data-service="moto-rental"') || !html.includes('data-status="planned"')) {
     errors.push(`${lang.id} rental not planned`);
   }
+  if (html.includes('href="#planned"') || html.includes("href='#planned'")) {
+    errors.push(`${lang.id} still links to #planned`);
+  }
+  const showPlanned = catalog.showPlannedServices === true;
+  if (showPlanned) {
+    if (!html.includes('data-show-planned="true"')) errors.push(`${lang.id} planned flag not on`);
+    if (html.includes('class="card is-planned" hidden')) errors.push(`${lang.id} planned card still hidden`);
+  } else {
+    if (!html.includes('data-show-planned="false"')) errors.push(`${lang.id} planned section still visible`);
+    if (!html.includes('"showPlannedServices":false')) errors.push(`${lang.id} page config still shows planned services`);
+    if (!html.includes('data-view="planned" aria-pressed="false" hidden')) errors.push(`${lang.id} planned filter still visible`);
+    if (!html.includes('id="planned" hidden')) errors.push(`${lang.id} planned anchor still visible`);
+    if (!html.includes('class="empty-note planned-note" hidden')) errors.push(`${lang.id} planned note still visible`);
+    const plannedCards = html.match(/<article class="card is-planned"/g) || [];
+    const hiddenPlannedCards = html.match(/<article class="card is-planned" hidden /g) || [];
+    if (!plannedCards.length || plannedCards.length !== hiddenPlannedCards.length) {
+      errors.push(`${lang.id} planned cards not all hidden`);
+    }
+  }
   if (!html.includes('data-service="ship-vn"') || !html.includes('data-status="open"')) {
     errors.push(`${lang.id} Vietnam shipping missing`);
   }
@@ -73,6 +92,11 @@ for (const lang of catalog.langs) {
     if (pattern.test(html)) errors.push(`${lang.id} forbidden ${pattern}`);
   }
   if (html.includes("待確認的假") || html.includes("lorem")) errors.push(`${lang.id} placeholder copy`);
+}
+
+const css = readFileSync(join(root, "assets/css/site.css"), "utf8");
+if (!css.includes('html[data-show-planned="false"] .card.is-planned')) {
+  errors.push("css does not hide planned services");
 }
 
 const analytics = JSON.parse(readFileSync(join(root, "data/analytics.json"), "utf8"));

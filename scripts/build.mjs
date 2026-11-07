@@ -3,6 +3,9 @@ import { join } from "node:path";
 
 const root = join(import.meta.dirname, "..");
 const catalog = JSON.parse(readFileSync(join(root, "data/catalog.json"), "utf8"));
+// Planned / coming-soon services stay in the generated HTML.
+// Set data/catalog.json "showPlannedServices" to true and rerun `npm run build` to show them.
+const showPlannedServices = catalog.showPlannedServices === true;
 const locales = Object.fromEntries(
   catalog.langs.map((lang) => [
     lang.id,
@@ -117,7 +120,8 @@ function card(ui, service) {
   const steps = copy.steps.map((step) => `<li>${esc(step)}</li>`).join("");
   const askLabel = service.status === "planned" ? ui.card.askPlanned : ui.card.ask;
   const askClass = service.status === "planned" ? "button button-quiet" : "button button-quiet";
-  return `<article class="card${service.status === "planned" ? " is-planned" : ""}" id="service-${esc(service.id)}" data-category="${esc(service.category)}" data-countries="${esc(service.countries.join(","))}" data-service="${esc(service.id)}" data-status="${esc(service.status)}" data-inquiry="${esc(service.inquiry)}">
+  const concealPlanned = !showPlannedServices && service.status === "planned";
+  return `<article class="card${service.status === "planned" ? " is-planned" : ""}"${concealPlanned ? " hidden" : ""} id="service-${esc(service.id)}" data-category="${esc(service.category)}" data-countries="${esc(service.countries.join(","))}" data-service="${esc(service.id)}" data-status="${esc(service.status)}" data-inquiry="${esc(service.inquiry)}">
     <div class="card-top">
       <div class="card-icon">${icons[service.icon] || ""}</div>
       <p class="status status-${esc(service.status)}">${esc(ui.status[service.status])}</p>
@@ -181,6 +185,7 @@ function page(lang) {
     langNative: lang.native,
     lineUrl: catalog.line.url,
     lineId: catalog.line.id,
+    showPlannedServices,
     inquiry: ui.inquiry,
     services: Object.fromEntries(
       catalog.services.map((service) => [
@@ -220,7 +225,7 @@ function page(lang) {
   const points = ui.heroPoints.map((point) => `<li>${esc(point)}</li>`).join("");
 
   return `<!DOCTYPE html>
-<html lang="${esc(lang.html)}" data-lang="${esc(lang.id)}">
+<html lang="${esc(lang.html)}" data-lang="${esc(lang.id)}" data-show-planned="${showPlannedServices ? "true" : "false"}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -302,17 +307,17 @@ ${hreflangLinks()}
         <button type="button" class="chip" data-view="all" aria-pressed="true">${esc(ui.filters.all)}</button>
         <button type="button" class="chip" data-view="open" aria-pressed="false">${esc(ui.filters.open)}</button>
         <button type="button" class="chip" data-view="country" aria-pressed="false">${esc(ui.filters.country)}</button>
-        <button type="button" class="chip" data-view="planned" aria-pressed="false">${esc(ui.filters.planned)}</button>
+        <button type="button" class="chip" data-view="planned" aria-pressed="false"${showPlannedServices ? "" : " hidden"}>${esc(ui.filters.planned)}</button>
       </div>
     </div>
     <p id="filter-empty" class="empty-note" hidden>${esc(ui.filters.empty)}</p>
     <div class="cards">
       ${cardsFor(ui, "common")}
       ${cardsFor(ui, "country")}
-      <div id="planned"></div>
+      <div id="planned"${showPlannedServices ? "" : " hidden"}></div>
       ${cardsFor(ui, "expansion")}
     </div>
-    <p class="empty-note">${esc(ui.sections.expansion.lead)}</p>
+    <p class="empty-note planned-note"${showPlannedServices ? "" : " hidden"}>${esc(ui.sections.expansion.lead)}</p>
   </section>
   <section id="steps" class="section">
     <div class="section-head">
