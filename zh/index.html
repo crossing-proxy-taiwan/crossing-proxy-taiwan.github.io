@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-lang="zh">
+<html lang="zh-Hant" data-lang="zh" data-show-planned="false">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,7 +120,7 @@
         <button type="button" class="chip" data-view="all" aria-pressed="true">全部</button>
         <button type="button" class="chip" data-view="open" aria-pressed="false">已開放</button>
         <button type="button" class="chip" data-view="country" aria-pressed="false">特定國家</button>
-        <button type="button" class="chip" data-view="planned" aria-pressed="false">籌備中</button>
+        <button type="button" class="chip" data-view="planned" aria-pressed="false" hidden>籌備中</button>
       </div>
     </div>
     <p id="filter-empty" class="empty-note" hidden>這個篩選下目前沒有符合的服務。</p>
@@ -317,7 +317,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-ship-other" data-category="country" data-countries="ID,TH,PH" data-service="ship-other" data-status="planned" data-inquiry="shipping">
+<article class="card is-planned" hidden id="service-ship-other" data-category="country" data-countries="ID,TH,PH" data-service="ship-other" data-status="planned" data-inquiry="shipping">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16l16-8 16 8-16 8-16-8z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M8 16v16l16 8 16-8V16M24 24v16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">規劃中</p>
@@ -341,8 +341,8 @@
       </div>
     </details>
   </article>
-      <div id="planned"></div>
-      <article class="card is-planned" id="service-translate-more" data-category="expansion" data-countries="*" data-service="translate-more" data-status="planned" data-inquiry="translate">
+      <div id="planned" hidden></div>
+      <article class="card is-planned" hidden id="service-translate-more" data-category="expansion" data-countries="*" data-service="translate-more" data-status="planned" data-inquiry="translate">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h18M17 12c0 10-6 16-14 20M14 20c2 4 6 8 12 10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M26 28h14l-7 10h-8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M30 28c1.5 3 3 5 6 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
       <p class="status status-planned">規劃中</p>
@@ -366,7 +366,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-moto-rental" data-category="expansion" data-countries="*" data-service="moto-rental" data-status="planned" data-inquiry="rental">
+<article class="card is-planned" hidden id="service-moto-rental" data-category="expansion" data-countries="*" data-service="moto-rental" data-status="planned" data-inquiry="rental">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="34" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M14 34h8l4-10h8l4 10M22 24l4-8h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">規劃中</p>
@@ -390,7 +390,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-goods-rental" data-category="expansion" data-countries="*" data-service="goods-rental" data-status="planned" data-inquiry="rental">
+<article class="card is-planned" hidden id="service-goods-rental" data-category="expansion" data-countries="*" data-service="goods-rental" data-status="planned" data-inquiry="rental">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 28v-6a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v6M8 28h32v8H8v-8zM12 36v4M36 36v4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">規劃中</p>
@@ -414,7 +414,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-b2b-life" data-category="expansion" data-countries="*" data-service="b2b-life" data-status="planned" data-inquiry="enterprise">
+<article class="card is-planned" hidden id="service-b2b-life" data-category="expansion" data-countries="*" data-service="b2b-life" data-status="planned" data-inquiry="enterprise">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V14l14-6 14 6v26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M18 40v-8h12v8M18 20h4M26 20h4M18 26h4M26 26h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
       <p class="status status-planned">規劃中</p>
@@ -439,7 +439,7 @@
     </details>
   </article>
     </div>
-    <p class="empty-note">可以先詢問需求，但現在不能下單、沒有價格，也不代表已經接受預約。</p>
+    <p class="empty-note planned-note" hidden>可以先詢問需求，但現在不能下單、沒有價格，也不代表已經接受預約。</p>
   </section>
   <section id="steps" class="section">
     <div class="section-head">
@@ -543,7 +543,7 @@
     <p id="inquiry-status" role="status"></p>
   </form>
 </dialog>
-<script type="application/json" id="cp-config">{"lang":"zh","langNative":"繁體中文","lineUrl":"https://lin.ee/SQbAREU","lineId":"@681ydjcz","inquiry":{"title":"準備詢問內容","privacy":"不要填身分證、護照、居留證號碼、完整生日或證件照片。此表單不會上傳到這個網站。","copy":"複製詢問內容","copied":"已複製。請貼到 LINE。","copyFailed":"無法自動複製。請手動選取文字。","line":"開啟 LINE","close":"關閉","service":"服務","language":"語言","status":"狀態","profiles":{"general":{"intro":"用最少的資訊說明你需要什麼。","fields":[{"id":"city","label":"縣市","placeholder":"你人在哪個縣市"},{"id":"need","label":"想詢問的事","placeholder":"一兩句即可"}]},"shipping":{"intro":"若這項服務仍是規劃中，這份內容只是需求，不是寄件單。","fields":[{"id":"destination","label":"目的地","placeholder":"城市或國家，不要寫證件號碼"},{"id":"item","label":"物品類型","placeholder":"例如衣物、文件。不要寫禁寄品細節以外的敏感內容"},{"id":"pickup","label":"是否需要到府收件","placeholder":"需要／不需要／還不確定"}]},"moto":{"intro":"這是買賣諮詢，不是租車。租賃尚未開放。","fields":[{"id":"city","label":"縣市","placeholder":"看車或交易的縣市"},{"id":"side","label":"想買還是想賣","placeholder":"買／賣／還不確定"},{"id":"when","label":"大概時程","placeholder":"例如這個月"}]},"rental":{"intro":"此服務尚未開放。複製這段文字只是告訴我們需求，不會成立租約。","fields":[{"id":"city","label":"縣市","placeholder":"使用縣市"},{"id":"term","label":"希望租期","placeholder":"例如兩週、一個月"},{"id":"start","label":"希望開始日期","placeholder":"大約日期即可"}]},"sim":{"intro":"門號契約是你與電信業者之間的契約。","fields":[{"id":"city","label":"縣市","placeholder":"你人在哪個縣市"},{"id":"need","label":"門號用途","placeholder":"例如日常聯絡。不要填證件號碼"}]},"documents":{"intro":"先講文件名稱與你卡關的地方。不要貼證件號碼。","fields":[{"id":"city","label":"縣市","placeholder":"你人在哪個縣市"},{"id":"paper","label":"文件名稱","placeholder":"例如哪一種表格，不要填號碼"},{"id":"need","label":"需要哪種協助","placeholder":"看懂、翻譯或整理"}]},"translate":{"intro":"請說明語言方向與用途。未開放的語言不能當成已接案。","fields":[{"id":"direction","label":"語言方向","placeholder":"例如中文到越南文"},{"id":"use","label":"用途","placeholder":"生活溝通或文件名稱"},{"id":"city","label":"縣市","placeholder":"若需要見面"}]},"pickup":{"intro":"縣市尚未公告。我們會先確認去不去得到。","fields":[{"id":"city","label":"縣市","placeholder":"收件縣市"},{"id":"when","label":"希望時段","placeholder":"大約日期與上午或下午"},{"id":"item","label":"物品類型","placeholder":"不要寫敏感內容"}]},"enterprise":{"intro":"這是企業需求，不是已生效的合作。請另備一般消費者詢問。","fields":[{"id":"company","label":"公司名稱","placeholder":"公司或單位名稱"},{"id":"contact","label":"聯絡人","placeholder":"姓名或稱謂"},{"id":"method","label":"聯絡方式","placeholder":"LINE、電話或電子郵件"},{"id":"city","label":"縣市","placeholder":"員工所在或服務縣市"},{"id":"headcount","label":"預估人數","placeholder":"大約人數"},{"id":"items","label":"合作項目","placeholder":"生活支援、交通、翻譯或其他"}]}}},"services":{"translate-vi":{"title":"中越翻譯","status":"已開放","inquiry":"translate"},"documents":{"title":"生活文件協助","status":"已開放","inquiry":"documents"},"moto-sale":{"title":"機車買賣","status":"已開放","inquiry":"moto"},"sim":{"title":"門號與通訊","status":"已開放","inquiry":"sim"},"life-help":{"title":"生活問題協助","status":"已開放","inquiry":"general"},"pickup":{"title":"到府收件","status":"已開放","inquiry":"pickup"},"ship-vn":{"title":"寄件回越南","status":"已開放","inquiry":"shipping"},"vn-papers":{"title":"越南相關文件與翻譯","status":"已開放","inquiry":"documents"},"ship-other":{"title":"寄往其他國家","status":"規劃中","inquiry":"shipping"},"translate-more":{"title":"其他語言翻譯","status":"規劃中","inquiry":"translate"},"moto-rental":{"title":"機車短中期租賃","status":"規劃中","inquiry":"rental"},"goods-rental":{"title":"生活用品與家具租賃","status":"規劃中","inquiry":"rental"},"b2b-life":{"title":"企業生活與交通合作","status":"規劃中","inquiry":"enterprise"}}}</script>
+<script type="application/json" id="cp-config">{"lang":"zh","langNative":"繁體中文","lineUrl":"https://lin.ee/SQbAREU","lineId":"@681ydjcz","showPlannedServices":false,"inquiry":{"title":"準備詢問內容","privacy":"不要填身分證、護照、居留證號碼、完整生日或證件照片。此表單不會上傳到這個網站。","copy":"複製詢問內容","copied":"已複製。請貼到 LINE。","copyFailed":"無法自動複製。請手動選取文字。","line":"開啟 LINE","close":"關閉","service":"服務","language":"語言","status":"狀態","profiles":{"general":{"intro":"用最少的資訊說明你需要什麼。","fields":[{"id":"city","label":"縣市","placeholder":"你人在哪個縣市"},{"id":"need","label":"想詢問的事","placeholder":"一兩句即可"}]},"shipping":{"intro":"若這項服務仍是規劃中，這份內容只是需求，不是寄件單。","fields":[{"id":"destination","label":"目的地","placeholder":"城市或國家，不要寫證件號碼"},{"id":"item","label":"物品類型","placeholder":"例如衣物、文件。不要寫禁寄品細節以外的敏感內容"},{"id":"pickup","label":"是否需要到府收件","placeholder":"需要／不需要／還不確定"}]},"moto":{"intro":"這是買賣諮詢，不是租車。租賃尚未開放。","fields":[{"id":"city","label":"縣市","placeholder":"看車或交易的縣市"},{"id":"side","label":"想買還是想賣","placeholder":"買／賣／還不確定"},{"id":"when","label":"大概時程","placeholder":"例如這個月"}]},"rental":{"intro":"此服務尚未開放。複製這段文字只是告訴我們需求，不會成立租約。","fields":[{"id":"city","label":"縣市","placeholder":"使用縣市"},{"id":"term","label":"希望租期","placeholder":"例如兩週、一個月"},{"id":"start","label":"希望開始日期","placeholder":"大約日期即可"}]},"sim":{"intro":"門號契約是你與電信業者之間的契約。","fields":[{"id":"city","label":"縣市","placeholder":"你人在哪個縣市"},{"id":"need","label":"門號用途","placeholder":"例如日常聯絡。不要填證件號碼"}]},"documents":{"intro":"先講文件名稱與你卡關的地方。不要貼證件號碼。","fields":[{"id":"city","label":"縣市","placeholder":"你人在哪個縣市"},{"id":"paper","label":"文件名稱","placeholder":"例如哪一種表格，不要填號碼"},{"id":"need","label":"需要哪種協助","placeholder":"看懂、翻譯或整理"}]},"translate":{"intro":"請說明語言方向與用途。未開放的語言不能當成已接案。","fields":[{"id":"direction","label":"語言方向","placeholder":"例如中文到越南文"},{"id":"use","label":"用途","placeholder":"生活溝通或文件名稱"},{"id":"city","label":"縣市","placeholder":"若需要見面"}]},"pickup":{"intro":"縣市尚未公告。我們會先確認去不去得到。","fields":[{"id":"city","label":"縣市","placeholder":"收件縣市"},{"id":"when","label":"希望時段","placeholder":"大約日期與上午或下午"},{"id":"item","label":"物品類型","placeholder":"不要寫敏感內容"}]},"enterprise":{"intro":"這是企業需求，不是已生效的合作。請另備一般消費者詢問。","fields":[{"id":"company","label":"公司名稱","placeholder":"公司或單位名稱"},{"id":"contact","label":"聯絡人","placeholder":"姓名或稱謂"},{"id":"method","label":"聯絡方式","placeholder":"LINE、電話或電子郵件"},{"id":"city","label":"縣市","placeholder":"員工所在或服務縣市"},{"id":"headcount","label":"預估人數","placeholder":"大約人數"},{"id":"items","label":"合作項目","placeholder":"生活支援、交通、翻譯或其他"}]}}},"services":{"translate-vi":{"title":"中越翻譯","status":"已開放","inquiry":"translate"},"documents":{"title":"生活文件協助","status":"已開放","inquiry":"documents"},"moto-sale":{"title":"機車買賣","status":"已開放","inquiry":"moto"},"sim":{"title":"門號與通訊","status":"已開放","inquiry":"sim"},"life-help":{"title":"生活問題協助","status":"已開放","inquiry":"general"},"pickup":{"title":"到府收件","status":"已開放","inquiry":"pickup"},"ship-vn":{"title":"寄件回越南","status":"已開放","inquiry":"shipping"},"vn-papers":{"title":"越南相關文件與翻譯","status":"已開放","inquiry":"documents"},"ship-other":{"title":"寄往其他國家","status":"規劃中","inquiry":"shipping"},"translate-more":{"title":"其他語言翻譯","status":"規劃中","inquiry":"translate"},"moto-rental":{"title":"機車短中期租賃","status":"規劃中","inquiry":"rental"},"goods-rental":{"title":"生活用品與家具租賃","status":"規劃中","inquiry":"rental"},"b2b-life":{"title":"企業生活與交通合作","status":"規劃中","inquiry":"enterprise"}}}</script>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

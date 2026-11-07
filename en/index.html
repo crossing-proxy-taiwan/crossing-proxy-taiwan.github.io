@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en" data-lang="en" data-show-planned="false">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,7 +120,7 @@
         <button type="button" class="chip" data-view="all" aria-pressed="true">All</button>
         <button type="button" class="chip" data-view="open" aria-pressed="false">Open</button>
         <button type="button" class="chip" data-view="country" aria-pressed="false">By country</button>
-        <button type="button" class="chip" data-view="planned" aria-pressed="false">In preparation</button>
+        <button type="button" class="chip" data-view="planned" aria-pressed="false" hidden>In preparation</button>
       </div>
     </div>
     <p id="filter-empty" class="empty-note" hidden>Nothing matches this filter.</p>
@@ -317,7 +317,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-ship-other" data-category="country" data-countries="ID,TH,PH" data-service="ship-other" data-status="planned" data-inquiry="shipping">
+<article class="card is-planned" hidden id="service-ship-other" data-category="country" data-countries="ID,TH,PH" data-service="ship-other" data-status="planned" data-inquiry="shipping">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16l16-8 16 8-16 8-16-8z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M8 16v16l16 8 16-8V16M24 24v16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">Planned</p>
@@ -341,8 +341,8 @@
       </div>
     </details>
   </article>
-      <div id="planned"></div>
-      <article class="card is-planned" id="service-translate-more" data-category="expansion" data-countries="*" data-service="translate-more" data-status="planned" data-inquiry="translate">
+      <div id="planned" hidden></div>
+      <article class="card is-planned" hidden id="service-translate-more" data-category="expansion" data-countries="*" data-service="translate-more" data-status="planned" data-inquiry="translate">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h18M17 12c0 10-6 16-14 20M14 20c2 4 6 8 12 10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M26 28h14l-7 10h-8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M30 28c1.5 3 3 5 6 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
       <p class="status status-planned">Planned</p>
@@ -366,7 +366,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-moto-rental" data-category="expansion" data-countries="*" data-service="moto-rental" data-status="planned" data-inquiry="rental">
+<article class="card is-planned" hidden id="service-moto-rental" data-category="expansion" data-countries="*" data-service="moto-rental" data-status="planned" data-inquiry="rental">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="34" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M14 34h8l4-10h8l4 10M22 24l4-8h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">Planned</p>
@@ -390,7 +390,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-goods-rental" data-category="expansion" data-countries="*" data-service="goods-rental" data-status="planned" data-inquiry="rental">
+<article class="card is-planned" hidden id="service-goods-rental" data-category="expansion" data-countries="*" data-service="goods-rental" data-status="planned" data-inquiry="rental">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 28v-6a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v6M8 28h32v8H8v-8zM12 36v4M36 36v4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">Planned</p>
@@ -414,7 +414,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-b2b-life" data-category="expansion" data-countries="*" data-service="b2b-life" data-status="planned" data-inquiry="enterprise">
+<article class="card is-planned" hidden id="service-b2b-life" data-category="expansion" data-countries="*" data-service="b2b-life" data-status="planned" data-inquiry="enterprise">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V14l14-6 14 6v26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M18 40v-8h12v8M18 20h4M26 20h4M18 26h4M26 26h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
       <p class="status status-planned">Planned</p>
@@ -439,7 +439,7 @@
     </details>
   </article>
     </div>
-    <p class="empty-note">You may describe a need. You cannot book, there is no price, and a message is not a reservation.</p>
+    <p class="empty-note planned-note" hidden>You may describe a need. You cannot book, there is no price, and a message is not a reservation.</p>
   </section>
   <section id="steps" class="section">
     <div class="section-head">
@@ -543,7 +543,7 @@
     <p id="inquiry-status" role="status"></p>
   </form>
 </dialog>
-<script type="application/json" id="cp-config">{"lang":"en","langNative":"English","lineUrl":"https://lin.ee/SQbAREU","lineId":"@681ydjcz","inquiry":{"title":"Prepare your question","privacy":"Do not enter an ID, passport, or ARC number, a full date of birth, or a photo of a document. This form is not uploaded to the website.","copy":"Copy the question","copied":"Copied. Paste it into LINE.","copyFailed":"Automatic copy failed. Select the text yourself.","line":"Open LINE","close":"Close","service":"Service","language":"Language","status":"Status","profiles":{"general":{"intro":"Say what you need in as few words as possible.","fields":[{"id":"city","label":"City or county","placeholder":"Where you are in Taiwan"},{"id":"need","label":"What you want to ask","placeholder":"One or two sentences"}]},"shipping":{"intro":"If this service is still planned, the note is only a request, not a shipment.","fields":[{"id":"destination","label":"Destination","placeholder":"City or country. No ID numbers."},{"id":"item","label":"Type of items","placeholder":"For example clothes or papers"},{"id":"pickup","label":"Pickup at your place?","placeholder":"Yes / No / Not sure"}]},"moto":{"intro":"This is about buying or selling, not renting. Rental is not open.","fields":[{"id":"city","label":"City or county","placeholder":"Where the scooter is"},{"id":"side","label":"Buy or sell","placeholder":"Buy / Sell / Not sure"},{"id":"when","label":"Rough timing","placeholder":"For example this month"}]},"rental":{"intro":"This service is not open. Copying this text only records a need. It does not create a rental.","fields":[{"id":"city","label":"City or county","placeholder":"Where you would use it"},{"id":"term","label":"Length you have in mind","placeholder":"For example two weeks or one month"},{"id":"start","label":"Date you hope to start","placeholder":"An approximate date is enough"}]},"sim":{"intro":"The phone contract is between you and the carrier.","fields":[{"id":"city","label":"City or county","placeholder":"Where you are"},{"id":"need","label":"What you need the number for","placeholder":"Daily contact. No document numbers."}]},"documents":{"intro":"Name the paper and where you are stuck. Do not paste document numbers.","fields":[{"id":"city","label":"City or county","placeholder":"Where you are"},{"id":"paper","label":"Name of the paper","placeholder":"Which form. No numbers."},{"id":"need","label":"What help you need","placeholder":"Understand, translate, or organize"}]},"translate":{"intro":"Say the language direction and the purpose. A language that is not open is not an accepted job.","fields":[{"id":"direction","label":"Language direction","placeholder":"For example Chinese to Vietnamese"},{"id":"use","label":"Purpose","placeholder":"Daily talk or the name of a paper"},{"id":"city","label":"City or county","placeholder":"If you need to meet"}]},"pickup":{"intro":"Cities are not published yet. We confirm whether we can reach you.","fields":[{"id":"city","label":"City or county","placeholder":"Pickup city or county"},{"id":"when","label":"Time window","placeholder":"Approximate day, morning or afternoon"},{"id":"item","label":"Type of items","placeholder":"No sensitive details"}]},"enterprise":{"intro":"This is a company request, not an active partnership. Personal questions use the other forms.","fields":[{"id":"company","label":"Company name","placeholder":"Company or team"},{"id":"contact","label":"Contact person","placeholder":"Name"},{"id":"method","label":"How to reach you","placeholder":"LINE, phone, or email"},{"id":"city","label":"City or county","placeholder":"Where the employees are"},{"id":"headcount","label":"Estimated number of people","placeholder":"A rough number"},{"id":"items","label":"What you want to discuss","placeholder":"Daily support, transport, translation, or something else"}]}}},"services":{"translate-vi":{"title":"Chinese–Vietnamese translation","status":"Open","inquiry":"translate"},"documents":{"title":"Help with everyday papers","status":"Open","inquiry":"documents"},"moto-sale":{"title":"Buying and selling a scooter","status":"Open","inquiry":"moto"},"sim":{"title":"SIM cards and phone service","status":"Open","inquiry":"sim"},"life-help":{"title":"Help with daily-life questions","status":"Open","inquiry":"general"},"pickup":{"title":"Pickup at your place","status":"Open","inquiry":"pickup"},"ship-vn":{"title":"Shipping to Vietnam","status":"Open","inquiry":"shipping"},"vn-papers":{"title":"Vietnam-related papers and translation","status":"Open","inquiry":"documents"},"ship-other":{"title":"Shipping to other countries","status":"Planned","inquiry":"shipping"},"translate-more":{"title":"Translation in other languages","status":"Planned","inquiry":"translate"},"moto-rental":{"title":"Short- and medium-term scooter rental","status":"Planned","inquiry":"rental"},"goods-rental":{"title":"Household goods and furniture rental","status":"Planned","inquiry":"rental"},"b2b-life":{"title":"Company life-support and transport","status":"Planned","inquiry":"enterprise"}}}</script>
+<script type="application/json" id="cp-config">{"lang":"en","langNative":"English","lineUrl":"https://lin.ee/SQbAREU","lineId":"@681ydjcz","showPlannedServices":false,"inquiry":{"title":"Prepare your question","privacy":"Do not enter an ID, passport, or ARC number, a full date of birth, or a photo of a document. This form is not uploaded to the website.","copy":"Copy the question","copied":"Copied. Paste it into LINE.","copyFailed":"Automatic copy failed. Select the text yourself.","line":"Open LINE","close":"Close","service":"Service","language":"Language","status":"Status","profiles":{"general":{"intro":"Say what you need in as few words as possible.","fields":[{"id":"city","label":"City or county","placeholder":"Where you are in Taiwan"},{"id":"need","label":"What you want to ask","placeholder":"One or two sentences"}]},"shipping":{"intro":"If this service is still planned, the note is only a request, not a shipment.","fields":[{"id":"destination","label":"Destination","placeholder":"City or country. No ID numbers."},{"id":"item","label":"Type of items","placeholder":"For example clothes or papers"},{"id":"pickup","label":"Pickup at your place?","placeholder":"Yes / No / Not sure"}]},"moto":{"intro":"This is about buying or selling, not renting. Rental is not open.","fields":[{"id":"city","label":"City or county","placeholder":"Where the scooter is"},{"id":"side","label":"Buy or sell","placeholder":"Buy / Sell / Not sure"},{"id":"when","label":"Rough timing","placeholder":"For example this month"}]},"rental":{"intro":"This service is not open. Copying this text only records a need. It does not create a rental.","fields":[{"id":"city","label":"City or county","placeholder":"Where you would use it"},{"id":"term","label":"Length you have in mind","placeholder":"For example two weeks or one month"},{"id":"start","label":"Date you hope to start","placeholder":"An approximate date is enough"}]},"sim":{"intro":"The phone contract is between you and the carrier.","fields":[{"id":"city","label":"City or county","placeholder":"Where you are"},{"id":"need","label":"What you need the number for","placeholder":"Daily contact. No document numbers."}]},"documents":{"intro":"Name the paper and where you are stuck. Do not paste document numbers.","fields":[{"id":"city","label":"City or county","placeholder":"Where you are"},{"id":"paper","label":"Name of the paper","placeholder":"Which form. No numbers."},{"id":"need","label":"What help you need","placeholder":"Understand, translate, or organize"}]},"translate":{"intro":"Say the language direction and the purpose. A language that is not open is not an accepted job.","fields":[{"id":"direction","label":"Language direction","placeholder":"For example Chinese to Vietnamese"},{"id":"use","label":"Purpose","placeholder":"Daily talk or the name of a paper"},{"id":"city","label":"City or county","placeholder":"If you need to meet"}]},"pickup":{"intro":"Cities are not published yet. We confirm whether we can reach you.","fields":[{"id":"city","label":"City or county","placeholder":"Pickup city or county"},{"id":"when","label":"Time window","placeholder":"Approximate day, morning or afternoon"},{"id":"item","label":"Type of items","placeholder":"No sensitive details"}]},"enterprise":{"intro":"This is a company request, not an active partnership. Personal questions use the other forms.","fields":[{"id":"company","label":"Company name","placeholder":"Company or team"},{"id":"contact","label":"Contact person","placeholder":"Name"},{"id":"method","label":"How to reach you","placeholder":"LINE, phone, or email"},{"id":"city","label":"City or county","placeholder":"Where the employees are"},{"id":"headcount","label":"Estimated number of people","placeholder":"A rough number"},{"id":"items","label":"What you want to discuss","placeholder":"Daily support, transport, translation, or something else"}]}}},"services":{"translate-vi":{"title":"Chinese–Vietnamese translation","status":"Open","inquiry":"translate"},"documents":{"title":"Help with everyday papers","status":"Open","inquiry":"documents"},"moto-sale":{"title":"Buying and selling a scooter","status":"Open","inquiry":"moto"},"sim":{"title":"SIM cards and phone service","status":"Open","inquiry":"sim"},"life-help":{"title":"Help with daily-life questions","status":"Open","inquiry":"general"},"pickup":{"title":"Pickup at your place","status":"Open","inquiry":"pickup"},"ship-vn":{"title":"Shipping to Vietnam","status":"Open","inquiry":"shipping"},"vn-papers":{"title":"Vietnam-related papers and translation","status":"Open","inquiry":"documents"},"ship-other":{"title":"Shipping to other countries","status":"Planned","inquiry":"shipping"},"translate-more":{"title":"Translation in other languages","status":"Planned","inquiry":"translate"},"moto-rental":{"title":"Short- and medium-term scooter rental","status":"Planned","inquiry":"rental"},"goods-rental":{"title":"Household goods and furniture rental","status":"Planned","inquiry":"rental"},"b2b-life":{"title":"Company life-support and transport","status":"Planned","inquiry":"enterprise"}}}</script>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

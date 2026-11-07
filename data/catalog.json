@@ -37,6 +37,7 @@
     { "id": "fil", "html": "fil", "og": "fil_PH", "native": "Filipino" }
   ],
   "countries": ["VN", "ID", "TH", "PH"],
+  "showPlannedServices": false,
   "services": [
     {
       "id": "translate-vi",

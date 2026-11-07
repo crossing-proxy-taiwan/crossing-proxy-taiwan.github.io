@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th" data-lang="th">
+<html lang="th" data-lang="th" data-show-planned="false">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,7 +120,7 @@
         <button type="button" class="chip" data-view="all" aria-pressed="true">ทั้งหมด</button>
         <button type="button" class="chip" data-view="open" aria-pressed="false">เปิดแล้ว</button>
         <button type="button" class="chip" data-view="country" aria-pressed="false">เฉพาะประเทศ</button>
-        <button type="button" class="chip" data-view="planned" aria-pressed="false">กำลังเตรียม</button>
+        <button type="button" class="chip" data-view="planned" aria-pressed="false" hidden>กำลังเตรียม</button>
       </div>
     </div>
     <p id="filter-empty" class="empty-note" hidden>ไม่มีบริการที่ตรงกับตัวกรองนี้</p>
@@ -317,7 +317,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-ship-other" data-category="country" data-countries="ID,TH,PH" data-service="ship-other" data-status="planned" data-inquiry="shipping">
+<article class="card is-planned" hidden id="service-ship-other" data-category="country" data-countries="ID,TH,PH" data-service="ship-other" data-status="planned" data-inquiry="shipping">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16l16-8 16 8-16 8-16-8z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M8 16v16l16 8 16-8V16M24 24v16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">กำลังเตรียม</p>
@@ -341,8 +341,8 @@
       </div>
     </details>
   </article>
-      <div id="planned"></div>
-      <article class="card is-planned" id="service-translate-more" data-category="expansion" data-countries="*" data-service="translate-more" data-status="planned" data-inquiry="translate">
+      <div id="planned" hidden></div>
+      <article class="card is-planned" hidden id="service-translate-more" data-category="expansion" data-countries="*" data-service="translate-more" data-status="planned" data-inquiry="translate">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h18M17 12c0 10-6 16-14 20M14 20c2 4 6 8 12 10" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><path d="M26 28h14l-7 10h-8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M30 28c1.5 3 3 5 6 7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
       <p class="status status-planned">กำลังเตรียม</p>
@@ -366,7 +366,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-moto-rental" data-category="expansion" data-countries="*" data-service="moto-rental" data-status="planned" data-inquiry="rental">
+<article class="card is-planned" hidden id="service-moto-rental" data-category="expansion" data-countries="*" data-service="moto-rental" data-status="planned" data-inquiry="rental">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="14" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><circle cx="34" cy="34" r="5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M14 34h8l4-10h8l4 10M22 24l4-8h8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">กำลังเตรียม</p>
@@ -390,7 +390,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-goods-rental" data-category="expansion" data-countries="*" data-service="goods-rental" data-status="planned" data-inquiry="rental">
+<article class="card is-planned" hidden id="service-goods-rental" data-category="expansion" data-countries="*" data-service="goods-rental" data-status="planned" data-inquiry="rental">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 28v-6a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v6M8 28h32v8H8v-8zM12 36v4M36 36v4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg></div>
       <p class="status status-planned">กำลังเตรียม</p>
@@ -414,7 +414,7 @@
       </div>
     </details>
   </article>
-<article class="card is-planned" id="service-b2b-life" data-category="expansion" data-countries="*" data-service="b2b-life" data-status="planned" data-inquiry="enterprise">
+<article class="card is-planned" hidden id="service-b2b-life" data-category="expansion" data-countries="*" data-service="b2b-life" data-status="planned" data-inquiry="enterprise">
     <div class="card-top">
       <div class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V14l14-6 14 6v26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M18 40v-8h12v8M18 20h4M26 20h4M18 26h4M26 26h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></div>
       <p class="status status-planned">กำลังเตรียม</p>
@@ -439,7 +439,7 @@
     </details>
   </article>
     </div>
-    <p class="empty-note">บอกความต้องการได้ แต่ยังจองไม่ได้ ยังไม่มีราคา และข้อความไม่ใช่การนัดหมาย</p>
+    <p class="empty-note planned-note" hidden>บอกความต้องการได้ แต่ยังจองไม่ได้ ยังไม่มีราคา และข้อความไม่ใช่การนัดหมาย</p>
   </section>
   <section id="steps" class="section">
     <div class="section-head">
@@ -543,7 +543,7 @@
     <p id="inquiry-status" role="status"></p>
   </form>
 </dialog>
-<script type="application/json" id="cp-config">{"lang":"th","langNative":"ไทย","lineUrl":"https://lin.ee/SQbAREU","lineId":"@681ydjcz","inquiry":{"title":"เตรียมข้อความถาม","privacy":"อย่ากรอกเลขบัตร หนังสือเดินทาง ARC วันเกิดเต็ม หรือรูปเอกสาร แบบฟอร์มนี้ไม่ได้อัปโหลดขึ้นเว็บ","copy":"คัดลอกข้อความถาม","copied":"คัดลอกแล้ว วางใน LINE","copyFailed":"คัดลอกอัตโนมัติไม่ได้ ให้เลือกข้อความเอง","line":"เปิด LINE","close":"ปิด","service":"บริการ","language":"ภาษา","status":"สถานะ","profiles":{"general":{"intro":"บอกสิ่งที่ต้องการให้สั้นที่สุด","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"คุณอยู่ที่ไหนในไต้หวัน"},{"id":"need","label":"เรื่องที่อยากถาม","placeholder":"หนึ่งหรือสองประโยค"}]},"shipping":{"intro":"ถ้าบริการนี้ยังอยู่ขั้นเตรียม ข้อความนี้เป็นแค่ความต้องการ ไม่ใช่ใบส่งของ","fields":[{"id":"destination","label":"ปลายทาง","placeholder":"เมืองหรือประเทศ อย่าใส่เลขเอกสาร"},{"id":"item","label":"ประเภทสิ่งของ","placeholder":"เช่น เสื้อผ้าหรือเอกสาร"},{"id":"pickup","label":"ต้องไปรับที่ที่อยู่ไหม","placeholder":"ต้องการ / ไม่ต้องการ / ยังไม่แน่ใจ"}]},"moto":{"intro":"นี่คือการซื้อหรือขาย ไม่ใช่การเช่า การเช่ายังไม่เปิด","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"รถอยู่ที่ไหน"},{"id":"side","label":"อยากซื้อหรือขาย","placeholder":"ซื้อ / ขาย / ยังไม่แน่ใจ"},{"id":"when","label":"ช่วงเวลาโดยประมาณ","placeholder":"เช่น เดือนนี้"}]},"rental":{"intro":"บริการนี้ยังไม่เปิด การคัดลอกแค่บอกความต้องการ ไม่เกิดสัญญาเช่า","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"จะใช้ที่ไหน"},{"id":"term","label":"ระยะเวลาที่อยากเช่า","placeholder":"เช่น สองสัปดาห์หรือหนึ่งเดือน"},{"id":"start","label":"วันที่อยากเริ่ม","placeholder":"วันที่โดยประมาณก็พอ"}]},"sim":{"intro":"สัญญาเบอร์อยู่ระหว่างคุณกับผู้ให้บริการ","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"คุณอยู่ที่ไหน"},{"id":"need","label":"ใช้เบอร์เพื่ออะไร","placeholder":"ติดต่อประจำวัน อย่าใส่เลขเอกสาร"}]},"documents":{"intro":"บอกชื่อเอกสารและจุดที่ติด อย่าวางเลขเอกสาร","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"คุณอยู่ที่ไหน"},{"id":"paper","label":"ชื่อเอกสาร","placeholder":"แบบฟอร์มใด อย่าใส่เลข"},{"id":"need","label":"ต้องการความช่วยเหลือแบบไหน","placeholder":"อ่านให้เข้าใจ แปล หรือจัดระเบียบ"}]},"translate":{"intro":"บอกทิศทางภาษาและวัตถุประสงค์ ภาษาที่ยังไม่เปิดไม่ถือว่ารับงานแล้ว","fields":[{"id":"direction","label":"ทิศทางภาษา","placeholder":"เช่น จีนเป็นเวียดนาม"},{"id":"use","label":"ใช้เพื่ออะไร","placeholder":"คุยประจำวันหรือชื่อเอกสาร"},{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"ถ้าต้องพบกัน"}]},"pickup":{"intro":"รายชื่อเมืองยังไม่ประกาศ เราจะตรวจก่อนว่าไปถึงไหม","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"จุดรับของ"},{"id":"when","label":"ช่วงเวลา","placeholder":"วันโดยประมาณ เช้าหรือบ่าย"},{"id":"item","label":"ประเภทสิ่งของ","placeholder":"อย่าใส่ข้อมูลอ่อนไหว"}]},"enterprise":{"intro":"นี่คือความต้องการของบริษัท ยังไม่ใช่ความร่วมมือที่มีผลแล้ว คำถามส่วนตัวใช้แบบอื่น","fields":[{"id":"company","label":"ชื่อบริษัท","placeholder":"บริษัทหรือทีม"},{"id":"contact","label":"ผู้ติดต่อ","placeholder":"ชื่อ"},{"id":"method","label":"วิธีติดต่อ","placeholder":"LINE โทรศัพท์ หรืออีเมล"},{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"พนักงานอยู่ที่ไหน"},{"id":"headcount","label":"จำนวนคนโดยประมาณ","placeholder":"ตัวเลขคร่าว ๆ"},{"id":"items","label":"อยากคุยเรื่องอะไร","placeholder":"ชีวิตประจำวัน การเดินทาง การแปล หรืออย่างอื่น"}]}}},"services":{"translate-vi":{"title":"แปลจีน–เวียดนาม","status":"เปิดแล้ว","inquiry":"translate"},"documents":{"title":"ช่วยเรื่องเอกสารใช้ชีวิต","status":"เปิดแล้ว","inquiry":"documents"},"moto-sale":{"title":"ซื้อขายรถจักรยานยนต์","status":"เปิดแล้ว","inquiry":"moto"},"sim":{"title":"ซิมและการสื่อสาร","status":"เปิดแล้ว","inquiry":"sim"},"life-help":{"title":"ช่วยคำถามใช้ชีวิต","status":"เปิดแล้ว","inquiry":"general"},"pickup":{"title":"ไปรับของถึงที่","status":"เปิดแล้ว","inquiry":"pickup"},"ship-vn":{"title":"ส่งของกลับเวียดนาม","status":"เปิดแล้ว","inquiry":"shipping"},"vn-papers":{"title":"เอกสารเกี่ยวกับเวียดนามและการแปล","status":"เปิดแล้ว","inquiry":"documents"},"ship-other":{"title":"ส่งไปประเทศอื่น","status":"กำลังเตรียม","inquiry":"shipping"},"translate-more":{"title":"แปลภาษาอื่น","status":"กำลังเตรียม","inquiry":"translate"},"moto-rental":{"title":"เช่ารถจักรยานยนต์ระยะสั้นถึงกลาง","status":"กำลังเตรียม","inquiry":"rental"},"goods-rental":{"title":"เช่าของใช้และเฟอร์นิเจอร์","status":"กำลังเตรียม","inquiry":"rental"},"b2b-life":{"title":"ความร่วมมือด้านชีวิตประจำวันและการเดินทางสำหรับองค์กร","status":"กำลังเตรียม","inquiry":"enterprise"}}}</script>
+<script type="application/json" id="cp-config">{"lang":"th","langNative":"ไทย","lineUrl":"https://lin.ee/SQbAREU","lineId":"@681ydjcz","showPlannedServices":false,"inquiry":{"title":"เตรียมข้อความถาม","privacy":"อย่ากรอกเลขบัตร หนังสือเดินทาง ARC วันเกิดเต็ม หรือรูปเอกสาร แบบฟอร์มนี้ไม่ได้อัปโหลดขึ้นเว็บ","copy":"คัดลอกข้อความถาม","copied":"คัดลอกแล้ว วางใน LINE","copyFailed":"คัดลอกอัตโนมัติไม่ได้ ให้เลือกข้อความเอง","line":"เปิด LINE","close":"ปิด","service":"บริการ","language":"ภาษา","status":"สถานะ","profiles":{"general":{"intro":"บอกสิ่งที่ต้องการให้สั้นที่สุด","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"คุณอยู่ที่ไหนในไต้หวัน"},{"id":"need","label":"เรื่องที่อยากถาม","placeholder":"หนึ่งหรือสองประโยค"}]},"shipping":{"intro":"ถ้าบริการนี้ยังอยู่ขั้นเตรียม ข้อความนี้เป็นแค่ความต้องการ ไม่ใช่ใบส่งของ","fields":[{"id":"destination","label":"ปลายทาง","placeholder":"เมืองหรือประเทศ อย่าใส่เลขเอกสาร"},{"id":"item","label":"ประเภทสิ่งของ","placeholder":"เช่น เสื้อผ้าหรือเอกสาร"},{"id":"pickup","label":"ต้องไปรับที่ที่อยู่ไหม","placeholder":"ต้องการ / ไม่ต้องการ / ยังไม่แน่ใจ"}]},"moto":{"intro":"นี่คือการซื้อหรือขาย ไม่ใช่การเช่า การเช่ายังไม่เปิด","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"รถอยู่ที่ไหน"},{"id":"side","label":"อยากซื้อหรือขาย","placeholder":"ซื้อ / ขาย / ยังไม่แน่ใจ"},{"id":"when","label":"ช่วงเวลาโดยประมาณ","placeholder":"เช่น เดือนนี้"}]},"rental":{"intro":"บริการนี้ยังไม่เปิด การคัดลอกแค่บอกความต้องการ ไม่เกิดสัญญาเช่า","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"จะใช้ที่ไหน"},{"id":"term","label":"ระยะเวลาที่อยากเช่า","placeholder":"เช่น สองสัปดาห์หรือหนึ่งเดือน"},{"id":"start","label":"วันที่อยากเริ่ม","placeholder":"วันที่โดยประมาณก็พอ"}]},"sim":{"intro":"สัญญาเบอร์อยู่ระหว่างคุณกับผู้ให้บริการ","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"คุณอยู่ที่ไหน"},{"id":"need","label":"ใช้เบอร์เพื่ออะไร","placeholder":"ติดต่อประจำวัน อย่าใส่เลขเอกสาร"}]},"documents":{"intro":"บอกชื่อเอกสารและจุดที่ติด อย่าวางเลขเอกสาร","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"คุณอยู่ที่ไหน"},{"id":"paper","label":"ชื่อเอกสาร","placeholder":"แบบฟอร์มใด อย่าใส่เลข"},{"id":"need","label":"ต้องการความช่วยเหลือแบบไหน","placeholder":"อ่านให้เข้าใจ แปล หรือจัดระเบียบ"}]},"translate":{"intro":"บอกทิศทางภาษาและวัตถุประสงค์ ภาษาที่ยังไม่เปิดไม่ถือว่ารับงานแล้ว","fields":[{"id":"direction","label":"ทิศทางภาษา","placeholder":"เช่น จีนเป็นเวียดนาม"},{"id":"use","label":"ใช้เพื่ออะไร","placeholder":"คุยประจำวันหรือชื่อเอกสาร"},{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"ถ้าต้องพบกัน"}]},"pickup":{"intro":"รายชื่อเมืองยังไม่ประกาศ เราจะตรวจก่อนว่าไปถึงไหม","fields":[{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"จุดรับของ"},{"id":"when","label":"ช่วงเวลา","placeholder":"วันโดยประมาณ เช้าหรือบ่าย"},{"id":"item","label":"ประเภทสิ่งของ","placeholder":"อย่าใส่ข้อมูลอ่อนไหว"}]},"enterprise":{"intro":"นี่คือความต้องการของบริษัท ยังไม่ใช่ความร่วมมือที่มีผลแล้ว คำถามส่วนตัวใช้แบบอื่น","fields":[{"id":"company","label":"ชื่อบริษัท","placeholder":"บริษัทหรือทีม"},{"id":"contact","label":"ผู้ติดต่อ","placeholder":"ชื่อ"},{"id":"method","label":"วิธีติดต่อ","placeholder":"LINE โทรศัพท์ หรืออีเมล"},{"id":"city","label":"เมืองหรือเทศมณฑล","placeholder":"พนักงานอยู่ที่ไหน"},{"id":"headcount","label":"จำนวนคนโดยประมาณ","placeholder":"ตัวเลขคร่าว ๆ"},{"id":"items","label":"อยากคุยเรื่องอะไร","placeholder":"ชีวิตประจำวัน การเดินทาง การแปล หรืออย่างอื่น"}]}}},"services":{"translate-vi":{"title":"แปลจีน–เวียดนาม","status":"เปิดแล้ว","inquiry":"translate"},"documents":{"title":"ช่วยเรื่องเอกสารใช้ชีวิต","status":"เปิดแล้ว","inquiry":"documents"},"moto-sale":{"title":"ซื้อขายรถจักรยานยนต์","status":"เปิดแล้ว","inquiry":"moto"},"sim":{"title":"ซิมและการสื่อสาร","status":"เปิดแล้ว","inquiry":"sim"},"life-help":{"title":"ช่วยคำถามใช้ชีวิต","status":"เปิดแล้ว","inquiry":"general"},"pickup":{"title":"ไปรับของถึงที่","status":"เปิดแล้ว","inquiry":"pickup"},"ship-vn":{"title":"ส่งของกลับเวียดนาม","status":"เปิดแล้ว","inquiry":"shipping"},"vn-papers":{"title":"เอกสารเกี่ยวกับเวียดนามและการแปล","status":"เปิดแล้ว","inquiry":"documents"},"ship-other":{"title":"ส่งไปประเทศอื่น","status":"กำลังเตรียม","inquiry":"shipping"},"translate-more":{"title":"แปลภาษาอื่น","status":"กำลังเตรียม","inquiry":"translate"},"moto-rental":{"title":"เช่ารถจักรยานยนต์ระยะสั้นถึงกลาง","status":"กำลังเตรียม","inquiry":"rental"},"goods-rental":{"title":"เช่าของใช้และเฟอร์นิเจอร์","status":"กำลังเตรียม","inquiry":"rental"},"b2b-life":{"title":"ความร่วมมือด้านชีวิตประจำวันและการเดินทางสำหรับองค์กร","status":"กำลังเตรียม","inquiry":"enterprise"}}}</script>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

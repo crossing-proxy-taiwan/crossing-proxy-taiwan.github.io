@@ -1,6 +1,7 @@
 const configNode = document.getElementById("cp-config");
 if (configNode) {
   const config = JSON.parse(configNode.textContent);
+  const showPlannedServices = config.showPlannedServices === true;
   const analytics = { enabled: false, endpoint: "" };
 
   try {
@@ -46,6 +47,10 @@ if (configNode) {
     const country = countrySelect ? countrySelect.value : "all";
     let shown = 0;
     cards.forEach((card) => {
+      if (!showPlannedServices && card.dataset.status === "planned") {
+        card.hidden = true;
+        return;
+      }
       const list = card.dataset.countries.split(",");
       const countryOk = country === "all" || list.includes("*") || list.includes(country);
       const viewOk =
@@ -79,7 +84,9 @@ if (configNode) {
 
   document.querySelectorAll("[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
-      view = button.dataset.view || "all";
+      const nextView = button.dataset.view || "all";
+      if (!showPlannedServices && nextView === "planned") return;
+      view = nextView;
       document.querySelectorAll("[data-view]").forEach((item) => {
         item.setAttribute("aria-pressed", item === button ? "true" : "false");
       });
