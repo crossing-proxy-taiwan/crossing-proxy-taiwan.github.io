@@ -1,605 +1,484 @@
 {
-  "metaTitle": "CROSSING PROXY | Life services in Taiwan",
-  "metaDescription": "CROSSING PROXY helps foreign residents in Taiwan with translation, everyday documents, scooter buying and selling, SIM cards, shipping, and daily questions. Language and country are separate. Unconfirmed prices, cities, and credentials stay marked as pending.",
-  "position": "CROSSING PROXY is a one-stop life-service partner for foreign residents in Taiwan.",
-  "heroLead": "See what is open and what the limits are, then ask on LINE. Unconfirmed prices, addresses, and reviews are not shown here.",
-  "heroPoints": [
-    "Who we are: CROSSING PROXY, also known as 越境代辦.",
-    "What we can help with: translation, documents, scooter sales, SIM cards, shipping, and daily questions. Rentals and company plans are not open yet.",
-    "Languages: 繁體中文, English, Tiếng Việt, Bahasa Indonesia, ไทย, Filipino.",
-    "Where to start: pick a country, open a service card, and read the status and limits.",
-    "How to reach us: LINE official account @681ydjcz."
-  ],
+  "meta": {
+    "homeTitle": "Everyday life in Taiwan, handled with you | CROSSING PROXY",
+    "homeDescription": "CROSSING PROXY helps people from abroad living in Taiwan with parcels, motorbikes, phone lines, and everyday questions. The first chat is free, and nothing starts until you agree.",
+    "shippingTitle": "International shipping and home pickup | CROSSING PROXY",
+    "shippingDescription": "Shipping is open to Vietnam, Thailand, Indonesia, the Philippines, and India. Pickup covers Keelung, Taipei, New Taipei, Taoyuan, Yilan, Hsinchu City, and Hsinchu County.",
+    "motorcycleTitle": "Motorbike buying, selling, and rental | CROSSING PROXY",
+    "motorcycleDescription": "Help with buying or selling covers all of Taiwan. Short and medium rentals are in Taipei, New Taipei, and Keelung. There is no vehicle list and no online order.",
+    "servicesTitle": "Services | CROSSING PROXY",
+    "servicesDescription": "Phone and SIM help, everyday questions, air conditioners, translation, and everyday documents. Shipping and motorbikes have their own pages.",
+    "simTitle": "Phone and SIM help | CROSSING PROXY",
+    "simDescription": "We can go with you in Hsinchu City, Hsinchu County, Taoyuan, New Taipei, Taipei, Keelung, and Yilan. We are not a phone carrier.",
+    "lifeTitle": "Everyday help and air conditioners | CROSSING PROXY",
+    "lifeDescription": "Online life advice covers all of Taiwan. Air-conditioner visits cover Taoyuan, New Taipei, Taipei, Keelung, and Yilan.",
+    "translationTitle": "Translation and everyday documents | CROSSING PROXY",
+    "translationDescription": "Translation between Chinese and Vietnamese, Thai, Indonesian, Filipino or English, and Hindi, plus help reading and arranging everyday documents. Online, anywhere in Taiwan.",
+    "businessTitle": "Life support for foreign employees | CROSSING PROXY",
+    "businessDescription": "Help for companies whose foreign staff need everyday support in Taiwan. Coverage is nationwide. We explain the work and the fee before anything starts.",
+    "aboutTitle": "About us | CROSSING PROXY",
+    "aboutDescription": "CROSSING PROXY is run by 懿翔實業有限公司. Tax ID 42700785. The representative, address, hours, and service areas are listed here.",
+    "privacyTitle": "Privacy | CROSSING PROXY",
+    "privacyDescription": "This website has no inquiry form. It does not collect, store, or send personal details you type. Language and country stay on your device.",
+    "mapTitle": "Sitemap | CROSSING PROXY",
+    "mapDescription": "A list of CROSSING PROXY pages in this language."
+  },
+  "skip": "Skip to content",
   "nav": {
-    "services": "Shared services",
-    "countries": "By country",
-    "planned": "Not open yet",
-    "steps": "3 steps",
-    "trust": "Trust",
-    "cases": "Cases",
-    "business": "Companies",
-    "faq": "FAQ",
-    "contact": "Contact"
+    "menu": "Main menu",
+    "home": "Home",
+    "shipping": "Shipping",
+    "motorcycle": "Motorbikes",
+    "services": "Services",
+    "business": "For business",
+    "about": "About",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "consult": "Free chat",
+    "langCountry": "Language and country",
+    "allServices": "All services",
+    "breadcrumb": "Breadcrumb"
   },
-  "langLabel": "Language",
-  "ctaAsk": "Ask now",
-  "ctaServices": "View services",
-  "countryLabel": "Which country's services",
-  "countryHelp": "Language changes the words. Country changes the specific services. You can read in English and still select Vietnam.",
+  "cta": {
+    "line": "Free consultation (LINE)",
+    "seeServices": "See services"
+  },
+  "tip": {
+    "longBefore": "💬 If something in Taiwan feels unfamiliar, talk with us first. ",
+    "longEm1": "The first consultation is free",
+    "longMid": ". If you need the actual service, we explain the work and the fee clearly, and ",
+    "longEm2": "we start only after you agree",
+    "longAfter": ".",
+    "shortBefore": "💬 If something in Taiwan is unfamiliar, just ask us. ",
+    "shortEm1": "The first consultation is free",
+    "shortMid": ". We confirm the work and the fee, and start only ",
+    "shortEm2": "after you agree",
+    "shortAfter": "."
+  },
+  "hours": "Hours 08:00–23:00, usually a reply within 1 hour",
+  "hoursCompact": "08:00–23:00",
+  "replyCompact": "Usually within 1 hour",
   "countries": {
-    "all": "All countries",
+    "ALL": "All countries",
     "VN": "Vietnam",
-    "ID": "Indonesia",
     "TH": "Thailand",
-    "PH": "Philippines"
+    "ID": "Indonesia",
+    "PH": "Philippines",
+    "IN": "India"
   },
-  "sections": {
-    "common": {
-      "title": "Services for everyone",
-      "lead": "These are the existing day-to-day services. Covered cities are not published yet, so tell us your city when you ask."
+  "regions": {
+    "keelung": "Keelung",
+    "taipei": "Taipei",
+    "new-taipei": "New Taipei",
+    "taoyuan": "Taoyuan",
+    "yilan": "Yilan",
+    "hsinchu-city": "Hsinchu City",
+    "hsinchu-county": "Hsinchu County"
+  },
+  "area": {
+    "sep": ", ",
+    "nationwide": "Anywhere in Taiwan",
+    "nationwideShort": "All of Taiwan",
+    "online": "Online, anywhere in Taiwan",
+    "life": "Online advice is available anywhere in Taiwan. If someone needs to come in person, we confirm the area first.",
+    "service": "Area"
+  },
+  "statusOpen": "Open",
+  "selected": "Selected",
+  "viewing": "The country you are viewing",
+  "live": {
+    "language": "The language is now {name}.",
+    "country": "Now showing {name}. Other services stay visible."
+  },
+  "countryNote": "Country only sets the default shipping destination and the order of translation pairs. It does not hide other services.",
+  "hero": {
+    "kicker": "A life companion for people from abroad in Taiwan",
+    "title": "When life in Taiwan gets big or small, we handle it with you.",
+    "sub": "From parcels, motorbikes, and phone lines to translation and everyday help: talk through what you need for free, then start only after the service and the fee are clear.",
+    "art": "Line illustration of a parcel, a motorbike, a phone, and a conversation",
+    "chatUser": "Hi, a parcel?",
+    "chatUs": "Sure, tell me.",
+    "greetingsLabel": "Greetings",
+    "entriesLabel": "Three ways to start",
+    "entries": [
+      "International shipping and pickup",
+      "Motorbike buying, selling, or rental",
+      "Phone, translation, and life in Taiwan"
+    ]
+  },
+  "home": {
+    "tier1Kicker": "What people ask about most",
+    "tier1Title": "Start with these three",
+    "tier1Lead": "Each service shows where we can help, so you can see if it fits.",
+    "tier2Kicker": "Services",
+    "tier2Title": "Other help for life in Taiwan",
+    "areasKicker": "Where we can help",
+    "areasTitle": "Where we can help you",
+    "areasService": "Service",
+    "areasPlace": "Area",
+    "stepsKicker": "How it works",
+    "stepsTitle": "Talk first, then decide",
+    "stepsBadge": "Example of the steps",
+    "aboutKicker": "About",
+    "aboutTitle": "Company and service facts",
+    "aboutMore": "Read the full introduction",
+    "faqKicker": "Questions",
+    "faqTitle": "Things people often ask",
+    "contactKicker": "Contact",
+    "contactTitle": "Contact and socials",
+    "languagesLabel": "Languages a person can reply in"
+  },
+  "cards": {
+    "shipping": {
+      "title": "International shipping and home pickup",
+      "summary": "Send things home. We can pick them up, and we explain everything before anything is sent.",
+      "area": "Pickup area",
+      "link": "About shipping"
     },
-    "country": {
-      "title": "Country-specific services",
-      "lead": "Only Vietnam shipping and Vietnam-related papers are marked open. Services specific to other countries stay planned."
+    "moto": {
+      "title": "Motorbike buy, sell, and rent",
+      "summary": "If you want to buy, sell, or rent for a short or medium time, ask first.",
+      "trade": "Buying and selling",
+      "rent": "Short and medium rental",
+      "link": "About motorbikes"
     },
-    "expansion": {
-      "title": "Planned, not open",
-      "lead": "You may describe a need. You cannot book, there is no price, and a message is not a reservation."
+    "sim": {
+      "title": "Phone and SIM help",
+      "menuTitle": "Phone and SIM help",
+      "summary": "For a phone line and related tasks, we can go with you.",
+      "area": "Where we can accompany you",
+      "link": "About phone help"
     },
-    "steps": {
-      "title": "Three steps",
-      "lead": "Read the limits before you get in touch. Do not put ID numbers in the form."
+    "life": {
+      "title": "Help with everyday questions",
+      "summary": "If you do not know who to ask about daily life, tell us first."
     },
-    "trust": {
-      "title": "Service area and trust",
-      "lead": "Only confirmed facts are shown. Missing facts stay pending. We do not fill the gaps with numbers."
+    "aircon": {
+      "title": "Air conditioners",
+      "summary": "Visit, installation, repair, and cleaning.",
+      "chips": [
+        "On-site look",
+        "Installation",
+        "Repair",
+        "Cleaning"
+      ]
     },
-    "cases": {
-      "title": "Real cases",
-      "lead": "This block stays empty until there is permission to publish a real case."
+    "translate": {
+      "title": "Translation",
+      "summary": "Chinese–Vietnamese, Chinese–Thai, Chinese–Indonesian, Chinese–Filipino or English, Chinese–Hindi"
     },
-    "business": {
-      "title": "Companies",
-      "lead": "If you are asking for foreign employees — daily-life support, transport, translation, or cooperation with a licensed provider — use the company inquiry. This is not an active contract."
+    "documents": {
+      "title": "Reading, arranging, and translating everyday documents",
+      "summary": "Online, anywhere in Taiwan"
     },
-    "faq": {
-      "title": "FAQ",
-      "lead": "Read what we do not do before you ask."
-    },
-    "contact": {
-      "title": "Contact and social",
-      "lead": "LINE is the main channel. The form does not send anything to this website."
-    },
-    "legal": {
-      "title": "Rules and privacy"
+    "b2b": {
+      "title": "Life support for a company’s foreign staff",
+      "summary": "All of Taiwan"
     }
   },
-  "status": {
-    "open": "Open",
-    "referral": "Referred partner",
-    "planned": "Planned",
-    "paused": "Paused"
+  "areaRows": {
+    "shipping": "Shipping pickup and home pickup",
+    "motoTrade": "Help buying or selling a motorbike",
+    "motoRent": "Short and medium motorbike rental",
+    "sim": "Accompanying a phone application",
+    "aircon": "Air-conditioner visits",
+    "translate": "Translation and documents",
+    "b2b": "Support for a company’s foreign staff",
+    "life": "Everyday questions"
   },
-  "card": {
-    "details": "Details",
-    "ask": "Ask now",
-    "audience": "Who it is for",
-    "scope": "Scope",
-    "documents": "Papers you may need",
-    "pricing": "How fees work",
-    "steps": "Steps",
-    "limits": "Limits",
-    "where": "Cities",
-    "applies": "Applies to",
-    "askPlanned": "Note a need"
-  },
-  "appliesAll": "Not limited to one country",
-  "areaPending": "Pending confirmation by the owner",
   "steps": [
     {
-      "title": "Choose a service",
-      "body": "Pick a service and read its status first. Language and country stay independent."
+      "title": "Tell us on LINE",
+      "body": "Use the language you are comfortable with."
     },
     {
-      "title": "Confirm the need and the scope",
-      "body": "Open the details: who it is for, papers, how fees work, and the limits. Planned means no booking and no price."
+      "title": "We confirm the request",
+      "body": "We learn the details and whether we can help."
     },
     {
-      "title": "Confirm on LINE",
-      "body": "Copy the note into LINE @681ydjcz. Do not include an ID, passport, or ARC number."
+      "title": "We explain the work and the fee",
+      "body": "If you need the actual service, the work and the fee come first."
+    },
+    {
+      "title": "We start after you agree",
+      "body": "Nothing is handled until you are fine with it."
     }
   ],
-  "trustItems": [
-    {
-      "title": "Confirmed",
-      "body": "The brand is CROSSING PROXY / 越境代辦. The LINE official account is @681ydjcz. This site has six language pages."
-    },
-    {
-      "title": "Status labels",
-      "body": "Each card says open, referred partner, planned, or paused. Nothing is marked as a referred partner, because no licensed partner has been confirmed."
-    },
-    {
-      "title": "Cities and hours",
-      "body": "Cities we can visit, and the hours a person replies, are pending. Tell us your city in the inquiry."
-    },
-    {
-      "title": "Fees",
-      "body": "This site shows no service fee, shipping fee, or starting price. Ask on LINE and confirm the quote before anything starts."
-    },
-    {
-      "title": "Not published",
-      "body": "Team profiles, license numbers, partner names, a street address, and a phone number are not confirmed for publication, so they are not listed."
-    }
-  ],
-  "casesEmptyTitle": "No case is cleared for publication",
-  "casesEmptyBody": "Until a customer agrees and photos are authorized, we do not publish stories, reviews, or transaction counts. The section is empty because the material does not exist here, not because reviews are hidden.",
-  "businessNote": "The company form asks for the company name, a contact person, how to reach them, the city, an estimated headcount, and the kind of cooperation. Copying the text is not an order and does not mean the service is open.",
+  "company": {
+    "name": "Company",
+    "tax": "Tax ID",
+    "rep": "Representative",
+    "address": "Address",
+    "addressPlace": "Shilin, Taipei",
+    "hours": "Hours",
+    "hoursValue": "08:00–23:00 (usually within 1 hour)",
+    "languages": "Languages a person replies in",
+    "languagesValue": "繁體中文, English, Tiếng Việt, Bahasa Indonesia, ไทย, Filipino, हिन्दी"
+  },
+  "qual": {
+    "title": "Scope and professional work",
+    "lead": "We can hear what you need for free. When a task requires a professional qualification, we help you reach a suitable, lawful service.",
+    "items": [
+      "We do not handle visas or licensed immigration work ourselves.",
+      "We do not give legal advice ourselves.",
+      "We do not handle money transfers.",
+      "We do not diagnose or give medical advice. We can only suggest a general direction for seeking care. There is no medical partner to name."
+    ],
+    "partners": "If there is a path for visas, immigration, legal help, or lawful money and financial services, the other party’s name, logo, and license are not published on this site."
+  },
   "faq": [
     {
-      "q": "If I read the site in English, can I still find Vietnam services?",
-      "a": "Yes. Change the language at the top, then set the country to Vietnam. Words and the service list are separate."
+      "q": "Does the first consultation cost anything?",
+      "a": "The first consultation is free. If you need the actual service, we explain the work and the fee, and we start only after you agree."
     },
     {
-      "q": "Do you file visas, residence permits, or work permits?",
-      "a": "We do not act as an immigration, visa, or residence-permit agent, and we do not promise any government result. Document help means explaining, organizing, and translating. Work that needs a legal qualification is not labeled as a partner referral until a real licensed partner is confirmed."
+      "q": "Which languages can I use?",
+      "a": "A person can reply in 繁體中文, English, Tiếng Việt, Bahasa Indonesia, ไทย, Filipino, and हिन्दी. You can switch the site language anytime. A language on the site does not mean every professional task is done in that language."
     },
     {
-      "q": "How much does it cost?",
-      "a": "Prices are not published. There is no starting price on this site. Ask on LINE. We explain how the fee is calculated before we begin."
+      "q": "Does this website collect my information?",
+      "a": "There is no inquiry form. The site does not collect, store, or send personal details typed into the site. Free consultation opens LINE. Later messages on LINE are handled by staff of 懿翔實業有限公司. Your language and country stay on your device."
     },
     {
-      "q": "What cannot be shipped to Vietnam?",
-      "a": "From the owner's own public guidance: meat and meat products are not accepted; batteries and power banks are restricted; liquids and medicine are usually restricted too. Rules change, so confirm again before you ship. The full prohibited-item text from the old website could not be recovered from the suspended account, so this is not that original list."
+      "q": "Can you file a visa or give legal advice?",
+      "a": "We do not handle visas or licensed immigration work, we do not give legal advice, and we do not handle money transfers. When a qualification is required, we help you reach a suitable, lawful service. Names and licenses of those parties are not published here."
     },
     {
-      "q": "Can I rent a scooter or furniture?",
-      "a": "Not yet. Short- and medium-term scooter rental, and household or furniture rental, are planned. An inquiry only records interest. It is not a booking."
+      "q": "What are the hours?",
+      "a": "Hours are 08:00–23:00, and a first reply is usually within an hour."
     },
     {
-      "q": "Do you handle money transfers?",
-      "a": "No. We do not collect or send money. If social posts compared legal transfer options, that was general information, not a paid service on this site."
+      "q": "Why are there no numbers on the price table?",
+      "a": "Where a fixed price is not published, the page says the first consultation is free and a formal quote comes after we confirm what you need. Unconfirmed numbers are not put on the site."
     },
     {
-      "q": "Does this website store the form?",
-      "a": "No. The page is static. After you copy the text, it stays on your device until you paste it into LINE. Do not enter an ID, passport, ARC number, or other sensitive data."
+      "q": "Can you handle a visa, a money transfer, or give legal or medical services?",
+      "a": "We do not ourselves provide visa filing, money transfers, or legal or medical services. We can hear what you need for free and help you look for a lawful service."
     }
   ],
-  "contactHours": "Languages a person replies in, and the hours: pending confirmation by the owner.",
-  "contactSocialNote": "Social accounts use the names the owner already publishes. WhatsApp and Messenger are omitted because no confirmed link was provided.",
-  "socialLabels": {
+  "contact": {
+    "primary": "Main way to reach us",
+    "lineTitle": "Add the official LINE account and talk directly",
+    "phone": "Phone",
+    "email": "Email",
+    "social": "Social",
+    "zaloLabel": "ZALO",
+    "zaloBody": "On the Vietnamese pages you can also use ZALO.",
+    "zaloSecondary": "Secondary channel",
+    "noLineBefore": "Can't use LINE? Call ",
+    "noLineMid": " or email ",
+    "noLineAfter": "."
+  },
+  "footer": {
+    "contact": "Contact",
+    "info": "Site",
+    "privacy": "Privacy (this site has no inquiry form)",
+    "qual": "Scope and qualifications",
+    "map": "Sitemap",
+    "rights": "© 懿翔實業有限公司　CROSSING PROXY"
+  },
+  "gate": {
+    "choose": "Choose your language",
+    "suggest": "Suggested",
+    "note": "Your choice is saved on this device. You can change it anytime at the top of the page.",
+    "notFound": "This page is not here. Choose a language."
+  },
+  "menu": {
+    "simGroup": "Phone",
+    "lifeGroup": "Life in Taiwan",
+    "docGroup": "Translation and documents",
+    "unsureTitle": "Not sure which one?",
+    "unsureBody": "Tell us what is going on, and we will help you find the right service."
+  },
+  "price": {
+    "kicker": "Fees",
+    "title": "Price table",
+    "name": "Service",
+    "fee": "Fee",
+    "base": "Base price",
+    "unit": "Unit",
+    "extra": "Surcharge",
+    "note": "Note",
+    "fallback": "Free first consultation. We send a formal quote after we confirm what you need.",
+    "items": {
+      "ship": "International shipping",
+      "pickup": "Home pickup",
+      "moto-sale": "Help buying or selling a motorbike",
+      "moto-rent": "Short and medium rental",
+      "sim": "Phone and SIM help",
+      "life": "Everyday questions",
+      "aircon-assess": "Air-conditioner visit",
+      "aircon-install": "Air-conditioner installation",
+      "aircon-repair": "Air-conditioner repair",
+      "aircon-clean": "Air-conditioner cleaning",
+      "tr-vi": "Chinese–Vietnamese translation",
+      "tr-th": "Chinese–Thai translation",
+      "tr-id": "Chinese–Indonesian translation",
+      "tr-ph": "Chinese–Filipino or English translation",
+      "tr-hi": "Chinese–Hindi translation",
+      "documents": "Everyday documents",
+      "b2b": "Life support for foreign staff"
+    }
+  },
+  "shipping": {
+    "crumb": "Shipping",
+    "title": "International shipping and home pickup",
+    "sub": "Sending things to Vietnam, Thailand, Indonesia, the Philippines, or India starts on LINE: tell us what you want to send, and pickup is arranged only after we confirm it can go and what it costs.",
+    "sidePickup": "Home pickup",
+    "sideCountries": "Five destination countries",
+    "sideCountryList": "Vietnam, Thailand, Indonesia, the Philippines, India",
+    "destKicker": "Destinations",
+    "destTitle": "Countries we already ship to",
+    "areaKicker": "Pickup area",
+    "areaTitle": "Where we collect and pick up",
+    "areaLead": "Home pickup and arranged collection are in these places: Keelung, Taipei, New Taipei, Taoyuan, Yilan, Hsinchu City, and Hsinchu County. Hsinchu means both the city and the county.",
+    "flowKicker": "How sending works",
+    "flowTitle": "How to send",
+    "noticeKicker": "Read this before sending",
+    "noticeTitle": "Things to know before sending",
+    "noticeLead": "These are the shared points we already tell people. They are not a complete banned-item list. Rules differ by country, and we explain whether and how something can be sent before you agree.",
+    "principles": [
+      "We do not take meat or meat products.",
+      "Batteries and power banks are restricted.",
+      "Liquids and medicine are usually restricted.",
+      "Before anything is sent, we confirm it again with you for that destination."
+    ],
+    "cta": "Want to send something home? Talk first, then decide.",
+    "steps": [
+      {
+        "title": "Tell us on LINE",
+        "body": "Destination country, what is inside, length, width and height, actual weight, where the parcel is now, and whether you need home pickup."
+      },
+      {
+        "title": "We check whether it can be sent",
+        "body": "We check if the item is allowed and what limits apply."
+      },
+      {
+        "title": "We explain the fee",
+        "body": "The work and the fee are explained first."
+      },
+      {
+        "title": "Pickup is arranged after you agree",
+        "body": "Collection and sending happen only after you agree."
+      }
+    ]
+  },
+  "motorcycle": {
+    "crumb": "Motorbikes",
+    "title": "Motorbike buying, selling, and rental",
+    "sub": "If you want to buy, sell, or rent for a short or medium time, talk for free first. We start only after the request and the fee are clear.",
+    "caption": "Buying and selling: anywhere in Taiwan. Short and medium rental: Taipei, New Taipei, and Keelung.",
+    "art": "Line drawing of a motorbike",
+    "buyTitle": "I want to buy",
+    "buyBody": "Tell us the city and the timing. We help you understand what to watch for when buying.",
+    "sellTitle": "I want to sell",
+    "sellBody": "Tell us the city and the timing, and we talk for free about how to proceed.",
+    "rentTitle": "Short or medium rental",
+    "rentBody": "If you need a bike for a while, tell us the area, how long, and the start date.",
+    "flowKicker": "How it proceeds",
+    "flowTitle": "How it proceeds",
+    "docsKicker": "Before we start",
+    "docsTitle": "Papers you might need",
+    "docsBody": "Which papers are needed is explained during the consultation, based on your situation. This page does not list document types in advance.",
+    "noList": "For now we match a request and help you directly. An online vehicle platform is being prepared.",
+    "cta": "Want to buy, sell, or rent? Talk for free first.",
+    "faqTitle": "Motorbike questions",
+    "buySteps": [
+      {
+        "title": "Talk on LINE",
+        "body": "Buying, your city, and the timing."
+      }
+    ],
+    "sellSteps": [
+      {
+        "title": "Talk on LINE",
+        "body": "Selling, your city, and the timing."
+      }
+    ],
+    "rentSteps": [
+      {
+        "title": "Talk on LINE",
+        "body": "The area, how long, and the start date."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I see bikes or order on the website?",
+        "a": "For now we match a request and help you directly. An online vehicle platform is being prepared. Start on LINE."
+      },
+      {
+        "q": "Are rental and buying areas different?",
+        "a": "Help with buying or selling covers all of Taiwan. Short and medium rental is Taipei, New Taipei, and Keelung."
+      }
+    ]
+  },
+  "servicesPage": {
+    "title": "Services",
+    "sub": "Phone help, everyday questions, air conditioners, translation, and documents are here. Shipping and motorbikes have their own pages.",
+    "also": "Two other main entries"
+  },
+  "simPage": {
+    "title": "Phone and SIM help",
+    "sub": "When you apply for a number or deal with a phone matter, we can go with you in the areas below. Say what you need on LINE first.",
+    "note": "We accompany you. We are not a phone carrier. The plan and the fee are explained after we confirm the request.",
+    "cta": "Need a number or a phone question? Talk for free first."
+  },
+  "lifePage": {
+    "title": "Everyday help and air conditioners",
+    "sub": "If you do not know who to ask about daily life, ask us online first. For air conditioners, we visit, install, repair, and clean.",
+    "lifeTitle": "Everyday questions",
+    "airconTitle": "Air conditioners",
+    "airconLead": "Visits include an on-site look, installation, repair, and cleaning. The area is Taoyuan, New Taipei, Taipei, Keelung, and Yilan.",
+    "cta": "A daily-life question, or an air conditioner? Talk for free first."
+  },
+  "translationPage": {
+    "title": "Translation and everyday documents",
+    "sub": "Translation between Chinese and Vietnamese, Thai, Indonesian, Filipino or English, and Hindi, plus reading, arranging, and translating everyday documents. It is online and available anywhere in Taiwan.",
+    "note": "A language on the site does not mean every document is handled in that language. A person can reply in these seven languages.",
+    "pairsTitle": "Translation pairs",
+    "docsTitle": "Reading, arranging, and translating everyday documents",
+    "docsLead": "Whether we can handle a document, and what it costs, is explained after we have seen it. This page does not claim a list of document types.",
+    "pairBodies": {
+      "VN": "Chinese and Vietnamese.",
+      "TH": "Chinese and Thai.",
+      "ID": "Chinese and Indonesian.",
+      "PH": "Chinese and Filipino or English.",
+      "IN": "Chinese and Hindi."
+    },
+    "cta": "A translation, or an everyday document? Talk for free first."
+  },
+  "businessPage": {
+    "title": "Life support for foreign employees",
+    "sub": "If a company wants help with daily life for foreign staff in Taiwan, talk with us first. Coverage is nationwide. We ask about the city, roughly how many people, and what help is needed, then explain the work and the fee.",
+    "note": "This is not a ready-made package, and the site does not publish the names of other organizations.",
+    "cta": "Want everyday support for foreign colleagues? Talk for free first."
+  },
+  "aboutPage": {
+    "title": "About us",
+    "sub": "CROSSING PROXY is run by 懿翔實業有限公司. We want people from abroad in Taiwan to have a place where they can ask about daily life with confidence.",
+    "placeNote": "The address is given in the official Chinese wording."
+  },
+  "privacyPage": {
+    "title": "Privacy",
+    "paragraphs": [
+      "This website does not collect, store, or send personal details typed into the site. There is no inquiry form and no data field.",
+      "The free-consultation button only opens the official LINE account at https://lin.ee/SQbAREU . Later messages happen on LINE and are handled by staff of 懿翔實業有限公司.",
+      "Your language and country are saved only on your device so the site can remember them. They are not sent to our server.",
+      "Site analytics are not turned on.",
+      "This site has no inquiry form and does not actively collect personal details you type. It may load fonts and other external resources. After you open LINE or a social link, that platform’s privacy policy applies."
+    ]
+  },
+  "mapPage": {
+    "title": "Sitemap",
+    "sub": "The pages in this language are below."
+  },
+  "social": {
     "facebook": "Facebook",
     "instagram": "Instagram",
     "threads": "Threads",
     "tiktok": "TikTok"
   },
-  "inquiry": {
-    "title": "Prepare your question",
-    "privacy": "Do not enter an ID, passport, or ARC number, a full date of birth, or a photo of a document. This form is not uploaded to the website.",
-    "copy": "Copy the question",
-    "copied": "Copied. Paste it into LINE.",
-    "copyFailed": "Automatic copy failed. Select the text yourself.",
-    "line": "Open LINE",
-    "close": "Close",
-    "service": "Service",
-    "language": "Language",
-    "status": "Status",
-    "profiles": {
-      "general": {
-        "intro": "Say what you need in as few words as possible.",
-        "fields": [
-          {
-            "id": "city",
-            "label": "City or county",
-            "placeholder": "Where you are in Taiwan"
-          },
-          {
-            "id": "need",
-            "label": "What you want to ask",
-            "placeholder": "One or two sentences"
-          }
-        ]
-      },
-      "shipping": {
-        "intro": "If this service is still planned, the note is only a request, not a shipment.",
-        "fields": [
-          {
-            "id": "destination",
-            "label": "Destination",
-            "placeholder": "City or country. No ID numbers."
-          },
-          {
-            "id": "item",
-            "label": "Type of items",
-            "placeholder": "For example clothes or papers"
-          },
-          {
-            "id": "pickup",
-            "label": "Pickup at your place?",
-            "placeholder": "Yes / No / Not sure"
-          }
-        ]
-      },
-      "moto": {
-        "intro": "This is about buying or selling, not renting. Rental is not open.",
-        "fields": [
-          {
-            "id": "city",
-            "label": "City or county",
-            "placeholder": "Where the scooter is"
-          },
-          {
-            "id": "side",
-            "label": "Buy or sell",
-            "placeholder": "Buy / Sell / Not sure"
-          },
-          {
-            "id": "when",
-            "label": "Rough timing",
-            "placeholder": "For example this month"
-          }
-        ]
-      },
-      "rental": {
-        "intro": "This service is not open. Copying this text only records a need. It does not create a rental.",
-        "fields": [
-          {
-            "id": "city",
-            "label": "City or county",
-            "placeholder": "Where you would use it"
-          },
-          {
-            "id": "term",
-            "label": "Length you have in mind",
-            "placeholder": "For example two weeks or one month"
-          },
-          {
-            "id": "start",
-            "label": "Date you hope to start",
-            "placeholder": "An approximate date is enough"
-          }
-        ]
-      },
-      "sim": {
-        "intro": "The phone contract is between you and the carrier.",
-        "fields": [
-          {
-            "id": "city",
-            "label": "City or county",
-            "placeholder": "Where you are"
-          },
-          {
-            "id": "need",
-            "label": "What you need the number for",
-            "placeholder": "Daily contact. No document numbers."
-          }
-        ]
-      },
-      "documents": {
-        "intro": "Name the paper and where you are stuck. Do not paste document numbers.",
-        "fields": [
-          {
-            "id": "city",
-            "label": "City or county",
-            "placeholder": "Where you are"
-          },
-          {
-            "id": "paper",
-            "label": "Name of the paper",
-            "placeholder": "Which form. No numbers."
-          },
-          {
-            "id": "need",
-            "label": "What help you need",
-            "placeholder": "Understand, translate, or organize"
-          }
-        ]
-      },
-      "translate": {
-        "intro": "Say the language direction and the purpose. A language that is not open is not an accepted job.",
-        "fields": [
-          {
-            "id": "direction",
-            "label": "Language direction",
-            "placeholder": "For example Chinese to Vietnamese"
-          },
-          {
-            "id": "use",
-            "label": "Purpose",
-            "placeholder": "Daily talk or the name of a paper"
-          },
-          {
-            "id": "city",
-            "label": "City or county",
-            "placeholder": "If you need to meet"
-          }
-        ]
-      },
-      "pickup": {
-        "intro": "Cities are not published yet. We confirm whether we can reach you.",
-        "fields": [
-          {
-            "id": "city",
-            "label": "City or county",
-            "placeholder": "Pickup city or county"
-          },
-          {
-            "id": "when",
-            "label": "Time window",
-            "placeholder": "Approximate day, morning or afternoon"
-          },
-          {
-            "id": "item",
-            "label": "Type of items",
-            "placeholder": "No sensitive details"
-          }
-        ]
-      },
-      "enterprise": {
-        "intro": "This is a company request, not an active partnership. Personal questions use the other forms.",
-        "fields": [
-          {
-            "id": "company",
-            "label": "Company name",
-            "placeholder": "Company or team"
-          },
-          {
-            "id": "contact",
-            "label": "Contact person",
-            "placeholder": "Name"
-          },
-          {
-            "id": "method",
-            "label": "How to reach you",
-            "placeholder": "LINE, phone, or email"
-          },
-          {
-            "id": "city",
-            "label": "City or county",
-            "placeholder": "Where the employees are"
-          },
-          {
-            "id": "headcount",
-            "label": "Estimated number of people",
-            "placeholder": "A rough number"
-          },
-          {
-            "id": "items",
-            "label": "What you want to discuss",
-            "placeholder": "Daily support, transport, translation, or something else"
-          }
-        ]
-      }
-    }
-  },
-  "dock": "Ask now",
-  "footerNote": "Static site. The public URL updates only after this branch is merged into the default branch.",
-  "pendingStrip": "Prices, cities, address, licenses, team details, and customer cases that the owner has not provided are marked pending. They are not filled in.",
-  "legal": [
-    "These notes follow the direction of current Taiwan rules. They are not legal advice. Immigration, visas, residence permits, private employment services, transport and shipping permits, and scooter-rental contracts and insurance are not offered as something we can do directly, or as a partner referral, until the owner confirms the qualification or a real licensed partner.",
-    "We do not guarantee a visa, a job, residence, or any government approval. Whether a document is accepted is decided by the authority.",
-    "A first question does not ask for an ID card, passport, ARC, or other sensitive data. Do not put that data in a public URL or in this static form.",
-    "Whether shipping and home pickup already have the required permits is pending. Until that is confirmed, the description is help with questions and the existing shipping flow. It is not a claim that we hold a particular transport license.",
-    "Help with buying or selling a scooter does not replace registration, insurance, or traffic rules. Short- and medium-term rental is not open, so there is no rental contract to sign."
-  ],
-  "root": {
-    "title": "Choose a language",
-    "lead": "CROSSING PROXY｜越境代辦. Each of the six languages is a full one-page site. We do not force a redirect based on your browser language.",
-    "suggest": "You last used",
-    "choose": "Choose one language",
-    "browser": "Your browser language may be closer to"
-  },
-  "notFound": "That page does not exist. Choose a language.",
-  "services": {
-    "translate-vi": {
-      "title": "Chinese–Vietnamese translation",
-      "summary": "Help saying everyday matters and document text clearly in Chinese and Vietnamese.",
-      "audience": "People in Taiwan who need Chinese and Vietnamese side by side.",
-      "scope": "Spoken help and written Chinese–Vietnamese wording. This is not a visa service.",
-      "documents": "Describe the kind of paper on LINE first. Do not put document numbers in the website form. You keep the originals.",
-      "pricing": "No published price and no starting price. A LINE quote, accepted by you, comes first.",
-      "steps": [
-        "Say the direction and the kind of paper",
-        "We confirm whether we can help",
-        "We start only after you accept the quote"
-      ],
-      "limits": "A translation does not mean an office will accept the paper. Translation in other languages is not open."
-    },
-    "documents": {
-      "title": "Help with everyday papers",
-      "summary": "Help reading and organizing papers for daily life. This is not an immigration or residence-permit service.",
-      "audience": "Foreign residents in Taiwan who want the fields explained in a language they use.",
-      "scope": "Explain fields, sort papers you already have, and work out which counter to ask. A list of papers we can handle one by one is pending, so we do not claim each type in advance.",
-      "documents": "At first we only need the name of the paper and your city. Do not send an ID, passport, or ARC number.",
-      "pricing": "Ask for a quote. No fee is published on this site.",
-      "steps": [
-        "Name the paper and the step you are stuck on",
-        "We separate what we can do from what we cannot",
-        "We meet only after you accept the quote"
-      ],
-      "limits": "We do not guarantee a visa, a job, or government approval. Work that needs a license is not marked as a partner referral until a licensed partner is confirmed."
-    },
-    "moto-sale": {
-      "title": "Buying and selling a scooter",
-      "summary": "Help with the questions that come up when buying or selling a used scooter in Taiwan. This is not rental.",
-      "audience": "Foreign residents in Taiwan who want to buy or sell a used scooter and need language help.",
-      "scope": "Questions before you look at a scooter, a plain explanation of the steps, and help with the conversation. Whether we hold a dealer or other permit is pending. This page does not claim a license.",
-      "documents": "Transfer, insurance, and registration follow the motor-vehicle office. Do not put ID or plate numbers in the form.",
-      "pricing": "Neither the scooter price nor our fee is published. Ask on LINE.",
-      "steps": [
-        "Say the city and whether you want to buy or sell",
-        "We explain the part we can help with",
-        "We arrange anything only after a quote"
-      ],
-      "limits": "Short- and medium-term rental is a different service and is only planned. Riding still has to follow Taiwan traffic rules."
-    },
-    "sim": {
-      "title": "SIM cards and phone service",
-      "summary": "Help understanding what a carrier usually asks before you apply for a number.",
-      "audience": "Foreign residents in Taiwan who want the steps explained in a familiar language.",
-      "scope": "Explanation beforehand and help with the conversation. The contract is between you and the carrier. We are not a carrier.",
-      "documents": "The carrier may need to see a passport or residence paper. Show it to the carrier. Do not type the number into this website.",
-      "pricing": "The carrier's plan prices are the carrier's. Our help fee is not published. Ask on LINE.",
-      "steps": [
-        "Say the city and what you need the number for",
-        "We explain what we can help with",
-        "We meet only after a quote"
-      ],
-      "limits": "The carrier decides whether to issue a number. We do not guarantee approval."
-    },
-    "life-help": {
-      "title": "Help with daily-life questions",
-      "summary": "If you do not know who to ask about daily life, start with a short description.",
-      "audience": "Foreign residents in Taiwan.",
-      "scope": "Help reading a notice, preparing a question, and other daily matters we are allowed to help with. If a specific task is not confirmed, we say so first.",
-      "documents": "It depends. Do not send photos or numbers of identity papers at the start.",
-      "pricing": "If there is a fee, we say so before we start. There is no price list on this site.",
-      "steps": [
-        "Describe the question and the city",
-        "We say whether we can help",
-        "If there is a fee, we quote first"
-      ],
-      "limits": "We do not give a medical diagnosis or litigation advice, and we do not handle money transfers."
-    },
-    "pickup": {
-      "title": "Pickup at your place",
-      "summary": "Pickup that goes with shipping. The cities we cover are not published.",
-      "audience": "Senders who cannot drop the parcel off themselves.",
-      "scope": "Only in cities the owner confirms. Until then, ask first. Do not assume we cover all of Taiwan.",
-      "documents": "Give the street address later on LINE. Do not put it in a public URL.",
-      "pricing": "Whether pickup has its own fee is explained in the quote. No price is shown here.",
-      "steps": [
-        "Say the city and a rough time",
-        "We confirm whether we can come",
-        "Book only after the quote"
-      ],
-      "limits": "Dangerous goods are not accepted. The city list is pending."
-    },
-    "ship-vn": {
-      "title": "Shipping to Vietnam",
-      "summary": "Help sending belongings to Vietnam, including what cannot be sent and what is restricted.",
-      "audience": "People who need to send items to Vietnam.",
-      "scope": "Questions before you pack, a check of the item type, and home pickup after the city is confirmed.",
-      "documents": "Sender and receiver contact details are usually needed. Do not put ID numbers in the website form.",
-      "pricing": "The quote depends on weight, size, and how it travels. There is no starting price here. Get a LINE quote before you hand anything over.",
-      "steps": [
-        "Say the destination, the type of items, and whether you need pickup",
-        "We confirm whether we can take them and send a quote",
-        "Hand them over only after you agree"
-      ],
-      "limits": "Meat and meat products are not accepted. Batteries and power banks are restricted. Liquids and medicine are usually restricted. Rules change, so confirm the latest rule before shipping. The full prohibited-item text from the old website has not been recovered, so this paragraph is not that original list. Whether the required transport permits are in place is pending."
-    },
-    "vn-papers": {
-      "title": "Vietnam-related papers and translation",
-      "summary": "Explanation and Chinese–Vietnamese translation for papers connected to Vietnam, in one service.",
-      "audience": "People whose papers relate to Vietnam and who need them explained in Chinese or Vietnamese.",
-      "scope": "Explain, organize, and translate. We do not file visas or residence permits.",
-      "documents": "Start with the name of the paper. Do not put numbers in the form.",
-      "pricing": "Ask for a quote. There is no starting price.",
-      "steps": [
-        "Name the paper and why you need it",
-        "We confirm whether we can handle it",
-        "We proceed after you accept the quote"
-      ],
-      "limits": "We do not guarantee that an office in Taiwan or Vietnam will accept the paper."
-    },
-    "ship-other": {
-      "title": "Shipping to other countries",
-      "summary": "Shipping anywhere other than Vietnam is not open, including Indonesia, Thailand, and the Philippines.",
-      "audience": "People who want to send items outside Vietnam.",
-      "scope": "We can hear the request. We do not accept parcels.",
-      "documents": "We do not collect the receiver's identity numbers before this opens.",
-      "pricing": "Not open. There is no price.",
-      "steps": [
-        "Leave the destination and the type of items",
-        "We only note the request",
-        "We will not ask you to hand over a parcel before this opens"
-      ],
-      "limits": "This is not marked open. Each country has its own restrictions, which will be stated if the service opens. Do not send items now."
-    },
-    "translate-more": {
-      "title": "Translation in other languages",
-      "summary": "Indonesian, Thai, Filipino, and other translation is not open yet.",
-      "audience": "People who need translation other than Chinese–Vietnamese.",
-      "scope": "Only Chinese–Vietnamese translation is confirmed as available. This item is planned.",
-      "documents": "Do not send papers before this opens.",
-      "pricing": "Not open. There is no price.",
-      "steps": [
-        "Say the language direction",
-        "We note the request",
-        "We do not take the job before this opens"
-      ],
-      "limits": "Six interface languages do not mean six translation services are open."
-    },
-    "moto-rental": {
-      "title": "Short- and medium-term scooter rental",
-      "summary": "Planned. You cannot reserve a scooter, and there is no rental price.",
-      "audience": "People who want a scooter in Taiwan for a short or medium stay, including students.",
-      "scope": "No scooter, contract, or insurance is offered yet.",
-      "documents": "We do not collect license or passport numbers before this opens.",
-      "pricing": "There is no daily rate, weekly rate, or starting price.",
-      "steps": [
-        "You may leave a city, a length, and a hoped-for start date",
-        "That is only a request",
-        "It does not become an order"
-      ],
-      "limits": "Until the rental contract, insurance, and permits are done, this is not open. To buy or sell a used scooter, use the open buying-and-selling service."
-    },
-    "goods-rental": {
-      "title": "Household goods and furniture rental",
-      "summary": "Planned. There is no catalog and no rental price.",
-      "audience": "Foreign residents in Taiwan who need household goods or furniture for a while.",
-      "scope": "Rental is not open.",
-      "documents": "No contract is signed before this opens, and we do not collect ID numbers.",
-      "pricing": "There is no price.",
-      "steps": [
-        "You may say the city and the kind of items",
-        "We only note the request",
-        "We cannot schedule delivery before this opens"
-      ],
-      "limits": "Not officially open. An inquiry is not an order."
-    },
-    "b2b-life": {
-      "title": "Company life-support and transport",
-      "summary": "Planned. A company may describe a need. That does not mean we can take the work.",
-      "audience": "Companies asking about daily-life support, transport, or translation for foreign employees, or about cooperation with a legal provider.",
-      "scope": "We only collect the request. If a personal service is already open, that service's limits still apply.",
-      "documents": "Leave the company and a contact person. Do not send employees' ID numbers.",
-      "pricing": "There is no company price list. If the work can be taken later, we quote it individually first.",
-      "steps": [
-        "Leave the company, contact, city, headcount, and topic",
-        "Copy it to LINE",
-        "We say whether a next conversation is possible only after we check"
-      ],
-      "limits": "This is not marked open or as a partner referral. No partner company has been confirmed, so none is named."
-    }
-  },
-  "primaryNav": {
-    "services": "Services",
-    "steps": "Process",
-    "about": "About",
-    "faq": "FAQ",
-    "menu": "Menu"
-  },
-  "filters": {
-    "label": "Filter services",
-    "all": "All",
-    "open": "Open",
-    "country": "By country",
-    "planned": "In preparation",
-    "empty": "Nothing matches this filter."
-  },
-  "principles": [
-    {
-      "title": "Clear communication",
-      "body": "Every service is marked open, referred, planned, or paused. We do not guarantee a visa, a job, or any government approval."
-    },
-    {
-      "title": "A transparent process",
-      "body": "Fees are not published, and there is no starting price. Before anything starts, the scope and quote are explained on LINE."
-    },
-    {
-      "title": "Respect for privacy",
-      "body": "The inquiry stays on your device and is not uploaded. Please do not enter an ID, passport, or ARC number."
-    }
-  ]
+  "trustStrip": "懿翔實業有限公司｜Tax ID 42700785｜A person replies in several languages｜08:00–23:00",
+  "lineHint": "After LINE opens, choose the service you need. Incomplete details are fine; we will ask step by step.",
+  "areaAsk": "If you are outside these areas, you can still ask. We will check whether we can arrange it."
 }
