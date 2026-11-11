@@ -98,7 +98,13 @@
     "art": "Minh họa nét: kiện hàng, xe máy, điện thoại và cuộc trò chuyện",
     "chatUser": "Mình muốn gửi hàng",
     "chatUs": "Cứ nói nhé",
-    "greetingsLabel": "Lời chào"
+    "greetingsLabel": "Lời chào",
+    "entriesLabel": "Ba lối vào chính",
+    "entries": [
+      "Gửi hàng và lấy tận nơi",
+      "Hỗ trợ mua, bán hoặc thuê xe",
+      "Thuê bao, dịch thuật và đời sống tại Đài Loan"
+    ]
   },
   "home": {
     "tier1Kicker": "Những việc được hỏi nhiều",
@@ -244,6 +250,10 @@
     {
       "q": "Sao bảng giá không có số?",
       "a": "Mục chưa có giá cố định sẽ ghi trao đổi ban đầu miễn phí, và báo giá chính thức sau khi xác nhận nhu cầu. Số chưa được xác nhận sẽ không đưa lên website."
+    },
+    {
+      "q": "Các bạn có trực tiếp làm visa, chuyển tiền, hoặc tư vấn pháp lý, y tế không?",
+      "a": "Chúng tôi không trực tiếp làm visa, chuyển tiền, hay cung cấp dịch vụ pháp lý hoặc y tế. Có thể tìm hiểu nhu cầu miễn phí và giúp bạn tìm dịch vụ hợp pháp."
     }
   ],
   "contact": {
@@ -254,12 +264,15 @@
     "social": "Mạng xã hội",
     "zaloLabel": "ZALO",
     "zaloBody": "Nếu bạn đang dùng tiếng Việt, có thể nhắn ZALO. Đây là kênh phụ, LINE vẫn là cách chính.",
-    "zaloSecondary": "Kênh phụ"
+    "zaloSecondary": "Kênh phụ",
+    "noLineBefore": "Không dùng được LINE? Gọi ",
+    "noLineMid": " hoặc gửi thư tới ",
+    "noLineAfter": "."
   },
   "footer": {
     "contact": "Liên hệ",
     "info": "Thông tin website",
-    "privacy": "Riêng tư (website không thu thập dữ liệu cá nhân)",
+    "privacy": "Riêng tư (website không có biểu mẫu hỏi)",
     "qual": "Phạm vi và chuyên môn",
     "map": "Sơ đồ website",
     "rights": "© 懿翔實業有限公司　CROSSING PROXY"
@@ -334,7 +347,7 @@
     "steps": [
       {
         "title": "Nói với chúng tôi trên LINE",
-        "body": "Nước đến, loại đồ, cân nặng, và có cần lấy tận nơi không."
+        "body": "Nước đến, đồ bên trong, chiều dài, rộng, cao, cân nặng thực, nơi đang giữ hàng, và có cần lấy tận nơi không."
       },
       {
         "title": "Xác nhận gửi được không",
@@ -367,7 +380,7 @@
     "docsKicker": "Chuẩn bị trước",
     "docsTitle": "Giấy tờ có thể cần",
     "docsBody": "Cần giấy tờ gì sẽ được nói khi trao đổi, theo tình huống của bạn. Trang này không liệt kê sẵn loại giấy tờ.",
-    "noList": "Ở đây không có danh sách xe, và không đặt xe trên website.",
+    "noList": "Hiện chúng tôi ghép nhu cầu và hỗ trợ trực tiếp. Nền tảng xe trực tuyến đang được chuẩn bị.",
     "cta": "Muốn mua, bán hoặc thuê? Cứ nói chuyện miễn phí trước.",
     "faqTitle": "Câu hỏi về xe máy",
     "buySteps": [
@@ -391,7 +404,7 @@
     "faq": [
       {
         "q": "Xem xe hoặc đặt trên website được không?",
-        "a": "Hiện không có danh sách xe và không nhận đặt trên website. Hãy bắt đầu trên LINE."
+        "a": "Hiện chúng tôi ghép nhu cầu và hỗ trợ trực tiếp. Nền tảng xe trực tuyến đang được chuẩn bị. Hãy bắt đầu trên LINE."
       },
       {
         "q": "Khu vực thuê và mua bán có khác không?",
@@ -451,7 +464,8 @@
       "Website không thu thập, không lưu và không gửi dữ liệu cá nhân bạn nhập trên web. Không có biểu mẫu và không có ô nhập liệu.",
       "Nút tư vấn miễn phí chỉ mở tài khoản LINE chính thức https://lin.ee/SQbAREU . Cuộc trò chuyện sau đó diễn ra trên LINE, do nhân viên 懿翔實業有限公司 xử lý.",
       "Ngôn ngữ và quốc gia chỉ được lưu trên máy của bạn để ghi nhớ lựa chọn, không gửi lên máy chủ của chúng tôi.",
-      "Hiện chưa bật phân tích website."
+      "Hiện chưa bật phân tích website.",
+      "Website không có biểu mẫu hỏi, và không chủ động thu thập dữ liệu cá nhân bạn nhập. Website có thể tải phông chữ và tài nguyên bên ngoài. Sau khi bấm LINE, ZALO hoặc mạng xã hội, chính sách riêng tư của nền tảng đó sẽ áp dụng."
     ]
   },
   "mapPage": {
@@ -463,5 +477,8 @@
     "instagram": "Instagram",
     "threads": "Threads",
     "tiktok": "TikTok"
-  }
+  },
+  "trustStrip": "懿翔實業有限公司｜Mã số thuế 42700785｜Nhân viên trực, nhiều ngôn ngữ｜08:00–23:00",
+  "lineHint": "Mở LINE rồi chọn dịch vụ bạn cần. Thiếu thông tin cũng không sao; chúng tôi sẽ hỏi lần lượt.",
+  "areaAsk": "Không ở các khu vực trên vẫn có thể hỏi trước. Chúng tôi sẽ xem có sắp xếp được không."
 }

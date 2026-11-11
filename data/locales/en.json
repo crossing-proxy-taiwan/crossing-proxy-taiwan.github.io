@@ -98,7 +98,13 @@
     "art": "Line illustration of a parcel, a motorbike, a phone, and a conversation",
     "chatUser": "Hi, a parcel?",
     "chatUs": "Sure, tell me.",
-    "greetingsLabel": "Greetings"
+    "greetingsLabel": "Greetings",
+    "entriesLabel": "Three ways to start",
+    "entries": [
+      "International shipping and pickup",
+      "Motorbike buying, selling, or rental",
+      "Phone, translation, and life in Taiwan"
+    ]
   },
   "home": {
     "tier1Kicker": "What people ask about most",
@@ -244,6 +250,10 @@
     {
       "q": "Why are there no numbers on the price table?",
       "a": "Where a fixed price is not published, the page says the first consultation is free and a formal quote comes after we confirm what you need. Unconfirmed numbers are not put on the site."
+    },
+    {
+      "q": "Can you handle a visa, a money transfer, or give legal or medical services?",
+      "a": "We do not ourselves provide visa filing, money transfers, or legal or medical services. We can hear what you need for free and help you look for a lawful service."
     }
   ],
   "contact": {
@@ -254,12 +264,15 @@
     "social": "Social",
     "zaloLabel": "ZALO",
     "zaloBody": "On the Vietnamese pages you can also use ZALO.",
-    "zaloSecondary": "Secondary channel"
+    "zaloSecondary": "Secondary channel",
+    "noLineBefore": "Can't use LINE? Call ",
+    "noLineMid": " or email ",
+    "noLineAfter": "."
   },
   "footer": {
     "contact": "Contact",
     "info": "Site",
-    "privacy": "Privacy (this site does not collect personal data)",
+    "privacy": "Privacy (this site has no inquiry form)",
     "qual": "Scope and qualifications",
     "map": "Sitemap",
     "rights": "© 懿翔實業有限公司　CROSSING PROXY"
@@ -334,7 +347,7 @@
     "steps": [
       {
         "title": "Tell us on LINE",
-        "body": "Destination, what the item is, the weight, and whether you need pickup."
+        "body": "Destination country, what is inside, length, width and height, actual weight, where the parcel is now, and whether you need home pickup."
       },
       {
         "title": "We check whether it can be sent",
@@ -367,7 +380,7 @@
     "docsKicker": "Before we start",
     "docsTitle": "Papers you might need",
     "docsBody": "Which papers are needed is explained during the consultation, based on your situation. This page does not list document types in advance.",
-    "noList": "There is no vehicle list here, and you cannot place an order on the website.",
+    "noList": "For now we match a request and help you directly. An online vehicle platform is being prepared.",
     "cta": "Want to buy, sell, or rent? Talk for free first.",
     "faqTitle": "Motorbike questions",
     "buySteps": [
@@ -391,7 +404,7 @@
     "faq": [
       {
         "q": "Can I see bikes or order on the website?",
-        "a": "There is no vehicle list, and orders are not taken on the website. Start on LINE."
+        "a": "For now we match a request and help you directly. An online vehicle platform is being prepared. Start on LINE."
       },
       {
         "q": "Are rental and buying areas different?",
@@ -451,7 +464,8 @@
       "This website does not collect, store, or send personal details typed into the site. There is no inquiry form and no data field.",
       "The free-consultation button only opens the official LINE account at https://lin.ee/SQbAREU . Later messages happen on LINE and are handled by staff of 懿翔實業有限公司.",
       "Your language and country are saved only on your device so the site can remember them. They are not sent to our server.",
-      "Site analytics are not turned on."
+      "Site analytics are not turned on.",
+      "This site has no inquiry form and does not actively collect personal details you type. It may load fonts and other external resources. After you open LINE or a social link, that platform’s privacy policy applies."
     ]
   },
   "mapPage": {
@@ -463,5 +477,8 @@
     "instagram": "Instagram",
     "threads": "Threads",
     "tiktok": "TikTok"
-  }
+  },
+  "trustStrip": "懿翔實業有限公司｜Tax ID 42700785｜A person replies in several languages｜08:00–23:00",
+  "lineHint": "After LINE opens, choose the service you need. Incomplete details are fine; we will ask step by step.",
+  "areaAsk": "If you are outside these areas, you can still ask. We will check whether we can arrange it."
 }

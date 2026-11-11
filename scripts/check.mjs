@@ -61,6 +61,37 @@ if (!catalog.socials.some((item) => item.url === "https://www.threads.com/@cross
 const analytics = JSON.parse(readFileSync(join(root, "data/analytics.json"), "utf8"));
 if (analytics.enabled !== false || analytics.endpoint) errors.push("analytics must stay disabled until configured");
 
+const VOID_TAGS = new Set("area,base,br,col,embed,hr,img,input,link,meta,param,source,track,wbr".split(","));
+const PHRASING = new Set(
+  "a,abbr,b,bdi,bdo,br,cite,code,data,em,i,mark,q,s,small,span,strong,sub,sup,time,u,var,wbr,button,label,img,svg,path,circle,rect,g,text,use,line,polyline,polygon,audio,video,canvas,iframe,select,textarea,output,progress,meter,kbd,samp,ruby,rt,rp".split(","),
+);
+
+function nestingProblems(html) {
+  const problems = [];
+  const source = html.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "");
+  const stack = [];
+  const tokens = source.matchAll(/<!--[\s\S]*?-->|<\/?([a-zA-Z][\w:-]*)\b[^>]*?>/g);
+  for (const token of tokens) {
+    if (token[0].startsWith("<!--")) continue;
+    const name = token[1].toLowerCase();
+    const raw = token[0];
+    if (raw.startsWith("</")) {
+      const index = stack.lastIndexOf(name);
+      if (index === -1) problems.push(`unexpected </${name}>`);
+      else stack.splice(index);
+      continue;
+    }
+    if (stack.includes("p") && name === "p") problems.push("<p> inside <p>");
+    if (stack.includes("p") && !PHRASING.has(name)) problems.push(`<p> cannot contain <${name}>`);
+    if (name === "a" && stack.includes("a")) problems.push("<a> inside <a>");
+    if (name === "button" && (stack.includes("a") || stack.includes("button"))) problems.push("<button> inside interactive element");
+    if (name === "a" && stack.includes("button")) problems.push("<a> inside <button>");
+    const selfClosing = /\/>\s*$/.test(raw) || VOID_TAGS.has(name);
+    if (!selfClosing) stack.push(name);
+  }
+  return [...new Set(problems)].slice(0, 6);
+}
+
 function htmlFiles(dir, out = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
     if (entry.name === "node_modules" || entry.name === ".git" || entry.name === "cp-redesign") continue;
@@ -127,6 +158,7 @@ for (const [file, html] of htmlByPath) {
     errors.push(`${rel} unexpected phone number`);
   }
   if (html.includes('id="estimate"')) errors.push(`${rel} estimator was rendered`);
+  for (const problem of nestingProblems(html)) errors.push(`${rel} ${problem}`);
   const ids = idsIn(html);
   const dupes = ids.filter((id, index) => ids.indexOf(id) !== index);
   if (dupes.length) errors.push(`${rel} duplicate id ${[...new Set(dupes)].join(",")}`);
@@ -179,6 +211,10 @@ for (const lang of catalog.langs) {
   const shipping = htmlByPath.get(join(root, lang.id, "shipping", "index.html"));
   if (!shipping || !shipping.includes(locales[lang.id].price.fallback)) errors.push(`${lang.id} missing price fallback text`);
   if (lang.id === "vi" && !home.includes("https://zalo.me/886907246207")) errors.push("vi missing ZALO");
+  if (lang.id === "vi") {
+    const privacy = htmlByPath.get(join(root, "vi", "privacy", "index.html"));
+    if (!privacy.includes("ZALO")) errors.push("vi privacy should mention ZALO");
+  }
   if (lang.id !== "vi" && home.includes("zalo.me")) errors.push(`${lang.id} should not show ZALO`);
   if (lang.id === "zh") {
     const longTip = "在台灣遇到不熟悉的事情，別擔心，都可以先和我們聊聊。";
@@ -187,6 +223,27 @@ for (const lang of catalog.langs) {
     if (!home.includes("免費初步諮詢，確認需求後提供正式報價。")) errors.push("zh price sentence");
     if (!home.includes("新竹市") || !home.includes("新竹縣")) errors.push("zh hsinchu city and county");
     if (!home.includes("在台灣遇到生活上的大小事，我們陪您一起處理。")) errors.push("zh hero title");
+    for (const phrase of [
+      "機車買賣／租賃協助",
+      "門號、翻譯與在台生活協助",
+      "真人多語客服",
+      "點開 LINE 後，選擇您需要的服務即可；資料不完整也沒關係，我們會一步一步詢問。",
+      "不在以上地區也可以先詢問，我們會確認是否能安排。",
+      "無法使用 LINE？也可來電",
+      "我們不直接提供簽證代辦、匯款、法律或醫療服務；可以免費了解需求，並協助尋找合法服務管道。",
+    ]) {
+      if (!home.includes(phrase)) errors.push(`zh home missing ${phrase}`);
+    }
+    if (home.includes("隱私說明（本網站不收集個人資料）")) errors.push("old privacy link");
+    if (!home.includes("隱私說明（網站不設詢問表單）")) errors.push("new privacy link");
+    const dock = home.split('<div class="dock">')[1]?.slice(0, 500) || "";
+    if (dock.includes("一步一步詢問")) errors.push("line hint inside sticky dock");
+    if (!shipping.includes("長寬高、實際重量、收件所在地")) errors.push("shipping prepare text");
+    const moto = htmlByPath.get(join(root, "zh", "motorcycle", "index.html"));
+    if (!moto.includes("目前採需求媒合與人工協助；線上車輛平台籌備中。")) errors.push("moto matching copy");
+    const privacy = htmlByPath.get(join(root, "zh", "privacy", "index.html"));
+    if (!privacy.includes("本網站不設詢問表單，也不主動收集您輸入的個人資料。")) errors.push("privacy form sentence");
+    if (privacy.includes("ZALO")) errors.push("zh privacy mentions ZALO");
     for (const id of ["services", "steps", "about", "faq", "contact", "legal", "countries", "trust", "service-ship-vn", "service-moto-rental", "service-sim", "service-b2b-life", "business"]) {
       if (!home.includes(`id="${id}"`)) errors.push(`zh missing legacy anchor ${id}`);
     }

@@ -98,7 +98,13 @@
     "art": "Ilustrasi garis: paket, motor, ponsel, dan percakapan",
     "chatUser": "Mau kirim paket",
     "chatUs": "Silakan cerita",
-    "greetingsLabel": "Salam"
+    "greetingsLabel": "Salam",
+    "entriesLabel": "Tiga pintu utama",
+    "entries": [
+      "Kirim paket dan jemput",
+      "Bantuan jual, beli, atau sewa motor",
+      "Nomor, terjemahan, dan hidup di Taiwan"
+    ]
   },
   "home": {
     "tier1Kicker": "Yang paling sering ditanyakan",
@@ -244,6 +250,10 @@
     {
       "q": "Mengapa tabel harga tidak ada angkanya?",
       "a": "Kalau harga tetap belum diumumkan, halamannya menulis konsultasi awal gratis dan penawaran resmi setelah kebutuhan dipastikan. Angka yang belum pasti tidak dipasang di situs."
+    },
+    {
+      "q": "Apakah kalian langsung mengurus visa, transfer uang, atau layanan hukum dan medis?",
+      "a": "Kami tidak langsung menyediakan pengurusan visa, transfer uang, atau layanan hukum maupun medis. Kami bisa mendengar kebutuhan secara gratis dan membantu mencari layanan yang sah."
     }
   ],
   "contact": {
@@ -254,12 +264,15 @@
     "social": "Media sosial",
     "zaloLabel": "ZALO",
     "zaloBody": "Di halaman bahasa Vietnam, ZALO juga bisa dipakai.",
-    "zaloSecondary": "Kanal tambahan"
+    "zaloSecondary": "Kanal tambahan",
+    "noLineBefore": "Tidak bisa memakai LINE? Telepon ",
+    "noLineMid": " atau kirim email ke ",
+    "noLineAfter": "."
   },
   "footer": {
     "contact": "Kontak",
     "info": "Info situs",
-    "privacy": "Privasi (situs ini tidak mengumpulkan data pribadi)",
+    "privacy": "Privasi (situs ini tidak punya formulir)",
     "qual": "Cakupan dan kualifikasi",
     "map": "Peta situs",
     "rights": "© 懿翔實業有限公司　CROSSING PROXY"
@@ -334,7 +347,7 @@
     "steps": [
       {
         "title": "Beri tahu di LINE",
-        "body": "Negara tujuan, jenis barang, berat, dan apakah perlu dijemput."
+        "body": "Negara tujuan, isi barang, panjang, lebar, tinggi, berat aktual, lokasi barang sekarang, dan apakah perlu dijemput."
       },
       {
         "title": "Cek apakah bisa dikirim",
@@ -367,7 +380,7 @@
     "docsKicker": "Sebelum mulai",
     "docsTitle": "Dokumen yang mungkin diperlukan",
     "docsBody": "Dokumen apa yang dibutuhkan dijelaskan saat konsultasi, sesuai situasi Anda. Halaman ini tidak mencantumkan jenis dokumen terlebih dahulu.",
-    "noList": "Di sini tidak ada daftar kendaraan, dan tidak bisa memesan di situs.",
+    "noList": "Saat ini kami mencocokkan permintaan dan membantu secara langsung. Platform kendaraan online masih disiapkan.",
     "cta": "Mau beli, jual, atau sewa? Ngobrol gratis dulu.",
     "faqTitle": "Pertanyaan soal motor",
     "buySteps": [
@@ -391,7 +404,7 @@
     "faq": [
       {
         "q": "Bisa lihat motor atau pesan di situs?",
-        "a": "Belum ada daftar kendaraan, dan pesanan tidak diterima di situs. Mulai di LINE."
+        "a": "Saat ini kami mencocokkan permintaan dan membantu secara langsung. Platform kendaraan online masih disiapkan. Mulai di LINE."
       },
       {
         "q": "Wilayah sewa dan jual beli berbeda?",
@@ -451,7 +464,8 @@
       "Situs ini tidak mengumpulkan, menyimpan, atau mengirim data pribadi yang diketik di situs. Tidak ada formulir dan tidak ada kolom isian.",
       "Tombol konsultasi gratis hanya membuka akun LINE resmi https://lin.ee/SQbAREU . Percakapan berikutnya terjadi di LINE dan ditangani staf 懿翔實業有限公司.",
       "Bahasa dan negara hanya disimpan di perangkat Anda untuk mengingat pilihan, tidak dikirim ke server kami.",
-      "Analitik situs saat ini tidak diaktifkan."
+      "Analitik situs saat ini tidak diaktifkan.",
+      "Situs ini tidak punya formulir dan tidak secara aktif mengumpulkan data pribadi yang Anda ketik. Situs dapat memuat font dan sumber luar. Setelah Anda membuka LINE atau tautan sosial, kebijakan privasi platform itu yang berlaku."
     ]
   },
   "mapPage": {
@@ -463,5 +477,8 @@
     "instagram": "Instagram",
     "threads": "Threads",
     "tiktok": "TikTok"
-  }
+  },
+  "trustStrip": "懿翔實業有限公司｜Nomor pajak 42700785｜Petugas langsung, beberapa bahasa｜08:00–23:00",
+  "lineHint": "Setelah LINE terbuka, pilih layanan yang Anda butuhkan. Data belum lengkap tidak masalah; kami bertanya bertahap.",
+  "areaAsk": "Di luar wilayah di atas tetap bisa bertanya dulu. Kami akan cek apakah bisa diatur."
 }

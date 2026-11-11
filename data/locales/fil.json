@@ -98,7 +98,13 @@
     "art": "Guhit na linya: padala, motorsiklo, telepon, at usapan",
     "chatUser": "Gusto kong magpadala",
     "chatUs": "Sige, kuwento ka.",
-    "greetingsLabel": "Mga bati"
+    "greetingsLabel": "Mga bati",
+    "entriesLabel": "Tatlong pangunahing pasukan",
+    "entries": [
+      "Padala at susundo",
+      "Tulong sa bili, benta, o renta",
+      "Numero, pagsasalin, at buhay sa Taiwan"
+    ]
   },
   "home": {
     "tier1Kicker": "Mga madalas itanong",
@@ -244,6 +250,10 @@
     {
       "q": "Bakit walang numero sa talaan ng bayad?",
       "a": "Kapag walang nakapaskil na nakatakdang bayad, nakasulat na libre ang unang konsultasyon at may pormal na quotation pagkatapos makumpirma ang kailangan. Hindi inilalagay sa site ang numerong hindi pa tiyak."
+    },
+    {
+      "q": "Kayo ba mismo ang mag-aasikaso ng visa, padala ng pera, o legal at medikal na serbisyo?",
+      "a": "Hindi kami mismo ang nagbibigay ng visa, padala ng pera, o legal at medikal na serbisyo. Puwede naming pakinggan nang libre ang kailangan at tulungan kayong humanap ng legal na serbisyo."
     }
   ],
   "contact": {
@@ -254,12 +264,15 @@
     "social": "Social",
     "zaloLabel": "ZALO",
     "zaloBody": "Sa mga pahinang Vietnamese, puwede ring gamitin ang ZALO.",
-    "zaloSecondary": "Pangalawang channel"
+    "zaloSecondary": "Pangalawang channel",
+    "noLineBefore": "Hindi magamit ang LINE? Tumawag sa ",
+    "noLineMid": " o mag-email sa ",
+    "noLineAfter": "."
   },
   "footer": {
     "contact": "Kontak",
     "info": "Impormasyon",
-    "privacy": "Privacy (hindi kumukuha ng personal na datos ang site na ito)",
+    "privacy": "Privacy (walang inquiry form ang site)",
     "qual": "Saklaw at kwalipikasyon",
     "map": "Mapa ng site",
     "rights": "© 懿翔實業有限公司　CROSSING PROXY"
@@ -334,7 +347,7 @@
     "steps": [
       {
         "title": "Sabihin sa LINE",
-        "body": "Ban sa, uri ng bagay, timbang, at kung kailangan sunduin."
+        "body": "Bansang padalahan, laman, haba, lapad at taas, tunay na timbang, nasaan ang padala, at kung kailangan sunduin."
       },
       {
         "title": "Tingnan kung puwedeng ipadala",
@@ -367,7 +380,7 @@
     "docsKicker": "Bago magsimula",
     "docsTitle": "Mga papeles na maaaring kailanganin",
     "docsBody": "Kung aling papeles ang kailangan ay ipapaliwanag sa konsultasyon, ayon sa sitwasyon ninyo. Hindi inililista nang maaga ng pahinang ito ang uri ng dokumento.",
-    "noList": "Walang listahan ng sasakyan dito, at hindi puwedeng umorder sa website.",
+    "noList": "Sa ngayon, itinutugma namin ang kahilingan at tinutulungan nang personal. Inihahanda pa ang online na platform ng sasakyan.",
     "cta": "Gusto ninyong bumili, magbenta, o magrenta? Usap muna nang libre.",
     "faqTitle": "Mga tanong tungkol sa motorsiklo",
     "buySteps": [
@@ -391,7 +404,7 @@
     "faq": [
       {
         "q": "Puwede bang makakita ng motor o umorder sa website?",
-        "a": "Wala pang listahan ng sasakyan, at hindi tinatanggap ang order sa website. Magsimula sa LINE."
+        "a": "Sa ngayon, itinutugma namin ang kahilingan at tinutulungan nang personal. Inihahanda pa ang online na platform ng sasakyan. Magsimula sa LINE."
       },
       {
         "q": "Iba ba ang lugar ng renta at ng bili o benta?",
@@ -451,7 +464,8 @@
       "Hindi kinukuha, itinatago, o ipinapadala ng website na ito ang personal na datos na tina-type dito. Walang form at walang field.",
       "Ang button ng libreng konsultasyon ay magbubukas lang ng opisyal na LINE sa https://lin.ee/SQbAREU . Ang kasunod na usapan ay sa LINE at hinahawakan ng staff ng 懿翔實業有限公司.",
       "Ang wika at bansa ay naka-save lang sa device ninyo para maalala ang pinili. Hindi ipinapadala sa server namin.",
-      "Hindi naka-on ang analytics ng site."
+      "Hindi naka-on ang analytics ng site.",
+      "Walang inquiry form ang site na ito at hindi ito aktibong kumukuha ng personal na datos na tina-type ninyo. Maaari itong magkarga ng font at ibang panlabas na resource. Pagkatapos ninyong buksan ang LINE o isang social link, ang privacy policy ng platform na iyon ang susunod."
     ]
   },
   "mapPage": {
@@ -463,5 +477,8 @@
     "instagram": "Instagram",
     "threads": "Threads",
     "tiktok": "TikTok"
-  }
+  },
+  "trustStrip": "懿翔實業有限公司｜Tax ID 42700785｜Taong sumasagot sa ilang wika｜08:00–23:00",
+  "lineHint": "Pagbukas ng LINE, piliin ang serbisyong kailangan. Ayos lang kung kulang ang detalye; tatanungin namin kayo nang paunti-unti.",
+  "areaAsk": "Kahit wala kayo sa mga lugar sa itaas, puwede munang magtanong. Titingnan namin kung maaayos."
 }

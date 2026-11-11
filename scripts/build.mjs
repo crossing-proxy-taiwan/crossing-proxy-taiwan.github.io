@@ -65,6 +65,22 @@ function lineButton(ui, size) {
   return `<a class="${cls}" href="${esc(catalog.line.url)}" data-channel="line">${icon("chat")}<span class="btn-label">${esc(size === "sm" ? ui.nav.consult : ui.cta.line)}</span></a>`;
 }
 
+function lineHint(ui) {
+  return `<p class="line-hint">${esc(ui.lineHint)}</p>`;
+}
+
+function lineStack(ui, size) {
+  return `<div class="line-stack">${lineButton(ui, size)}${lineHint(ui)}</div>`;
+}
+
+function areaNote(ui) {
+  return `<p class="area-ask">${esc(ui.areaAsk)}</p>`;
+}
+
+function noLine(ui) {
+  return `<p class="no-line">${esc(ui.contact.noLineBefore)}<a href="tel:${esc(catalog.phoneTel)}">${esc(catalog.phone)}</a>${esc(ui.contact.noLineMid)}<a href="mailto:${esc(catalog.email)}">${esc(catalog.email)}</a>${esc(ui.contact.noLineAfter)}</p>`;
+}
+
 function hoursMeta(ui) {
   return `<div class="meta"><span>${icon("clock")}${esc(ui.hours)}</span><span>${icon("chat")}LINE ${esc(catalog.line.id)}</span></div>`;
 }
@@ -127,7 +143,7 @@ function priceSection(ui, priceId) {
 }
 
 function ctaBand(ui, heading) {
-  return `<section class="sec" id="contact"><div class="wrap"><div class="ctaband"><div><h2>${esc(heading)}</h2><p class="lead">${esc(ui.hours)}</p></div><div>${lineButton(ui, "lg")}${tips(ui)}</div></div></div></section>`;
+  return `<section class="sec" id="contact"><div class="wrap"><div class="ctaband"><div><h2>${esc(heading)}</h2><p class="lead">${esc(ui.hours)}</p></div><div>${lineStack(ui, "lg")}${tips(ui)}${noLine(ui)}</div></div></div></section>`;
 }
 
 function zhText(value) {
@@ -436,8 +452,10 @@ function homePage(lang, ui) {
   return `<section class="hero" id="top"><div class="wrap"><div>
     <p class="eyebrow">${esc(ui.hero.kicker)}</p>
     <h1>${esc(ui.hero.title)}</h1>
+    <nav class="hero-entries" aria-label="${esc(ui.hero.entriesLabel)}"><a href="${href(lang.id, "shipping/")}">${esc(ui.hero.entries[0])}</a><a href="${href(lang.id, "motorcycle/")}">${esc(ui.hero.entries[1])}</a><a href="${href(lang.id, "services/")}">${esc(ui.hero.entries[2])}</a></nav>
     <p class="sub">${esc(ui.hero.sub)}</p>
-    <div class="actions" data-hero-cta>${lineButton(ui, "lg")}<a class="btn lg ghost" href="#services">${esc(ui.cta.seeServices)}${icon("right")}</a></div>
+    <div class="actions" data-hero-cta>${lineStack(ui, "lg")}<a class="btn lg ghost" href="#services">${esc(ui.cta.seeServices)}${icon("right")}</a></div>
+    <p class="trust-strip">${esc(ui.trustStrip)}</p>
     ${tips(ui)}
     ${hoursMeta(ui)}
     ${languagesRow(ui)}
@@ -458,6 +476,7 @@ function homePage(lang, ui) {
   <section class="sec" id="countries"><div class="wrap">
     <div class="sh"><p class="kicker">${esc(ui.home.areasKicker)}</p><h2>${esc(ui.home.areasTitle)}</h2></div>
     ${areaTable(ui)}
+    ${areaNote(ui)}
   </div></section>
   <section class="sec alt" id="steps"><div class="wrap">
     <div class="sh"><p class="kicker">${esc(ui.home.stepsKicker)}</p><h2>${esc(ui.home.stepsTitle)} <span class="badge-ex">${esc(ui.home.stepsBadge)}</span></h2></div>
@@ -486,11 +505,11 @@ function contactGrid(lang, ui) {
   const socials = catalog.socials
     .map((item) => `<a href="${esc(item.url)}">${esc(ui.social[item.id])}</a>`)
     .join("");
-  return `<div class="contact"><div class="linecard"><p style="color:#e5ad69;font-weight:700">${esc(ui.contact.primary)}</p><h3>${esc(ui.contact.lineTitle)}</h3><p class="id">${esc(catalog.line.id)}</p><p>${esc(ui.hours)}</p>${lineButton(ui, "lg").replace('class="btn lg"', 'class="btn lg light"')}</div><div class="clist"><a class="ci" href="tel:${esc(catalog.phoneTel)}">${spanIcon("phone")}<span><small>${esc(ui.contact.phone)}</small><b>${esc(catalog.phone)}</b></span></a><a class="ci" href="mailto:${esc(catalog.email)}">${spanIcon("mail")}<span><small>${esc(ui.contact.email)}</small><b>${esc(catalog.email)}</b></span></a>${zalo}<div><p style="font-weight:700;color:#133447;margin-bottom:8px">${esc(ui.contact.social)}</p><div class="social">${socials}</div></div></div></div>`;
+  return `<div class="contact"><div class="linecard"><p class="line-kicker">${esc(ui.contact.primary)}</p><h3>${esc(ui.contact.lineTitle)}</h3><p class="id">${esc(catalog.line.id)}</p><p>${esc(ui.hours)}</p>${lineStack(ui, "lg").replace('class="btn lg"', 'class="btn lg light"')}</div><div class="clist"><a class="ci" href="tel:${esc(catalog.phoneTel)}">${spanIcon("phone")}<span><small>${esc(ui.contact.phone)}</small><b>${esc(catalog.phone)}</b></span></a><a class="ci" href="mailto:${esc(catalog.email)}">${spanIcon("mail")}<span><small>${esc(ui.contact.email)}</small><b>${esc(catalog.email)}</b></span></a>${zalo}<div><p class="social-label">${esc(ui.contact.social)}</p><div class="social">${socials}</div></div></div></div>${noLine(ui)}`;
 }
 
 function pageHero(lang, ui, { crumbItems, title, sub, aside }) {
-  return `<section class="phero"><div class="wrap"><div>${crumbs(lang, ui, crumbItems)}<h1>${esc(title)}</h1><p class="sub">${esc(sub)}</p><div class="actions" data-hero-cta>${lineButton(ui, "lg")}</div>${tips(ui)}${hoursMeta(ui)}</div>${aside || ""}</div></section>`;
+  return `<section class="phero"><div class="wrap"><div>${crumbs(lang, ui, crumbItems)}<h1>${esc(title)}</h1><p class="sub">${esc(sub)}</p><div class="actions" data-hero-cta>${lineStack(ui, "lg")}</div>${tips(ui)}${hoursMeta(ui)}</div>${aside || ""}</div></section>`;
 }
 
 function shippingAside(ui) {
@@ -531,7 +550,7 @@ function shippingPage(lang, ui) {
     aside: shippingAside(ui),
   })}
   <section class="sec"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.shipping.destKicker)}</p><h2>${esc(ui.shipping.destTitle)}</h2></div><div class="dest" data-reorder>${cards}</div></div></section>
-  <section class="sec alt"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.shipping.areaKicker)}</p><h2>${esc(ui.shipping.areaTitle)}</h2><p>${esc(ui.shipping.areaLead)}</p></div>${regionChips(ui, "shipping-pickup")}</div></section>
+  <section class="sec alt"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.shipping.areaKicker)}</p><h2>${esc(ui.shipping.areaTitle)}</h2><p>${esc(ui.shipping.areaLead)}</p></div>${regionChips(ui, "shipping-pickup")}${areaNote(ui)}</div></section>
   ${estimateSlot()}
   <section class="sec"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.shipping.flowKicker)}</p><h2>${esc(ui.shipping.flowTitle)} <span class="badge-ex">${esc(ui.home.stepsBadge)}</span></h2></div>${stepsGrid(flow)}</div></section>
   <section class="sec alt"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.shipping.noticeKicker)}</p><h2>${esc(ui.shipping.noticeTitle)}</h2><p>${esc(ui.shipping.noticeLead)}</p></div><div class="tabs" role="group" aria-label="${esc(ui.shipping.destKicker)}">${tabs}</div><div class="panel"><p><b id="notice-current">${esc(ui.countries[notice])}</b></p><ul class="plain">${ui.shipping.principles.map((item) => `<li>${esc(item)}</li>`).join("")}</ul></div></div></section>
@@ -587,7 +606,7 @@ function motorcyclePage(lang, ui) {
     sub: ui.motorcycle.sub,
     aside: scooterArt(ui),
   })}
-  <section class="sec"><div class="wrap"><p class="muted" style="margin-bottom:16px">${esc(ui.motorcycle.noList)}</p><div class="opt">${options}</div></div></section>
+  <section class="sec"><div class="wrap"><p class="moto-note">${esc(ui.motorcycle.noList)}</p><div class="opt">${options}</div>${areaNote(ui)}</div></section>
   <section class="sec alt"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.motorcycle.flowKicker)}</p><h2>${esc(ui.motorcycle.flowTitle)} <span class="badge-ex">${esc(ui.home.stepsBadge)}</span></h2></div>${motoFlows(ui)}</div></section>
   <section class="sec"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.motorcycle.docsKicker)}</p><h2>${esc(ui.motorcycle.docsTitle)}</h2></div><div class="panel"><p>${esc(ui.motorcycle.docsBody)}</p></div></div></section>
   ${priceSection(ui, "motorcycle")}
@@ -635,7 +654,7 @@ function simpleService(lang, ui, { pageId, path, title, sub, body, priceId, cta,
 }
 
 function simPage(lang, ui) {
-  const body = `<section class="sec"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.cards.sim.area)}</p><h2>${esc(ui.area.service)}</h2></div>${regionChips(ui, "sim-escort")}<div class="panel" style="margin-top:16px"><p>${esc(ui.simPage.note)}</p></div></div></section><section class="sec alt"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.home.stepsKicker)}</p><h2>${esc(ui.home.stepsTitle)} <span class="badge-ex">${esc(ui.home.stepsBadge)}</span></h2></div>${stepsGrid(ui.steps)}</div></section>`;
+  const body = `<section class="sec"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.cards.sim.area)}</p><h2>${esc(ui.area.service)}</h2></div>${regionChips(ui, "sim-escort")}${areaNote(ui)}<div class="panel area-spacing"><p>${esc(ui.simPage.note)}</p></div></div></section><section class="sec alt"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.home.stepsKicker)}</p><h2>${esc(ui.home.stepsTitle)} <span class="badge-ex">${esc(ui.home.stepsBadge)}</span></h2></div>${stepsGrid(ui.steps)}</div></section>`;
   return simpleService(lang, ui, {
     pageId: "sim",
     path: "services/sim/",
@@ -648,8 +667,8 @@ function simPage(lang, ui) {
 }
 
 function lifePage(lang, ui) {
-  const body = `<section class="sec" id="life"><div class="wrap"><div class="sh"><h2>${esc(ui.lifePage.lifeTitle)}</h2><p>${esc(ui.cards.life.summary)}</p></div>${areaLine(ui, ui.area.service, areaText(ui, "life-help"))}</div></section>
-  <section class="sec alt" id="aircon"><div class="wrap"><div class="sh"><h2>${esc(ui.lifePage.airconTitle)}</h2><p>${esc(ui.lifePage.airconLead)}</p></div><div class="chips">${ui.cards.aircon.chips.map((chip) => `<span class="chip">${esc(chip)}</span>`).join("")}</div><div style="margin-top:14px">${regionChips(ui, "aircon")}</div></div></section>
+  const body = `<section class="sec" id="life"><div class="wrap"><div class="sh"><h2>${esc(ui.lifePage.lifeTitle)}</h2><p>${esc(ui.cards.life.summary)}</p></div>${areaLine(ui, ui.area.service, areaText(ui, "life-help"))}${areaNote(ui)}</div></section>
+  <section class="sec alt" id="aircon"><div class="wrap"><div class="sh"><h2>${esc(ui.lifePage.airconTitle)}</h2><p>${esc(ui.lifePage.airconLead)}</p></div><div class="chips">${ui.cards.aircon.chips.map((chip) => `<span class="chip">${esc(chip)}</span>`).join("")}</div><div class="area-spacing">${regionChips(ui, "aircon")}${areaNote(ui)}</div></div></section>
   <section class="sec"><div class="wrap">${stepsGrid(ui.steps)}</div></section>`;
   return simpleService(lang, ui, {
     pageId: "life",
@@ -670,7 +689,7 @@ function translationPage(lang, ui) {
         `<article class="card" data-country="${esc(country.id)}" data-order="${index}"><h3>${esc(ui.price.items[pairKey[country.id]])}</h3><p class="d">${esc(ui.translationPage.pairBodies[country.id])}</p><span class="viewing">${esc(ui.viewing)}</span></article>`,
     )
     .join("");
-  const body = `<section class="sec"><div class="wrap"><p>${esc(ui.translationPage.note)}</p><div class="sh" style="margin-top:22px"><h2>${esc(ui.translationPage.pairsTitle)}</h2></div><div class="dest" data-reorder>${pairs}</div><p style="margin-top:12px">${areaLine(ui, ui.area.service, ui.area.online)}</p></div></section>
+  const body = `<section class="sec"><div class="wrap"><p>${esc(ui.translationPage.note)}</p><div class="sh sh-follow"><h2>${esc(ui.translationPage.pairsTitle)}</h2></div><div class="dest" data-reorder>${pairs}</div><div class="area-spacing">${areaLine(ui, ui.area.service, ui.area.online)}${areaNote(ui)}</div></div></section>
   <section class="sec alt" id="documents"><div class="wrap"><div class="sh"><h2>${esc(ui.translationPage.docsTitle)}</h2><p>${esc(ui.translationPage.docsLead)}</p></div>${areaLine(ui, ui.area.service, ui.area.online)}</div></section>`;
   return simpleService(lang, ui, {
     pageId: "translation",
@@ -684,7 +703,7 @@ function translationPage(lang, ui) {
 }
 
 function businessPage(lang, ui) {
-  const body = `<section class="sec"><div class="wrap"><div class="panel"><p>${esc(ui.businessPage.note)}</p></div><div style="margin-top:16px">${areaLine(ui, ui.area.service, ui.area.nationwideShort)}</div>${qualNote(ui)}</div></section><section class="sec alt"><div class="wrap">${stepsGrid(ui.steps)}</div></section>`;
+  const body = `<section class="sec"><div class="wrap"><div class="panel"><p>${esc(ui.businessPage.note)}</p></div><div class="area-spacing">${areaLine(ui, ui.area.service, ui.area.nationwideShort)}${areaNote(ui)}</div>${qualNote(ui)}</div></section><section class="sec alt"><div class="wrap">${stepsGrid(ui.steps)}</div></section>`;
   return `${pageHero(lang, ui, {
     crumbItems: [
       { path: "", label: ui.nav.home },
@@ -707,7 +726,7 @@ function aboutPage(lang, ui) {
     aside: "",
   })}
   <section class="sec"><div class="wrap"><div class="trust"><div class="card">${companyList(ui)}<p class="muted" style="margin-top:12px">${esc(ui.aboutPage.placeNote)} ${esc(ui.company.addressPlace)}</p></div>${qualNote(ui, "qualifications")}</div></div></section>
-  <section class="sec alt" id="countries"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.home.areasKicker)}</p><h2>${esc(ui.home.areasTitle)}</h2></div>${areaTable(ui)}</div></section>
+  <section class="sec alt" id="countries"><div class="wrap"><div class="sh"><p class="kicker">${esc(ui.home.areasKicker)}</p><h2>${esc(ui.home.areasTitle)}</h2></div>${areaTable(ui)}${areaNote(ui)}</div></section>
   ${ctaBand(ui, ui.menu.unsureTitle)}`;
 }
 
