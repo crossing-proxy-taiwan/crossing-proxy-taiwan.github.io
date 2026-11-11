@@ -1,25 +1,43 @@
-# 怎麼改語言、國家與服務
+# 怎麼改語言、國家、服務與價格
 
-結構在 `data/catalog.json`。六語文字在 `data/locales/zh.json`、`en.json`、`vi.json`、`id.json`、`th.json`、`fil.json`。六個語檔的鍵必須一致。
+結構在 `data/catalog.json`。七語文字在 `data/locales/zh.json`、`en.json`、`vi.json`、`id.json`、`th.json`、`fil.json`、`hi.json`。七個語檔的鍵必須一致。語言名稱永遠用母語原名：繁體中文、English、Tiếng Việt、Bahasa Indonesia、ไทย、Filipino、हिन्दी。
 
-新增服務：
+改完後執行：
 
-1. 在 `catalog.json` 的 `services` 加一筆。`status` 只能是 `open`、`referral`、`planned`、`paused`。未正式開通用 `planned`。
-2. `countries` 用 `["*"]` 表示不限國家，或用 `VN`、`ID`、`TH`、`PH`。
-3. `inquiry` 用現有的 `general`、`shipping`、`moto`、`rental`、`sim`、`documents`、`translate`、`pickup`、`enterprise`。
-4. 在六個語檔的 `services` 補上同一組欄位：`title`、`summary`、`audience`、`scope`、`documents`、`pricing`、`steps`、`limits`。
-5. 執行 `npm run build` 與 `npm run check`，把產生的 HTML 一起提交。
+```bash
+npm run build
+npm run check
+```
 
-新增國家：在 `catalog.json` 的 `countries` 加入代碼，並在每個語檔的 `countries` 加上原生名稱。然後把對應服務的 `countries` 指到新代碼。不要複製整站。
+把產生的 HTML 一起提交。
 
-新增介面語言：在 `catalog.json` 的 `langs` 加一筆，新增 `data/locales/<id>.json`，並在 `scripts/build.mjs` 的 `skipText` 補上「跳到內容」的譯文。
+## 價格
 
-## 規劃中的服務
+`data/catalog.json` 的 `prices` 每一筆都有 `published` 與 `items`。每一列有 `basePrice`、`currency`、`unit`、`surcharges`、`note`。
 
-`data/catalog.json` 的 `showPlannedServices` 目前是 `false`。六個語言頁面都不顯示規劃中的服務：篩選鈕、`#planned` 錨點、狀態為 `planned` 的卡片，以及卡片下方那句尚未開放的說明。這些內容仍留在產生的 HTML 裡，只是隱藏，也不會有導覽連結指過去。
+- `published` 不是 `true`，或 `basePrice` 是 `null`：公開頁只顯示服務名稱，以及該語言的「免費初步諮詢，確認需求後提供正式報價。」
+- 未來真的要公告價格時，把 `published` 設為 `true`，填入 `basePrice`（數字）、`unit`、`surcharges`、`note`，再重新建置。價目表會改成五欄：服務名稱、基本價格、計價單位、附加費、備註。不要填估計或範例數字。
 
-要重新顯示：把 `showPlannedServices` 改成 `true`，然後執行 `npm run build` 與 `npm run check`，並提交產生的頁面。
+服務名稱的譯文在各語檔的 `price.items`。
 
-語言與國家是分開的。語言由網址 `/zh/`、`/en/`、`/vi/`、`/id/`、`/th/`、`/fil/` 決定。國家由頁面上的選單決定，並記在 `localStorage` 的 `cp-country` 與 `?country=`。問句內容不會放進網址。
+## 車輛列表（尚未啟用）
 
-分析預設關閉。`data/analytics.json` 的 `enabled` 維持 `false`，直到有已審查的收集端點。事件只會送語言、服務 ID、國家代碼與渠道名稱，不送表單內文。
+`vehicles.enabled` 必須維持 `false`，`items` 維持空陣列。欄位只定義在 `vehicles.fields`：`id`、`mode`（`sale` 或 `rental`）、`brand`、`model`、`displacementCc`、`year`、`mileageKm`、`region`、`priceId`、`rentalTerms`、`photos`、`status`（`available`、`reserved` 或 `closed`）、`updatedAt`。
+
+不要放範例車輛。`enabled` 改成 `true` 之前，要先在 `scripts/build.mjs` 的 `listingsPage()` 寫好列表頁，否則建置會停止。列表頁預計路徑是 `/{lang}/motorcycle/listings/`。
+
+## 國際寄件試算（尚未啟用）
+
+`shippingEstimator.enabled` 必須維持 `false`。啟用後，`scripts/build.mjs` 的 `estimateSlot()` 會在國際寄件頁輸出 `#estimate`。現在不輸出任何試算器。
+
+## 語言與國家
+
+語言由網址決定。國家記在 `localStorage` 的 `cp-country`，也可以用 `?country=VN`。對應是：繁體中文與 English 為全部國家，Tiếng Việt 為越南，Bahasa Indonesia 為印尼，ไทย 為泰國，Filipino 為菲律賓，हिन्दी 為印度。使用者改過的國家會保留。國家只調整寄件目的國的預設與翻譯方向的排序，不隱藏其他服務。
+
+服務地區在 `areaSets`。新竹同時包含新竹市與新竹縣。
+
+## 不要放進網站的東西
+
+不要填假價格、假案例、假評價、假車輛、假統計或未公開的合作單位名稱。不要寫「認證合作夥伴」。不要加回詢問表單。家具與生活用品租賃不要出現。
+
+分析維持關閉。`data/analytics.json` 的 `enabled` 維持 `false`，直到有已審查的收集端點。

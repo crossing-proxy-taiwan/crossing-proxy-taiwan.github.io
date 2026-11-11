@@ -1,239 +1,328 @@
 const configNode = document.getElementById("cp-config");
-if (configNode) {
-  const config = JSON.parse(configNode.textContent);
-  const showPlannedServices = config.showPlannedServices === true;
-  const analytics = { enabled: false, endpoint: "" };
+const langsNode = document.getElementById("cp-langs");
 
+function readStore(key) {
   try {
-    localStorage.setItem("cp-lang", config.lang);
+    return localStorage.getItem(key) || "";
+  } catch (error) {
+    return "";
+  }
+}
+
+function writeStore(key, value) {
+  try {
+    localStorage.setItem(key, value);
   } catch (error) {
     /* Private mode can block storage. The page still works. */
   }
+}
 
-  const menuButton = document.querySelector(".fold-button");
-  const header = document.querySelector(".top");
-  if (menuButton && header) {
-    menuButton.addEventListener("click", () => {
-      const open = header.classList.toggle("menu-open");
-      menuButton.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    header.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        header.classList.remove("menu-open");
-        menuButton.setAttribute("aria-expanded", "false");
-      });
-    });
+function matchBrowser(list) {
+  const codes = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+  for (const code of codes) {
+    const value = String(code || "").toLowerCase();
+    if (value.startsWith("zh")) return "zh";
+    if (value.startsWith("vi")) return "vi";
+    if (value.startsWith("id")) return "id";
+    if (value.startsWith("th")) return "th";
+    if (value.startsWith("fil") || value.startsWith("tl")) return "fil";
+    if (value.startsWith("hi")) return "hi";
+    if (value.startsWith("en")) return "en";
   }
+  return list[0] ? list[0].id : "";
+}
 
-  const countrySelect = document.getElementById("country");
-  const cards = [...document.querySelectorAll("[data-countries]")];
-  const emptyNote = document.getElementById("filter-empty");
-  let view = "all";
-
-  function readCountry() {
-    const fromUrl = new URL(location.href).searchParams.get("country");
-    let stored = "";
-    try {
-      stored = localStorage.getItem("cp-country") || "";
-    } catch (error) {
-      stored = "";
+if (langsNode) {
+  const langs = JSON.parse(langsNode.textContent);
+  const suggested = matchBrowser(langs);
+  document.querySelectorAll("[data-pick-lang]").forEach((link) => {
+    const badge = link.querySelector(".suggest-badge");
+    if (badge && link.dataset.pickLang === suggested) {
+      badge.hidden = false;
+      link.classList.add("sug");
     }
-    const value = fromUrl || stored || "all";
-    const allowed = new Set(["all", "VN", "ID", "TH", "PH"]);
-    return allowed.has(value) ? value : "all";
-  }
-
-  function applyFilters(persistCountry) {
-    const country = countrySelect ? countrySelect.value : "all";
-    let shown = 0;
-    cards.forEach((card) => {
-      if (!showPlannedServices && card.dataset.status === "planned") {
-        card.hidden = true;
-        return;
-      }
-      const list = card.dataset.countries.split(",");
-      const countryOk = country === "all" || list.includes("*") || list.includes(country);
-      const viewOk =
-        view === "all" ||
-        (view === "open" && card.dataset.status === "open") ||
-        (view === "planned" && card.dataset.status === "planned") ||
-        (view === "country" && card.dataset.category === "country");
-      const visible = countryOk && viewOk;
-      card.hidden = !visible;
-      if (visible) shown += 1;
-    });
-    if (emptyNote) emptyNote.hidden = shown !== 0;
-    if (!persistCountry) return;
-    try {
-      localStorage.setItem("cp-country", country);
-    } catch (error) {
-      /* Ignore storage failures. */
-    }
-    const url = new URL(location.href);
-    if (country === "all") url.searchParams.delete("country");
-    else url.searchParams.set("country", country);
-    history.replaceState(null, "", url.pathname + url.search + url.hash);
-    track("country_change", { country });
-  }
-
-  if (countrySelect) {
-    countrySelect.value = readCountry();
-    applyFilters(false);
-    countrySelect.addEventListener("change", () => applyFilters(true));
-  }
-
-  document.querySelectorAll("[data-view]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const nextView = button.dataset.view || "all";
-      if (!showPlannedServices && nextView === "planned") return;
-      view = nextView;
-      document.querySelectorAll("[data-view]").forEach((item) => {
-        item.setAttribute("aria-pressed", item === button ? "true" : "false");
-      });
-      applyFilters(false);
-    });
-  });
-
-  document.querySelectorAll("[data-lang-switch]").forEach((link) => {
     link.addEventListener("click", () => {
-      const url = new URL(link.getAttribute("href"), location.origin);
-      const country = new URL(location.href).searchParams.get("country");
-      if (country) url.searchParams.set("country", country);
-      if (location.hash) url.hash = location.hash;
-      link.href = url.pathname + url.search + url.hash;
-      track("language_switch", { to: url.pathname });
+      writeStore("cp-lang", link.dataset.pickLang);
+      writeStore("cp-country", link.dataset.defaultCountry || "ALL");
+      writeStore("cp-country-source", "lang");
     });
   });
+  document.querySelectorAll(`[data-gate-note="${suggested}"]`).forEach((note) => note.classList.add("show"));
+}
 
-  document.querySelectorAll(".more").forEach((details) => {
-    details.addEventListener("toggle", () => {
-      if (!details.open) return;
-      const card = details.closest("[data-service]");
-      track("service_open", { service: card ? card.dataset.service : "" });
-    });
-  });
+if (configNode) {
+  const config = JSON.parse(configNode.textContent);
+  const live = document.getElementById("live");
+  const header = document.querySelector(".top");
+  const countryName = document.getElementById("country-name");
 
-  document.querySelectorAll("[data-channel]").forEach((link) => {
-    link.addEventListener("click", () => track("contact_channel", { channel: link.dataset.channel }));
-  });
+  writeStore("cp-lang", config.lang);
 
-  const dialog = document.getElementById("inquiry");
-  const intro = document.getElementById("inquiry-intro");
-  const serviceLine = document.getElementById("inquiry-service");
-  const fields = document.getElementById("inquiry-fields");
-  const output = document.getElementById("inquiry-output");
-  const copyButton = document.getElementById("inquiry-copy");
-  const status = document.getElementById("inquiry-status");
-  let lastFocus = null;
-  let activeService = "general";
-
-  function profileFor(serviceId) {
-    if (serviceId === "general") return { id: "general", profile: config.inquiry.profiles.general, title: "" };
-    const service = config.services[serviceId];
-    const profileName = service ? service.inquiry : "general";
-    return {
-      id: serviceId,
-      profile: config.inquiry.profiles[profileName] || config.inquiry.profiles.general,
-      title: service ? service.title : "",
-      status: service ? service.status : "",
-    };
-  }
-
-  function renderOutput() {
-    const current = profileFor(activeService);
-    const lines = [
-      "CROSSING PROXY",
-      `${config.inquiry.language}: ${config.langNative}`,
-    ];
-    if (current.title) {
-      lines.push(`${config.inquiry.service}: ${current.title}`);
-      lines.push(`${config.inquiry.status}: ${current.status}`);
-    }
-    fields.querySelectorAll("input, textarea").forEach((field) => {
-      lines.push(`${field.dataset.label}: ${field.value.trim()}`);
-    });
-    lines.push(config.lineId);
-    lines.push(config.inquiry.privacy);
-    output.value = lines.join("\n");
-  }
-
-  function openInquiry(serviceId) {
-    activeService = serviceId;
-    const current = profileFor(serviceId);
-    intro.textContent = current.profile.intro;
-    serviceLine.textContent = current.title ? `${config.inquiry.service}: ${current.title} · ${current.status}` : "";
-    fields.replaceChildren();
-    current.profile.fields.forEach((field) => {
-      const wrap = document.createElement("label");
-      wrap.className = "field";
-      wrap.textContent = field.label;
-      const input = document.createElement("input");
-      input.type = "text";
-      input.name = field.id;
-      input.placeholder = field.placeholder || "";
-      input.autocomplete = "off";
-      input.dataset.label = field.label;
-      input.addEventListener("input", renderOutput);
-      wrap.append(input);
-      fields.append(wrap);
-    });
-    status.textContent = "";
-    renderOutput();
-    lastFocus = document.activeElement;
-    if (typeof dialog.showModal === "function") dialog.showModal();
-    else dialog.setAttribute("open", "");
-    const first = fields.querySelector("input");
-    if (first) first.focus();
-    track(serviceId === "b2b-life" ? "enterprise_inquiry" : "inquiry_open", { service: serviceId });
-  }
-
-  document.querySelectorAll("[data-open-inquiry]").forEach((button) => {
-    button.addEventListener("click", () => openInquiry(button.dataset.openInquiry));
-  });
-
-  dialog.addEventListener("close", () => {
-    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
-  });
-
-  copyButton.addEventListener("click", async () => {
-    renderOutput();
-    let copied = false;
-    try {
-      await navigator.clipboard.writeText(output.value);
-      copied = true;
-    } catch (error) {
-      output.focus();
-      output.select();
-      copied = document.execCommand("copy");
-    }
-    status.textContent = copied ? config.inquiry.copied : config.inquiry.copyFailed;
-    if (copied) track("inquiry_copy", { service: activeService });
-  });
-
-  function track(name, detail) {
-    if (!analytics.enabled || !analytics.endpoint) return;
-    const payload = {
-      event: name,
-      lang: config.lang,
-      service: detail && detail.service ? detail.service : "",
-      country: countrySelect ? countrySelect.value : "",
-      channel: detail && detail.channel ? detail.channel : "",
-      to: detail && detail.to ? detail.to : "",
-    };
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(analytics.endpoint, new Blob([JSON.stringify(payload)], { type: "application/json" }));
+  const allowed = new Set(config.countries);
+  const url = new URL(location.href);
+  const fromUrl = url.searchParams.get("country");
+  let country = "";
+  let source = readStore("cp-country-source") || "lang";
+  if (fromUrl && allowed.has(fromUrl)) {
+    country = fromUrl;
+    source = "user";
+    writeStore("cp-country", country);
+    writeStore("cp-country-source", "user");
+  } else {
+    const stored = readStore("cp-country");
+    if (stored && allowed.has(stored)) country = stored;
+    else {
+      country = config.defaultCountry;
+      source = "lang";
+      writeStore("cp-country", country);
+      writeStore("cp-country-source", "lang");
     }
   }
 
-  fetch("/data/analytics.json")
-    .then((response) => (response.ok ? response.json() : null))
-    .then((data) => {
-      if (!data || data.enabled !== true || !data.endpoint) return;
-      analytics.enabled = true;
-      analytics.endpoint = data.endpoint;
-      track("page_view");
-    })
-    .catch(() => {
-      /* Analytics stays off when it is not configured. */
+  function say(message) {
+    if (!live) return;
+    live.textContent = "";
+    window.setTimeout(() => {
+      live.textContent = message;
+    }, 40);
+  }
+
+  function fill(template, name) {
+    return template.replace("{name}", name);
+  }
+
+  function applyCountry(announce) {
+    const name = config.labels[country] || country;
+    document.querySelectorAll("[data-country-press]").forEach((button) => {
+      const on = button.dataset.countryPress === country;
+      button.setAttribute("aria-pressed", on ? "true" : "false");
     });
+    document.querySelectorAll("[data-reorder]").forEach((group) => {
+      const items = [...group.children];
+      items.sort((a, b) => {
+        const aHit = a.dataset.country === country && country !== "ALL" ? 0 : 1;
+        const bHit = b.dataset.country === country && country !== "ALL" ? 0 : 1;
+        const aOrder = Number(a.dataset.order || 0);
+        const bOrder = Number(b.dataset.order || 0);
+        return aHit - bHit || aOrder - bOrder;
+      });
+      items.forEach((item) => group.appendChild(item));
+    });
+    document.querySelectorAll("[data-country]").forEach((node) => {
+      if (!node.dataset.order) return;
+      node.classList.toggle("is-current", country !== "ALL" && node.dataset.country === country);
+    });
+    if (countryName) countryName.textContent = name;
+    const noticeCountry = country === "ALL" ? config.countries.find((item) => item !== "ALL") : country;
+    const notice = document.getElementById("notice-current");
+    if (notice) notice.textContent = config.labels[noticeCountry] || name;
+    document.querySelectorAll("[data-notice]").forEach((button) => {
+      const on = button.dataset.notice === noticeCountry;
+      button.setAttribute("aria-pressed", on ? "true" : "false");
+      button.classList.toggle("on", on);
+    });
+    if (announce) say(fill(config.live.country, name));
+  }
+
+  applyCountry(false);
+  window.setTimeout(() => say(fill(config.live.language, config.native)), 300);
+
+  document.querySelectorAll("[data-country-press]").forEach((button) => {
+    button.addEventListener("click", () => {
+      country = button.dataset.countryPress;
+      source = "user";
+      writeStore("cp-country", country);
+      writeStore("cp-country-source", "user");
+      const next = new URL(location.href);
+      if (country === "ALL") next.searchParams.delete("country");
+      else next.searchParams.set("country", country);
+      history.replaceState(null, "", next.pathname + next.search + next.hash);
+      applyCountry(true);
+    });
+  });
+
+  document.querySelectorAll("[data-notice]").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll("[data-notice]").forEach((item) => {
+        const on = item === button;
+        item.setAttribute("aria-pressed", on ? "true" : "false");
+        item.classList.toggle("on", on);
+      });
+      const notice = document.getElementById("notice-current");
+      if (notice) notice.textContent = config.labels[button.dataset.notice] || "";
+    });
+  });
+
+  document.querySelectorAll("[data-lang]").forEach((link) => {
+    link.addEventListener("click", () => {
+      const id = link.dataset.lang;
+      const fallback = link.dataset.defaultCountry || "ALL";
+      writeStore("cp-lang", id);
+      if (source !== "user") {
+        writeStore("cp-country", fallback);
+        writeStore("cp-country-source", "lang");
+      } else if (country && country !== "ALL") {
+        const href = new URL(link.getAttribute("href"), location.origin);
+        href.searchParams.set("country", country);
+        if (location.hash) href.hash = location.hash;
+        link.href = href.pathname + href.search + href.hash;
+      } else if (location.hash) {
+        const href = new URL(link.getAttribute("href"), location.origin);
+        href.hash = location.hash;
+        link.href = href.pathname + href.search + href.hash;
+      }
+    });
+  });
+
+  const panels = [
+    ["mega", "[data-open='mega']"],
+    ["lang-panel", "[data-open='lang-panel']"],
+    ["mobile-menu", "[data-open='mobile-menu']"],
+  ];
+
+  function closePanels(except) {
+    panels.forEach(([id]) => {
+      if (id === except) return;
+      const panel = document.getElementById(id);
+      if (!panel || panel.hidden) return;
+      panel.hidden = true;
+      document.querySelectorAll(`[data-open='${id}']`).forEach((button) => button.setAttribute("aria-expanded", "false"));
+    });
+    document.body.classList.remove("menu-open");
+    updateDock();
+    const menuButton = document.querySelector("[data-open='mobile-menu']");
+    if (menuButton && document.getElementById("mobile-menu")?.hidden) {
+      menuButton.setAttribute("aria-label", config.openMenu);
+    }
+  }
+
+  function toggle(id, button) {
+    const panel = document.getElementById(id);
+    if (!panel) return;
+    const willOpen = panel.hidden;
+    closePanels(willOpen ? id : "");
+    panel.hidden = !willOpen;
+    document.querySelectorAll(`[data-open='${id}']`).forEach((item) => item.setAttribute("aria-expanded", willOpen ? "true" : "false"));
+    if (id === "mobile-menu") {
+      document.body.classList.toggle("menu-open", willOpen);
+      button.setAttribute("aria-label", willOpen ? config.closeMenu : config.openMenu);
+    }
+    updateDock();
+    if (willOpen) {
+      const focusable = panel.querySelector("a, button");
+      if (focusable) focusable.focus();
+    }
+  }
+
+  document.querySelectorAll("[data-open]").forEach((button) => {
+    button.addEventListener("click", () => toggle(button.dataset.open, button));
+  });
+
+  document.querySelectorAll("[data-fold]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = document.getElementById(button.dataset.fold);
+      if (!panel) return;
+      const willOpen = panel.hidden;
+      panel.hidden = !willOpen;
+      button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      const mark = button.querySelector("span");
+      if (mark) mark.textContent = willOpen ? "–" : "+";
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      const opener = document.querySelector("[aria-expanded='true']");
+      closePanels("");
+      if (opener) opener.focus();
+      return;
+    }
+    if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+    const panel = [...document.querySelectorAll("#mega, #lang-panel, #mobile-menu")].find((item) => !item.hidden);
+    if (!panel || !panel.contains(document.activeElement)) return;
+    const items = [...panel.querySelectorAll("a, button")].filter((item) => !item.hidden && item.getClientRects().length);
+    const index = items.indexOf(document.activeElement);
+    if (index < 0) return;
+    event.preventDefault();
+    const next = event.key === "ArrowDown" ? (index + 1) % items.length : (index - 1 + items.length) % items.length;
+    items[next].focus();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header) return;
+    if (header.contains(event.target)) return;
+    closePanels("");
+  });
+
+  document.querySelectorAll("[role='tablist']").forEach((list) => {
+    const tabs = [...list.querySelectorAll("[role='tab']")];
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectTab(tabs, tab));
+      tab.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft" && event.key !== "Home" && event.key !== "End") return;
+        event.preventDefault();
+        let next = index;
+        if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+        if (event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "Home") next = 0;
+        if (event.key === "End") next = tabs.length - 1;
+        selectTab(tabs, tabs[next]);
+        tabs[next].focus();
+      });
+    });
+  });
+
+  function selectTab(tabs, tab) {
+    tabs.forEach((item) => {
+      const on = item === tab;
+      item.setAttribute("aria-selected", on ? "true" : "false");
+      item.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(item.getAttribute("aria-controls"));
+      if (panel) panel.hidden = !on;
+    });
+  }
+
+  const nav = document.querySelector(".nav");
+  function measure() {
+    if (!header || !nav) return;
+    const mobile = window.matchMedia("(max-width: 1039px)").matches;
+    header.classList.remove("collapsed", "tight");
+    if (mobile) return;
+    if (nav.scrollWidth > nav.clientWidth + 1) header.classList.add("collapsed");
+    const bar = header.querySelector(".bar");
+    if (bar && bar.scrollWidth > bar.clientWidth + 1) header.classList.add("tight");
+  }
+  measure();
+  window.addEventListener("resize", measure);
+  if (window.ResizeObserver && nav) new ResizeObserver(measure).observe(nav);
+
+  const heroCta = document.querySelector("[data-hero-cta]");
+  const contact = document.getElementById("contact");
+  let heroGone = false;
+  let contactSeen = false;
+  function updateDock() {
+    const mobile = window.matchMedia("(max-width: 1039px)").matches;
+    document.body.classList.toggle("dock-on", mobile && heroGone && !contactSeen && !document.body.classList.contains("menu-open"));
+  }
+  if (heroCta && "IntersectionObserver" in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        heroGone = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      });
+      updateDock();
+    }).observe(heroCta);
+  }
+  if (contact && "IntersectionObserver" in window) {
+    new IntersectionObserver((entries) => {
+      contactSeen = entries.some((entry) => entry.isIntersecting);
+      updateDock();
+    }, { rootMargin: "0px 0px -70px 0px" }).observe(contact);
+  }
+  window.addEventListener("resize", updateDock);
+
+  const retired = config.legacy || {};
+  const hash = location.hash.replace("#", "");
+  if (hash && retired[hash] && !document.getElementById(hash)) {
+    location.replace(`${location.pathname}${location.search}#${retired[hash]}`);
+  }
 }

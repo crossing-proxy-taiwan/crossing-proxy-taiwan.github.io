@@ -5,10 +5,24 @@
     "en": "CROSSING PROXY"
   },
   "tagline": "Your Life in Taiwan, Made Easier.",
-  "theme": "Connecting People, Simplifying Life in Taiwan.",
+  "company": {
+    "name": "懿翔實業有限公司",
+    "taxId": "42700785",
+    "representative": "陳垠中",
+    "address": "台北市士林區通河東街一段200巷2號4樓",
+    "hours": "08:00–23:00",
+    "firstReply": "通常1小時內"
+  },
   "line": {
     "id": "@681ydjcz",
     "url": "https://lin.ee/SQbAREU"
+  },
+  "phone": "0923-870-421",
+  "phoneTel": "+886923870421",
+  "email": "crossingproxy.tw@gmail.com",
+  "zalo": {
+    "display": "+886 907246207",
+    "url": "https://zalo.me/886907246207"
   },
   "socials": [
     {
@@ -21,7 +35,7 @@
     },
     {
       "id": "threads",
-      "url": "https://www.threads.net/@crossing_proxy"
+      "url": "https://www.threads.com/@crossing_proxy"
     },
     {
       "id": "tiktok",
@@ -29,132 +43,260 @@
     }
   ],
   "langs": [
-    { "id": "zh", "html": "zh-Hant", "og": "zh_TW", "native": "繁體中文" },
-    { "id": "en", "html": "en", "og": "en_US", "native": "English" },
-    { "id": "vi", "html": "vi", "og": "vi_VN", "native": "Tiếng Việt" },
-    { "id": "id", "html": "id", "og": "id_ID", "native": "Bahasa Indonesia" },
-    { "id": "th", "html": "th", "og": "th_TH", "native": "ไทย" },
-    { "id": "fil", "html": "fil", "og": "fil_PH", "native": "Filipino" }
+    { "id": "zh", "html": "zh-Hant", "og": "zh_TW", "native": "繁體中文", "defaultCountry": "ALL" },
+    { "id": "en", "html": "en", "og": "en_US", "native": "English", "defaultCountry": "ALL" },
+    { "id": "vi", "html": "vi", "og": "vi_VN", "native": "Tiếng Việt", "defaultCountry": "VN", "secondaryChannel": "zalo" },
+    { "id": "id", "html": "id", "og": "id_ID", "native": "Bahasa Indonesia", "defaultCountry": "ID" },
+    { "id": "th", "html": "th", "og": "th_TH", "native": "ไทย", "defaultCountry": "TH" },
+    { "id": "fil", "html": "fil", "og": "fil_PH", "native": "Filipino", "defaultCountry": "PH" },
+    { "id": "hi", "html": "hi", "og": "hi_IN", "native": "हिन्दी", "defaultCountry": "IN" }
   ],
-  "countries": ["VN", "ID", "TH", "PH"],
-  "showPlannedServices": false,
+  "countries": [
+    { "id": "VN", "shipping": "open" },
+    { "id": "TH", "shipping": "open" },
+    { "id": "ID", "shipping": "open" },
+    { "id": "PH", "shipping": "open" },
+    { "id": "IN", "shipping": "open" }
+  ],
+  "regions": [
+    "keelung",
+    "taipei",
+    "new-taipei",
+    "taoyuan",
+    "yilan",
+    "hsinchu-city",
+    "hsinchu-county"
+  ],
+  "areaSets": {
+    "shipping-pickup": {
+      "type": "list",
+      "regions": ["keelung", "taipei", "new-taipei", "taoyuan", "yilan", "hsinchu-city", "hsinchu-county"]
+    },
+    "moto-trade": { "type": "nationwide" },
+    "moto-rental": {
+      "type": "list",
+      "regions": ["taipei", "new-taipei", "keelung"]
+    },
+    "sim-escort": {
+      "type": "list",
+      "regions": ["hsinchu-city", "hsinchu-county", "taoyuan", "new-taipei", "taipei", "keelung", "yilan"]
+    },
+    "aircon": {
+      "type": "list",
+      "regions": ["taoyuan", "new-taipei", "taipei", "keelung", "yilan"]
+    },
+    "online": { "type": "online-nationwide" },
+    "b2b": { "type": "nationwide-short" },
+    "life-help": { "type": "life-help" }
+  },
+  "home": {
+    "tier1": ["shipping", "moto", "sim"],
+    "tier2": ["life", "aircon"],
+    "tier3": ["translate", "documents", "b2b"]
+  },
+  "nav": [
+    { "id": "home", "path": "" },
+    { "id": "shipping", "path": "shipping/" },
+    { "id": "motorcycle", "path": "motorcycle/" },
+    { "id": "services", "path": "services/", "menu": true },
+    { "id": "business", "path": "business/" },
+    { "id": "about", "path": "about/" }
+  ],
+  "serviceMenu": [
+    { "id": "simGroup", "items": ["sim"] },
+    { "id": "lifeGroup", "items": ["life", "aircon"] },
+    { "id": "docGroup", "items": ["translate", "documents"] }
+  ],
+  "pages": [
+    { "id": "home", "path": "" },
+    { "id": "shipping", "path": "shipping/" },
+    { "id": "motorcycle", "path": "motorcycle/" },
+    { "id": "services", "path": "services/" },
+    { "id": "sim", "path": "services/sim/" },
+    { "id": "life", "path": "services/life/" },
+    { "id": "translation", "path": "services/translation/" },
+    { "id": "business", "path": "business/" },
+    { "id": "about", "path": "about/" },
+    { "id": "privacy", "path": "privacy/" },
+    { "id": "map", "path": "sitemap/" }
+  ],
   "services": [
     {
-      "id": "translate-vi",
-      "category": "common",
-      "countries": ["VN"],
+      "id": "shipping",
+      "tier": 1,
+      "page": "shipping/",
       "status": "open",
-      "home": true,
-      "icon": "translate",
-      "inquiry": "translate"
+      "areaSet": "shipping-pickup",
+      "countries": ["VN", "TH", "ID", "PH", "IN"],
+      "icon": "parcel",
+      "legacyIds": ["service-ship-vn", "service-pickup", "service-ship-other"]
     },
     {
-      "id": "documents",
-      "category": "common",
-      "countries": ["*"],
+      "id": "moto",
+      "tier": 1,
+      "page": "motorcycle/",
       "status": "open",
-      "home": true,
-      "icon": "file",
-      "inquiry": "documents"
-    },
-    {
-      "id": "moto-sale",
-      "category": "common",
-      "countries": ["*"],
-      "status": "open",
-      "home": true,
       "icon": "scooter",
-      "inquiry": "moto"
+      "legacyIds": ["service-moto-sale", "service-moto-rental"]
     },
     {
       "id": "sim",
-      "category": "common",
-      "countries": ["*"],
+      "tier": 1,
+      "navGroup": "services",
+      "page": "services/sim/",
       "status": "open",
-      "home": true,
+      "areaSet": "sim-escort",
+      "countries": ["*"],
       "icon": "sim",
-      "inquiry": "sim"
+      "legacyIds": ["service-sim"]
     },
     {
-      "id": "life-help",
-      "category": "common",
-      "countries": ["*"],
+      "id": "life",
+      "tier": 2,
+      "navGroup": "services",
+      "page": "services/life/",
       "status": "open",
-      "home": true,
+      "areaSet": "life-help",
+      "countries": ["*"],
       "icon": "life",
-      "inquiry": "general"
+      "legacyIds": ["service-life-help"]
     },
     {
-      "id": "pickup",
-      "category": "common",
+      "id": "aircon",
+      "tier": 2,
+      "navGroup": "services",
+      "page": "services/life/#aircon",
+      "status": "open",
+      "areaSet": "aircon",
       "countries": ["*"],
+      "icon": "aircon"
+    },
+    {
+      "id": "translate",
+      "tier": 3,
+      "navGroup": "services",
+      "page": "services/translation/",
       "status": "open",
-      "home": true,
-      "icon": "pickup",
-      "inquiry": "pickup"
-    },
-    {
-      "id": "ship-vn",
-      "category": "country",
-      "countries": ["VN"],
-      "status": "open",
-      "home": true,
-      "icon": "parcel",
-      "inquiry": "shipping"
-    },
-    {
-      "id": "vn-papers",
-      "category": "country",
-      "countries": ["VN"],
-      "status": "open",
-      "home": true,
-      "icon": "file",
-      "inquiry": "documents"
-    },
-    {
-      "id": "ship-other",
-      "category": "country",
-      "countries": ["ID", "TH", "PH"],
-      "status": "planned",
-      "home": true,
-      "icon": "parcel",
-      "inquiry": "shipping"
-    },
-    {
-      "id": "translate-more",
-      "category": "expansion",
+      "areaSet": "online",
       "countries": ["*"],
-      "status": "planned",
-      "home": true,
       "icon": "translate",
-      "inquiry": "translate"
+      "legacyIds": ["service-translate-vi", "service-translate-more"]
     },
     {
-      "id": "moto-rental",
-      "category": "expansion",
+      "id": "documents",
+      "tier": 3,
+      "navGroup": "services",
+      "page": "services/translation/#documents",
+      "status": "open",
+      "areaSet": "online",
       "countries": ["*"],
-      "status": "planned",
-      "home": true,
-      "icon": "scooter",
-      "inquiry": "rental"
+      "icon": "file",
+      "legacyIds": ["service-documents", "service-vn-papers"]
     },
     {
-      "id": "goods-rental",
-      "category": "expansion",
+      "id": "b2b",
+      "tier": 3,
+      "page": "business/",
+      "status": "open",
+      "areaSet": "b2b",
       "countries": ["*"],
-      "status": "planned",
-      "home": true,
-      "icon": "sofa",
-      "inquiry": "rental"
-    },
-    {
-      "id": "b2b-life",
-      "category": "expansion",
-      "countries": ["*"],
-      "status": "planned",
-      "home": true,
       "icon": "building",
-      "inquiry": "enterprise"
+      "legacyIds": ["service-b2b-life", "business"]
     }
+  ],
+  "prices": [
+    {
+      "id": "shipping",
+      "published": false,
+      "items": [
+        { "id": "ship", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "pickup", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null }
+      ]
+    },
+    {
+      "id": "motorcycle",
+      "published": false,
+      "items": [
+        { "id": "moto-sale", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "moto-rent", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null }
+      ]
+    },
+    {
+      "id": "sim",
+      "published": false,
+      "items": [
+        { "id": "sim", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null }
+      ]
+    },
+    {
+      "id": "life",
+      "published": false,
+      "items": [
+        { "id": "life", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "aircon-assess", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "aircon-install", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "aircon-repair", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "aircon-clean", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null }
+      ]
+    },
+    {
+      "id": "translation",
+      "published": false,
+      "items": [
+        { "id": "tr-vi", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "tr-th", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "tr-id", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "tr-ph", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "tr-hi", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null },
+        { "id": "documents", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null }
+      ]
+    },
+    {
+      "id": "business",
+      "published": false,
+      "items": [
+        { "id": "b2b", "basePrice": null, "currency": "TWD", "unit": null, "surcharges": [], "note": null }
+      ]
+    }
+  ],
+  "vehicles": {
+    "enabled": false,
+    "items": [],
+    "fields": [
+      "id",
+      "mode",
+      "brand",
+      "model",
+      "displacementCc",
+      "year",
+      "mileageKm",
+      "region",
+      "priceId",
+      "rentalTerms",
+      "photos",
+      "status",
+      "updatedAt"
+    ]
+  },
+  "shippingEstimator": {
+    "enabled": false,
+    "destinations": ["VN", "TH", "ID", "PH", "IN"],
+    "inputs": ["weightKg", "sizeCm", "category", "homePickup"],
+    "rateTable": null
+  },
+  "legacyHash": {
+    "planned": "services",
+    "cases": "about",
+    "service-goods-rental": "services"
+  },
+  "areaRows": [
+    { "id": "shipping", "areaSet": "shipping-pickup" },
+    { "id": "motoTrade", "areaSet": "moto-trade" },
+    { "id": "motoRent", "areaSet": "moto-rental" },
+    { "id": "sim", "areaSet": "sim-escort" },
+    { "id": "aircon", "areaSet": "aircon" },
+    { "id": "translate", "areaSet": "online" },
+    { "id": "b2b", "areaSet": "b2b" },
+    { "id": "life", "areaSet": "life-help" }
   ]
 }
