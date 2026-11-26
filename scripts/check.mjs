@@ -225,6 +225,54 @@ for (const [code, spec] of Object.entries(flagSpec)) {
   }
 }
 
+const siteJs = readFileSync(join(root, "assets/js/site.js"), "utf8");
+const sensitiveStart = siteJs.indexOf("function looksSensitive");
+const sensitiveEnd = siteJs.indexOf("function enteredText");
+if (sensitiveStart < 0 || sensitiveEnd < sensitiveStart) errors.push("sensitive detector missing");
+else {
+  const looksSensitive = new Function(
+    "config",
+    `${siteJs.slice(sensitiveStart, sensitiveEnd)}\nreturn looksSensitive;`,
+  )({ lineId: "@681ydjcz" });
+  const allowedSamples = [
+    "2026-11-26",
+    "2026/11/26",
+    "26.11.2026",
+    "2026年11月26日",
+    "2026年11月",
+    "11月26日",
+    "20261126",
+    "NT$1,200",
+    "NT$120000",
+    "TWD 12,500.50",
+    "$1,234",
+    "1,500,000元",
+    "300元",
+    "0912345678",
+    "0912-345-678",
+    "02-12345678",
+    "+886912345678",
+    "訂單 20261126001",
+    "Order AB-88421",
+    "No. 884213",
+    "#20261126",
+    "@681ydjcz",
+  ];
+  const blockedSamples = [
+    "A123456789",
+    "A812345678",
+    "AC12345678",
+    "E12345678",
+    "護照 123456789",
+  ];
+  for (const sample of allowedSamples) {
+    if (looksSensitive(sample)) errors.push(`false positive ${sample}`);
+  }
+  for (const sample of blockedSamples) {
+    if (!looksSensitive(sample)) errors.push(`missed id ${sample}`);
+  }
+}
+
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

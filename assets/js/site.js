@@ -233,7 +233,20 @@ if (configNode) {
     scan = scan.replace(/\b\d{4}[-/.]\d{1,2}[-/.]\d{1,2}\b/g, " ");
     scan = scan.replace(/\b\d{1,2}[-/.]\d{1,2}[-/.]\d{4}\b/g, " ");
     scan = scan.replace(/\b\d{4}[-/.]\d{1,2}\b/g, " ");
-    return /\d{6,}/.test(scan);
+    scan = scan.replace(/\b(?:19|20)\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])\b/g, " ");
+    scan = scan.replace(/(?:NT\$|TWD|USD|\$|＄)\s*\d{1,3}(?:,\d{3})*(?:\.\d+)?/gi, " ");
+    scan = scan.replace(/(?:NT\$|TWD|USD|\$|＄)\s*\d+(?:\.\d+)?/gi, " ");
+    scan = scan.replace(/\b\d{1,3}(?:,\d{3})+(?:\.\d+)?\s*(?:元|塊)?/g, " ");
+    scan = scan.replace(/\b\d+(?:\.\d+)?\s*元/g, " ");
+    scan = scan.replace(/(?:\+?886[-\s]?|0)9\d{2}[-\s]?\d{3}[-\s]?\d{3}/g, " ");
+    scan = scan.replace(/\b09\d{8}\b/g, " ");
+    scan = scan.replace(/\b0\d{1,2}[-\s]\d{3,4}[-\s]\d{4}\b/g, " ");
+    scan = scan.replace(/\+\d{8,15}\b/g, " ");
+    scan = scan.replace(/(?:訂單|單號|order|ord|no\.?|#)\s*[:：]?\s*[A-Z0-9-]{4,}/gi, " ");
+    if (/\b[A-Z][1289]\d{8}\b/i.test(scan)) return true;
+    if (/\b[A-Z]{2}\d{8}\b/i.test(scan)) return true;
+    if (/\b[A-Z]{1,2}\d{7,9}\b/i.test(scan)) return true;
+    return /\b\d{9}\b/.test(scan);
   }
 
   function enteredText() {

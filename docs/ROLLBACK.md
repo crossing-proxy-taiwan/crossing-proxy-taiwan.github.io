@@ -13,19 +13,21 @@
 
 ## 已經合併、要退回舊版
 
-用一個新的提交把 `main` 的檔案樹恢復成標籤內容。不要 force-push。
+用一個新的提交把 `main` 的檔案樹恢復成標籤內容。不要 force-push。只執行 `git checkout v1-before-v2.0 -- .` 會留下 V2.0 新增、標籤裡沒有的檔案，Pages 仍會把它們公開。所以要先刪掉目前追蹤的檔案，再取出標籤內容。
 
 ```bash
 git fetch origin --tags
 git checkout main
 git pull origin main
+git rm -r --quiet .
 git checkout v1-before-v2.0 -- .
+git add -A
 git status
 git commit -m "Restore the public site to v1-before-v2.0"
 git push origin main
 ```
 
-推上 `main` 之後，GitHub Pages 會用 legacy 模式從根目錄重新發布。可用這支指令再要求一次建置：
+推上 `main` 之後，GitHub Pages 會用 legacy 模式從根目錄重新發布。若要再要求一次建置：
 
 ```bash
 gh api --method POST repos/crossing-proxy-taiwan/crossing-proxy-taiwan.github.io/pages/builds
