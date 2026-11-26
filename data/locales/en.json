@@ -4,7 +4,7 @@
   "position": "CROSSING PROXY is a one-stop life-service partner for foreign residents in Taiwan.",
   "heroLead": "Document help, driver's license assistance, translation, motorbike sales, cross-border shipping, and everyday services, so each step in Taiwan is simpler.",
   "heroPoints": [
-    "Who we are: CROSSING PROXY, also called 越境代辦, a life-service partner for foreign residents in Taiwan.",
+    "Who we are: CROSSING PROXY, a life-service partner for foreign residents in Taiwan.",
     "What you can ask about: documents, a driver's license, Chinese–Vietnamese translation, motorbike sales, SIM cards, shipping, and daily questions. Rentals and company plans are in preparation.",
     "Language and country are separate. There are six language pages. A flag only filters services.",
     "Where to start: choose a flag, open a service, read the status and limits, then ask on LINE.",
@@ -125,7 +125,7 @@
   "trustItems": [
     {
       "title": "Confirmed",
-      "body": "The brand is CROSSING PROXY / 越境代辦. The LINE official account is @681ydjcz. This site has six language pages."
+      "body": "The brand is CROSSING PROXY. The LINE official account is @681ydjcz. This site has six language pages."
     },
     {
       "title": "Service status",
@@ -162,7 +162,7 @@
     },
     {
       "q": "What cannot be shipped to Vietnam?",
-      "a": "From the owner's own public guidance: meat and meat products are not accepted; batteries and power banks are restricted; liquids and medicine are usually restricted too. Rules change, so confirm again before you ship. The full prohibited-item text from the old website could not be recovered from the suspended account, so this is not that original list."
+      "a": "Meat and meat products are not accepted; batteries and power banks are restricted; liquids and medicine are usually restricted too. Rules change, so confirm again before you ship."
     },
     {
       "q": "Can I rent a scooter or furniture?",
@@ -480,7 +480,7 @@
     "sensitiveBlock": "This message has a long run of digits that looks like an ID number. Remove any passport, ARC, or national ID number before copying. A normal date and the LINE ID are not treated as an ID number."
   },
   "dock": "Ask now",
-  "footerNote": "Static site. This V2.0 does not replace the public site until it is merged into main.",
+  "footerNote": "This site is available in six languages.",
   "pendingStrip": "Address, licenses, the team, partners, and client stories stay off this site until the operator confirms them.",
   "legal": [
     "These notes follow the direction of current Taiwan rules. They are not legal advice. Immigration, visas, residence permits, private employment services, transport and shipping permits, and scooter-rental contracts and insurance are not offered as something we can do directly, or as a partner referral, until the owner confirms the qualification or a real licensed partner.",
@@ -492,7 +492,7 @@
   ],
   "root": {
     "title": "Choose a language",
-    "lead": "CROSSING PROXY｜越境代辦. Each of the six languages is a full one-page site. We do not force a redirect based on your browser language.",
+    "lead": "CROSSING PROXY. Each of the six languages is a full one-page site. We do not force a redirect based on your browser language.",
     "suggest": "You last used",
     "choose": "Choose one language",
     "browser": "Your browser language may be closer to"
@@ -595,7 +595,7 @@
         "We confirm whether we can take them and send a quote",
         "Hand them over only after you agree"
       ],
-      "limits": "Meat and meat products are not accepted. Batteries and power banks are restricted. Liquids and medicine are usually restricted. Rules change, so confirm the latest rule before shipping. The full prohibited-item text from the old website has not been recovered, so this paragraph is not that original list. Whether the required transport permits are in place is pending."
+      "limits": "Meat and meat products are not accepted. Batteries and power banks are restricted. Liquids and medicine are usually restricted. Rules change, so confirm the latest rule before shipping. Whether the required transport permits are in place is pending."
     },
     "vn-papers": {
       "title": "Vietnam-related papers and translation",
@@ -872,5 +872,11 @@
       "id": "OTHER",
       "label": "Other"
     }
-  ]
+  ],
+  "community": {
+    "title": "Join the community",
+    "lead": "You can also find us here.",
+    "line": "LINE community",
+    "facebook": "Facebook group"
+  }
 }

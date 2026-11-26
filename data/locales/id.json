@@ -4,7 +4,7 @@
   "position": "CROSSING PROXY adalah mitra layanan hidup terpadu bagi warga asing di Taiwan.",
   "heroLead": "Bantuan dokumen, pengurusan SIM, penerjemahan, jual beli motor, pengiriman lintas negara, dan urusan sehari-hari, supaya tiap langkah di Taiwan lebih sederhana.",
   "heroPoints": [
-    "Kami adalah CROSSING PROXY, juga disebut 越境代辦, mitra layanan hidup bagi warga asing di Taiwan.",
+    "Kami adalah CROSSING PROXY, mitra layanan hidup bagi warga asing di Taiwan.",
     "Yang bisa ditanyakan: dokumen, SIM, terjemahan Tionghoa–Vietnam, jual beli motor, nomor ponsel, pengiriman, dan urusan harian. Sewa dan paket perusahaan masih disiapkan.",
     "Bahasa dan negara terpisah. Ada enam halaman bahasa. Bendera hanya menyaring layanan.",
     "Mulai dari: pilih bendera, buka layanan, baca status dan batasan, lalu tanya di LINE.",
@@ -125,7 +125,7 @@
   "trustItems": [
     {
       "title": "Sudah dikonfirmasi",
-      "body": "Mereknya CROSSING PROXY / 越境代辦. Akun LINE resmi adalah @681ydjcz. Situs ini punya enam bahasa."
+      "body": "Mereknya CROSSING PROXY. Akun LINE resmi adalah @681ydjcz. Situs ini punya enam bahasa."
     },
     {
       "title": "Status layanan",
@@ -162,7 +162,7 @@
     },
     {
       "q": "Apa yang tidak boleh dikirim ke Vietnam?",
-      "a": "Sesuai arahan pemilik yang sudah dipakai ke publik: daging dan olahan daging tidak diterima; baterai dan power bank dibatasi; cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim. Daftar larangan lengkap dari situs lama belum bisa diambil dari akun yang ditangguhkan, jadi ini bukan naskah aslinya."
+      "a": "Daging dan olahan daging tidak diterima; baterai dan power bank dibatasi; cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim."
     },
     {
       "q": "Bisa sewa sepeda motor atau furnitur?",
@@ -480,7 +480,7 @@
     "sensitiveBlock": "Pesan ini berisi deretan angka panjang yang tampak seperti nomor identitas. Hapus nomor paspor, ARC, atau identitas sebelum menyalin. Tanggal biasa dan akun LINE tidak dianggap nomor identitas."
   },
   "dock": "Tanya sekarang",
-  "footerNote": "Situs statis. V2.0 ini belum menggantikan situs publik sampai digabung ke cabang main.",
+  "footerNote": "Situs ini tersedia dalam enam bahasa.",
   "pendingStrip": "Alamat, izin, tim, mitra, dan cerita klien tidak ditampilkan sebelum operator mengonfirmasinya.",
   "legal": [
     "Catatan ini mengikuti arah aturan yang berlaku di Taiwan, bukan nasihat hukum. Urusan imigrasi, visa, izin tinggal, jasa penyalur kerja swasta, izin angkut dan kirim, serta kontrak sewa motor dan asuransi tidak ditawarkan sebagai layanan langsung atau rujukan mitra sampai pemilik mengonfirmasi kualifikasi atau mitra berizin yang nyata.",
@@ -492,7 +492,7 @@
   ],
   "root": {
     "title": "Pilih bahasa",
-    "lead": "CROSSING PROXY｜越境代辦. Enam bahasa masing-masing satu halaman penuh. Kami tidak memaksa pindah halaman menurut bahasa peramban.",
+    "lead": "CROSSING PROXY. Enam bahasa masing-masing satu halaman penuh. Kami tidak memaksa pindah halaman menurut bahasa peramban.",
     "suggest": "Terakhir Anda memakai",
     "choose": "Pilih satu bahasa",
     "browser": "Bahasa peramban mungkin lebih dekat ke"
@@ -595,7 +595,7 @@
         "Kami pastikan bisa diterima dan kirim penawaran",
         "Serahkan barang setelah Anda setuju"
       ],
-      "limits": "Daging dan olahan daging tidak diterima. Baterai dan power bank dibatasi. Cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim. Naskah larangan lengkap dari situs lama belum ditemukan, jadi paragraf ini bukan naskah itu. Apakah izin angkut yang diperlukan sudah ada masih menunggu konfirmasi pemilik."
+      "limits": "Daging dan olahan daging tidak diterima. Baterai dan power bank dibatasi. Cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim. Apakah izin angkut yang diperlukan sudah ada masih menunggu konfirmasi pemilik."
     },
     "vn-papers": {
       "title": "Dokumen terkait Vietnam dan terjemahan",
@@ -872,5 +872,11 @@
       "id": "OTHER",
       "label": "Lainnya"
     }
-  ]
+  ],
+  "community": {
+    "title": "Gabung komunitas",
+    "lead": "Anda juga bisa menemukan kami di sini.",
+    "line": "Komunitas LINE",
+    "facebook": "Grup Facebook"
+  }
 }

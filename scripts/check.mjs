@@ -141,6 +141,19 @@ for (const lang of catalog.langs) {
     errors.push(`${lang.id} missing translation review metadata`);
   }
   if (!html.includes('id="inquiry-confirm"')) errors.push(`${lang.id} missing confirmation`);
+  if (!html.includes('id="community"')) errors.push(`${lang.id} missing community`);
+  if (!html.includes('href="https://line.me/ti/g2/c8um63-f3JUv4x643EFZShKNiDHQY1UplD-djg"')) errors.push(`${lang.id} line community`);
+  if (!html.includes('href="https://www.facebook.com/share/g/1FeefYhL9j/"')) errors.push(`${lang.id} facebook group`);
+  const community = html.split('id="community"')[1]?.split("</div>")[0] || "";
+  if (!community.includes('target="_blank"') || !community.includes('rel="noopener noreferrer"')) {
+    errors.push(`${lang.id} community link attributes`);
+  }
+  if (/utm_/i.test(community)) errors.push(`${lang.id} community utm`);
+  if (/停權|舊網站|合併進 main|suspended account|old website/i.test(html)) errors.push(`${lang.id} internal note`);
+  if (lang.id !== "zh") {
+    const visible = html.replace(/<script[\s\S]*?<\/script>/g, "");
+    if (visible.includes("越境代辦")) errors.push(`${lang.id} shows the Chinese brand name`);
+  }
   if (!html.includes("data-quick-group=")) errors.push(`${lang.id} quick links are not tied to groups`);
   const ld = JSON.parse(html.split('type="application/ld+json">')[1].split("</script>")[0]);
   const serviceNodes = ld["@graph"].filter((node) => node["@type"] === "Service");
@@ -180,6 +193,11 @@ for (const lang of catalog.langs) {
 if (!sitemap.includes('hreflang="x-default"')) errors.push("sitemap x-default");
 const gate = readFileSync(join(root, "index.html"), "utf8");
 if (!gate.includes('name="cp-translation-review" content="not-yet-native-reviewed"')) errors.push("gate metadata");
+if (!gate.includes('name="google-site-verification" content="O5v_Vbt6Z-JsQgCpghEn8o48Yh4prPGLoE3jebFfKPs"')) {
+  errors.push("root homepage missing search console verification");
+}
+const notFoundPage = readFileSync(join(root, "404.html"), "utf8");
+if (notFoundPage.includes("google-site-verification")) errors.push("404 should not carry the homepage verification tag");
 if (!gate.includes(`<link rel="canonical" href="${catalog.siteUrl}/">`)) errors.push("gate canonical");
 const rollback = readFileSync(join(root, "docs/ROLLBACK.md"), "utf8");
 if (!rollback.includes("v1-before-v2.0") || !rollback.includes("1d640b9cf55a0381c74841ab4f476e55202b7c4f")) {

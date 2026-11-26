@@ -35,6 +35,14 @@ const icons = {
     '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V14l14-6 14 6v26" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M18 40v-8h12v8M18 20h4M26 20h4M18 26h4M26 26h4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>',
 };
 
+function publicUrl(url) {
+  const parsed = new URL(url);
+  for (const key of [...parsed.searchParams.keys()]) {
+    if (key.toLowerCase().startsWith("utm_")) parsed.searchParams.delete(key);
+  }
+  return parsed.toString();
+}
+
 function esc(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -218,7 +226,11 @@ function quickLinks(ui) {
 function page(lang) {
   const ui = locales[lang.id];
   const canonical = `${catalog.siteUrl}/${lang.id}/`;
-  const sameAs = [catalog.line.url, ...catalog.socials.map((item) => item.url)];
+  const sameAs = [
+    catalog.line.url,
+    ...catalog.communities.map((item) => publicUrl(item.url)),
+    ...catalog.socials.map((item) => item.url),
+  ];
   const organizationId = `${catalog.siteUrl}/#organization`;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -385,8 +397,7 @@ try {
   <a class="brand" href="/${lang.id}/#top">
     <span class="mark" aria-hidden="true">CP</span>
     <span>
-      <strong>${esc(catalog.brand.zh)}</strong>
-      <em>${esc(catalog.brand.en)}</em>
+      ${lang.id === "zh" ? `<strong>${esc(catalog.brand.zh)}</strong><em>${esc(catalog.brand.en)}</em>` : `<strong>${esc(catalog.brand.en)}</strong>`}
     </span>
   </a>
   <button type="button" class="fold-button" aria-expanded="false" aria-controls="menu"><span></span><span class="visually-hidden">${esc(ui.primaryNav.menu)}</span></button>
@@ -493,6 +504,18 @@ try {
       <p>${esc(ui.sections.contact.lead)}</p>
       <p>${esc(ui.contactHours)}</p>
       <p><a class="button button-line" href="${esc(catalog.line.url)}" data-channel="line" target="_blank" rel="noopener noreferrer">${esc(ui.ctaLine)} ${esc(catalog.line.id)}</a></p>
+      <div class="community" id="community">
+        <h3>${esc(ui.community.title)}</h3>
+        <p>${esc(ui.community.lead)}</p>
+        <ul class="community-links">
+          ${catalog.communities
+            .map(
+              (item) =>
+                `<li><a href="${esc(publicUrl(item.url))}" target="_blank" rel="noopener noreferrer">${esc(ui.community[item.id])}</a></li>`,
+            )
+            .join("")}
+        </ul>
+      </div>
     </div>
   </section>
 </main>
@@ -501,7 +524,7 @@ try {
   ${legal}
   <ul class="socials">${socials}</ul>
   <p class="social-note">${esc(ui.contactSocialNote)}</p>
-  <p class="fine">${esc(catalog.brand.zh)} · ${esc(catalog.brand.en)} · ${esc(catalog.tagline)}</p>
+  <p class="fine">${lang.id === "zh" ? `${esc(catalog.brand.zh)} · ${esc(catalog.brand.en)}` : esc(catalog.brand.en)} · ${esc(catalog.tagline)}</p>
   <p class="fine">CROSSING PROXY WEBSITE V2.0</p>
   <p class="fine">${esc(ui.footerNote)}</p>
 </footer>
@@ -556,6 +579,7 @@ function gate(notFound) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="cp-translation-review" content="not-yet-native-reviewed">
+${notFound ? "" : `<meta name="google-site-verification" content="O5v_Vbt6Z-JsQgCpghEn8o48Yh4prPGLoE3jebFfKPs">`}
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(ui.root.lead)}">
 <link rel="canonical" href="${catalog.siteUrl}/">

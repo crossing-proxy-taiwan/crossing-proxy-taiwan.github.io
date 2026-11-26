@@ -4,7 +4,7 @@
   "position": "CROSSING PROXY là đối tác dịch vụ đời sống một cửa cho người nước ngoài tại Đài Loan.",
   "heroLead": "Hỗ trợ giấy tờ, thủ tục giấy phép lái xe, phiên dịch, mua bán xe máy, gửi hàng xuyên biên giới và việc sinh hoạt hằng ngày, để mỗi bước ở Đài Loan đơn giản hơn.",
   "heroPoints": [
-    "Chúng tôi là CROSSING PROXY, cũng gọi là 越境代辦, đối tác dịch vụ đời sống cho người nước ngoài tại Đài Loan.",
+    "Chúng tôi là CROSSING PROXY, đối tác dịch vụ đời sống cho người nước ngoài tại Đài Loan.",
     "Có thể hỏi: giấy tờ, bằng lái, dịch Trung–Việt, mua bán xe máy, SIM, gửi hàng và việc hằng ngày. Thuê xe và gói doanh nghiệp đang chuẩn bị.",
     "Ngôn ngữ và quốc gia tách riêng. Có sáu trang ngôn ngữ. Cờ chỉ lọc dịch vụ.",
     "Bắt đầu: chọn cờ, mở dịch vụ, đọc trạng thái và giới hạn, rồi hỏi trên LINE.",
@@ -125,7 +125,7 @@
   "trustItems": [
     {
       "title": "Đã xác nhận",
-      "body": "Thương hiệu là CROSSING PROXY / 越境代辦. LINE chính thức là @681ydjcz. Site có sáu ngôn ngữ."
+      "body": "Thương hiệu là CROSSING PROXY. LINE chính thức là @681ydjcz. Site có sáu ngôn ngữ."
     },
     {
       "title": "Trạng thái",
@@ -162,7 +162,7 @@
     },
     {
       "q": "Gửi về Việt Nam thì món nào không nhận?",
-      "a": "Theo nguyên tắc người phụ trách đã dùng khi nói với khách: không nhận thịt và sản phẩm từ thịt; pin và sạc dự phòng bị hạn chế; chất lỏng và thuốc thường cũng bị hạn chế. Quy định đổi, phải hỏi lại trước khi gửi. Bản cấm gửi đầy đủ của website cũ chưa lấy lại được từ tài khoản bị khóa, nên đoạn này không phải nguyên văn cũ."
+      "a": "Không nhận thịt và sản phẩm từ thịt; pin và sạc dự phòng bị hạn chế; chất lỏng và thuốc thường cũng bị hạn chế. Quy định đổi, phải hỏi lại trước khi gửi."
     },
     {
       "q": "Thuê xe máy hoặc đồ nội thất được không?",
@@ -480,7 +480,7 @@
     "sensitiveBlock": "Tin này có một dãy số dài giống số giấy tờ. Hãy xóa số hộ chiếu, thẻ cư trú hoặc căn cước trước khi sao chép. Ngày tháng thông thường và tài khoản LINE không bị xem là số giấy tờ."
   },
   "dock": "Hỏi ngay",
-  "footerNote": "Trang tĩnh. Bản V2.0 chưa thay thế website công khai cho đến khi được gộp vào nhánh main.",
+  "footerNote": "Trang này có sáu ngôn ngữ.",
   "pendingStrip": "Địa chỉ, giấy phép, đội ngũ, đối tác và câu chuyện khách hàng chưa được đăng khi người phụ trách chưa xác nhận.",
   "legal": [
     "Phần này viết theo hướng quy định hiện hành tại Đài Loan, không phải tư vấn pháp lý. Việc di trú, visa, cư trú, dịch vụ việc làm tư nhân, giấy phép vận chuyển và gửi hàng, hợp đồng thuê xe máy cùng bảo hiểm, nếu cần tư cách pháp lý, sẽ không được ghi là trực tiếp làm hoặc giới thiệu đối tác cho đến khi người phụ trách xác nhận tư cách hoặc đối tác hợp pháp.",
@@ -492,7 +492,7 @@
   ],
   "root": {
     "title": "Chọn ngôn ngữ",
-    "lead": "CROSSING PROXY｜越境代辦. Sáu ngôn ngữ đều là một trang đầy đủ. Chúng tôi không ép chuyển hướng theo ngôn ngữ trình duyệt.",
+    "lead": "CROSSING PROXY. Sáu ngôn ngữ đều là một trang đầy đủ. Chúng tôi không ép chuyển hướng theo ngôn ngữ trình duyệt.",
     "suggest": "Lần trước bạn dùng",
     "choose": "Hãy chọn một ngôn ngữ",
     "browser": "Ngôn ngữ trình duyệt có thể gần với"
@@ -595,7 +595,7 @@
         "Chúng tôi xác nhận có nhận không và báo giá",
         "Giao hàng sau khi bạn đồng ý"
       ],
-      "limits": "Không nhận thịt và sản phẩm từ thịt. Pin và sạc dự phòng bị hạn chế. Chất lỏng và thuốc thường cũng bị hạn chế. Quy định sẽ đổi, phải hỏi lại trước khi gửi. Nguyên văn danh sách cấm của website cũ chưa tìm lại được, nên đoạn này không phải bản cũ. Giấy phép vận chuyển đã đủ hay chưa vẫn đang chờ người phụ trách xác nhận."
+      "limits": "Không nhận thịt và sản phẩm từ thịt. Pin và sạc dự phòng bị hạn chế. Chất lỏng và thuốc thường cũng bị hạn chế. Quy định sẽ đổi, phải hỏi lại trước khi gửi. Giấy phép vận chuyển đã đủ hay chưa vẫn đang chờ người phụ trách xác nhận."
     },
     "vn-papers": {
       "title": "Giấy tờ liên quan Việt Nam và dịch thuật",
@@ -872,5 +872,11 @@
       "id": "OTHER",
       "label": "Khác"
     }
-  ]
+  ],
+  "community": {
+    "title": "Tham gia cộng đồng",
+    "lead": "Bạn cũng có thể tìm chúng tôi ở đây.",
+    "line": "Cộng đồng LINE",
+    "facebook": "Nhóm Facebook"
+  }
 }

@@ -4,7 +4,7 @@
   "position": "Ang CROSSING PROXY ay isang one-stop na kasama sa buhay ng mga dayuhan sa Taiwan.",
   "heroLead": "Tulong sa dokumento, lisensya sa pagmamaneho, pagsasalin, bentahan ng motorsiklo, padala sa ibang bansa, at pang-araw-araw na usapin, para mas simple ang bawat hakbang sa Taiwan.",
   "heroPoints": [
-    "Kami ang CROSSING PROXY, tinatawag ding 越境代辦, kasama sa buhay ng mga dayuhan sa Taiwan.",
+    "Kami ang CROSSING PROXY, kasama sa buhay ng mga dayuhan sa Taiwan.",
     "Puwedeng itanong: dokumento, lisensya, pagsasaling Chinese–Vietnamese, bentahan ng motorsiklo, numero, padala, at usaping pang-araw-araw. Ang upa at planong pang-kumpanya ay inihahanda pa.",
     "Hiwalay ang wika at bansa. May anim na pahina ng wika. Bandila lang ang nagsasala ng serbisyo.",
     "Simulan sa: pumili ng bandila, buksan ang serbisyo, basahin ang status at limitasyon, tapos magtanong sa LINE.",
@@ -125,7 +125,7 @@
   "trustItems": [
     {
       "title": "Kumpirmado",
-      "body": "Ang brand ay CROSSING PROXY / 越境代辦. Ang opisyal na LINE ay @681ydjcz. May anim na wika ang site."
+      "body": "Ang brand ay CROSSING PROXY. Ang opisyal na LINE ay @681ydjcz. May anim na wika ang site."
     },
     {
       "title": "Status ng serbisyo",
@@ -162,7 +162,7 @@
     },
     {
       "q": "Ano ang hindi puwedeng ipadala sa Vietnam?",
-      "a": "Ayon sa patnubay na ginagamit na ng may-ari sa publiko: hindi tinatanggap ang karne at produktong karne; limitado ang baterya at power bank; karaniwan ding limitado ang likido at gamot. Nagbabago ang patakaran, kaya kumpirmahin muli bago magpadala. Hindi na-recover ang buong teksto ng bawal mula sa nasuspindeng account, kaya hindi ito ang orihinal na listahan."
+      "a": "Hindi tinatanggap ang karne at produktong karne; limitado ang baterya at power bank; karaniwan ding limitado ang likido at gamot. Nagbabago ang patakaran, kaya kumpirmahin muli bago magpadala."
     },
     {
       "q": "Puwede bang umupa ng motorsiklo o muwebles?",
@@ -480,7 +480,7 @@
     "sensitiveBlock": "May mahabang sunod na numero sa mensaheng ito na kamukha ng numero ng ID. Alisin ang numero ng pasaporte, ARC, o ID bago kumopya. Ang ordinaryong petsa at ang LINE ID ay hindi itinuturing na numero ng ID."
   },
   "dock": "Magtanong ngayon",
-  "footerNote": "Static na site. Hindi papalitan ng V2.0 na ito ang pampublikong site hanggang ma-merge ito sa main.",
+  "footerNote": "May anim na wika ang site na ito.",
   "pendingStrip": "Ang address, lisensya, koponan, kasosyo, at kwento ng kliyente ay hindi ilalathala hanggang kumpirmahin ng operator.",
   "legal": [
     "Ang mga tala na ito ay sumusunod sa direksyon ng kasalukuyang patakaran sa Taiwan. Hindi ito legal na payo. Ang imigrasyon, visa, residence permit, pribadong serbisyo sa empleo, permiso sa transport at padala, at ang kontrata at insurance ng pag-upa ng motorsiklo ay hindi inaalok bilang direktang serbisyo o referral hanggang kumpirmahin ng may-ari ang kwalipikasyon o ang totoong lisensyadong kapareha.",
@@ -492,7 +492,7 @@
   ],
   "root": {
     "title": "Pumili ng wika",
-    "lead": "CROSSING PROXY｜越境代辦. Bawat isa sa anim na wika ay isang buong pahina. Hindi kami pumipilit ng redirect ayon sa wika ng browser.",
+    "lead": "CROSSING PROXY. Bawat isa sa anim na wika ay isang buong pahina. Hindi kami pumipilit ng redirect ayon sa wika ng browser.",
     "suggest": "Huli mong ginamit ang",
     "choose": "Pumili ng isang wika",
     "browser": "Maaaring mas malapit ang wika ng browser sa"
@@ -595,7 +595,7 @@
         "Kinukumpirma namin kung tatanggapin at magpapadala ng presyo",
         "Ibibigay mo lang pagkatapos mong pumayag"
       ],
-      "limits": "Hindi tinatanggap ang karne at produktong karne. Limitado ang baterya at power bank. Karaniwan ding limitado ang likido at gamot. Nagbabago ang patakaran, kaya kumpirmahin muli bago magpadala. Hindi pa na-recover ang buong tekstong bawal mula sa lumang site, kaya hindi ito ang orihinal na listahan. Nakabinbin kung kumpleto ang kinakailangang permiso sa transport."
+      "limits": "Hindi tinatanggap ang karne at produktong karne. Limitado ang baterya at power bank. Karaniwan ding limitado ang likido at gamot. Nagbabago ang patakaran, kaya kumpirmahin muli bago magpadala. Nakabinbin kung kumpleto ang kinakailangang permiso sa transport."
     },
     "vn-papers": {
       "title": "Mga papeles na kaugnay ng Vietnam at pagsasalin",
@@ -872,5 +872,11 @@
       "id": "OTHER",
       "label": "Iba pa"
     }
-  ]
+  ],
+  "community": {
+    "title": "Sumali sa komunidad",
+    "lead": "Makikita rin kami rito.",
+    "line": "Komunidad sa LINE",
+    "facebook": "Grupong Facebook"
+  }
 }
