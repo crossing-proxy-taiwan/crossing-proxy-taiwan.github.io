@@ -134,6 +134,26 @@ for (const lang of catalog.langs) {
     if (pattern.test(html)) errors.push(`${lang.id} forbidden ${pattern}`);
   }
   if (html.includes("待確認的假") || html.includes("lorem")) errors.push(`${lang.id} placeholder copy`);
+  if (html.includes("英文不以單一國旗代表") || /not represented by one flag/i.test(html)) {
+    errors.push(`${lang.id} still says English is not one flag`);
+  }
+  if (!html.includes('name="cp-translation-review" content="not-yet-native-reviewed"')) {
+    errors.push(`${lang.id} missing translation review metadata`);
+  }
+  if (!html.includes('id="inquiry-confirm"')) errors.push(`${lang.id} missing confirmation`);
+  if (!html.includes("data-quick-group=")) errors.push(`${lang.id} quick links are not tied to groups`);
+  const ld = JSON.parse(html.split('type="application/ld+json">')[1].split("</script>")[0]);
+  const serviceNodes = ld["@graph"].filter((node) => node["@type"] === "Service");
+  const openServices = catalog.services.filter((service) => service.status === "open");
+  if (serviceNodes.length !== openServices.length) errors.push(`${lang.id} service schema count ${serviceNodes.length}`);
+  const openNames = new Set(openServices.map((service) => locales[lang.id].services[service.id].title));
+  for (const node of serviceNodes) {
+    if (!openNames.has(node.name)) errors.push(`${lang.id} schema service ${node.name}`);
+  }
+  for (const service of catalog.services.filter((item) => item.status === "planned")) {
+    const title = locales[lang.id].services[service.id].title;
+    if (serviceNodes.some((node) => node.name === title)) errors.push(`${lang.id} planned service in schema ${title}`);
+  }
 }
 
 const css = readFileSync(join(root, "assets/css/site.css"), "utf8");
@@ -145,13 +165,46 @@ if (analytics.enabled !== false || analytics.endpoint) errors.push("analytics mu
 
 const robots = readFileSync(join(root, "robots.txt"), "utf8");
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
-if (!robots.includes("Sitemap:")) errors.push("robots");
-for (const lang of catalog.langs) {
-  if (!sitemap.includes(`${catalog.siteUrl}/${lang.id}/`)) errors.push(`sitemap ${lang.id}`);
+if (!robots.includes(`Sitemap: ${catalog.siteUrl}/sitemap.xml`)) errors.push("robots sitemap");
+if (!robots.includes("Disallow: /docs/plans/")) errors.push("robots should keep plans out of crawl");
+if (!sitemap.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"')) errors.push("sitemap xhtml");
+const sitemapLocs = sitemap.match(/<loc>[^<]+<\/loc>/g) || [];
+const expectedLocs = [catalog.siteUrl + "/", ...catalog.langs.map((lang) => `${catalog.siteUrl}/${lang.id}/`)];
+if (sitemapLocs.length !== expectedLocs.length) errors.push(`sitemap url count ${sitemapLocs.length}`);
+for (const loc of expectedLocs) {
+  if (!sitemap.includes(`<loc>${loc}</loc>`)) errors.push(`sitemap missing ${loc}`);
 }
-for (const code of ["all", "tw", "vn", "id", "th", "ph"]) {
+for (const lang of catalog.langs) {
+  if (!sitemap.includes(`hreflang="${lang.html}"`)) errors.push(`sitemap hreflang ${lang.html}`);
+}
+if (!sitemap.includes('hreflang="x-default"')) errors.push("sitemap x-default");
+const gate = readFileSync(join(root, "index.html"), "utf8");
+if (!gate.includes('name="cp-translation-review" content="not-yet-native-reviewed"')) errors.push("gate metadata");
+if (!gate.includes(`<link rel="canonical" href="${catalog.siteUrl}/">`)) errors.push("gate canonical");
+const rollback = readFileSync(join(root, "docs/ROLLBACK.md"), "utf8");
+if (!rollback.includes("v1-before-v2.0") || !rollback.includes("1d640b9cf55a0381c74841ab4f476e55202b7c4f")) {
+  errors.push("rollback doc");
+}
+const cityIds = ["TPE","NTP","TAO","TXG","TNN","KHH","KEL","HSZ","CYI","HSQ","MIA","CHA","NAN","YUN","CYQ","PIF","ILA","HUA","TTT","PEN","KIN","LIE","OTHER"];
+for (const lang of catalog.langs) {
+  const ids = locales[lang.id].cities.map((city) => city.id).join(",");
+  if (ids !== cityIds.join(",")) errors.push(`${lang.id} cities ${ids}`);
+}
+const flagSpec = {
+  tw: { box: "0 0 60 40", colors: ["#FE0000", "#000095"] },
+  vn: { box: "0 0 30 20", colors: ["#DA251D", "#FFCD00"] },
+  id: { box: "0 0 30 20", colors: ["#CE1126", "#FFFFFF"] },
+  th: { box: "0 0 9 6", colors: ["#A51931", "#2D2A4A", "#FFFFFF"] },
+  ph: { box: "0 0 200 100", colors: ["#0038A8", "#CE1126", "#FCD116"] },
+  all: { box: "0 0 60 40", colors: ["#0F2742"] },
+};
+for (const [code, spec] of Object.entries(flagSpec)) {
   const svg = readFileSync(join(root, "assets/flags", `${code}.svg`), "utf8");
-  if (!svg.includes("<svg") || svg.includes("emoji")) errors.push(`flag ${code}`);
+  if (!svg.includes(`viewBox="${spec.box}"`)) errors.push(`flag ${code} ratio`);
+  if (!svg.includes('preserveAspectRatio="xMidYMid meet"')) errors.push(`flag ${code} aspect`);
+  for (const color of spec.colors) {
+    if (!svg.toUpperCase().includes(color.toUpperCase())) errors.push(`flag ${code} color ${color}`);
+  }
 }
 
 if (errors.length) {

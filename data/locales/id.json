@@ -25,7 +25,7 @@
   "ctaAsk": "Tanya sekarang",
   "ctaServices": "Cari layanan",
   "countryLabel": "Negara yang dicakup layanan",
-  "countryHelp": "Bendera hanya menyaring layanan, tidak mengubah bahasa situs. Gunakan menu bahasa di atas. Setiap bahasa memakai namanya sendiri, dan bahasa Inggris tidak diwakili satu bendera.",
+  "countryHelp": "Bendera hanya menyaring layanan, tidak mengubah bahasa situs. Gunakan menu bahasa di atas. Setiap bahasa memakai namanya sendiri.",
   "countries": {
     "all": "Semua layanan",
     "VN": "Vietnam",
@@ -191,7 +191,7 @@
   },
   "inquiry": {
     "title": "Siapkan pertanyaan",
-    "privacy": "Jangan isi nomor paspor, nomor ARC, nomor identitas, atau foto identitas. Formulir ini tidak diunggah dan tidak dikirim untuk Anda.",
+    "privacy": "Jangan isi nomor paspor, nomor ARC, nomor identitas, atau foto identitas. Baca lagi drafnya sebelum menyalin. Formulir ini tidak diunggah dan tidak dikirim untuk Anda.",
     "copy": "Salin pertanyaan",
     "copied": "Tersalin. Tempel ke LINE. Situs ini tidak mengirimnya.",
     "copyFailed": "Salin otomatis gagal. Pilih teksnya sendiri.",
@@ -474,7 +474,10 @@
         "label": "Kota di Taiwan",
         "placeholder": "Anda berada di kota mana"
       }
-    }
+    },
+    "confirmLabel": "Saya mengonfirmasi pesan ini tidak berisi nomor paspor, nomor ARC, nomor identitas, atau foto identitas.",
+    "confirmRequired": "Centang konfirmasi sebelum menyalin atau membuka LINE.",
+    "sensitiveBlock": "Pesan ini berisi deretan angka panjang yang tampak seperti nomor identitas. Hapus nomor paspor, ARC, atau identitas sebelum menyalin. Tanggal biasa dan akun LINE tidak dianggap nomor identitas."
   },
   "dock": "Tanya sekarang",
   "footerNote": "Situs statis. V2.0 ini belum menggantikan situs publik sampai digabung ke cabang main.",
@@ -775,5 +778,99 @@
       "Cakupan: kota, izin, dan mitra belum diumumkan. Situs tidak menampilkan alamat, ulasan, jumlah pelanggan, tingkat keberhasilan, atau otorisasi pemerintah yang belum dikonfirmasi.",
       "SIM: kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan. Lulus ujian atau berhasil menukar SIM tidak dijamin. Terjemahan dan pendampingan harus ditanyakan dan dikonfirmasi per kasus."
     ]
-  }
+  },
+  "cities": [
+    {
+      "id": "TPE",
+      "label": "Kota Taipei"
+    },
+    {
+      "id": "NTP",
+      "label": "Kota New Taipei"
+    },
+    {
+      "id": "TAO",
+      "label": "Kota Taoyuan"
+    },
+    {
+      "id": "TXG",
+      "label": "Kota Taichung"
+    },
+    {
+      "id": "TNN",
+      "label": "Kota Tainan"
+    },
+    {
+      "id": "KHH",
+      "label": "Kota Kaohsiung"
+    },
+    {
+      "id": "KEL",
+      "label": "Kota Keelung"
+    },
+    {
+      "id": "HSZ",
+      "label": "Kota Hsinchu"
+    },
+    {
+      "id": "CYI",
+      "label": "Kota Chiayi"
+    },
+    {
+      "id": "HSQ",
+      "label": "Kabupaten Hsinchu"
+    },
+    {
+      "id": "MIA",
+      "label": "Kabupaten Miaoli"
+    },
+    {
+      "id": "CHA",
+      "label": "Kabupaten Changhua"
+    },
+    {
+      "id": "NAN",
+      "label": "Kabupaten Nantou"
+    },
+    {
+      "id": "YUN",
+      "label": "Kabupaten Yunlin"
+    },
+    {
+      "id": "CYQ",
+      "label": "Kabupaten Chiayi"
+    },
+    {
+      "id": "PIF",
+      "label": "Kabupaten Pingtung"
+    },
+    {
+      "id": "ILA",
+      "label": "Kabupaten Yilan"
+    },
+    {
+      "id": "HUA",
+      "label": "Kabupaten Hualien"
+    },
+    {
+      "id": "TTT",
+      "label": "Kabupaten Taitung"
+    },
+    {
+      "id": "PEN",
+      "label": "Kabupaten Penghu"
+    },
+    {
+      "id": "KIN",
+      "label": "Kabupaten Kinmen"
+    },
+    {
+      "id": "LIE",
+      "label": "Kabupaten Lienchiang"
+    },
+    {
+      "id": "OTHER",
+      "label": "Lainnya"
+    }
+  ]
 }

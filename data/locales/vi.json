@@ -25,7 +25,7 @@
   "ctaAsk": "Hỏi ngay",
   "ctaServices": "Tìm dịch vụ",
   "countryLabel": "Quốc gia mà dịch vụ áp dụng",
-  "countryHelp": "Cờ chỉ lọc dịch vụ, không đổi ngôn ngữ website. Hãy dùng menu ngôn ngữ phía trên. Mỗi ngôn ngữ giữ tên riêng, tiếng Anh không được đại diện bằng một lá cờ.",
+  "countryHelp": "Cờ chỉ lọc dịch vụ, không đổi ngôn ngữ website. Hãy dùng menu ngôn ngữ phía trên. Mỗi ngôn ngữ giữ tên riêng.",
   "countries": {
     "all": "Mọi dịch vụ",
     "VN": "Việt Nam",
@@ -191,7 +191,7 @@
   },
   "inquiry": {
     "title": "Soạn nội dung hỏi",
-    "privacy": "Đừng điền số hộ chiếu, số thẻ cư trú, số căn cước hoặc ảnh giấy tờ. Biểu mẫu không được tải lên và không được gửi thay bạn.",
+    "privacy": "Đừng điền số hộ chiếu, số thẻ cư trú, số căn cước hoặc ảnh giấy tờ. Hãy đọc lại bản nháp trước khi sao chép. Biểu mẫu không được tải lên và không được gửi thay bạn.",
     "copy": "Sao chép nội dung hỏi",
     "copied": "Đã sao chép. Hãy dán vào LINE. Website chưa gửi.",
     "copyFailed": "Không tự sao chép được. Hãy chọn chữ bằng tay.",
@@ -474,7 +474,10 @@
         "label": "Thành phố tại Đài Loan",
         "placeholder": "Bạn đang ở thành phố nào"
       }
-    }
+    },
+    "confirmLabel": "Tôi xác nhận tin này không có số hộ chiếu, số thẻ cư trú, số căn cước hoặc ảnh giấy tờ.",
+    "confirmRequired": "Hãy đánh dấu xác nhận trước khi sao chép hoặc mở LINE.",
+    "sensitiveBlock": "Tin này có một dãy số dài giống số giấy tờ. Hãy xóa số hộ chiếu, thẻ cư trú hoặc căn cước trước khi sao chép. Ngày tháng thông thường và tài khoản LINE không bị xem là số giấy tờ."
   },
   "dock": "Hỏi ngay",
   "footerNote": "Trang tĩnh. Bản V2.0 chưa thay thế website công khai cho đến khi được gộp vào nhánh main.",
@@ -775,5 +778,99 @@
       "Phạm vi: chưa công bố thành phố, giấy phép và đối tác. Trang không đăng địa chỉ, đánh giá, số khách, tỷ lệ thành công hoặc ủy quyền của cơ quan khi chưa được xác nhận.",
       "Bằng lái: điều kiện và giấy tờ theo quy định của cơ quan giám lý Đài Loan. Không cam kết đậu hoặc đổi bằng thành công. Dịch và đi cùng phải hỏi trước và xác nhận từng trường hợp."
     ]
-  }
+  },
+  "cities": [
+    {
+      "id": "TPE",
+      "label": "Thành phố Đài Bắc"
+    },
+    {
+      "id": "NTP",
+      "label": "Thành phố Tân Bắc"
+    },
+    {
+      "id": "TAO",
+      "label": "Thành phố Đào Viên"
+    },
+    {
+      "id": "TXG",
+      "label": "Thành phố Đài Trung"
+    },
+    {
+      "id": "TNN",
+      "label": "Thành phố Đài Nam"
+    },
+    {
+      "id": "KHH",
+      "label": "Thành phố Cao Hùng"
+    },
+    {
+      "id": "KEL",
+      "label": "Thành phố Cơ Long"
+    },
+    {
+      "id": "HSZ",
+      "label": "Thành phố Tân Trúc"
+    },
+    {
+      "id": "CYI",
+      "label": "Thành phố Gia Nghĩa"
+    },
+    {
+      "id": "HSQ",
+      "label": "Huyện Tân Trúc"
+    },
+    {
+      "id": "MIA",
+      "label": "Huyện Miêu Lật"
+    },
+    {
+      "id": "CHA",
+      "label": "Huyện Chương Hóa"
+    },
+    {
+      "id": "NAN",
+      "label": "Huyện Nam Đầu"
+    },
+    {
+      "id": "YUN",
+      "label": "Huyện Vân Lâm"
+    },
+    {
+      "id": "CYQ",
+      "label": "Huyện Gia Nghĩa"
+    },
+    {
+      "id": "PIF",
+      "label": "Huyện Bình Đông"
+    },
+    {
+      "id": "ILA",
+      "label": "Huyện Nghi Lan"
+    },
+    {
+      "id": "HUA",
+      "label": "Huyện Hoa Liên"
+    },
+    {
+      "id": "TTT",
+      "label": "Huyện Đài Đông"
+    },
+    {
+      "id": "PEN",
+      "label": "Huyện Bành Hồ"
+    },
+    {
+      "id": "KIN",
+      "label": "Huyện Kim Môn"
+    },
+    {
+      "id": "LIE",
+      "label": "Huyện Liên Giang"
+    },
+    {
+      "id": "OTHER",
+      "label": "Khác"
+    }
+  ]
 }

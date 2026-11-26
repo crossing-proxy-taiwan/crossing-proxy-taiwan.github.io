@@ -71,6 +71,7 @@ if (configNode) {
     const plannedVisible = cards.some((card) => card.closest("#planned") && !card.hidden);
     if (openEmpty) openEmpty.hidden = openVisible;
     if (plannedEmpty) plannedEmpty.hidden = plannedVisible;
+    syncQuickLinks();
     if (country === "all") document.documentElement.removeAttribute("data-country");
     else document.documentElement.setAttribute("data-country", country);
     const name = countryName(country);
@@ -95,6 +96,26 @@ if (configNode) {
     else url.searchParams.set("country", country);
     history.replaceState(null, "", url.pathname + url.search + url.hash);
     track("country_change", { country });
+  }
+
+  function syncQuickLinks() {
+    document.querySelectorAll("[data-quick-group]").forEach((link) => {
+      const id = link.dataset.quickGroup;
+      const open = document.getElementById(`group-${id}-open`);
+      const planned = document.getElementById(`group-${id}-planned`);
+      const openOk = open && !open.hidden;
+      const plannedOk = showPlannedServices && planned && !planned.hidden;
+      if (openOk) {
+        link.hidden = false;
+        link.setAttribute("href", `#group-${id}-open`);
+      } else if (plannedOk) {
+        link.hidden = false;
+        link.setAttribute("href", `#group-${id}-planned`);
+      } else {
+        link.hidden = true;
+        link.removeAttribute("href");
+      }
+    });
   }
 
   function selectCountry(code, persist) {
@@ -190,9 +211,35 @@ if (configNode) {
     return list;
   }
 
+  const cityIds = new Set((config.cities || []).map((city) => city.id));
+
   function fieldText(field) {
+    if (field.tagName === "SELECT") {
+      const option = field.selectedOptions && field.selectedOptions[0];
+      if (!option || !option.value) return config.inquiry.blank;
+      return option.textContent.trim();
+    }
     const value = field.value.trim();
     return value || config.inquiry.blank;
+  }
+
+  function looksSensitive(text) {
+    let scan = String(text || "");
+    if (config.lineId) scan = scan.split(config.lineId).join(" ");
+    scan = scan.replace(/@681ydjcz/gi, " ");
+    scan = scan.replace(/\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日/g, " ");
+    scan = scan.replace(/\d{4}\s*年\s*\d{1,2}\s*月/g, " ");
+    scan = scan.replace(/\d{1,2}\s*月\s*\d{1,2}\s*日/g, " ");
+    scan = scan.replace(/\b\d{4}[-/.]\d{1,2}[-/.]\d{1,2}\b/g, " ");
+    scan = scan.replace(/\b\d{1,2}[-/.]\d{1,2}[-/.]\d{4}\b/g, " ");
+    scan = scan.replace(/\b\d{4}[-/.]\d{1,2}\b/g, " ");
+    return /\d{6,}/.test(scan);
+  }
+
+  function enteredText() {
+    return [...fields.querySelectorAll("input, textarea")]
+      .map((field) => field.value)
+      .join("\n");
   }
 
   function renderOutput() {
@@ -203,19 +250,40 @@ if (configNode) {
       lines.push(`${config.inquiry.status}: ${current.status}`);
     }
     fields.querySelectorAll("input, textarea, select").forEach((field) => {
+      if (field.type === "checkbox") return;
       lines.push(`${field.dataset.label}: ${fieldText(field)}`);
     });
     lines.push(config.lineId);
     lines.push(config.inquiry.notSent);
     output.value = lines.join("\n");
-    const digits = [...fields.querySelectorAll("input, textarea")]
-      .map((field) => field.value)
-      .join(" ");
-    if (/\d{6,}/.test(digits)) status.textContent = config.inquiry.idHint;
-    else if (status.textContent === config.inquiry.idHint) status.textContent = "";
+    const sensitive = looksSensitive(enteredText());
+    output.dataset.sensitive = sensitive ? "true" : "false";
+    if (sensitive) status.textContent = config.inquiry.sensitiveBlock;
+    else if (status.textContent === config.inquiry.sensitiveBlock) status.textContent = "";
+  }
+
+  function copyBlockedReason() {
+    if (output.dataset.sensitive === "true") return config.inquiry.sensitiveBlock;
+    const confirm = document.getElementById("inquiry-confirm");
+    if (!confirm || !confirm.checked) return config.inquiry.confirmRequired;
+    return "";
   }
 
   function makeControl(field) {
+    if (field.id === "city" && cityIds.size) {
+      const select = document.createElement("select");
+      const blank = document.createElement("option");
+      blank.value = "";
+      blank.textContent = config.inquiry.selectPlaceholder;
+      select.append(blank);
+      config.cities.forEach((city) => {
+        const node = document.createElement("option");
+        node.value = city.id;
+        node.textContent = city.label;
+        select.append(node);
+      });
+      return select;
+    }
     if (field.type === "select") {
       const select = document.createElement("select");
       const blank = document.createElement("option");
@@ -261,13 +329,16 @@ if (configNode) {
       }
       if (field.id === "city") {
         try {
-          control.value = localStorage.getItem("cp-city") || "";
+          const saved = localStorage.getItem("cp-city") || "";
+          if (cityIds.has(saved)) control.value = saved;
+          else localStorage.removeItem("cp-city");
         } catch (error) {
-          control.value = "";
+          /* Ignore storage failures. */
         }
-        control.addEventListener("input", () => {
+        control.addEventListener("change", () => {
           try {
-            localStorage.setItem("cp-city", control.value.trim());
+            if (cityIds.has(control.value)) localStorage.setItem("cp-city", control.value);
+            else localStorage.removeItem("cp-city");
           } catch (error) {
             /* Ignore storage failures. */
           }
@@ -279,6 +350,8 @@ if (configNode) {
       wrap.append(name, control);
       fields.append(wrap);
     });
+    const confirmBox = document.getElementById("inquiry-confirm");
+    if (confirmBox) confirmBox.checked = false;
     status.textContent = "";
     renderOutput();
     lastFocus = document.activeElement;
@@ -306,9 +379,27 @@ if (configNode) {
     });
   }
 
+  const lineButton = document.getElementById("inquiry-line");
+  if (lineButton) {
+    lineButton.addEventListener("click", (event) => {
+      renderOutput();
+      const reason = copyBlockedReason();
+      if (!reason) return;
+      event.preventDefault();
+      status.textContent = reason;
+      status.scrollIntoView({ block: "nearest" });
+    });
+  }
+
   if (copyButton) {
     copyButton.addEventListener("click", async () => {
       renderOutput();
+      const reason = copyBlockedReason();
+      if (reason) {
+        status.textContent = reason;
+        status.scrollIntoView({ block: "nearest" });
+        return;
+      }
       let copied = false;
       try {
         await navigator.clipboard.writeText(output.value);
@@ -319,7 +410,6 @@ if (configNode) {
         copied = document.execCommand("copy");
       }
       status.textContent = copied ? config.inquiry.copied : config.inquiry.copyFailed;
-      if (copied && /\d{6,}/.test(output.value)) status.textContent = `${config.inquiry.copied} ${config.inquiry.idHint}`;
       status.scrollIntoView({ block: "nearest" });
       if (copied) track("inquiry_copy", { service: activeService });
     });

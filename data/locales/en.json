@@ -25,7 +25,7 @@
   "ctaAsk": "Ask now",
   "ctaServices": "Find a service",
   "countryLabel": "Country a service applies to",
-  "countryHelp": "A flag only filters services. It does not change the site language. Use the language menu above. Each language keeps its own name, and English is not represented by one flag.",
+  "countryHelp": "A flag only filters services. It does not change the site language. Use the language menu above. Each language keeps its own name.",
   "countries": {
     "all": "All services",
     "VN": "Vietnam",
@@ -191,7 +191,7 @@
   },
   "inquiry": {
     "title": "Prepare your question",
-    "privacy": "Do not enter a passport number, ARC number, ID number, or an ID photo. This form is not uploaded and it is not sent for you.",
+    "privacy": "Do not enter a passport number, ARC number, national ID number, or an ID photo. Read the draft again before you copy it. This form is not uploaded and it is not sent for you.",
     "copy": "Copy the question",
     "copied": "Copied. Paste it into LINE. This site did not send it.",
     "copyFailed": "Automatic copy failed. Select the text yourself.",
@@ -474,7 +474,10 @@
         "label": "City in Taiwan",
         "placeholder": "Which city you are in"
       }
-    }
+    },
+    "confirmLabel": "I confirm this message has no passport number, ARC number, national ID number, or ID photo.",
+    "confirmRequired": "Check the confirmation before you copy or open LINE.",
+    "sensitiveBlock": "This message has a long run of digits that looks like an ID number. Remove any passport, ARC, or national ID number before copying. A normal date and the LINE ID are not treated as an ID number."
   },
   "dock": "Ask now",
   "footerNote": "Static site. This V2.0 does not replace the public site until it is merged into main.",
@@ -775,5 +778,99 @@
       "Scope: covered cities, permits, and partners are not published. This site does not show an unconfirmed address, reviews, customer counts, success rates, or government authorization.",
       "Driver's license: eligibility and documents follow Taiwan's motor vehicle authority. Passing a test or completing an exchange is not guaranteed. Translation and accompaniment must be requested and confirmed case by case."
     ]
-  }
+  },
+  "cities": [
+    {
+      "id": "TPE",
+      "label": "Taipei City"
+    },
+    {
+      "id": "NTP",
+      "label": "New Taipei City"
+    },
+    {
+      "id": "TAO",
+      "label": "Taoyuan City"
+    },
+    {
+      "id": "TXG",
+      "label": "Taichung City"
+    },
+    {
+      "id": "TNN",
+      "label": "Tainan City"
+    },
+    {
+      "id": "KHH",
+      "label": "Kaohsiung City"
+    },
+    {
+      "id": "KEL",
+      "label": "Keelung City"
+    },
+    {
+      "id": "HSZ",
+      "label": "Hsinchu City"
+    },
+    {
+      "id": "CYI",
+      "label": "Chiayi City"
+    },
+    {
+      "id": "HSQ",
+      "label": "Hsinchu County"
+    },
+    {
+      "id": "MIA",
+      "label": "Miaoli County"
+    },
+    {
+      "id": "CHA",
+      "label": "Changhua County"
+    },
+    {
+      "id": "NAN",
+      "label": "Nantou County"
+    },
+    {
+      "id": "YUN",
+      "label": "Yunlin County"
+    },
+    {
+      "id": "CYQ",
+      "label": "Chiayi County"
+    },
+    {
+      "id": "PIF",
+      "label": "Pingtung County"
+    },
+    {
+      "id": "ILA",
+      "label": "Yilan County"
+    },
+    {
+      "id": "HUA",
+      "label": "Hualien County"
+    },
+    {
+      "id": "TTT",
+      "label": "Taitung County"
+    },
+    {
+      "id": "PEN",
+      "label": "Penghu County"
+    },
+    {
+      "id": "KIN",
+      "label": "Kinmen County"
+    },
+    {
+      "id": "LIE",
+      "label": "Lienchiang County"
+    },
+    {
+      "id": "OTHER",
+      "label": "Other"
+    }
+  ]
 }

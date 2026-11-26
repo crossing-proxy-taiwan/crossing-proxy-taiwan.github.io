@@ -25,7 +25,7 @@
   "ctaAsk": "Magtanong ngayon",
   "ctaServices": "Hanapin ang serbisyo",
   "countryLabel": "Bansang saklaw ng serbisyo",
-  "countryHelp": "Bandila lang ang nagsasala ng serbisyo. Hindi nito binabago ang wika ng site. Gamitin ang menu ng wika sa itaas. Bawat wika ay may sariling pangalan, at ang English ay hindi kinakatawan ng iisang bandila.",
+  "countryHelp": "Bandila lang ang nagsasala ng serbisyo. Hindi nito binabago ang wika ng site. Gamitin ang menu ng wika sa itaas. Bawat wika ay may sariling pangalan.",
   "countries": {
     "all": "Lahat ng serbisyo",
     "VN": "Vietnam",
@@ -191,7 +191,7 @@
   },
   "inquiry": {
     "title": "Ihanda ang tanong",
-    "privacy": "Huwag ilagay ang numero ng pasaporte, numero ng ARC, numero ng ID, o larawan ng ID. Hindi ina-upload ang form at hindi ito ipinapadala para sa iyo.",
+    "privacy": "Huwag ilagay ang numero ng pasaporte, numero ng ARC, numero ng ID, o larawan ng ID. Basahin muli ang draft bago kopyahin. Hindi ina-upload ang form at hindi ito ipinapadala para sa iyo.",
     "copy": "Kopyahin ang tanong",
     "copied": "Nakopya na. I-paste ito sa LINE. Hindi ito ipinadala ng site.",
     "copyFailed": "Hindi awtomatikong nakopya. Piliin mismo ang teksto.",
@@ -474,7 +474,10 @@
         "label": "Lungsod sa Taiwan",
         "placeholder": "Saan kang lungsod"
       }
-    }
+    },
+    "confirmLabel": "Kinukumpirma ko na walang numero ng pasaporte, numero ng ARC, numero ng ID, o larawan ng ID sa mensaheng ito.",
+    "confirmRequired": "I-check muna ang kumpirmasyon bago kumopya o magbukas ng LINE.",
+    "sensitiveBlock": "May mahabang sunod na numero sa mensaheng ito na kamukha ng numero ng ID. Alisin ang numero ng pasaporte, ARC, o ID bago kumopya. Ang ordinaryong petsa at ang LINE ID ay hindi itinuturing na numero ng ID."
   },
   "dock": "Magtanong ngayon",
   "footerNote": "Static na site. Hindi papalitan ng V2.0 na ito ang pampublikong site hanggang ma-merge ito sa main.",
@@ -775,5 +778,99 @@
       "Saklaw: hindi pa nailalathala ang mga lungsod, permit, at kasosyo. Hindi nagpapakita ang site ng hindi kumpirmadong address, review, bilang ng kliyente, success rate, o awtorisasyon ng gobyerno.",
       "Lisensya: ang kwalipikasyon at dokumento ay sumusunod sa awtoridad ng sasakyan sa Taiwan. Hindi ginagarantiya ang pagpasa o ang matagumpay na palit. Ang pagsasalin at pagsama ay hihingin at kokumpirmahin ayon sa kaso."
     ]
-  }
+  },
+  "cities": [
+    {
+      "id": "TPE",
+      "label": "Lungsod ng Taipei"
+    },
+    {
+      "id": "NTP",
+      "label": "Lungsod ng New Taipei"
+    },
+    {
+      "id": "TAO",
+      "label": "Lungsod ng Taoyuan"
+    },
+    {
+      "id": "TXG",
+      "label": "Lungsod ng Taichung"
+    },
+    {
+      "id": "TNN",
+      "label": "Lungsod ng Tainan"
+    },
+    {
+      "id": "KHH",
+      "label": "Lungsod ng Kaohsiung"
+    },
+    {
+      "id": "KEL",
+      "label": "Lungsod ng Keelung"
+    },
+    {
+      "id": "HSZ",
+      "label": "Lungsod ng Hsinchu"
+    },
+    {
+      "id": "CYI",
+      "label": "Lungsod ng Chiayi"
+    },
+    {
+      "id": "HSQ",
+      "label": "Lalawigan ng Hsinchu"
+    },
+    {
+      "id": "MIA",
+      "label": "Lalawigan ng Miaoli"
+    },
+    {
+      "id": "CHA",
+      "label": "Lalawigan ng Changhua"
+    },
+    {
+      "id": "NAN",
+      "label": "Lalawigan ng Nantou"
+    },
+    {
+      "id": "YUN",
+      "label": "Lalawigan ng Yunlin"
+    },
+    {
+      "id": "CYQ",
+      "label": "Lalawigan ng Chiayi"
+    },
+    {
+      "id": "PIF",
+      "label": "Lalawigan ng Pingtung"
+    },
+    {
+      "id": "ILA",
+      "label": "Lalawigan ng Yilan"
+    },
+    {
+      "id": "HUA",
+      "label": "Lalawigan ng Hualien"
+    },
+    {
+      "id": "TTT",
+      "label": "Lalawigan ng Taitung"
+    },
+    {
+      "id": "PEN",
+      "label": "Lalawigan ng Penghu"
+    },
+    {
+      "id": "KIN",
+      "label": "Lalawigan ng Kinmen"
+    },
+    {
+      "id": "LIE",
+      "label": "Lalawigan ng Lienchiang"
+    },
+    {
+      "id": "OTHER",
+      "label": "Iba pa"
+    }
+  ]
 }

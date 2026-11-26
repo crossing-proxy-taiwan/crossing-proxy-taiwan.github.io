@@ -206,7 +206,7 @@ function quickLinks(ui) {
       if (!hasOpen && !showPlannedServices) return "";
       const href = hasOpen ? `#group-${group.id}-open` : `#group-${group.id}-planned`;
       const copy = ui.groups[group.id];
-      return `<a class="quick" href="${href}">
+      return `<a class="quick" href="${href}" data-quick-group="${esc(group.id)}">
         <span class="card-icon">${icons[group.icon] || ""}</span>
         <strong>${esc(copy.title)}</strong>
         <span>${esc(copy.blurb)}</span>
@@ -245,7 +245,7 @@ function page(lang) {
         inLanguage: catalog.langs.map((item) => item.html),
         publisher: { "@id": organizationId },
       },
-      ...catalog.services.map((service) => ({
+      ...catalog.services.filter((service) => service.status === "open").map((service) => ({
         "@type": "Service",
         "@id": `${canonical}#service-${service.id}`,
         name: ui.services[service.id].title,
@@ -277,6 +277,7 @@ function page(lang) {
     countryNow: ui.countryNow,
     filterLive: ui.filterLive,
     inquiry: ui.inquiry,
+    cities: ui.cities,
     services: Object.fromEntries(
       catalog.services.map((service) => [
         service.id,
@@ -349,6 +350,7 @@ function page(lang) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="cp-translation-review" content="not-yet-native-reviewed">
 <title>${esc(ui.metaTitle)}</title>
 <meta name="description" content="${esc(ui.metaDescription)}">
 <link rel="canonical" href="${canonical}">
@@ -518,6 +520,10 @@ try {
     <p id="inquiry-meta"></p>
     <div id="inquiry-fields"></div>
     <p class="privacy">${esc(ui.inquiry.privacy)}</p>
+    <label class="confirm">
+      <input type="checkbox" id="inquiry-confirm" name="confirm">
+      <span>${esc(ui.inquiry.confirmLabel)}</span>
+    </label>
     <label class="preview-label" for="inquiry-output">${esc(ui.inquiry.preview)}</label>
     <textarea id="inquiry-output" readonly></textarea>
     <p class="not-sent">${esc(ui.inquiry.notSent)}</p>
@@ -549,6 +555,7 @@ function gate(notFound) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="cp-translation-review" content="not-yet-native-reviewed">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(ui.root.lead)}">
 <link rel="canonical" href="${catalog.siteUrl}/">
@@ -609,14 +616,23 @@ for (const lang of catalog.langs) {
 writeFileSync(join(root, "index.html"), gate(false));
 writeFileSync(join(root, "404.html"), gate(true));
 
+const alternates = [
+  ...catalog.langs.map(
+    (lang) => `    <xhtml:link rel="alternate" hreflang="${lang.html}" href="${catalog.siteUrl}/${lang.id}/"/>`,
+  ),
+  `    <xhtml:link rel="alternate" hreflang="x-default" href="${catalog.siteUrl}/"/>`,
+].join("\n");
 const urls = [catalog.siteUrl + "/", ...catalog.langs.map((lang) => `${catalog.siteUrl}/${lang.id}/`)];
 writeFileSync(
   join(root, "sitemap.xml"),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
-    .map((url) => `  <url><loc>${url}</loc></url>`)
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls
+    .map((url) => `  <url>\n    <loc>${url}</loc>\n${alternates}\n  </url>`)
     .join("\n")}\n</urlset>\n`,
 );
-writeFileSync(join(root, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${catalog.siteUrl}/sitemap.xml\n`);
+writeFileSync(
+  join(root, "robots.txt"),
+  `User-agent: *\nAllow: /\nDisallow: /docs/plans/\n\nSitemap: ${catalog.siteUrl}/sitemap.xml\n`,
+);
 writeFileSync(
   join(root, "favicon.svg"),
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0F2742"/><text x="16" y="21" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#C5A572">CP</text></svg>\n`,

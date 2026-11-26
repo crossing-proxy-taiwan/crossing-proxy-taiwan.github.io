@@ -24,6 +24,6 @@
 
 國旗圖檔在 `assets/flags/`，建置時會內嵌。新增國家時要補一張 SVG，並把代碼加進 `catalog.json` 的 `countryChoices`。服務適用國家仍用 `countries` 陣列，`*` 代表不限國家。
 
-服務分組在 `catalog.json` 的 `groups`。同一項服務可以出現在兩個分組，頁面只建立一筆完整卡片，第二處是連到同一筆的入口。駕照文件代辦的 id 是 `driving-license-assistance`，詢問表單用 `driving`。表單只在瀏覽器裡組成文字，提供複製與開啟 LINE，不會送出。
+服務分組在 `catalog.json` 的 `groups`。同一項服務可以出現在兩個分組，頁面只建立一筆完整卡片，第二處是連到同一筆的入口。駕照文件代辦的 id 是 `driving-license-assistance`，詢問表單用 `driving`。表單只在瀏覽器裡組成文字。所在縣市是台灣 22 個縣市加上「其他」，只記住選項代碼，不保存自由輸入。複製或開啟 LINE 前要勾選確認，而且連續數字若像證件號碼會被擋住。一般日期與 LINE 帳號 `@681ydjcz` 不會被當成證件號碼。
 
 分析預設關閉。`data/analytics.json` 的 `enabled` 維持 `false`，直到有已審查的收集端點。事件只會送語言、服務 ID、國家代碼與渠道名稱，不送表單內文。
