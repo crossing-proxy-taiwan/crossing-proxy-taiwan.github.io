@@ -1,10 +1,10 @@
 {
-  "metaTitle": "Driver's License and Life Services in Taiwan | CROSSING PROXY",
-  "metaDescription": "CROSSING PROXY helps foreign residents in Taiwan ask about a driver's license test, exchanging a foreign license, documents, Chinese–Vietnamese translation, motorbike sales, shipping, and daily life. Eligibility follows the motor vehicle authority. No price is published here.",
-  "position": "CROSSING PROXY is a one-stop life-service partner for foreign residents in Taiwan.",
+  "metaTitle": "Driver's License Help and Everyday Services in Taiwan | CROSSING PROXY",
+  "metaDescription": "CROSSING PROXY helps foreign residents in Taiwan ask about a driver's license test, exchanging a foreign license, documents, Chinese–Vietnamese translation, motorbike sales, shipping, and daily life. Eligibility follows the motor vehicle authority, and results are not guaranteed. No prices are published here.",
+  "position": "CROSSING PROXY is a one-stop everyday-services partner for foreign residents in Taiwan.",
   "heroLead": "Document help, driver's license assistance, translation, motorbike sales, cross-border shipping, and everyday services, so each step in Taiwan is simpler.",
   "heroPoints": [
-    "Who we are: CROSSING PROXY, a life-service partner for foreign residents in Taiwan.",
+    "Who we are: CROSSING PROXY, an everyday-services partner for foreign residents in Taiwan.",
     "What you can ask about: documents, a driver's license, Chinese–Vietnamese translation, motorbike sales, SIM cards, shipping, and daily questions. Rentals and company plans are in preparation.",
     "Language and country are separate. There are six language pages. A flag only filters services.",
     "Where to start: choose a flag, open a service, read the status and limits, then ask on LINE.",
@@ -61,7 +61,7 @@
     },
     "business": {
       "title": "Companies",
-      "lead": "If you are asking for foreign employees — daily-life support, transport, translation, or cooperation with a licensed provider — use the company inquiry. This is not an active contract."
+      "lead": "If you are asking for foreign employees — daily-life support, transport, translation, or cooperation with a lawful provider — use the company inquiry. This is not an active contract."
     },
     "faq": {
       "title": "FAQ",
@@ -154,7 +154,7 @@
     },
     {
       "q": "Do you file visas, residence permits, or work permits?",
-      "a": "We do not act as an immigration, visa, or residence-permit agent, and we do not promise any government result. Document help means explaining, organizing, and translating. Work that needs a legal qualification is not labeled as a partner referral until a real licensed partner is confirmed."
+      "a": "We do not act as an immigration, visa, or residence-permit agent, and we do not promise any government result. Document help means explaining, organizing, and translating. Work that needs a legal qualification is not labeled as a partner referral until a real lawful partner is confirmed."
     },
     {
       "q": "How much does it cost?",
@@ -227,7 +227,7 @@
           {
             "id": "item",
             "label": "Type of items",
-            "placeholder": "For example clothes or papers"
+            "placeholder": "e.g. clothes, documents (please don't enter ID numbers or other sensitive personal data)"
           },
           {
             "id": "pickup",
@@ -483,7 +483,7 @@
   "footerNote": "This site is available in six languages.",
   "pendingStrip": "Address, licenses, the team, partners, and client stories stay off this site until the operator confirms them.",
   "legal": [
-    "These notes follow the direction of current Taiwan rules. They are not legal advice. Immigration, visas, residence permits, private employment services, transport and shipping permits, and scooter-rental contracts and insurance are not offered as something we can do directly, or as a partner referral, until the owner confirms the qualification or a real licensed partner.",
+    "These notes follow the direction of current Taiwan rules. They are not legal advice. Immigration, visas, residence permits, private employment services, transport and shipping permits, and scooter-rental contracts and insurance are not offered as something we can do directly, or as a partner referral, until the owner confirms the qualification or a real lawful partner.",
     "We do not guarantee a visa, a job, residence, or any government approval. Whether a document is accepted is decided by the authority.",
     "A first question does not ask for an ID card, passport, ARC, or other sensitive data. Do not put that data in a public URL or in this static form.",
     "Whether shipping and home pickup already have the required permits is pending. Until that is confirmed, the description is help with questions and the existing shipping flow. It is not a claim that we hold a particular transport license.",
@@ -505,7 +505,7 @@
       "audience": "People in Taiwan who need Chinese and Vietnamese side by side.",
       "scope": "Spoken help and written Chinese–Vietnamese wording. This is not a visa service.",
       "documents": "Describe the kind of paper on LINE first. Do not put document numbers in the website form. You keep the originals.",
-      "pricing": "No published price and no starting price. A LINE quote, accepted by you, comes first.",
+      "pricing": "No published price and no starting price. We start only after you accept a quote on LINE.",
       "steps": [
         "Say the direction and the kind of paper",
         "We confirm whether we can help",
@@ -525,7 +525,7 @@
         "We separate what we can do from what we cannot",
         "We meet only after you accept the quote"
       ],
-      "limits": "We do not guarantee a visa, a job, or government approval. Work that needs a license is not marked as a partner referral until a licensed partner is confirmed."
+      "limits": "We do not guarantee a visa, a job, or government approval. Work that needs a license is not marked as a partner referral until a lawful partner is confirmed."
     },
     "moto-sale": {
       "title": "Buying and selling a scooter",
@@ -615,7 +615,7 @@
       "title": "Shipping to other countries",
       "summary": "Shipping anywhere other than Vietnam is not open, including Indonesia, Thailand, and the Philippines.",
       "audience": "People who want to send items outside Vietnam.",
-      "scope": "We can hear the request. We do not accept parcels.",
+      "scope": "For now we only take inquiries. We do not accept parcels.",
       "documents": "We do not collect the receiver's identity numbers before this opens.",
       "pricing": "Not open. There is no price.",
       "steps": [
@@ -668,7 +668,7 @@
       "limits": "Not officially open. An inquiry is not an order."
     },
     "b2b-life": {
-      "title": "Company life-support and transport",
+      "title": "Everyday support and transport for companies",
       "summary": "Planned. A company may describe a need. That does not mean we can take the work.",
       "audience": "Companies asking about daily-life support, transport, or translation for foreign employees, or about cooperation with a legal provider.",
       "scope": "We only collect the request. If a personal service is already open, that service's limits still apply.",
@@ -685,7 +685,7 @@
       "title": "Driver's License Assistance",
       "summary": "Ask about a scooter license test, a retake, exchanging a foreign license, and related papers. What we can take on is confirmed case by case. Results are not guaranteed.",
       "audience": "Foreign residents in Taiwan who need a local license test, a foreign-license exchange, or related documents. Eligibility is confirmed case by case and follows the motor vehicle authority.",
-      "scope": "You can ask about: help booking a scooter license test, help registering a retake, help with the steps to exchange a foreign license for a Taiwan license, organizing license papers, written-test material and traffic rules, questions about motor vehicle office steps, and whether translation or accompaniment is available. Items we have not confirmed we can carry are only an inquiry, confirmed case by case. We do not promise to finish them.",
+      "scope": "You can ask about: help booking a scooter license test, help registering a retake, help with the steps to exchange a foreign license for a Taiwan license, organizing license papers, written-test material and traffic rules, questions about motor vehicle office steps, and whether translation or accompaniment is available. Anything we have not confirmed we can take on is handled only as an inquiry, confirmed case by case. We do not promise to finish them.",
       "documents": "Eligibility and required documents follow Taiwan's motor vehicle authority. Do not leave a passport number, ARC number, or an ID photo on this site.",
       "pricing": "Quoted individually on LINE. This site lists no fee and no minimum price.",
       "steps": [

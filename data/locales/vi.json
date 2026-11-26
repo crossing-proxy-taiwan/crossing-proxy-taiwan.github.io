@@ -1,6 +1,6 @@
 {
-  "metaTitle": "Đổi bằng lái xe tại Đài Loan | CROSSING PROXY",
-  "metaDescription": "CROSSING PROXY hỗ trợ người nước ngoài tại Đài Loan hỏi thủ tục đổi bằng lái xe, thi bằng lái xe máy, giấy tờ, phiên dịch Trung–Việt, mua bán xe máy và gửi hàng. Không cam kết đậu. Trang không đăng giá.",
+  "metaTitle": "Hỗ trợ bằng lái xe và đời sống tại Đài Loan | CROSSING PROXY",
+  "metaDescription": "CROSSING PROXY hỗ trợ người nước ngoài tại Đài Loan hỏi thủ tục đổi bằng lái xe, thi bằng lái xe máy, giấy tờ, dịch thuật Trung–Việt, mua bán xe máy và gửi hàng. Điều kiện theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan, không cam kết kết quả. Trang không đăng giá.",
   "position": "CROSSING PROXY là đối tác dịch vụ đời sống một cửa cho người nước ngoài tại Đài Loan.",
   "heroLead": "Hỗ trợ giấy tờ, thủ tục giấy phép lái xe, phiên dịch, mua bán xe máy, gửi hàng xuyên biên giới và việc sinh hoạt hằng ngày, để mỗi bước ở Đài Loan đơn giản hơn.",
   "heroPoints": [
@@ -61,7 +61,7 @@
     },
     "business": {
       "title": "Hợp tác với doanh nghiệp",
-      "lead": "Nếu bạn là công ty, muốn hỏi hỗ trợ đời sống, đi lại, dịch thuật cho nhân viên nước ngoài, hoặc phối hợp với đơn vị có phép, hãy dùng mục doanh nghiệp. Đây chưa phải hợp đồng đang chạy."
+      "lead": "Nếu bạn là công ty, muốn hỏi hỗ trợ đời sống, đi lại, dịch thuật cho nhân viên nước ngoài, hoặc phối hợp với đơn vị hợp pháp, hãy dùng mục doanh nghiệp. Đây chưa phải hợp đồng đang chạy."
     },
     "faq": {
       "title": "Câu hỏi thường gặp",
@@ -178,7 +178,7 @@
     },
     {
       "q": "Người nước ngoài có thể hỏi về thi bằng xe máy hoặc đổi bằng lái tại Đài Loan không?",
-      "a": "Có thể hỏi trước. Việc này gồm đặt lịch thi, đăng ký thi lại, quy trình đổi bằng, sắp xếp giấy tờ, tài liệu thi viết và luật giao thông, cùng quy trình tại cơ quan giám lý. Dịch và đi cùng phải hỏi riêng và xác nhận từng trường hợp. Điều kiện và giấy tờ theo quy định của cơ quan giám lý Đài Loan. Không cam kết đậu hoặc đổi bằng thành công."
+      "a": "Có thể hỏi trước. Việc này gồm đặt lịch thi, đăng ký thi lại, quy trình đổi bằng, sắp xếp giấy tờ, tài liệu thi viết và luật giao thông, cùng quy trình hành chính tại trạm quản lý xe (監理站). Dịch và đi cùng phải hỏi riêng và xác nhận từng trường hợp. Điều kiện và giấy tờ theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan. Không cam kết đậu hoặc đổi bằng thành công."
     }
   ],
   "contactHours": "Chưa công bố giờ trả lời. Hãy để lại tin trên LINE, chúng tôi sẽ phản hồi.",
@@ -227,7 +227,7 @@
           {
             "id": "item",
             "label": "Loại đồ",
-            "placeholder": "Ví dụ quần áo hoặc giấy tờ"
+            "placeholder": "Ví dụ quần áo, giấy tờ (vui lòng không điền số giấy tờ hoặc dữ liệu cá nhân nhạy cảm)"
           },
           {
             "id": "pickup",
@@ -488,7 +488,7 @@
     "Câu hỏi ban đầu không yêu cầu căn cước, hộ chiếu, thẻ cư trú hay dữ liệu nhạy cảm khác. Đừng đưa các dữ liệu đó vào đường dẫn công khai hoặc biểu mẫu tĩnh này.",
     "Việc gửi hàng và đến lấy tại nhà đã có đủ giấy phép hay chưa vẫn đang chờ xác nhận. Trước khi có xác nhận, mô tả chỉ là hỗ trợ hỏi đáp và quy trình gửi hàng hiện có, không phải tuyên bố đang giữ một loại giấy phép vận chuyển cụ thể.",
     "Hỗ trợ mua bán xe máy không thay việc đăng ký, bảo hiểm và luật giao thông. Thuê ngắn và trung hạn chưa mở nên không có hợp đồng thuê để ký.",
-    "Hỗ trợ giấy phép lái xe chỉ là hỏi, sắp xếp giấy tờ, và dịch hoặc đi cùng khi đã xác nhận từng trường hợp. Không cam kết đậu hoặc đổi bằng thành công. Điều kiện và giấy tờ theo cơ quan giám lý Đài Loan."
+    "Hỗ trợ giấy phép lái xe chỉ gồm tư vấn, sắp xếp giấy tờ, và dịch hoặc đi cùng khi đã xác nhận từng trường hợp. Không cam kết đậu hoặc đổi bằng thành công. Điều kiện và giấy tờ theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan."
   ],
   "root": {
     "title": "Chọn ngôn ngữ",
@@ -532,7 +532,7 @@
       "summary": "Giúp nắm những câu cần hỏi khi mua hoặc bán xe máy cũ tại Đài Loan. Đây không phải thuê xe.",
       "audience": "Người nước ngoài tại Đài Loan muốn mua hoặc bán xe máy cũ và cần hỗ trợ ngôn ngữ.",
       "scope": "Câu hỏi trước khi xem xe, giải thích các bước và đi cùng để nói chuyện. Chúng tôi có giấy phép cửa hàng xe hay không vẫn đang chờ xác nhận. Trang không tuyên bố đã có giấy phép.",
-      "documents": "Sang tên, bảo hiểm và đăng ký theo quy định của cơ quan giám lý. Đừng ghi số giấy tờ hoặc biển số vào biểu mẫu.",
+      "documents": "Sang tên, bảo hiểm và giấy đăng ký xe theo quy định của cơ quan quản lý xe (公路監理機關). Đừng ghi số giấy tờ hoặc biển số vào biểu mẫu.",
       "pricing": "Giá xe và phí dịch vụ đều chưa công bố. Hãy hỏi trên LINE.",
       "steps": [
         "Nói huyện thị và muốn mua hay bán",
@@ -570,7 +570,7 @@
       "limits": "Không chẩn đoán y khoa, không tư vấn kiện tụng, và không đứng ra chuyển tiền."
     },
     "pickup": {
-      "title": "Đến nhà lấy hàng",
+      "title": "Lấy hàng tận nơi",
       "summary": "Đi cùng việc gửi hàng, đến chỗ bạn lấy. Huyện thị phục vụ chưa công bố.",
       "audience": "Người gửi không tiện tự mang hàng đến.",
       "scope": "Chỉ ở những huyện thị người phụ trách xác nhận. Chưa xác nhận thì hãy hỏi trước, đừng mặc định phủ toàn Đài Loan.",
@@ -670,7 +670,7 @@
     "b2b-life": {
       "title": "Hợp tác đời sống và đi lại cho doanh nghiệp",
       "summary": "Đang chuẩn bị. Công ty có thể mô tả nhu cầu, không có nghĩa là chúng tôi đã nhận làm.",
-      "audience": "Công ty muốn hỏi hỗ trợ đời sống, đi lại, dịch thuật cho nhân viên nước ngoài, hoặc phối hợp với đơn vị có phép.",
+      "audience": "Công ty muốn hỏi hỗ trợ đời sống, đi lại, dịch thuật cho nhân viên nước ngoài, hoặc phối hợp với đơn vị hợp pháp.",
       "scope": "Chỉ ghi nhận ý định. Nếu một dịch vụ cá nhân đã mở thì vẫn theo giới hạn của dịch vụ đó.",
       "documents": "Để lại công ty và người liên hệ. Đừng gửi số giấy tờ của nhân viên.",
       "pricing": "Không có bảng giá doanh nghiệp. Nếu sau này làm được, sẽ báo giá riêng trước.",
@@ -684,16 +684,16 @@
     "driving-license-assistance": {
       "title": "Hỗ trợ thủ tục giấy phép lái xe",
       "summary": "Hỏi về thi bằng xe máy, thi lại, đổi bằng nước ngoài và giấy tờ liên quan. Việc nhận hỗ trợ được xác nhận từng trường hợp, không cam kết kết quả.",
-      "audience": "Người nước ngoài tại Đài Loan cần thi bằng, đổi bằng nước ngoài hoặc giấy tờ liên quan. Điều kiện được xác nhận từng trường hợp và theo cơ quan giám lý.",
-      "scope": "Có thể hỏi: hỗ trợ đặt lịch thi bằng xe máy, hỗ trợ đăng ký thi lại, hỗ trợ quy trình đổi bằng nước ngoài sang bằng Đài Loan, sắp xếp giấy tờ liên quan, tài liệu thi viết và giải thích luật giao thông, hỏi quy trình hành chính tại cơ quan giám lý, cùng nhu cầu dịch thuật và đi cùng. Hạng mục chưa xác nhận sẽ chỉ được xem là câu hỏi và xác nhận từng trường hợp, không hứa sẽ làm xong.",
-      "documents": "Điều kiện và giấy tờ theo quy định của cơ quan giám lý Đài Loan. Đừng để số hộ chiếu, số thẻ cư trú hoặc ảnh giấy tờ trên trang này.",
+      "audience": "Người nước ngoài tại Đài Loan cần thi bằng, đổi bằng nước ngoài hoặc làm giấy tờ liên quan. Điều kiện thực tế được xác nhận từng trường hợp và theo quy định của cơ quan quản lý xe (公路監理機關).",
+      "scope": "Có thể hỏi: hỗ trợ đặt lịch thi bằng xe máy, hỗ trợ đăng ký thi lại, hỗ trợ quy trình đổi bằng nước ngoài sang bằng Đài Loan, sắp xếp giấy tờ liên quan, tài liệu thi viết và giải thích luật giao thông, hỏi về quy trình hành chính tại trạm quản lý xe (監理站), cùng nhu cầu dịch thuật và đi cùng. Hạng mục chưa xác nhận sẽ chỉ được xem là câu hỏi và xác nhận từng trường hợp, không hứa sẽ làm xong.",
+      "documents": "Điều kiện và giấy tờ theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan. Đừng để số hộ chiếu, số thẻ cư trú hoặc ảnh giấy tờ trên trang này.",
       "pricing": "Báo giá riêng trên LINE. Trang không nêu phí và không có giá sàn.",
       "steps": [
         "Nói quốc tịch, thành phố và việc cần làm",
         "Chúng tôi xác nhận từng trường hợp, kể cả dịch và đi cùng",
         "Sau khi bạn đồng ý báo giá, cùng sắp xếp bước tiếp theo"
       ],
-      "limits": "Không cam kết đậu kỳ thi hoặc đổi bằng thành công. Dịch thuật và đi cùng phải hỏi trước và xác nhận từng trường hợp. Dịch vụ này không thay cơ quan giám lý hay thủ tục đăng ký theo luật."
+      "limits": "Không cam kết đậu kỳ thi hoặc đổi bằng thành công. Dịch thuật và đi cùng phải hỏi trước và xác nhận từng trường hợp. Dịch vụ này không thay thế cơ quan quản lý xe (公路監理機關) và không thay thế thủ tục đăng ký theo luật."
     }
   },
   "primaryNav": {
@@ -776,7 +776,7 @@
       "Phí: trang không đăng phí dịch vụ, phí vận chuyển hay giá sàn. Trước khi làm, LINE sẽ nói cách tính.",
       "Quyền riêng tư: biểu mẫu chỉ ghép chữ trên máy của bạn, không tải lên và không gửi thay. Đừng điền số hộ chiếu, số thẻ cư trú, số căn cước hoặc ảnh giấy tờ.",
       "Phạm vi: chưa công bố thành phố, giấy phép và đối tác. Trang không đăng địa chỉ, đánh giá, số khách, tỷ lệ thành công hoặc ủy quyền của cơ quan khi chưa được xác nhận.",
-      "Bằng lái: điều kiện và giấy tờ theo quy định của cơ quan giám lý Đài Loan. Không cam kết đậu hoặc đổi bằng thành công. Dịch và đi cùng phải hỏi trước và xác nhận từng trường hợp."
+      "Bằng lái: điều kiện và giấy tờ theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan. Không cam kết đậu hoặc đổi bằng thành công. Dịch và đi cùng phải hỏi trước và xác nhận từng trường hợp."
     ]
   },
   "cities": [

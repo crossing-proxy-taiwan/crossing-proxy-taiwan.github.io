@@ -1,11 +1,11 @@
 {
-  "metaTitle": "Bantuan SIM dan Layanan Hidup di Taiwan | CROSSING PROXY",
-  "metaDescription": "CROSSING PROXY membantu warga asing di Taiwan menanyakan ujian SIM, penukaran SIM luar negeri, dokumen, terjemahan, jual beli motor, dan pengiriman. Kelayakan mengikuti otoritas kendaraan. Harga tidak dipublikasikan.",
-  "position": "CROSSING PROXY adalah mitra layanan hidup terpadu bagi warga asing di Taiwan.",
+  "metaTitle": "Bantuan SIM dan Layanan Sehari-hari di Taiwan | CROSSING PROXY",
+  "metaDescription": "CROSSING PROXY membantu warga asing di Taiwan menanyakan ujian SIM, penukaran SIM luar negeri, dokumen, terjemahan Mandarin–Vietnam, jual beli motor, pengiriman, dan urusan harian. Kelayakan mengikuti otoritas kendaraan, dan hasil tidak dijamin. Harga tidak dipublikasikan.",
+  "position": "CROSSING PROXY adalah mitra layanan sehari-hari terpadu bagi warga asing di Taiwan.",
   "heroLead": "Bantuan dokumen, pengurusan SIM, penerjemahan, jual beli motor, pengiriman lintas negara, dan urusan sehari-hari, supaya tiap langkah di Taiwan lebih sederhana.",
   "heroPoints": [
-    "Kami adalah CROSSING PROXY, mitra layanan hidup bagi warga asing di Taiwan.",
-    "Yang bisa ditanyakan: dokumen, SIM, terjemahan Tionghoa–Vietnam, jual beli motor, nomor ponsel, pengiriman, dan urusan harian. Sewa dan paket perusahaan masih disiapkan.",
+    "Kami adalah CROSSING PROXY, mitra layanan sehari-hari bagi warga asing di Taiwan.",
+    "Yang bisa ditanyakan: dokumen, SIM, terjemahan Mandarin–Vietnam, jual beli motor, nomor ponsel, pengiriman, dan urusan harian. Sewa dan paket perusahaan masih disiapkan.",
     "Bahasa dan negara terpisah. Ada enam halaman bahasa. Bendera hanya menyaring layanan.",
     "Mulai dari: pilih bendera, buka layanan, baca status dan batasan, lalu tanya di LINE.",
     "Kontak: LINE @681ydjcz. Situs ini tidak mengirim pesan untuk Anda."
@@ -61,7 +61,7 @@
     },
     "business": {
       "title": "Kerja sama perusahaan",
-      "lead": "Jika Anda dari perusahaan dan ingin bertanya soal dukungan hidup, transport, terjemahan bagi karyawan asing, atau kerja sama dengan pihak yang berizin, gunakan pertanyaan perusahaan. Ini belum kontrak yang berjalan."
+      "lead": "Jika Anda dari perusahaan dan ingin bertanya soal dukungan sehari-hari, transport, terjemahan bagi karyawan asing, atau kerja sama dengan penyedia yang sah, gunakan pertanyaan perusahaan. Ini belum kontrak yang berjalan."
     },
     "faq": {
       "title": "Pertanyaan umum",
@@ -154,7 +154,7 @@
     },
     {
       "q": "Apakah kalian mengurus visa, izin tinggal, atau izin kerja?",
-      "a": "Kami tidak bertindak sebagai agen imigrasi, visa, atau izin tinggal, dan tidak menjanjikan hasil dari instansi. Bantuan dokumen hanya menjelaskan, merapikan, dan menerjemahkan. Urusan yang butuh kualifikasi hukum tidak ditandai sebagai rujukan mitra sebelum ada mitra berizin yang nyata."
+      "a": "Kami tidak bertindak sebagai agen imigrasi, visa, atau izin tinggal, dan tidak menjanjikan hasil dari instansi. Bantuan dokumen hanya menjelaskan, merapikan, dan menerjemahkan. Urusan yang butuh kualifikasi hukum tidak ditandai sebagai rujukan mitra sebelum ada mitra yang sah."
     },
     {
       "q": "Berapa biayanya?",
@@ -178,7 +178,7 @@
     },
     {
       "q": "Warga asing bisa bertanya tentang ujian SIM motor atau menukar SIM luar negeri di Taiwan?",
-      "a": "Bisa, sebagai pertanyaan. Itu meliputi jadwal ujian, daftar ulang, alur penukaran, merapikan dokumen, materi ujian tertulis dan aturan lalu lintas, serta langkah di kantor kendaraan. Terjemahan dan pendampingan ditanyakan terpisah dan dikonfirmasi per kasus. Kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan. Lulus atau berhasil menukar tidak dijamin."
+      "a": "Bisa, sebagai pertanyaan. Itu meliputi jadwal ujian, daftar ujian ulang, alur penukaran, merapikan dokumen, materi ujian tertulis dan aturan lalu lintas, serta langkah di kantor kendaraan. Terjemahan dan pendampingan ditanyakan terpisah dan dikonfirmasi per kasus. Kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan. Lulus atau berhasil menukar tidak dijamin."
     }
   ],
   "contactHours": "Jam balasan belum diumumkan. Tinggalkan pesan di LINE, kami akan membalas.",
@@ -227,7 +227,7 @@
           {
             "id": "item",
             "label": "Jenis barang",
-            "placeholder": "Misalnya pakaian atau dokumen"
+            "placeholder": "Misalnya pakaian, dokumen (mohon jangan isi nomor identitas atau data pribadi yang sensitif)"
           },
           {
             "id": "pickup",
@@ -382,7 +382,7 @@
           {
             "id": "items",
             "label": "Yang ingin dibahas",
-            "placeholder": "Dukungan hidup, transport, terjemahan, atau lainnya"
+            "placeholder": "Dukungan sehari-hari, transport, terjemahan, atau lainnya"
           }
         ]
       },
@@ -483,7 +483,7 @@
   "footerNote": "Situs ini tersedia dalam enam bahasa.",
   "pendingStrip": "Alamat, izin, tim, mitra, dan cerita klien tidak ditampilkan sebelum operator mengonfirmasinya.",
   "legal": [
-    "Catatan ini mengikuti arah aturan yang berlaku di Taiwan, bukan nasihat hukum. Urusan imigrasi, visa, izin tinggal, jasa penyalur kerja swasta, izin angkut dan kirim, serta kontrak sewa motor dan asuransi tidak ditawarkan sebagai layanan langsung atau rujukan mitra sampai pemilik mengonfirmasi kualifikasi atau mitra berizin yang nyata.",
+    "Catatan ini mengikuti arah aturan yang berlaku di Taiwan, bukan nasihat hukum. Urusan imigrasi, visa, izin tinggal, jasa penyalur kerja swasta, izin angkut dan kirim, serta kontrak sewa motor dan asuransi tidak ditawarkan sebagai layanan langsung atau rujukan mitra sampai pemilik mengonfirmasi kualifikasi atau mitra yang sah.",
     "Kami tidak menjanjikan visa, pekerjaan, izin tinggal, atau persetujuan instansi mana pun. Instansi yang memutuskan apakah dokumen diterima.",
     "Pertanyaan awal tidak meminta kartu identitas, paspor, ARC, atau data sensitif lain. Jangan menaruh data itu di URL publik atau formulir statis ini.",
     "Apakah pengiriman dan jemput di rumah sudah punya izin yang diperlukan masih menunggu konfirmasi. Sebelum itu, uraian ini adalah bantuan bertanya dan alur kirim yang sudah ada, bukan klaim memegang izin angkut tertentu.",
@@ -525,7 +525,7 @@
         "Kami pisahkan yang bisa dan yang tidak bisa",
         "Bertemu setelah Anda setuju dengan harga"
       ],
-      "limits": "Kami tidak menjanjikan visa, pekerjaan, atau persetujuan instansi. Urusan yang butuh izin tidak ditandai sebagai rujukan mitra sebelum ada mitra berizin."
+      "limits": "Kami tidak menjanjikan visa, pekerjaan, atau persetujuan instansi. Urusan yang butuh izin tidak ditandai sebagai rujukan mitra sebelum ada mitra yang sah."
     },
     "moto-sale": {
       "title": "Jual-beli sepeda motor",
@@ -545,7 +545,7 @@
       "title": "Kartu SIM dan komunikasi",
       "summary": "Membantu memahami apa yang biasanya ditanyakan operator sebelum Anda membuat nomor.",
       "audience": "Warga asing di Taiwan yang ingin langkahnya dijelaskan dalam bahasa yang dikenal.",
-      "scope": "Penjelasan di depan dan dampingan saat berbicara. Kontrak ada antara Anda dan operator. Kami bukan operator.",
+      "scope": "Penjelasan sebelumnya dan dampingan saat berbicara. Kontrak ada antara Anda dan operator. Kami bukan operator.",
       "documents": "Operator mungkin perlu melihat paspor atau dokumen tinggal. Tunjukkan langsung ke operator. Jangan ketik nomornya di situs ini.",
       "pricing": "Harga paket mengikuti operator. Biaya bantuan kami tidak diumumkan. Tanya di LINE.",
       "steps": [
@@ -615,7 +615,7 @@
       "title": "Kirim ke negara lain",
       "summary": "Pengiriman ke selain Vietnam belum dibuka, termasuk Indonesia, Thailand, dan Filipina.",
       "audience": "Orang yang ingin mengirim barang ke luar Vietnam.",
-      "scope": "Saat ini kami hanya mendengar permintaan, tidak menerima paket.",
+      "scope": "Saat ini kami hanya menerima pertanyaan, tidak menerima paket.",
       "documents": "Sebelum dibuka kami tidak mengumpulkan nomor identitas penerima.",
       "pricing": "Belum dibuka. Tidak ada harga.",
       "steps": [
@@ -668,9 +668,9 @@
       "limits": "Belum resmi dibuka. Pertanyaan bukan pesanan."
     },
     "b2b-life": {
-      "title": "Dukungan hidup dan transport untuk perusahaan",
+      "title": "Dukungan sehari-hari dan transport untuk perusahaan",
       "summary": "Direncanakan. Perusahaan boleh menjelaskan kebutuhan. Itu tidak berarti kami sudah bisa mengerjakan.",
-      "audience": "Perusahaan yang bertanya tentang dukungan hidup, transport, atau terjemahan bagi karyawan asing, atau kerja sama dengan penyedia yang sah.",
+      "audience": "Perusahaan yang bertanya tentang dukungan sehari-hari, transport, atau terjemahan bagi karyawan asing, atau kerja sama dengan penyedia yang sah.",
       "scope": "Kami hanya mengumpulkan permintaan. Jika suatu layanan pribadi sudah dibuka, batas layanan itu tetap berlaku.",
       "documents": "Tinggalkan nama perusahaan dan narahubung. Jangan kirim nomor identitas karyawan.",
       "pricing": "Tidak ada daftar harga perusahaan. Jika nanti bisa dikerjakan, kami menawarkan harga satu per satu lebih dulu.",
@@ -687,7 +687,7 @@
       "audience": "Warga asing di Taiwan yang membutuhkan ujian SIM, penukaran SIM luar negeri, atau dokumen terkait. Kelayakan dikonfirmasi per kasus dan mengikuti otoritas kendaraan.",
       "scope": "Anda bisa menanyakan: bantuan jadwal ujian SIM motor, bantuan daftar ujian ulang, bantuan alur menukar SIM luar negeri menjadi SIM Taiwan, merapikan dokumen SIM, bahan ujian tertulis dan penjelasan aturan lalu lintas, pertanyaan tentang langkah administrasi di kantor kendaraan, serta apakah terjemahan atau pendampingan bisa diatur. Hal yang belum dipastikan hanya dicatat sebagai pertanyaan dan dikonfirmasi per kasus. Kami tidak menjanjikan akan menyelesaikannya.",
       "documents": "Kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan. Jangan tinggalkan nomor paspor, nomor ARC, atau foto identitas di situs ini.",
-      "pricing": "Dikutip satu per satu di LINE. Situs ini tidak mencantumkan biaya atau harga minimum.",
+      "pricing": "Biaya diberikan lewat penawaran di LINE, per kasus. Situs ini tidak mencantumkan biaya atau harga minimum.",
       "steps": [
         "Sebutkan kewarganegaraan, kota, dan yang dibutuhkan",
         "Kami konfirmasi per kasus, termasuk terjemahan atau pendampingan",
@@ -746,8 +746,8 @@
     },
     "language": {
       "title": "Bahasa dan terjemahan",
-      "lead": "Terjemahan Tionghoa–Vietnam sudah dibuka. Bahasa lain masih disiapkan dan belum menjadi pekerjaan yang diterima.",
-      "blurb": "Tionghoa–Vietnam sudah buka"
+      "lead": "Terjemahan Mandarin–Vietnam sudah dibuka. Bahasa lain masih disiapkan dan belum menjadi pekerjaan yang diterima.",
+      "blurb": "Mandarin–Vietnam sudah buka"
     },
     "transport": {
       "title": "Transportasi dan motor",
@@ -761,7 +761,7 @@
     },
     "daily": {
       "title": "Kehidupan sehari-hari",
-      "lead": "Nomor ponsel dan pertanyaan sehari-hari sudah dibuka. Sewa perabot masih disiapkan.",
+      "lead": "Nomor ponsel dan pertanyaan sehari-hari sudah dibuka. Sewa barang rumah dan furnitur masih disiapkan.",
       "blurb": "Ponsel dan urusan harian"
     },
     "enterprise": {
