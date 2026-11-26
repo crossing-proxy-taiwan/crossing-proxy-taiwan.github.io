@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /docs/plans/
 
 Sitemap: https://crossing-proxy-taiwan.github.io/sitemap.xml

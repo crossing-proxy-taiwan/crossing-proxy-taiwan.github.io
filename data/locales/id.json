@@ -1,14 +1,14 @@
 {
-  "metaTitle": "CROSSING PROXY｜越境代辦｜Urusan hidup di Taiwan",
-  "metaDescription": "CROSSING PROXY (越境代辦) membantu warga asing di Taiwan untuk urusan terjemahan, dokumen harian, jual-beli sepeda motor, kartu SIM, pengiriman, dan pertanyaan sehari-hari. Bahasa dan negara dipilih terpisah. Harga, kota, dan izin yang belum dikonfirmasi tetap ditandai menunggu.",
-  "position": "CROSSING PROXY adalah mitra layanan hidup sehari-hari bagi warga asing di Taiwan.",
-  "heroLead": "Lihat layanan yang sudah dibuka dan batasannya, lalu tanya lewat LINE. Harga, alamat, dan ulasan yang belum dikonfirmasi tidak ditampilkan di sini.",
+  "metaTitle": "Bantuan SIM dan Layanan Sehari-hari di Taiwan | CROSSING PROXY",
+  "metaDescription": "CROSSING PROXY membantu warga asing di Taiwan menanyakan ujian SIM, penukaran SIM luar negeri, dokumen, terjemahan Mandarin–Vietnam, jual beli motor, pengiriman, dan urusan harian. Kelayakan mengikuti otoritas kendaraan, dan hasil tidak dijamin. Harga tidak dipublikasikan.",
+  "position": "CROSSING PROXY adalah mitra layanan sehari-hari terpadu bagi warga asing di Taiwan.",
+  "heroLead": "Bantuan dokumen, pengurusan SIM, penerjemahan, jual beli motor, pengiriman lintas negara, dan urusan sehari-hari, supaya tiap langkah di Taiwan lebih sederhana.",
   "heroPoints": [
-    "Siapa kami: 越境代辦 CROSSING PROXY.",
-    "Yang bisa dibantu: terjemahan, dokumen, jual-beli motor, SIM, kirim barang, dan urusan harian. Sewa dan paket perusahaan belum dibuka.",
-    "Bahasa: 繁體中文, English, Tiếng Việt, Bahasa Indonesia, ไทย, Filipino.",
-    "Mulai dari mana: pilih negara, buka kartu layanan, baca status dan batasannya.",
-    "Cara menghubungi: akun LINE resmi @681ydjcz."
+    "Kami adalah CROSSING PROXY, mitra layanan sehari-hari bagi warga asing di Taiwan.",
+    "Yang bisa ditanyakan: dokumen, SIM, terjemahan Mandarin–Vietnam, jual beli motor, nomor ponsel, pengiriman, dan urusan harian. Sewa dan paket perusahaan masih disiapkan.",
+    "Bahasa dan negara terpisah. Ada enam halaman bahasa. Bendera hanya menyaring layanan.",
+    "Mulai dari: pilih bendera, buka layanan, baca status dan batasan, lalu tanya di LINE.",
+    "Kontak: LINE @681ydjcz. Situs ini tidak mengirim pesan untuk Anda."
   ],
   "nav": {
     "services": "Layanan bersama",
@@ -23,15 +23,16 @@
   },
   "langLabel": "Bahasa",
   "ctaAsk": "Tanya sekarang",
-  "ctaServices": "Lihat layanan",
-  "countryLabel": "Layanan negara yang mana",
-  "countryHelp": "Bahasa hanya mengubah tulisan. Negara hanya mengubah layanan khusus. Anda bisa membaca dalam bahasa Inggris dan tetap memilih Vietnam.",
+  "ctaServices": "Cari layanan",
+  "countryLabel": "Negara yang dicakup layanan",
+  "countryHelp": "Bendera hanya menyaring layanan, tidak mengubah bahasa situs. Gunakan menu bahasa di atas. Setiap bahasa memakai namanya sendiri.",
   "countries": {
-    "all": "Semua negara",
+    "all": "Semua layanan",
     "VN": "Vietnam",
     "ID": "Indonesia",
     "TH": "Thailand",
-    "PH": "Filipina"
+    "PH": "Filipina",
+    "TW": "Taiwan"
   },
   "sections": {
     "common": {
@@ -43,12 +44,12 @@
       "lead": "Saat ini hanya pengiriman ke Vietnam dan dokumen terkait Vietnam yang ditandai sudah dibuka. Layanan khusus negara lain tetap direncanakan."
     },
     "expansion": {
-      "title": "Masih direncanakan, belum dibuka",
-      "lead": "Anda boleh menjelaskan kebutuhan. Belum bisa memesan, belum ada harga, dan pesan bukan janji temu."
+      "title": "Layanan yang sedang disiapkan",
+      "lead": "Ini belum dibuka. Anda bisa meninggalkan kebutuhan. Itu bukan pesanan dan tidak ada harganya."
     },
     "steps": {
-      "title": "Tiga langkah",
-      "lead": "Baca batasannya dulu. Jangan menulis nomor identitas di formulir."
+      "title": "Cara mengajukan",
+      "lead": "Baca batasan dulu, lalu tempel pertanyaan ke LINE. Jangan isi nomor identitas di formulir."
     },
     "trust": {
       "title": "Wilayah layanan dan informasi tepercaya",
@@ -60,18 +61,30 @@
     },
     "business": {
       "title": "Kerja sama perusahaan",
-      "lead": "Jika Anda dari perusahaan dan ingin bertanya soal dukungan hidup, transport, terjemahan bagi karyawan asing, atau kerja sama dengan pihak yang berizin, gunakan pertanyaan perusahaan. Ini belum kontrak yang berjalan."
+      "lead": "Jika Anda dari perusahaan dan ingin bertanya soal dukungan sehari-hari, transport, terjemahan bagi karyawan asing, atau kerja sama dengan penyedia yang sah, gunakan pertanyaan perusahaan. Ini belum kontrak yang berjalan."
     },
     "faq": {
       "title": "Pertanyaan umum",
       "lead": "Lihat dulu apa yang tidak kami kerjakan."
     },
     "contact": {
-      "title": "Kontak dan media sosial",
-      "lead": "Jalur utama adalah LINE. Formulir tidak mengirim isi ke situs ini."
+      "title": "LINE",
+      "lead": "Salin pesan lalu tempel sendiri ke LINE. Situs ini tidak mengirimkannya."
     },
     "legal": {
       "title": "Aturan dan data pribadi"
+    },
+    "flags": {
+      "title": "Pilih layanan yang ingin dilihat",
+      "lead": "Bendera hanya menyaring layanan, tidak mengganti bahasa. Menu di atas memakai nama asli tiap bahasa."
+    },
+    "quick": {
+      "title": "Pintasan layanan",
+      "lead": "Pilih kelompok, lalu lihat apakah sudah dibuka. Item yang sedang disiapkan tidak bisa dipesan."
+    },
+    "open": {
+      "title": "Layanan yang sudah dibuka",
+      "lead": "Ini bisa ditanyakan. Biaya dijelaskan di LINE. Situs ini tidak mengumumkan harga."
     }
   },
   "status": {
@@ -81,7 +94,7 @@
     "paused": "Ditunda"
   },
   "card": {
-    "details": "Rincian",
+    "details": "Lihat detail",
     "ask": "Tanya sekarang",
     "audience": "Untuk siapa",
     "scope": "Cakupan",
@@ -94,41 +107,41 @@
     "askPlanned": "Catat kebutuhan"
   },
   "appliesAll": "Tidak terbatas pada satu negara",
-  "areaPending": "Menunggu konfirmasi pemilik",
+  "areaPending": "Kota yang dilayani belum diumumkan. Sebutkan kota Anda di LINE, kami konfirmasi per kasus.",
   "steps": [
     {
       "title": "Pilih layanan",
-      "body": "Pilih satu layanan dan baca statusnya dulu. Bahasa dan negara tetap terpisah."
+      "body": "Pakai bendera atau pintasan. Bahasa dan negara diatur terpisah dan tidak diikat jadi satu."
     },
     {
-      "title": "Konfirmasi kebutuhan dan cakupan",
-      "body": "Buka rincian: untuk siapa, dokumen, cara biaya, dan batasan. Yang masih disiapkan tidak bisa dipesan dan belum ada harga."
+      "title": "Baca cakupan",
+      "body": "Buka detail untuk melihat siapa yang dilayani, dokumen, cara biaya, dan batasan. Item yang sedang disiapkan tidak bisa dipesan dan tidak ada harganya."
     },
     {
-      "title": "Konfirmasi lewat LINE",
-      "body": "Salin pertanyaan ke LINE @681ydjcz. Jangan sertakan nomor identitas, paspor, atau ARC."
+      "title": "Tempel ke LINE",
+      "body": "Salin pertanyaan dan tempel sendiri ke LINE @681ydjcz. Situs tidak mengirimnya. Jangan sertakan nomor paspor, ARC, atau identitas."
     }
   ],
   "trustItems": [
     {
       "title": "Sudah dikonfirmasi",
-      "body": "Mereknya CROSSING PROXY／越境代辦. Akun LINE resmi adalah @681ydjcz. Situs ini punya enam halaman bahasa."
+      "body": "Mereknya CROSSING PROXY. Akun LINE resmi adalah @681ydjcz. Situs ini punya enam bahasa."
     },
     {
-      "title": "Label status",
-      "body": "Setiap kartu bertuliskan sudah dibuka, dirujuk ke mitra, direncanakan, atau ditunda. Belum ada yang dirujuk ke mitra karena mitra berizin belum dikonfirmasi."
+      "title": "Status layanan",
+      "body": "Setiap kartu bertanda sudah dibuka, rujukan mitra, sedang disiapkan, atau dijeda. Belum ada rujukan mitra karena mitra yang sah belum dikonfirmasi."
     },
     {
-      "title": "Kota dan jam balas",
-      "body": "Kota yang bisa dikunjungi dan jam ada orang membalas masih menunggu konfirmasi. Sebutkan kota Anda saat bertanya."
+      "title": "Kota dan waktu",
+      "body": "Kota yang dilayani dan jam balasan belum diumumkan. Sebutkan kota saat bertanya."
     },
     {
       "title": "Biaya",
-      "body": "Situs ini tidak menampilkan biaya layanan, ongkir, atau harga mulai. Minta penawaran di LINE dan setujui sebelum mulai."
+      "body": "Situs tidak menampilkan biaya layanan, ongkir, atau harga minimum. Penawaran diberikan di LINE sebelum dikerjakan."
     },
     {
-      "title": "Belum dipublikasikan",
-      "body": "Profil tim, nomor izin, nama mitra, alamat jalan, dan nomor telepon belum dikonfirmasi untuk dipublikasikan, jadi tidak dicantumkan."
+      "title": "Belum ditampilkan",
+      "body": "Profil tim, nomor izin, mitra, alamat, dan nomor telepon belum dikonfirmasi untuk publik, jadi tidak ditampilkan."
     }
   ],
   "casesEmptyTitle": "Belum ada kisah yang boleh dipublikasikan",
@@ -136,12 +149,12 @@
   "businessNote": "Formulir perusahaan menanyakan nama perusahaan, narahubung, cara dihubungi, kota, perkiraan jumlah orang, dan jenis kerja sama. Menyalin teks bukan pesanan dan tidak berarti layanan sudah dibuka.",
   "faq": [
     {
-      "q": "Kalau situs dibaca dalam bahasa Inggris, layanan Vietnam masih bisa dicari?",
-      "a": "Bisa. Ganti bahasa di kanan atas, lalu pilih negara Vietnam. Tulisan dan daftar layanan terpisah."
+      "q": "Kalau situs dibaca dalam bahasa Inggris, layanan untuk Vietnam tetap bisa dilihat?",
+      "a": "Bisa. Pilih English di menu bahasa, lalu pilih bendera Vietnam. Bendera hanya menyaring layanan dan tidak mengubah situs menjadi bahasa Vietnam."
     },
     {
       "q": "Apakah kalian mengurus visa, izin tinggal, atau izin kerja?",
-      "a": "Kami tidak bertindak sebagai agen imigrasi, visa, atau izin tinggal, dan tidak menjanjikan hasil dari instansi. Bantuan dokumen hanya menjelaskan, merapikan, dan menerjemahkan. Urusan yang butuh kualifikasi hukum tidak ditandai sebagai rujukan mitra sebelum ada mitra berizin yang nyata."
+      "a": "Kami tidak bertindak sebagai agen imigrasi, visa, atau izin tinggal, dan tidak menjanjikan hasil dari instansi. Bantuan dokumen hanya menjelaskan, merapikan, dan menerjemahkan. Urusan yang butuh kualifikasi hukum tidak ditandai sebagai rujukan mitra sebelum ada mitra yang sah."
     },
     {
       "q": "Berapa biayanya?",
@@ -149,7 +162,7 @@
     },
     {
       "q": "Apa yang tidak boleh dikirim ke Vietnam?",
-      "a": "Sesuai arahan pemilik yang sudah dipakai ke publik: daging dan olahan daging tidak diterima; baterai dan power bank dibatasi; cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim. Daftar larangan lengkap dari situs lama belum bisa diambil dari akun yang ditangguhkan, jadi ini bukan naskah aslinya."
+      "a": "Daging dan olahan daging tidak diterima; baterai dan power bank dibatasi; cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim."
     },
     {
       "q": "Bisa sewa sepeda motor atau furnitur?",
@@ -162,9 +175,13 @@
     {
       "q": "Apakah formulir disimpan di situs ini?",
       "a": "Tidak. Halaman ini statis. Setelah Anda menyalin, teks tetap di perangkat Anda sampai Anda menempelkannya ke LINE. Jangan mengisi nomor identitas, paspor, ARC, atau data sensitif lain."
+    },
+    {
+      "q": "Warga asing bisa bertanya tentang ujian SIM motor atau menukar SIM luar negeri di Taiwan?",
+      "a": "Bisa, sebagai pertanyaan. Itu meliputi jadwal ujian, daftar ujian ulang, alur penukaran, merapikan dokumen, materi ujian tertulis dan aturan lalu lintas, serta langkah di kantor kendaraan. Terjemahan dan pendampingan ditanyakan terpisah dan dikonfirmasi per kasus. Kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan. Lulus atau berhasil menukar tidak dijamin."
     }
   ],
-  "contactHours": "Bahasa yang dibalas orang dan jam layanannya: menunggu konfirmasi pemilik.",
+  "contactHours": "Jam balasan belum diumumkan. Tinggalkan pesan di LINE, kami akan membalas.",
   "contactSocialNote": "Akun sosial memakai nama yang sudah dipakai pemilik. WhatsApp dan Messenger tidak dipasang karena belum ada tautan yang dikonfirmasi.",
   "socialLabels": {
     "facebook": "Facebook",
@@ -174,9 +191,9 @@
   },
   "inquiry": {
     "title": "Siapkan pertanyaan",
-    "privacy": "Jangan mengisi nomor identitas, paspor, ARC, tanggal lahir lengkap, atau foto dokumen. Formulir ini tidak diunggah ke situs.",
+    "privacy": "Jangan isi nomor paspor, nomor ARC, nomor identitas, atau foto identitas. Baca lagi drafnya sebelum menyalin. Formulir ini tidak diunggah dan tidak dikirim untuk Anda.",
     "copy": "Salin pertanyaan",
-    "copied": "Tersalin. Tempel ke LINE.",
+    "copied": "Tersalin. Tempel ke LINE. Situs ini tidak mengirimnya.",
     "copyFailed": "Salin otomatis gagal. Pilih teksnya sendiri.",
     "line": "Buka LINE",
     "close": "Tutup",
@@ -210,7 +227,7 @@
           {
             "id": "item",
             "label": "Jenis barang",
-            "placeholder": "Misalnya pakaian atau dokumen"
+            "placeholder": "Misalnya pakaian, dokumen (mohon jangan isi nomor identitas atau data pribadi yang sensitif)"
           },
           {
             "id": "pickup",
@@ -365,25 +382,117 @@
           {
             "id": "items",
             "label": "Yang ingin dibahas",
-            "placeholder": "Dukungan hidup, transport, terjemahan, atau lainnya"
+            "placeholder": "Dukungan sehari-hari, transport, terjemahan, atau lainnya"
+          }
+        ]
+      },
+      "driving": {
+        "intro": "Draf ini hanya disusun di perangkat Anda. Pendampingan, terjemahan, dan apakah kami bisa membantu dikonfirmasi kemudian. Ini belum kasus yang diterima.",
+        "fields": [
+          {
+            "id": "nationality",
+            "label": "Kewarganegaraan",
+            "placeholder": "Misalnya Vietnam. Bisa diubah"
+          },
+          {
+            "id": "city",
+            "label": "Kota di Taiwan",
+            "placeholder": "Anda berada di kota mana"
+          },
+          {
+            "id": "licenseNeed",
+            "label": "Layanan yang dibutuhkan",
+            "type": "select",
+            "options": [
+              {
+                "id": "first",
+                "label": "Ujian SIM pertama"
+              },
+              {
+                "id": "retake",
+                "label": "Daftar ulang ujian"
+              },
+              {
+                "id": "exchange",
+                "label": "Penukaran SIM luar negeri"
+              },
+              {
+                "id": "papers",
+                "label": "Rapikan dokumen dan terjemahan"
+              },
+              {
+                "id": "other",
+                "label": "Pertanyaan SIM lainnya"
+              }
+            ]
+          },
+          {
+            "id": "hasLicense",
+            "label": "Punya SIM dari negara asal?",
+            "type": "select",
+            "options": [
+              {
+                "id": "yes",
+                "label": "Ya"
+              },
+              {
+                "id": "no",
+                "label": "Tidak"
+              },
+              {
+                "id": "unsure",
+                "label": "Belum pasti"
+              }
+            ]
+          },
+          {
+            "id": "when",
+            "label": "Perkiraan waktu",
+            "placeholder": "Misalnya bulan depan"
+          },
+          {
+            "id": "need",
+            "label": "Kebutuhan lain",
+            "placeholder": "Hal yang ingin ditanyakan. Jangan isi nomor identitas"
           }
         ]
       }
-    }
+    },
+    "selectPlaceholder": "Pilih",
+    "blank": "(kosong)",
+    "notSent": "Belum terkirim. Salin lalu tempel sendiri ke LINE. Jangan lampirkan nomor identitas atau foto identitas.",
+    "preview": "Pratinjau pesan",
+    "idHint": "Teks berisi deretan angka yang panjang. Pastikan itu bukan nomor paspor, ARC, atau identitas.",
+    "shared": {
+      "nationality": {
+        "id": "nationality",
+        "label": "Kewarganegaraan",
+        "placeholder": "Misalnya Vietnam. Bisa diubah"
+      },
+      "city": {
+        "id": "city",
+        "label": "Kota di Taiwan",
+        "placeholder": "Anda berada di kota mana"
+      }
+    },
+    "confirmLabel": "Saya mengonfirmasi pesan ini tidak berisi nomor paspor, nomor ARC, nomor identitas, atau foto identitas.",
+    "confirmRequired": "Centang konfirmasi sebelum menyalin atau membuka LINE.",
+    "sensitiveBlock": "Pesan ini berisi deretan angka panjang yang tampak seperti nomor identitas. Hapus nomor paspor, ARC, atau identitas sebelum menyalin. Tanggal biasa dan akun LINE tidak dianggap nomor identitas."
   },
   "dock": "Tanya sekarang",
-  "footerNote": "Situs statis. Alamat publik baru berubah setelah cabang ini digabung ke cabang bawaan.",
-  "pendingStrip": "Harga, kota, alamat, izin, tim, dan kisah pelanggan yang belum diberikan pemilik ditandai menunggu dan tidak diisi sendiri.",
+  "footerNote": "Situs ini tersedia dalam enam bahasa.",
+  "pendingStrip": "Alamat, izin, tim, mitra, dan cerita klien tidak ditampilkan sebelum operator mengonfirmasinya.",
   "legal": [
-    "Catatan ini mengikuti arah aturan yang berlaku di Taiwan, bukan nasihat hukum. Urusan imigrasi, visa, izin tinggal, jasa penyalur kerja swasta, izin angkut dan kirim, serta kontrak sewa motor dan asuransi tidak ditawarkan sebagai layanan langsung atau rujukan mitra sampai pemilik mengonfirmasi kualifikasi atau mitra berizin yang nyata.",
+    "Catatan ini mengikuti arah aturan yang berlaku di Taiwan, bukan nasihat hukum. Urusan imigrasi, visa, izin tinggal, jasa penyalur kerja swasta, izin angkut dan kirim, serta kontrak sewa motor dan asuransi tidak ditawarkan sebagai layanan langsung atau rujukan mitra sampai pemilik mengonfirmasi kualifikasi atau mitra yang sah.",
     "Kami tidak menjanjikan visa, pekerjaan, izin tinggal, atau persetujuan instansi mana pun. Instansi yang memutuskan apakah dokumen diterima.",
     "Pertanyaan awal tidak meminta kartu identitas, paspor, ARC, atau data sensitif lain. Jangan menaruh data itu di URL publik atau formulir statis ini.",
     "Apakah pengiriman dan jemput di rumah sudah punya izin yang diperlukan masih menunggu konfirmasi. Sebelum itu, uraian ini adalah bantuan bertanya dan alur kirim yang sudah ada, bukan klaim memegang izin angkut tertentu.",
-    "Bantuan jual-beli motor tidak menggantikan pendaftaran, asuransi, dan aturan lalu lintas. Sewa jangka pendek dan menengah belum dibuka, jadi tidak ada kontrak sewa untuk ditandatangani."
+    "Bantuan jual-beli motor tidak menggantikan pendaftaran, asuransi, dan aturan lalu lintas. Sewa jangka pendek dan menengah belum dibuka, jadi tidak ada kontrak sewa untuk ditandatangani.",
+    "Bantuan SIM hanya berupa pertanyaan, merapikan dokumen, serta terjemahan atau pendampingan bila dikonfirmasi per kasus. Tidak menjamin lulus atau berhasil menukar SIM. Kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan."
   ],
   "root": {
     "title": "Pilih bahasa",
-    "lead": "CROSSING PROXY｜越境代辦. Enam bahasa masing-masing satu halaman penuh. Kami tidak memaksa pindah halaman menurut bahasa peramban.",
+    "lead": "CROSSING PROXY. Enam bahasa masing-masing satu halaman penuh. Kami tidak memaksa pindah halaman menurut bahasa peramban.",
     "suggest": "Terakhir Anda memakai",
     "choose": "Pilih satu bahasa",
     "browser": "Bahasa peramban mungkin lebih dekat ke"
@@ -416,7 +525,7 @@
         "Kami pisahkan yang bisa dan yang tidak bisa",
         "Bertemu setelah Anda setuju dengan harga"
       ],
-      "limits": "Kami tidak menjanjikan visa, pekerjaan, atau persetujuan instansi. Urusan yang butuh izin tidak ditandai sebagai rujukan mitra sebelum ada mitra berizin."
+      "limits": "Kami tidak menjanjikan visa, pekerjaan, atau persetujuan instansi. Urusan yang butuh izin tidak ditandai sebagai rujukan mitra sebelum ada mitra yang sah."
     },
     "moto-sale": {
       "title": "Jual-beli sepeda motor",
@@ -436,7 +545,7 @@
       "title": "Kartu SIM dan komunikasi",
       "summary": "Membantu memahami apa yang biasanya ditanyakan operator sebelum Anda membuat nomor.",
       "audience": "Warga asing di Taiwan yang ingin langkahnya dijelaskan dalam bahasa yang dikenal.",
-      "scope": "Penjelasan di depan dan dampingan saat berbicara. Kontrak ada antara Anda dan operator. Kami bukan operator.",
+      "scope": "Penjelasan sebelumnya dan dampingan saat berbicara. Kontrak ada antara Anda dan operator. Kami bukan operator.",
       "documents": "Operator mungkin perlu melihat paspor atau dokumen tinggal. Tunjukkan langsung ke operator. Jangan ketik nomornya di situs ini.",
       "pricing": "Harga paket mengikuti operator. Biaya bantuan kami tidak diumumkan. Tanya di LINE.",
       "steps": [
@@ -486,7 +595,7 @@
         "Kami pastikan bisa diterima dan kirim penawaran",
         "Serahkan barang setelah Anda setuju"
       ],
-      "limits": "Daging dan olahan daging tidak diterima. Baterai dan power bank dibatasi. Cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim. Naskah larangan lengkap dari situs lama belum ditemukan, jadi paragraf ini bukan naskah itu. Apakah izin angkut yang diperlukan sudah ada masih menunggu konfirmasi pemilik."
+      "limits": "Daging dan olahan daging tidak diterima. Baterai dan power bank dibatasi. Cairan dan obat biasanya juga dibatasi. Aturan berubah, jadi konfirmasi lagi sebelum mengirim. Apakah izin angkut yang diperlukan sudah ada masih menunggu konfirmasi pemilik."
     },
     "vn-papers": {
       "title": "Dokumen terkait Vietnam dan terjemahan",
@@ -506,7 +615,7 @@
       "title": "Kirim ke negara lain",
       "summary": "Pengiriman ke selain Vietnam belum dibuka, termasuk Indonesia, Thailand, dan Filipina.",
       "audience": "Orang yang ingin mengirim barang ke luar Vietnam.",
-      "scope": "Saat ini kami hanya mendengar permintaan, tidak menerima paket.",
+      "scope": "Saat ini kami hanya menerima pertanyaan, tidak menerima paket.",
       "documents": "Sebelum dibuka kami tidak mengumpulkan nomor identitas penerima.",
       "pricing": "Belum dibuka. Tidak ada harga.",
       "steps": [
@@ -559,9 +668,9 @@
       "limits": "Belum resmi dibuka. Pertanyaan bukan pesanan."
     },
     "b2b-life": {
-      "title": "Dukungan hidup dan transport untuk perusahaan",
+      "title": "Dukungan sehari-hari dan transport untuk perusahaan",
       "summary": "Direncanakan. Perusahaan boleh menjelaskan kebutuhan. Itu tidak berarti kami sudah bisa mengerjakan.",
-      "audience": "Perusahaan yang bertanya tentang dukungan hidup, transport, atau terjemahan bagi karyawan asing, atau kerja sama dengan penyedia yang sah.",
+      "audience": "Perusahaan yang bertanya tentang dukungan sehari-hari, transport, atau terjemahan bagi karyawan asing, atau kerja sama dengan penyedia yang sah.",
       "scope": "Kami hanya mengumpulkan permintaan. Jika suatu layanan pribadi sudah dibuka, batas layanan itu tetap berlaku.",
       "documents": "Tinggalkan nama perusahaan dan narahubung. Jangan kirim nomor identitas karyawan.",
       "pricing": "Tidak ada daftar harga perusahaan. Jika nanti bisa dikerjakan, kami menawarkan harga satu per satu lebih dulu.",
@@ -571,6 +680,20 @@
         "Kami baru menjelaskan apakah pembicaraan bisa dilanjutkan setelah dicek"
       ],
       "limits": "Ini tidak ditandai sudah dibuka atau sebagai rujukan mitra. Belum ada nama perusahaan mitra yang dikonfirmasi, jadi tidak ada yang dicantumkan."
+    },
+    "driving-license-assistance": {
+      "title": "Bantuan Pengurusan SIM",
+      "summary": "Tanyakan ujian SIM motor, ujian ulang, penukaran SIM luar negeri, dan dokumen terkait. Apakah kami bisa membantu dikonfirmasi per kasus. Hasil tidak dijamin.",
+      "audience": "Warga asing di Taiwan yang membutuhkan ujian SIM, penukaran SIM luar negeri, atau dokumen terkait. Kelayakan dikonfirmasi per kasus dan mengikuti otoritas kendaraan.",
+      "scope": "Anda bisa menanyakan: bantuan jadwal ujian SIM motor, bantuan daftar ujian ulang, bantuan alur menukar SIM luar negeri menjadi SIM Taiwan, merapikan dokumen SIM, bahan ujian tertulis dan penjelasan aturan lalu lintas, pertanyaan tentang langkah administrasi di kantor kendaraan, serta apakah terjemahan atau pendampingan bisa diatur. Hal yang belum dipastikan hanya dicatat sebagai pertanyaan dan dikonfirmasi per kasus. Kami tidak menjanjikan akan menyelesaikannya.",
+      "documents": "Kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan. Jangan tinggalkan nomor paspor, nomor ARC, atau foto identitas di situs ini.",
+      "pricing": "Biaya diberikan lewat penawaran di LINE, per kasus. Situs ini tidak mencantumkan biaya atau harga minimum.",
+      "steps": [
+        "Sebutkan kewarganegaraan, kota, dan yang dibutuhkan",
+        "Kami konfirmasi per kasus, termasuk terjemahan atau pendampingan",
+        "Setelah Anda setuju dengan penawaran, langkah berikutnya disusun bersama"
+      ],
+      "limits": "Kami tidak menjamin lulus ujian atau berhasil menukar SIM. Terjemahan dan pendampingan harus diminta dan dikonfirmasi per kasus. Layanan ini tidak menggantikan otoritas kendaraan atau pendaftaran yang diwajibkan hukum."
     }
   },
   "primaryNav": {
@@ -578,7 +701,8 @@
     "steps": "Proses",
     "about": "Tentang",
     "faq": "FAQ",
-    "menu": "Menu"
+    "menu": "Menu",
+    "planned": "Sedang disiapkan"
   },
   "filters": {
     "label": "Saring layanan",
@@ -601,5 +725,158 @@
       "title": "Menghargai privasi",
       "body": "Pertanyaan tetap di perangkat Anda dan tidak diunggah. Jangan mengisi nomor identitas, paspor, atau ARC."
     }
-  ]
+  ],
+  "heroTitle": "Hidup di Taiwan, bersama CROSSING PROXY.",
+  "ctaLine": "Tanya lewat LINE",
+  "floatLabel": "Tanya lewat LINE",
+  "countryNow": "Wilayah layanan: {name}",
+  "filterLive": "Sedang ditampilkan: {name}",
+  "aboutTitle": "Tentang CROSSING PROXY",
+  "entryNote": "Ini layanan SIM yang sama. Detail dan pertanyaan memakai satu data.",
+  "listSep": ", ",
+  "mobileBar": {
+    "services": "Lihat layanan",
+    "line": "Tanya di LINE"
+  },
+  "groups": {
+    "documents": {
+      "title": "Dokumen dan administrasi",
+      "lead": "Dokumen sehari-hari, dokumen SIM, dan dokumen terkait Vietnam.",
+      "blurb": "Dokumen, SIM, Vietnam"
+    },
+    "language": {
+      "title": "Bahasa dan terjemahan",
+      "lead": "Terjemahan Mandarin–Vietnam sudah dibuka. Bahasa lain masih disiapkan dan belum menjadi pekerjaan yang diterima.",
+      "blurb": "Mandarin–Vietnam sudah buka"
+    },
+    "transport": {
+      "title": "Transportasi dan motor",
+      "lead": "Jual beli motor sudah dibuka. Layanan SIM adalah data yang sama, bisa masuk dari sini. Sewa jangka pendek dan menengah masih disiapkan.",
+      "blurb": "Jual beli, SIM, sewa"
+    },
+    "logistics": {
+      "title": "Pengiriman lintas negara",
+      "lead": "Kirim ke Vietnam dan penjemputan sudah dibuka. Kirim ke negara lain masih disiapkan.",
+      "blurb": "Kirim dan jemput"
+    },
+    "daily": {
+      "title": "Kehidupan sehari-hari",
+      "lead": "Nomor ponsel dan pertanyaan sehari-hari sudah dibuka. Sewa barang rumah dan furnitur masih disiapkan.",
+      "blurb": "Ponsel dan urusan harian"
+    },
+    "enterprise": {
+      "title": "Kerja sama perusahaan",
+      "lead": "Masih disiapkan. Perusahaan bisa meninggalkan kebutuhan. Itu tidak berarti sudah bisa dikerjakan.",
+      "blurb": "Kebutuhan perusahaan, belum buka"
+    }
+  },
+  "notices": {
+    "title": "Biaya, privasi, dan catatan layanan",
+    "items": [
+      "Biaya: situs ini tidak mengumumkan biaya layanan, ongkir, atau harga minimum. Sebelum dikerjakan, LINE menjelaskan biayanya.",
+      "Privasi: formulir hanya menyusun teks di perangkat Anda. Tidak diunggah dan tidak dikirimkan. Jangan isi nomor paspor, nomor ARC, nomor identitas, atau foto identitas.",
+      "Cakupan: kota, izin, dan mitra belum diumumkan. Situs tidak menampilkan alamat, ulasan, jumlah pelanggan, tingkat keberhasilan, atau otorisasi pemerintah yang belum dikonfirmasi.",
+      "SIM: kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan. Lulus ujian atau berhasil menukar SIM tidak dijamin. Terjemahan dan pendampingan harus ditanyakan dan dikonfirmasi per kasus."
+    ]
+  },
+  "cities": [
+    {
+      "id": "TPE",
+      "label": "Kota Taipei"
+    },
+    {
+      "id": "NTP",
+      "label": "Kota New Taipei"
+    },
+    {
+      "id": "TAO",
+      "label": "Kota Taoyuan"
+    },
+    {
+      "id": "TXG",
+      "label": "Kota Taichung"
+    },
+    {
+      "id": "TNN",
+      "label": "Kota Tainan"
+    },
+    {
+      "id": "KHH",
+      "label": "Kota Kaohsiung"
+    },
+    {
+      "id": "KEL",
+      "label": "Kota Keelung"
+    },
+    {
+      "id": "HSZ",
+      "label": "Kota Hsinchu"
+    },
+    {
+      "id": "CYI",
+      "label": "Kota Chiayi"
+    },
+    {
+      "id": "HSQ",
+      "label": "Kabupaten Hsinchu"
+    },
+    {
+      "id": "MIA",
+      "label": "Kabupaten Miaoli"
+    },
+    {
+      "id": "CHA",
+      "label": "Kabupaten Changhua"
+    },
+    {
+      "id": "NAN",
+      "label": "Kabupaten Nantou"
+    },
+    {
+      "id": "YUN",
+      "label": "Kabupaten Yunlin"
+    },
+    {
+      "id": "CYQ",
+      "label": "Kabupaten Chiayi"
+    },
+    {
+      "id": "PIF",
+      "label": "Kabupaten Pingtung"
+    },
+    {
+      "id": "ILA",
+      "label": "Kabupaten Yilan"
+    },
+    {
+      "id": "HUA",
+      "label": "Kabupaten Hualien"
+    },
+    {
+      "id": "TTT",
+      "label": "Kabupaten Taitung"
+    },
+    {
+      "id": "PEN",
+      "label": "Kabupaten Penghu"
+    },
+    {
+      "id": "KIN",
+      "label": "Kabupaten Kinmen"
+    },
+    {
+      "id": "LIE",
+      "label": "Kabupaten Lienchiang"
+    },
+    {
+      "id": "OTHER",
+      "label": "Lainnya"
+    }
+  ],
+  "community": {
+    "title": "Gabung komunitas",
+    "lead": "Anda juga bisa menemukan kami di sini.",
+    "line": "Komunitas LINE",
+    "facebook": "Grup Facebook"
+  }
 }

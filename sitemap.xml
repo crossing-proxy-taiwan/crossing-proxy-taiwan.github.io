@@ -1,10 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://crossing-proxy-taiwan.github.io/</loc></url>
-  <url><loc>https://crossing-proxy-taiwan.github.io/zh/</loc></url>
-  <url><loc>https://crossing-proxy-taiwan.github.io/en/</loc></url>
-  <url><loc>https://crossing-proxy-taiwan.github.io/vi/</loc></url>
-  <url><loc>https://crossing-proxy-taiwan.github.io/id/</loc></url>
-  <url><loc>https://crossing-proxy-taiwan.github.io/th/</loc></url>
-  <url><loc>https://crossing-proxy-taiwan.github.io/fil/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://crossing-proxy-taiwan.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://crossing-proxy-taiwan.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crossing-proxy-taiwan.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crossing-proxy-taiwan.github.io/vi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://crossing-proxy-taiwan.github.io/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://crossing-proxy-taiwan.github.io/th/"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://crossing-proxy-taiwan.github.io/fil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crossing-proxy-taiwan.github.io/"/>
+  </url>
+  <url>
+    <loc>https://crossing-proxy-taiwan.github.io/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://crossing-proxy-taiwan.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crossing-proxy-taiwan.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crossing-proxy-taiwan.github.io/vi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://crossing-proxy-taiwan.github.io/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://crossing-proxy-taiwan.github.io/th/"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://crossing-proxy-taiwan.github.io/fil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crossing-proxy-taiwan.github.io/"/>
+  </url>
+  <url>
+    <loc>https://crossing-proxy-taiwan.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://crossing-proxy-taiwan.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crossing-proxy-taiwan.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crossing-proxy-taiwan.github.io/vi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://crossing-proxy-taiwan.github.io/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://crossing-proxy-taiwan.github.io/th/"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://crossing-proxy-taiwan.github.io/fil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crossing-proxy-taiwan.github.io/"/>
+  </url>
+  <url>
+    <loc>https://crossing-proxy-taiwan.github.io/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://crossing-proxy-taiwan.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crossing-proxy-taiwan.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crossing-proxy-taiwan.github.io/vi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://crossing-proxy-taiwan.github.io/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://crossing-proxy-taiwan.github.io/th/"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://crossing-proxy-taiwan.github.io/fil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crossing-proxy-taiwan.github.io/"/>
+  </url>
+  <url>
+    <loc>https://crossing-proxy-taiwan.github.io/id/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://crossing-proxy-taiwan.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crossing-proxy-taiwan.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crossing-proxy-taiwan.github.io/vi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://crossing-proxy-taiwan.github.io/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://crossing-proxy-taiwan.github.io/th/"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://crossing-proxy-taiwan.github.io/fil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crossing-proxy-taiwan.github.io/"/>
+  </url>
+  <url>
+    <loc>https://crossing-proxy-taiwan.github.io/th/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://crossing-proxy-taiwan.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crossing-proxy-taiwan.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crossing-proxy-taiwan.github.io/vi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://crossing-proxy-taiwan.github.io/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://crossing-proxy-taiwan.github.io/th/"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://crossing-proxy-taiwan.github.io/fil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crossing-proxy-taiwan.github.io/"/>
+  </url>
+  <url>
+    <loc>https://crossing-proxy-taiwan.github.io/fil/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://crossing-proxy-taiwan.github.io/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://crossing-proxy-taiwan.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://crossing-proxy-taiwan.github.io/vi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://crossing-proxy-taiwan.github.io/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://crossing-proxy-taiwan.github.io/th/"/>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://crossing-proxy-taiwan.github.io/fil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://crossing-proxy-taiwan.github.io/"/>
+  </url>
 </urlset>

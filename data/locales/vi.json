@@ -1,14 +1,14 @@
 {
-  "metaTitle": "CROSSING PROXY｜越境代辦｜Việc đời sống tại Đài Loan",
-  "metaDescription": "CROSSING PROXY (越境代辦) hỗ trợ người nước ngoài tại Đài Loan về dịch Trung–Việt, giấy tờ đời sống, mua bán xe máy, hòa mạng, gửi hàng và câu hỏi hằng ngày. Ngôn ngữ và quốc gia chọn riêng. Giá, địa bàn và giấy phép chưa xác nhận đều ghi là đang chờ.",
-  "position": "CROSSING PROXY là người bạn đồng hành, lo việc đời sống cho người nước ngoài tại Đài Loan ở một nơi.",
-  "heroLead": "Xem dịch vụ đã mở chưa và giới hạn là gì, rồi nhắn LINE. Giá, địa chỉ và nhận xét chưa xác nhận sẽ không xuất hiện ở đây.",
+  "metaTitle": "Hỗ trợ bằng lái xe và đời sống tại Đài Loan | CROSSING PROXY",
+  "metaDescription": "CROSSING PROXY hỗ trợ người nước ngoài tại Đài Loan hỏi thủ tục đổi bằng lái xe, thi bằng lái xe máy, giấy tờ, dịch thuật Trung–Việt, mua bán xe máy và gửi hàng. Điều kiện theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan, không cam kết kết quả. Trang không đăng giá.",
+  "position": "CROSSING PROXY là đối tác dịch vụ đời sống một cửa cho người nước ngoài tại Đài Loan.",
+  "heroLead": "Hỗ trợ giấy tờ, thủ tục giấy phép lái xe, phiên dịch, mua bán xe máy, gửi hàng xuyên biên giới và việc sinh hoạt hằng ngày, để mỗi bước ở Đài Loan đơn giản hơn.",
   "heroPoints": [
-    "Chúng tôi là ai: 越境代辦 CROSSING PROXY.",
-    "Có thể hỗ trợ: dịch, giấy tờ, mua bán xe máy, hòa mạng, gửi hàng và việc đời sống. Thuê xe, thuê đồ và gói doanh nghiệp chưa mở.",
-    "Ngôn ngữ: 繁體中文, English, Tiếng Việt, Bahasa Indonesia, ไทย, Filipino.",
-    "Bắt đầu từ đâu: chọn quốc gia, mở thẻ dịch vụ, đọc trạng thái và giới hạn.",
-    "Liên hệ: LINE chính thức @681ydjcz."
+    "Chúng tôi là CROSSING PROXY, đối tác dịch vụ đời sống cho người nước ngoài tại Đài Loan.",
+    "Có thể hỏi: giấy tờ, bằng lái, dịch Trung–Việt, mua bán xe máy, SIM, gửi hàng và việc hằng ngày. Thuê xe và gói doanh nghiệp đang chuẩn bị.",
+    "Ngôn ngữ và quốc gia tách riêng. Có sáu trang ngôn ngữ. Cờ chỉ lọc dịch vụ.",
+    "Bắt đầu: chọn cờ, mở dịch vụ, đọc trạng thái và giới hạn, rồi hỏi trên LINE.",
+    "Liên hệ: LINE @681ydjcz. Website không gửi tin thay bạn."
   ],
   "nav": {
     "services": "Dịch vụ chung",
@@ -23,15 +23,16 @@
   },
   "langLabel": "Ngôn ngữ",
   "ctaAsk": "Hỏi ngay",
-  "ctaServices": "Xem dịch vụ",
-  "countryLabel": "Xem dịch vụ của quốc gia nào",
-  "countryHelp": "Ngôn ngữ chỉ đổi chữ. Quốc gia chỉ đổi dịch vụ riêng. Có thể đọc tiếng Anh mà vẫn chọn Việt Nam.",
+  "ctaServices": "Tìm dịch vụ",
+  "countryLabel": "Quốc gia mà dịch vụ áp dụng",
+  "countryHelp": "Cờ chỉ lọc dịch vụ, không đổi ngôn ngữ website. Hãy dùng menu ngôn ngữ phía trên. Mỗi ngôn ngữ giữ tên riêng.",
   "countries": {
-    "all": "Mọi quốc gia",
+    "all": "Mọi dịch vụ",
     "VN": "Việt Nam",
     "ID": "Indonesia",
     "TH": "Thái Lan",
-    "PH": "Philippines"
+    "PH": "Philippines",
+    "TW": "Đài Loan"
   },
   "sections": {
     "common": {
@@ -43,12 +44,12 @@
       "lead": "Hiện chỉ gửi hàng về Việt Nam và giấy tờ liên quan Việt Nam được ghi là đã mở. Dịch vụ riêng của nước khác vẫn đang chuẩn bị."
     },
     "expansion": {
-      "title": "Đang chuẩn bị, chưa mở",
-      "lead": "Bạn có thể mô tả nhu cầu. Chưa đặt được, chưa có giá, và tin nhắn không phải là lịch hẹn."
+      "title": "Dịch vụ đang chuẩn bị",
+      "lead": "Các mục này chưa mở. Có thể để lại nhu cầu, đó không phải đơn hàng và không có giá."
     },
     "steps": {
-      "title": "Ba bước",
-      "lead": "Đọc giới hạn trước khi liên hệ. Đừng ghi số giấy tờ vào biểu mẫu."
+      "title": "Cách gửi yêu cầu",
+      "lead": "Đọc giới hạn trước, rồi dán câu hỏi vào LINE. Đừng điền số giấy tờ vào biểu mẫu."
     },
     "trust": {
       "title": "Khu vực phục vụ và thông tin tin cậy",
@@ -60,18 +61,30 @@
     },
     "business": {
       "title": "Hợp tác với doanh nghiệp",
-      "lead": "Nếu bạn là công ty, muốn hỏi hỗ trợ đời sống, đi lại, dịch thuật cho nhân viên nước ngoài, hoặc phối hợp với đơn vị có phép, hãy dùng mục doanh nghiệp. Đây chưa phải hợp đồng đang chạy."
+      "lead": "Nếu bạn là công ty, muốn hỏi hỗ trợ đời sống, đi lại, dịch thuật cho nhân viên nước ngoài, hoặc phối hợp với đơn vị hợp pháp, hãy dùng mục doanh nghiệp. Đây chưa phải hợp đồng đang chạy."
     },
     "faq": {
       "title": "Câu hỏi thường gặp",
       "lead": "Xem những việc chúng tôi không làm trước khi hỏi."
     },
     "contact": {
-      "title": "Liên hệ và mạng xã hội",
-      "lead": "Cách liên hệ chính là LINE. Biểu mẫu không gửi nội dung lên website này."
+      "title": "LINE",
+      "lead": "Sao chép nội dung rồi tự dán vào LINE. Website không gửi thay bạn."
     },
     "legal": {
       "title": "Quy định và dữ liệu cá nhân"
+    },
+    "flags": {
+      "title": "Chọn dịch vụ muốn xem",
+      "lead": "Cờ chỉ lọc dịch vụ, không đổi ngôn ngữ. Menu phía trên ghi tên riêng của từng ngôn ngữ."
+    },
+    "quick": {
+      "title": "Lối vào nhanh",
+      "lead": "Chọn một nhóm, rồi xem đã mở chưa. Mục đang chuẩn bị không đặt được."
+    },
+    "open": {
+      "title": "Dịch vụ đã mở",
+      "lead": "Có thể hỏi các mục này. Phí được nói trên LINE. Trang không đăng giá."
     }
   },
   "status": {
@@ -81,7 +94,7 @@
     "paused": "Tạm ngưng"
   },
   "card": {
-    "details": "Chi tiết",
+    "details": "Xem chi tiết",
     "ask": "Hỏi ngay",
     "audience": "Phù hợp với ai",
     "scope": "Phạm vi",
@@ -94,41 +107,41 @@
     "askPlanned": "Ghi nhu cầu"
   },
   "appliesAll": "Không giới hạn một quốc gia",
-  "areaPending": "Chờ người phụ trách xác nhận",
+  "areaPending": "Chưa công bố các thành phố phục vụ. Hãy nói thành phố của bạn trên LINE, chúng tôi xác nhận từng trường hợp.",
   "steps": [
     {
       "title": "Chọn dịch vụ",
-      "body": "Chọn một dịch vụ và xem trạng thái trước. Ngôn ngữ và quốc gia đặt riêng, không buộc đi cùng nhau."
+      "body": "Dùng cờ hoặc lối vào nhanh. Ngôn ngữ và quốc gia đặt riêng, không buộc với nhau."
     },
     {
-      "title": "Xác nhận nhu cầu và phạm vi",
-      "body": "Mở chi tiết để xem đối tượng, giấy tờ, cách tính phí và giới hạn. Đang chuẩn bị thì chưa đặt được và chưa có giá."
+      "title": "Đọc phạm vi",
+      "body": "Mở chi tiết để xem đối tượng, giấy tờ, cách tính phí và giới hạn. Mục đang chuẩn bị không đặt trước và không có giá."
     },
     {
-      "title": "Xác nhận qua LINE",
-      "body": "Sao chép nội dung hỏi, dán vào LINE @681ydjcz. Đừng gửi số căn cước, hộ chiếu hay thẻ cư trú."
+      "title": "Dán vào LINE",
+      "body": "Sao chép câu hỏi và tự dán vào LINE @681ydjcz. Website không gửi thay. Đừng kèm số hộ chiếu, thẻ cư trú hoặc căn cước."
     }
   ],
   "trustItems": [
     {
       "title": "Đã xác nhận",
-      "body": "Thương hiệu là CROSSING PROXY／越境代辦. LINE chính thức là @681ydjcz. Site có sáu trang ngôn ngữ."
+      "body": "Thương hiệu là CROSSING PROXY. LINE chính thức là @681ydjcz. Site có sáu ngôn ngữ."
     },
     {
-      "title": "Trạng thái dịch vụ",
-      "body": "Mỗi thẻ ghi đã mở, giới thiệu đối tác, đang chuẩn bị hoặc tạm ngưng. Hiện chưa có mục giới thiệu đối tác vì chưa xác nhận đơn vị có phép."
+      "title": "Trạng thái",
+      "body": "Mỗi thẻ ghi đã mở, giới thiệu đối tác, đang chuẩn bị hoặc tạm dừng. Chưa có mục giới thiệu đối tác vì chưa xác nhận đối tác hợp pháp."
     },
     {
-      "title": "Địa bàn và giờ trả lời",
-      "body": "Huyện thị có thể đến lấy hàng, và giờ có người trả lời, đều đang chờ xác nhận. Khi hỏi, bạn tự ghi huyện thị."
+      "title": "Thành phố và giờ",
+      "body": "Thành phố phục vụ và giờ trả lời chưa được công bố. Hãy nói thành phố khi hỏi."
     },
     {
       "title": "Phí",
-      "body": "Site không hiện phí dịch vụ, cước gửi hay giá sàn. Muốn báo giá thì nhắn LINE và xác nhận trước khi làm."
+      "body": "Trang không hiện phí dịch vụ, phí gửi hay giá sàn. Báo giá trên LINE trước khi làm."
     },
     {
-      "title": "Chưa công bố",
-      "body": "Giới thiệu đội ngũ, số giấy phép, tên đối tác, địa chỉ và số điện thoại chưa có bản được phép đăng, nên không ghi ở đây."
+      "title": "Chưa đăng",
+      "body": "Giới thiệu đội ngũ, số giấy phép, đối tác, địa chỉ và số điện thoại chưa được xác nhận để công khai, nên không đăng."
     }
   ],
   "casesEmptyTitle": "Chưa có câu chuyện được phép đăng",
@@ -136,8 +149,8 @@
   "businessNote": "Mẫu doanh nghiệp hỏi tên công ty, người liên hệ, cách liên hệ, huyện thị, số người ước tính và hạng mục. Sao chép chữ không phải là đơn hàng, cũng không có nghĩa dịch vụ đã mở.",
   "faq": [
     {
-      "q": "Đọc trang bằng tiếng Anh thì còn tìm được dịch vụ Việt Nam không?",
-      "a": "Được. Đổi ngôn ngữ ở góc trên, rồi chọn quốc gia Việt Nam. Chữ và danh sách dịch vụ là hai việc khác nhau."
+      "q": "Đọc trang bằng tiếng Anh thì vẫn xem dịch vụ cho Việt Nam được không?",
+      "a": "Được. Chọn English trong menu ngôn ngữ, rồi bấm cờ Việt Nam. Cờ chỉ lọc dịch vụ, không đổi trang sang tiếng Việt."
     },
     {
       "q": "Các bạn làm visa, thẻ cư trú hoặc giấy phép làm việc giúp không?",
@@ -149,7 +162,7 @@
     },
     {
       "q": "Gửi về Việt Nam thì món nào không nhận?",
-      "a": "Theo nguyên tắc người phụ trách đã dùng khi nói với khách: không nhận thịt và sản phẩm từ thịt; pin và sạc dự phòng bị hạn chế; chất lỏng và thuốc thường cũng bị hạn chế. Quy định đổi, phải hỏi lại trước khi gửi. Bản cấm gửi đầy đủ của website cũ chưa lấy lại được từ tài khoản bị khóa, nên đoạn này không phải nguyên văn cũ."
+      "a": "Không nhận thịt và sản phẩm từ thịt; pin và sạc dự phòng bị hạn chế; chất lỏng và thuốc thường cũng bị hạn chế. Quy định đổi, phải hỏi lại trước khi gửi."
     },
     {
       "q": "Thuê xe máy hoặc đồ nội thất được không?",
@@ -162,9 +175,13 @@
     {
       "q": "Biểu mẫu có được lưu trên website không?",
       "a": "Không. Đây là trang tĩnh. Sau khi bạn sao chép, chữ nằm trên máy của bạn cho đến khi bạn dán vào LINE. Đừng điền số căn cước, hộ chiếu, thẻ cư trú hay dữ liệu nhạy cảm khác."
+    },
+    {
+      "q": "Người nước ngoài có thể hỏi về thi bằng xe máy hoặc đổi bằng lái tại Đài Loan không?",
+      "a": "Có thể hỏi trước. Việc này gồm đặt lịch thi, đăng ký thi lại, quy trình đổi bằng, sắp xếp giấy tờ, tài liệu thi viết và luật giao thông, cùng quy trình hành chính tại trạm quản lý xe (監理站). Dịch và đi cùng phải hỏi riêng và xác nhận từng trường hợp. Điều kiện và giấy tờ theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan. Không cam kết đậu hoặc đổi bằng thành công."
     }
   ],
-  "contactHours": "Ngôn ngữ có người trả lời và khung giờ: chờ người phụ trách xác nhận.",
+  "contactHours": "Chưa công bố giờ trả lời. Hãy để lại tin trên LINE, chúng tôi sẽ phản hồi.",
   "contactSocialNote": "Tài khoản mạng xã hội dùng tên người phụ trách đã công bố. Không có liên kết WhatsApp hay Messenger đã xác nhận nên không đặt lên trang.",
   "socialLabels": {
     "facebook": "Facebook",
@@ -174,9 +191,9 @@
   },
   "inquiry": {
     "title": "Soạn nội dung hỏi",
-    "privacy": "Đừng điền số căn cước, hộ chiếu, thẻ cư trú, ngày sinh đầy đủ hoặc ảnh giấy tờ. Biểu mẫu này không tải lên website.",
+    "privacy": "Đừng điền số hộ chiếu, số thẻ cư trú, số căn cước hoặc ảnh giấy tờ. Hãy đọc lại bản nháp trước khi sao chép. Biểu mẫu không được tải lên và không được gửi thay bạn.",
     "copy": "Sao chép nội dung hỏi",
-    "copied": "Đã sao chép. Hãy dán vào LINE.",
+    "copied": "Đã sao chép. Hãy dán vào LINE. Website chưa gửi.",
     "copyFailed": "Không tự sao chép được. Hãy chọn chữ bằng tay.",
     "line": "Mở LINE",
     "close": "Đóng",
@@ -210,7 +227,7 @@
           {
             "id": "item",
             "label": "Loại đồ",
-            "placeholder": "Ví dụ quần áo hoặc giấy tờ"
+            "placeholder": "Ví dụ quần áo, giấy tờ (vui lòng không điền số giấy tờ hoặc dữ liệu cá nhân nhạy cảm)"
           },
           {
             "id": "pickup",
@@ -368,22 +385,114 @@
             "placeholder": "Đời sống, đi lại, dịch hoặc việc khác"
           }
         ]
+      },
+      "driving": {
+        "intro": "Bản nháp này chỉ được ghép trên máy của bạn. Việc đi cùng, dịch và khả năng hỗ trợ sẽ xác nhận sau. Đây chưa phải hồ sơ đã nhận.",
+        "fields": [
+          {
+            "id": "nationality",
+            "label": "Quốc tịch",
+            "placeholder": "Ví dụ Việt Nam. Có thể sửa"
+          },
+          {
+            "id": "city",
+            "label": "Thành phố tại Đài Loan",
+            "placeholder": "Bạn đang ở thành phố nào"
+          },
+          {
+            "id": "licenseNeed",
+            "label": "Việc cần hỗ trợ",
+            "type": "select",
+            "options": [
+              {
+                "id": "first",
+                "label": "Thi lần đầu"
+              },
+              {
+                "id": "retake",
+                "label": "Đăng ký thi lại"
+              },
+              {
+                "id": "exchange",
+                "label": "Đổi bằng lái nước ngoài"
+              },
+              {
+                "id": "papers",
+                "label": "Sắp xếp giấy tờ và dịch thuật"
+              },
+              {
+                "id": "other",
+                "label": "Câu hỏi khác về bằng lái"
+              }
+            ]
+          },
+          {
+            "id": "hasLicense",
+            "label": "Đang có bằng lái của nước mình không?",
+            "type": "select",
+            "options": [
+              {
+                "id": "yes",
+                "label": "Có"
+              },
+              {
+                "id": "no",
+                "label": "Không"
+              },
+              {
+                "id": "unsure",
+                "label": "Chưa chắc"
+              }
+            ]
+          },
+          {
+            "id": "when",
+            "label": "Thời gian dự kiến",
+            "placeholder": "Ví dụ tháng sau"
+          },
+          {
+            "id": "need",
+            "label": "Nhu cầu khác",
+            "placeholder": "Điều muốn hỏi trước. Đừng điền số giấy tờ"
+          }
+        ]
       }
-    }
+    },
+    "selectPlaceholder": "Chọn",
+    "blank": "(để trống)",
+    "notSent": "Chưa gửi. Hãy sao chép rồi tự dán vào LINE. Đừng kèm số giấy tờ hoặc ảnh giấy tờ.",
+    "preview": "Xem trước tin nhắn",
+    "idHint": "Nội dung có một dãy số dài. Hãy kiểm tra đó không phải số hộ chiếu, thẻ cư trú hoặc căn cước.",
+    "shared": {
+      "nationality": {
+        "id": "nationality",
+        "label": "Quốc tịch",
+        "placeholder": "Ví dụ Việt Nam. Có thể sửa"
+      },
+      "city": {
+        "id": "city",
+        "label": "Thành phố tại Đài Loan",
+        "placeholder": "Bạn đang ở thành phố nào"
+      }
+    },
+    "confirmLabel": "Tôi xác nhận tin này không có số hộ chiếu, số thẻ cư trú, số căn cước hoặc ảnh giấy tờ.",
+    "confirmRequired": "Hãy đánh dấu xác nhận trước khi sao chép hoặc mở LINE.",
+    "sensitiveBlock": "Tin này có một dãy số dài giống số giấy tờ. Hãy xóa số hộ chiếu, thẻ cư trú hoặc căn cước trước khi sao chép. Ngày tháng thông thường và tài khoản LINE không bị xem là số giấy tờ."
   },
   "dock": "Hỏi ngay",
-  "footerNote": "Website tĩnh. Địa chỉ công khai chỉ đổi sau khi nhánh này được gộp vào nhánh mặc định.",
-  "pendingStrip": "Giá, huyện thị, địa chỉ, giấy phép, đội ngũ và câu chuyện khách hàng mà người phụ trách chưa cung cấp đều ghi là đang chờ, không tự điền.",
+  "footerNote": "Trang này có sáu ngôn ngữ.",
+  "pendingStrip": "Địa chỉ, giấy phép, đội ngũ, đối tác và câu chuyện khách hàng chưa được đăng khi người phụ trách chưa xác nhận.",
   "legal": [
     "Phần này viết theo hướng quy định hiện hành tại Đài Loan, không phải tư vấn pháp lý. Việc di trú, visa, cư trú, dịch vụ việc làm tư nhân, giấy phép vận chuyển và gửi hàng, hợp đồng thuê xe máy cùng bảo hiểm, nếu cần tư cách pháp lý, sẽ không được ghi là trực tiếp làm hoặc giới thiệu đối tác cho đến khi người phụ trách xác nhận tư cách hoặc đối tác hợp pháp.",
     "Chúng tôi không cam kết visa, việc làm, cư trú hay bất kỳ phê duyệt nào của cơ quan. Cơ quan mới quyết định giấy tờ có được nhận hay không.",
     "Câu hỏi ban đầu không yêu cầu căn cước, hộ chiếu, thẻ cư trú hay dữ liệu nhạy cảm khác. Đừng đưa các dữ liệu đó vào đường dẫn công khai hoặc biểu mẫu tĩnh này.",
     "Việc gửi hàng và đến lấy tại nhà đã có đủ giấy phép hay chưa vẫn đang chờ xác nhận. Trước khi có xác nhận, mô tả chỉ là hỗ trợ hỏi đáp và quy trình gửi hàng hiện có, không phải tuyên bố đang giữ một loại giấy phép vận chuyển cụ thể.",
-    "Hỗ trợ mua bán xe máy không thay việc đăng ký, bảo hiểm và luật giao thông. Thuê ngắn và trung hạn chưa mở nên không có hợp đồng thuê để ký."
+    "Hỗ trợ mua bán xe máy không thay việc đăng ký, bảo hiểm và luật giao thông. Thuê ngắn và trung hạn chưa mở nên không có hợp đồng thuê để ký.",
+    "Hỗ trợ giấy phép lái xe chỉ gồm tư vấn, sắp xếp giấy tờ, và dịch hoặc đi cùng khi đã xác nhận từng trường hợp. Không cam kết đậu hoặc đổi bằng thành công. Điều kiện và giấy tờ theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan."
   ],
   "root": {
     "title": "Chọn ngôn ngữ",
-    "lead": "CROSSING PROXY｜越境代辦. Sáu ngôn ngữ đều là một trang đầy đủ. Chúng tôi không ép chuyển hướng theo ngôn ngữ trình duyệt.",
+    "lead": "CROSSING PROXY. Sáu ngôn ngữ đều là một trang đầy đủ. Chúng tôi không ép chuyển hướng theo ngôn ngữ trình duyệt.",
     "suggest": "Lần trước bạn dùng",
     "choose": "Hãy chọn một ngôn ngữ",
     "browser": "Ngôn ngữ trình duyệt có thể gần với"
@@ -423,7 +532,7 @@
       "summary": "Giúp nắm những câu cần hỏi khi mua hoặc bán xe máy cũ tại Đài Loan. Đây không phải thuê xe.",
       "audience": "Người nước ngoài tại Đài Loan muốn mua hoặc bán xe máy cũ và cần hỗ trợ ngôn ngữ.",
       "scope": "Câu hỏi trước khi xem xe, giải thích các bước và đi cùng để nói chuyện. Chúng tôi có giấy phép cửa hàng xe hay không vẫn đang chờ xác nhận. Trang không tuyên bố đã có giấy phép.",
-      "documents": "Sang tên, bảo hiểm và đăng ký theo quy định của cơ quan giám lý. Đừng ghi số giấy tờ hoặc biển số vào biểu mẫu.",
+      "documents": "Sang tên, bảo hiểm và giấy đăng ký xe theo quy định của cơ quan quản lý xe (公路監理機關). Đừng ghi số giấy tờ hoặc biển số vào biểu mẫu.",
       "pricing": "Giá xe và phí dịch vụ đều chưa công bố. Hãy hỏi trên LINE.",
       "steps": [
         "Nói huyện thị và muốn mua hay bán",
@@ -461,7 +570,7 @@
       "limits": "Không chẩn đoán y khoa, không tư vấn kiện tụng, và không đứng ra chuyển tiền."
     },
     "pickup": {
-      "title": "Đến nhà lấy hàng",
+      "title": "Lấy hàng tận nơi",
       "summary": "Đi cùng việc gửi hàng, đến chỗ bạn lấy. Huyện thị phục vụ chưa công bố.",
       "audience": "Người gửi không tiện tự mang hàng đến.",
       "scope": "Chỉ ở những huyện thị người phụ trách xác nhận. Chưa xác nhận thì hãy hỏi trước, đừng mặc định phủ toàn Đài Loan.",
@@ -486,7 +595,7 @@
         "Chúng tôi xác nhận có nhận không và báo giá",
         "Giao hàng sau khi bạn đồng ý"
       ],
-      "limits": "Không nhận thịt và sản phẩm từ thịt. Pin và sạc dự phòng bị hạn chế. Chất lỏng và thuốc thường cũng bị hạn chế. Quy định sẽ đổi, phải hỏi lại trước khi gửi. Nguyên văn danh sách cấm của website cũ chưa tìm lại được, nên đoạn này không phải bản cũ. Giấy phép vận chuyển đã đủ hay chưa vẫn đang chờ người phụ trách xác nhận."
+      "limits": "Không nhận thịt và sản phẩm từ thịt. Pin và sạc dự phòng bị hạn chế. Chất lỏng và thuốc thường cũng bị hạn chế. Quy định sẽ đổi, phải hỏi lại trước khi gửi. Giấy phép vận chuyển đã đủ hay chưa vẫn đang chờ người phụ trách xác nhận."
     },
     "vn-papers": {
       "title": "Giấy tờ liên quan Việt Nam và dịch thuật",
@@ -561,7 +670,7 @@
     "b2b-life": {
       "title": "Hợp tác đời sống và đi lại cho doanh nghiệp",
       "summary": "Đang chuẩn bị. Công ty có thể mô tả nhu cầu, không có nghĩa là chúng tôi đã nhận làm.",
-      "audience": "Công ty muốn hỏi hỗ trợ đời sống, đi lại, dịch thuật cho nhân viên nước ngoài, hoặc phối hợp với đơn vị có phép.",
+      "audience": "Công ty muốn hỏi hỗ trợ đời sống, đi lại, dịch thuật cho nhân viên nước ngoài, hoặc phối hợp với đơn vị hợp pháp.",
       "scope": "Chỉ ghi nhận ý định. Nếu một dịch vụ cá nhân đã mở thì vẫn theo giới hạn của dịch vụ đó.",
       "documents": "Để lại công ty và người liên hệ. Đừng gửi số giấy tờ của nhân viên.",
       "pricing": "Không có bảng giá doanh nghiệp. Nếu sau này làm được, sẽ báo giá riêng trước.",
@@ -571,6 +680,20 @@
         "Chúng tôi kiểm tra rồi mới nói có bàn tiếp được không"
       ],
       "limits": "Không ghi là đã mở hoặc giới thiệu đối tác. Chưa có tên công ty đối tác được xác nhận nên không liệt kê."
+    },
+    "driving-license-assistance": {
+      "title": "Hỗ trợ thủ tục giấy phép lái xe",
+      "summary": "Hỏi về thi bằng xe máy, thi lại, đổi bằng nước ngoài và giấy tờ liên quan. Việc nhận hỗ trợ được xác nhận từng trường hợp, không cam kết kết quả.",
+      "audience": "Người nước ngoài tại Đài Loan cần thi bằng, đổi bằng nước ngoài hoặc làm giấy tờ liên quan. Điều kiện thực tế được xác nhận từng trường hợp và theo quy định của cơ quan quản lý xe (公路監理機關).",
+      "scope": "Có thể hỏi: hỗ trợ đặt lịch thi bằng xe máy, hỗ trợ đăng ký thi lại, hỗ trợ quy trình đổi bằng nước ngoài sang bằng Đài Loan, sắp xếp giấy tờ liên quan, tài liệu thi viết và giải thích luật giao thông, hỏi về quy trình hành chính tại trạm quản lý xe (監理站), cùng nhu cầu dịch thuật và đi cùng. Hạng mục chưa xác nhận sẽ chỉ được xem là câu hỏi và xác nhận từng trường hợp, không hứa sẽ làm xong.",
+      "documents": "Điều kiện và giấy tờ theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan. Đừng để số hộ chiếu, số thẻ cư trú hoặc ảnh giấy tờ trên trang này.",
+      "pricing": "Báo giá riêng trên LINE. Trang không nêu phí và không có giá sàn.",
+      "steps": [
+        "Nói quốc tịch, thành phố và việc cần làm",
+        "Chúng tôi xác nhận từng trường hợp, kể cả dịch và đi cùng",
+        "Sau khi bạn đồng ý báo giá, cùng sắp xếp bước tiếp theo"
+      ],
+      "limits": "Không cam kết đậu kỳ thi hoặc đổi bằng thành công. Dịch thuật và đi cùng phải hỏi trước và xác nhận từng trường hợp. Dịch vụ này không thay thế cơ quan quản lý xe (公路監理機關) và không thay thế thủ tục đăng ký theo luật."
     }
   },
   "primaryNav": {
@@ -578,7 +701,8 @@
     "steps": "Quy trình",
     "about": "Về chúng tôi",
     "faq": "FAQ",
-    "menu": "Menu"
+    "menu": "Menu",
+    "planned": "Đang chuẩn bị"
   },
   "filters": {
     "label": "Lọc dịch vụ",
@@ -601,5 +725,158 @@
       "title": "Tôn trọng riêng tư",
       "body": "Nội dung hỏi chỉ nằm trên máy của bạn, không tải lên website. Đừng điền số căn cước, hộ chiếu hoặc thẻ cư trú."
     }
-  ]
+  ],
+  "heroTitle": "Sống tại Đài Loan, để CROSSING PROXY đồng hành cùng bạn.",
+  "ctaLine": "Hỏi ngay trên LINE",
+  "floatLabel": "Hỏi ngay trên LINE",
+  "countryNow": "Khu vực dịch vụ: {name}",
+  "filterLive": "Đang xem: {name}",
+  "aboutTitle": "Về CROSSING PROXY",
+  "entryNote": "Đây là cùng một dịch vụ bằng lái. Chi tiết và câu hỏi dùng chung một mục.",
+  "listSep": ", ",
+  "mobileBar": {
+    "services": "Xem dịch vụ",
+    "line": "Hỏi LINE ngay"
+  },
+  "groups": {
+    "documents": {
+      "title": "Giấy tờ và thủ tục",
+      "lead": "Giấy tờ đời sống, giấy phép lái xe, và giấy tờ liên quan đến Việt Nam.",
+      "blurb": "Giấy tờ, bằng lái, Việt Nam"
+    },
+    "language": {
+      "title": "Ngôn ngữ và phiên dịch",
+      "lead": "Đã mở dịch Trung–Việt. Ngôn ngữ khác vẫn đang chuẩn bị, chưa phải việc đã nhận.",
+      "blurb": "Trung–Việt đã mở"
+    },
+    "transport": {
+      "title": "Đi lại và xe máy",
+      "lead": "Mua bán xe máy đã mở. Dịch vụ bằng lái là cùng một mục, vào từ đây. Thuê ngắn và trung hạn đang chuẩn bị.",
+      "blurb": "Mua bán, bằng lái, thuê"
+    },
+    "logistics": {
+      "title": "Gửi hàng xuyên biên giới",
+      "lead": "Gửi về Việt Nam và lấy hàng tận nơi đã mở. Gửi sang nước khác đang chuẩn bị.",
+      "blurb": "Gửi hàng và lấy tận nơi"
+    },
+    "daily": {
+      "title": "Sinh hoạt hằng ngày",
+      "lead": "SIM và câu hỏi đời sống đã mở. Thuê đồ dùng và nội thất đang chuẩn bị.",
+      "blurb": "SIM và việc hằng ngày"
+    },
+    "enterprise": {
+      "title": "Hợp tác doanh nghiệp",
+      "lead": "Vẫn đang chuẩn bị. Công ty có thể để lại nhu cầu, điều đó không có nghĩa là đã nhận việc.",
+      "blurb": "Nhu cầu công ty, chưa mở"
+    }
+  },
+  "notices": {
+    "title": "Phí, quyền riêng tư và lưu ý",
+    "items": [
+      "Phí: trang không đăng phí dịch vụ, phí vận chuyển hay giá sàn. Trước khi làm, LINE sẽ nói cách tính.",
+      "Quyền riêng tư: biểu mẫu chỉ ghép chữ trên máy của bạn, không tải lên và không gửi thay. Đừng điền số hộ chiếu, số thẻ cư trú, số căn cước hoặc ảnh giấy tờ.",
+      "Phạm vi: chưa công bố thành phố, giấy phép và đối tác. Trang không đăng địa chỉ, đánh giá, số khách, tỷ lệ thành công hoặc ủy quyền của cơ quan khi chưa được xác nhận.",
+      "Bằng lái: điều kiện và giấy tờ theo quy định của cơ quan quản lý xe (公路監理機關) Đài Loan. Không cam kết đậu hoặc đổi bằng thành công. Dịch và đi cùng phải hỏi trước và xác nhận từng trường hợp."
+    ]
+  },
+  "cities": [
+    {
+      "id": "TPE",
+      "label": "Thành phố Đài Bắc"
+    },
+    {
+      "id": "NTP",
+      "label": "Thành phố Tân Bắc"
+    },
+    {
+      "id": "TAO",
+      "label": "Thành phố Đào Viên"
+    },
+    {
+      "id": "TXG",
+      "label": "Thành phố Đài Trung"
+    },
+    {
+      "id": "TNN",
+      "label": "Thành phố Đài Nam"
+    },
+    {
+      "id": "KHH",
+      "label": "Thành phố Cao Hùng"
+    },
+    {
+      "id": "KEL",
+      "label": "Thành phố Cơ Long"
+    },
+    {
+      "id": "HSZ",
+      "label": "Thành phố Tân Trúc"
+    },
+    {
+      "id": "CYI",
+      "label": "Thành phố Gia Nghĩa"
+    },
+    {
+      "id": "HSQ",
+      "label": "Huyện Tân Trúc"
+    },
+    {
+      "id": "MIA",
+      "label": "Huyện Miêu Lật"
+    },
+    {
+      "id": "CHA",
+      "label": "Huyện Chương Hóa"
+    },
+    {
+      "id": "NAN",
+      "label": "Huyện Nam Đầu"
+    },
+    {
+      "id": "YUN",
+      "label": "Huyện Vân Lâm"
+    },
+    {
+      "id": "CYQ",
+      "label": "Huyện Gia Nghĩa"
+    },
+    {
+      "id": "PIF",
+      "label": "Huyện Bình Đông"
+    },
+    {
+      "id": "ILA",
+      "label": "Huyện Nghi Lan"
+    },
+    {
+      "id": "HUA",
+      "label": "Huyện Hoa Liên"
+    },
+    {
+      "id": "TTT",
+      "label": "Huyện Đài Đông"
+    },
+    {
+      "id": "PEN",
+      "label": "Huyện Bành Hồ"
+    },
+    {
+      "id": "KIN",
+      "label": "Huyện Kim Môn"
+    },
+    {
+      "id": "LIE",
+      "label": "Huyện Liên Giang"
+    },
+    {
+      "id": "OTHER",
+      "label": "Khác"
+    }
+  ],
+  "community": {
+    "title": "Tham gia cộng đồng",
+    "lead": "Bạn cũng có thể tìm chúng tôi ở đây.",
+    "line": "Cộng đồng LINE",
+    "facebook": "Nhóm Facebook"
+  }
 }

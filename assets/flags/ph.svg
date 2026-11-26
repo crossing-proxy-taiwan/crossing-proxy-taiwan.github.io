@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" preserveAspectRatio="xMidYMid meet" role="img"><rect width="200" height="50" fill="#0038A8"/>
+  <rect y="50" width="200" height="50" fill="#CE1126"/>
+  <polygon points="0,0 0,100 86.60,50" fill="#FFFFFF"/>
+  <g transform="translate(28 50)"><polygon points="-1.66,-5.77 0.00,-14.00 1.66,-5.77" fill="#FCD116"/><polygon points="2.90,-5.25 9.90,-9.90 5.25,-2.90" fill="#FCD116"/><polygon points="5.77,-1.66 14.00,0.00 5.77,1.66" fill="#FCD116"/><polygon points="5.25,2.90 9.90,9.90 2.90,5.25" fill="#FCD116"/><polygon points="1.66,5.77 0.00,14.00 -1.66,5.77" fill="#FCD116"/><polygon points="-2.90,5.25 -9.90,9.90 -5.25,2.90" fill="#FCD116"/><polygon points="-5.77,1.66 -14.00,0.00 -5.77,-1.66" fill="#FCD116"/><polygon points="-5.25,-2.90 -9.90,-9.90 -2.90,-5.25" fill="#FCD116"/><circle r="5.2" fill="#FCD116"/></g>
+  <polygon points="14.00,7.80 15.00,10.62 17.99,10.70 15.62,12.53 16.47,15.40 14.00,13.70 11.53,15.40 12.38,12.53 10.01,10.70 13.00,10.62" fill="#FCD116"/>
+  <polygon points="14.00,83.80 15.00,86.62 17.99,86.70 15.62,88.53 16.47,91.40 14.00,89.70 11.53,91.40 12.38,88.53 10.01,86.70 13.00,86.62" fill="#FCD116"/>
+  <polygon points="72.00,45.80 73.00,48.62 75.99,48.70 73.62,50.53 74.47,53.40 72.00,51.70 69.53,53.40 70.38,50.53 68.01,48.70 71.00,48.62" fill="#FCD116"/></svg>
