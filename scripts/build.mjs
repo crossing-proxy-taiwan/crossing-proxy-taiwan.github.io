@@ -579,8 +579,7 @@ function gate(notFound) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="cp-translation-review" content="not-yet-native-reviewed">
-${notFound ? "" : `<meta name="google-site-verification" content="O5v_Vbt6Z-JsQgCpghEn8o48Yh4prPGLoE3jebFfKPs">`}
-<title>${esc(title)}</title>
+${notFound ? "" : `<meta name="google-site-verification" content="O5v_Vbt6Z-JsQgCpghEn8o48Yh4prPGLoE3jebFfKPs">\n`}<title>${esc(title)}</title>
 <meta name="description" content="${esc(ui.root.lead)}">
 <link rel="canonical" href="${catalog.siteUrl}/">
 ${hreflangLinks()}
