@@ -3,6 +3,7 @@ if (configNode) {
   const config = JSON.parse(configNode.textContent);
   const showPlannedServices = config.showPlannedServices === true;
   const analytics = { enabled: false, endpoint: "" };
+  const allowed = new Set(["all", "TW", "VN", "ID", "TH", "PH"]);
 
   try {
     localStorage.setItem("cp-lang", config.lang);
@@ -25,10 +26,13 @@ if (configNode) {
     });
   }
 
-  const countrySelect = document.getElementById("country");
-  const cards = [...document.querySelectorAll("[data-countries]")];
-  const emptyNote = document.getElementById("filter-empty");
-  let view = "all";
+  const radios = [...document.querySelectorAll(".flag-btn")];
+  const cards = [...document.querySelectorAll(".card")];
+  const groups = [...document.querySelectorAll("[data-group]")];
+  const openEmpty = document.getElementById("open-empty");
+  const plannedEmpty = document.getElementById("planned-empty");
+  const live = document.getElementById("filter-live");
+  const countryJump = document.getElementById("country-jump");
 
   function readCountry() {
     const fromUrl = new URL(location.href).searchParams.get("country");
@@ -39,30 +43,47 @@ if (configNode) {
       stored = "";
     }
     const value = fromUrl || stored || "all";
-    const allowed = new Set(["all", "VN", "ID", "TH", "PH"]);
     return allowed.has(value) ? value : "all";
   }
 
+  function countryName(code) {
+    return config.countries[code] || code;
+  }
+
+  function matchesCountry(card, country) {
+    if (!showPlannedServices && card.dataset.status === "planned") return false;
+    if (country === "all") return true;
+    const list = card.dataset.countries.split(",");
+    return list.includes("*") || list.includes(country);
+  }
+
   function applyFilters(persistCountry) {
-    const country = countrySelect ? countrySelect.value : "all";
-    let shown = 0;
+    const selected = document.querySelector('.flag-btn[aria-checked="true"]');
+    const country = selected ? selected.dataset.country : "all";
     cards.forEach((card) => {
-      if (!showPlannedServices && card.dataset.status === "planned") {
-        card.hidden = true;
-        return;
-      }
-      const list = card.dataset.countries.split(",");
-      const countryOk = country === "all" || list.includes("*") || list.includes(country);
-      const viewOk =
-        view === "all" ||
-        (view === "open" && card.dataset.status === "open") ||
-        (view === "planned" && card.dataset.status === "planned") ||
-        (view === "country" && card.dataset.category === "country");
-      const visible = countryOk && viewOk;
-      card.hidden = !visible;
-      if (visible) shown += 1;
+      card.hidden = !matchesCountry(card, country);
     });
-    if (emptyNote) emptyNote.hidden = shown !== 0;
+    groups.forEach((group) => {
+      const groupCards = [...group.querySelectorAll(".card")];
+      group.hidden = groupCards.length > 0 && groupCards.every((card) => card.hidden);
+    });
+    const openVisible = cards.some((card) => card.closest("#services") && !card.hidden);
+    const plannedVisible = cards.some((card) => card.closest("#planned") && !card.hidden);
+    if (openEmpty) openEmpty.hidden = openVisible;
+    if (plannedEmpty) plannedEmpty.hidden = plannedVisible;
+    if (country === "all") document.documentElement.removeAttribute("data-country");
+    else document.documentElement.setAttribute("data-country", country);
+    const name = countryName(country);
+    if (countryJump) {
+      countryJump.textContent = name;
+      countryJump.setAttribute("aria-label", config.countryNow.replace("{name}", name));
+    }
+    if (live) live.textContent = config.filterLive.replace("{name}", name);
+    radios.forEach((radio) => {
+      const on = radio.dataset.country === country;
+      radio.setAttribute("aria-checked", on ? "true" : "false");
+      radio.tabIndex = on ? 0 : -1;
+    });
     if (!persistCountry) return;
     try {
       localStorage.setItem("cp-country", country);
@@ -76,23 +97,30 @@ if (configNode) {
     track("country_change", { country });
   }
 
-  if (countrySelect) {
-    countrySelect.value = readCountry();
-    applyFilters(false);
-    countrySelect.addEventListener("change", () => applyFilters(true));
+  function selectCountry(code, persist) {
+    const match = radios.find((radio) => radio.dataset.country === code) || radios[0];
+    radios.forEach((radio) => radio.setAttribute("aria-checked", radio === match ? "true" : "false"));
+    applyFilters(persist);
   }
 
-  document.querySelectorAll("[data-view]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const nextView = button.dataset.view || "all";
-      if (!showPlannedServices && nextView === "planned") return;
-      view = nextView;
-      document.querySelectorAll("[data-view]").forEach((item) => {
-        item.setAttribute("aria-pressed", item === button ? "true" : "false");
+  if (radios.length) {
+    selectCountry(readCountry(), false);
+    radios.forEach((radio, index) => {
+      radio.addEventListener("click", () => selectCountry(radio.dataset.country, true));
+      radio.addEventListener("keydown", (event) => {
+        const key = event.key;
+        if (!["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", "Home", "End"].includes(key)) return;
+        event.preventDefault();
+        let next = index;
+        if (key === "ArrowRight" || key === "ArrowDown") next = (index + 1) % radios.length;
+        if (key === "ArrowLeft" || key === "ArrowUp") next = (index - 1 + radios.length) % radios.length;
+        if (key === "Home") next = 0;
+        if (key === "End") next = radios.length - 1;
+        radios[next].focus();
+        selectCountry(radios[next].dataset.country, true);
       });
-      applyFilters(false);
     });
-  });
+  }
 
   document.querySelectorAll("[data-lang-switch]").forEach((link) => {
     link.addEventListener("click", () => {
@@ -105,10 +133,15 @@ if (configNode) {
     });
   });
 
-  document.querySelectorAll(".more").forEach((details) => {
-    details.addEventListener("toggle", () => {
-      if (!details.open) return;
-      const card = details.closest("[data-service]");
+  document.querySelectorAll("[data-toggle-more]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = document.getElementById(button.getAttribute("aria-controls"));
+      if (!panel) return;
+      const open = panel.hidden;
+      panel.hidden = !open;
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      if (!open) return;
+      const card = button.closest("[data-service]");
       track("service_open", { service: card ? card.dataset.service : "" });
     });
   });
@@ -118,8 +151,9 @@ if (configNode) {
   });
 
   const dialog = document.getElementById("inquiry");
+  const form = document.getElementById("inquiry-form");
   const intro = document.getElementById("inquiry-intro");
-  const serviceLine = document.getElementById("inquiry-service");
+  const meta = document.getElementById("inquiry-meta");
   const fields = document.getElementById("inquiry-fields");
   const output = document.getElementById("inquiry-output");
   const copyButton = document.getElementById("inquiry-copy");
@@ -127,8 +161,13 @@ if (configNode) {
   let lastFocus = null;
   let activeService = "general";
 
+  function currentCountry() {
+    const selected = document.querySelector('.flag-btn[aria-checked="true"]');
+    return selected ? selected.dataset.country : "all";
+  }
+
   function profileFor(serviceId) {
-    if (serviceId === "general") return { id: "general", profile: config.inquiry.profiles.general, title: "" };
+    if (serviceId === "general") return { id: "general", profile: config.inquiry.profiles.general, title: "", status: "" };
     const service = config.services[serviceId];
     const profileName = service ? service.inquiry : "general";
     return {
@@ -139,50 +178,114 @@ if (configNode) {
     };
   }
 
+  function fieldsFor(profile) {
+    const list = profile.fields.map((field) => ({ ...field }));
+    if (!list.some((field) => field.id === "nationality") && config.inquiry.shared) {
+      list.unshift(config.inquiry.shared.nationality);
+    }
+    if (!list.some((field) => field.id === "city") && config.inquiry.shared) {
+      const index = list.findIndex((field) => field.id === "nationality");
+      list.splice(index + 1, 0, config.inquiry.shared.city);
+    }
+    return list;
+  }
+
+  function fieldText(field) {
+    const value = field.value.trim();
+    return value || config.inquiry.blank;
+  }
+
   function renderOutput() {
     const current = profileFor(activeService);
-    const lines = [
-      "CROSSING PROXY",
-      `${config.inquiry.language}: ${config.langNative}`,
-    ];
+    const lines = ["CROSSING PROXY", `${config.inquiry.language}: ${config.langNative}`];
     if (current.title) {
       lines.push(`${config.inquiry.service}: ${current.title}`);
       lines.push(`${config.inquiry.status}: ${current.status}`);
     }
-    fields.querySelectorAll("input, textarea").forEach((field) => {
-      lines.push(`${field.dataset.label}: ${field.value.trim()}`);
+    fields.querySelectorAll("input, textarea, select").forEach((field) => {
+      lines.push(`${field.dataset.label}: ${fieldText(field)}`);
     });
     lines.push(config.lineId);
-    lines.push(config.inquiry.privacy);
+    lines.push(config.inquiry.notSent);
     output.value = lines.join("\n");
+    const digits = [...fields.querySelectorAll("input, textarea")]
+      .map((field) => field.value)
+      .join(" ");
+    if (/\d{6,}/.test(digits)) status.textContent = config.inquiry.idHint;
+    else if (status.textContent === config.inquiry.idHint) status.textContent = "";
+  }
+
+  function makeControl(field) {
+    if (field.type === "select") {
+      const select = document.createElement("select");
+      const blank = document.createElement("option");
+      blank.value = "";
+      blank.textContent = config.inquiry.selectPlaceholder;
+      select.append(blank);
+      (field.options || []).forEach((option) => {
+        const node = document.createElement("option");
+        node.value = option.label;
+        node.textContent = option.label;
+        select.append(node);
+      });
+      return select;
+    }
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = field.placeholder || "";
+    input.autocomplete = "off";
+    return input;
   }
 
   function openInquiry(serviceId) {
     activeService = serviceId;
     const current = profileFor(serviceId);
     intro.textContent = current.profile.intro;
-    serviceLine.textContent = current.title ? `${config.inquiry.service}: ${current.title} · ${current.status}` : "";
+    const bits = [];
+    if (current.title) bits.push(`${config.inquiry.service}: ${current.title}`);
+    if (current.status) bits.push(`${config.inquiry.status}: ${current.status}`);
+    bits.push(`${config.inquiry.language}: ${config.langNative}`);
+    meta.textContent = bits.join(" · ");
     fields.replaceChildren();
-    current.profile.fields.forEach((field) => {
+    const country = currentCountry();
+    fieldsFor(current.profile).forEach((field) => {
       const wrap = document.createElement("label");
       wrap.className = "field";
-      wrap.textContent = field.label;
-      const input = document.createElement("input");
-      input.type = "text";
-      input.name = field.id;
-      input.placeholder = field.placeholder || "";
-      input.autocomplete = "off";
-      input.dataset.label = field.label;
-      input.addEventListener("input", renderOutput);
-      wrap.append(input);
+      const name = document.createElement("span");
+      name.textContent = field.label;
+      const control = makeControl(field);
+      control.name = field.id;
+      control.dataset.label = field.label;
+      if (field.id === "nationality" && ["VN", "ID", "TH", "PH"].includes(country)) {
+        control.value = countryName(country);
+      }
+      if (field.id === "city") {
+        try {
+          control.value = localStorage.getItem("cp-city") || "";
+        } catch (error) {
+          control.value = "";
+        }
+        control.addEventListener("input", () => {
+          try {
+            localStorage.setItem("cp-city", control.value.trim());
+          } catch (error) {
+            /* Ignore storage failures. */
+          }
+          renderOutput();
+        });
+      }
+      control.addEventListener("input", renderOutput);
+      control.addEventListener("change", renderOutput);
+      wrap.append(name, control);
       fields.append(wrap);
     });
     status.textContent = "";
     renderOutput();
     lastFocus = document.activeElement;
-    if (typeof dialog.showModal === "function") dialog.showModal();
-    else dialog.setAttribute("open", "");
-    const first = fields.querySelector("input");
+    if (typeof dialog.showModal === "function") {
+      if (!dialog.open) dialog.showModal();
+    } else dialog.setAttribute("open", "");
+    const first = fields.querySelector("input, select");
     if (first) first.focus();
     track(serviceId === "b2b-life" ? "enterprise_inquiry" : "inquiry_open", { service: serviceId });
   }
@@ -191,24 +294,36 @@ if (configNode) {
     button.addEventListener("click", () => openInquiry(button.dataset.openInquiry));
   });
 
-  dialog.addEventListener("close", () => {
-    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
-  });
+  if (dialog) {
+    dialog.addEventListener("close", () => {
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+    });
+  }
 
-  copyButton.addEventListener("click", async () => {
-    renderOutput();
-    let copied = false;
-    try {
-      await navigator.clipboard.writeText(output.value);
-      copied = true;
-    } catch (error) {
-      output.focus();
-      output.select();
-      copied = document.execCommand("copy");
-    }
-    status.textContent = copied ? config.inquiry.copied : config.inquiry.copyFailed;
-    if (copied) track("inquiry_copy", { service: activeService });
-  });
+  if (form) {
+    form.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" && event.target.matches("input")) event.preventDefault();
+    });
+  }
+
+  if (copyButton) {
+    copyButton.addEventListener("click", async () => {
+      renderOutput();
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(output.value);
+        copied = true;
+      } catch (error) {
+        output.focus();
+        output.select();
+        copied = document.execCommand("copy");
+      }
+      status.textContent = copied ? config.inquiry.copied : config.inquiry.copyFailed;
+      if (copied && /\d{6,}/.test(output.value)) status.textContent = `${config.inquiry.copied} ${config.inquiry.idHint}`;
+      status.scrollIntoView({ block: "nearest" });
+      if (copied) track("inquiry_copy", { service: activeService });
+    });
+  }
 
   function track(name, detail) {
     if (!analytics.enabled || !analytics.endpoint) return;
@@ -216,7 +331,7 @@ if (configNode) {
       event: name,
       lang: config.lang,
       service: detail && detail.service ? detail.service : "",
-      country: countrySelect ? countrySelect.value : "",
+      country: currentCountry(),
       channel: detail && detail.channel ? detail.channel : "",
       to: detail && detail.to ? detail.to : "",
     };

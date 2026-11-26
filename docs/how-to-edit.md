@@ -6,7 +6,7 @@
 
 1. 在 `catalog.json` 的 `services` 加一筆。`status` 只能是 `open`、`referral`、`planned`、`paused`。未正式開通用 `planned`。
 2. `countries` 用 `["*"]` 表示不限國家，或用 `VN`、`ID`、`TH`、`PH`。
-3. `inquiry` 用現有的 `general`、`shipping`、`moto`、`rental`、`sim`、`documents`、`translate`、`pickup`、`enterprise`。
+3. `inquiry` 用現有的 `general`、`shipping`、`moto`、`rental`、`sim`、`documents`、`translate`、`pickup`、`enterprise`、`driving`。
 4. 在六個語檔的 `services` 補上同一組欄位：`title`、`summary`、`audience`、`scope`、`documents`、`pricing`、`steps`、`limits`。
 5. 執行 `npm run build` 與 `npm run check`，把產生的 HTML 一起提交。
 
@@ -16,10 +16,14 @@
 
 ## 規劃中的服務
 
-`data/catalog.json` 的 `showPlannedServices` 目前是 `false`。六個語言頁面都不顯示規劃中的服務：篩選鈕、`#planned` 錨點、狀態為 `planned` 的卡片，以及卡片下方那句尚未開放的說明。這些內容仍留在產生的 HTML 裡，只是隱藏，也不會有導覽連結指過去。
+`data/catalog.json` 的 `showPlannedServices` 目前是 `true`。籌備中的服務顯示在 `#planned`，狀態維持 `planned`。不要把狀態改成 `open`。
 
-要重新顯示：把 `showPlannedServices` 改成 `true`，然後執行 `npm run build` 與 `npm run check`，並提交產生的頁面。
+若要再隱藏：把 `showPlannedServices` 改成 `false`，然後執行 `npm run build` 與 `npm run check`。卡片仍會留在 HTML 裡，只是不顯示，導覽也不會指過去。
 
-語言與國家是分開的。語言由網址 `/zh/`、`/en/`、`/vi/`、`/id/`、`/th/`、`/fil/` 決定。國家由頁面上的選單決定，並記在 `localStorage` 的 `cp-country` 與 `?country=`。問句內容不會放進網址。
+語言與國家是分開的。語言由網址 `/zh/`、`/en/`、`/vi/`、`/id/`、`/th/`、`/fil/` 決定，選單只顯示各語言的原生名稱，不加國旗。國家由頁面上的國旗按鈕決定，並記在 `localStorage` 的 `cp-country` 與 `?country=`。選項是 `all`、`TW`、`VN`、`ID`、`TH`、`PH`。選國旗不會切換語言。問句內容不會放進網址。
+
+國旗圖檔在 `assets/flags/`，建置時會內嵌。新增國家時要補一張 SVG，並把代碼加進 `catalog.json` 的 `countryChoices`。服務適用國家仍用 `countries` 陣列，`*` 代表不限國家。
+
+服務分組在 `catalog.json` 的 `groups`。同一項服務可以出現在兩個分組，頁面只建立一筆完整卡片，第二處是連到同一筆的入口。駕照文件代辦的 id 是 `driving-license-assistance`，詢問表單用 `driving`。表單只在瀏覽器裡組成文字，提供複製與開啟 LINE，不會送出。
 
 分析預設關閉。`data/analytics.json` 的 `enabled` 維持 `false`，直到有已審查的收集端點。事件只會送語言、服務 ID、國家代碼與渠道名稱，不送表單內文。

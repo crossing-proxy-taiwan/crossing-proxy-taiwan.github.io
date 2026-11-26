@@ -1,4 +1,5 @@
 {
+  "version": "2.0",
   "siteUrl": "https://crossing-proxy-taiwan.github.io",
   "brand": {
     "zh": "越境代辦",
@@ -37,7 +38,40 @@
     { "id": "fil", "html": "fil", "og": "fil_PH", "native": "Filipino" }
   ],
   "countries": ["VN", "ID", "TH", "PH"],
-  "showPlannedServices": false,
+  "countryChoices": ["all", "TW", "VN", "ID", "TH", "PH"],
+  "showPlannedServices": true,
+  "groups": [
+    {
+      "id": "documents",
+      "icon": "file",
+      "services": ["documents", "driving-license-assistance", "vn-papers"]
+    },
+    {
+      "id": "language",
+      "icon": "translate",
+      "services": ["translate-vi", "translate-more"]
+    },
+    {
+      "id": "transport",
+      "icon": "scooter",
+      "services": ["moto-sale", "driving-license-assistance", "moto-rental"]
+    },
+    {
+      "id": "logistics",
+      "icon": "parcel",
+      "services": ["ship-vn", "pickup", "ship-other"]
+    },
+    {
+      "id": "daily",
+      "icon": "life",
+      "services": ["sim", "life-help", "goods-rental"]
+    },
+    {
+      "id": "enterprise",
+      "icon": "building",
+      "services": ["b2b-life"]
+    }
+  ],
   "services": [
     {
       "id": "translate-vi",
@@ -56,6 +90,15 @@
       "home": true,
       "icon": "file",
       "inquiry": "documents"
+    },
+    {
+      "id": "driving-license-assistance",
+      "category": "common",
+      "countries": ["*"],
+      "status": "open",
+      "home": true,
+      "icon": "license",
+      "inquiry": "driving"
     },
     {
       "id": "moto-sale",
