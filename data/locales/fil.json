@@ -13,7 +13,7 @@
   "nav": {
     "services": "Pinagsasaluhang serbisyo",
     "countries": "Ayon sa bansa",
-    "planned": "Hindi pa bukas",
+    "planned": "Nakaplano",
     "steps": "3 hakbang",
     "trust": "Impormasyong mapagkakatiwalaan",
     "cases": "Mga halimbawa",
@@ -702,14 +702,14 @@
     "about": "Tungkol",
     "faq": "FAQ",
     "menu": "Menu",
-    "planned": "Inihahanda"
+    "planned": "Nakaplano"
   },
   "filters": {
     "label": "Salain ang serbisyo",
     "all": "Lahat",
     "open": "Bukas na",
     "country": "Ayon sa bansa",
-    "planned": "Inihahanda",
+    "planned": "Nakaplano",
     "empty": "Walang serbisyong tumutugma sa salaan na ito."
   },
   "principles": [
