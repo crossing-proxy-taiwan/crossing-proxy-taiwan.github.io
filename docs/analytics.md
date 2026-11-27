@@ -44,15 +44,17 @@ GoatCounter 自己的說明認為，因為只存彙總、不存可識別個人�
 
 載入前會把查詢字串收成只留 `country` 與五個 utm 欄位（`utm_source`、`utm_medium`、`utm_campaign`、`utm_content`、`utm_term`）。utm 的值只允許短的英文、數字、`.`、`_`、`~`、`-`，連續 6 位以上數字會被拿掉，避免證件號或電話被送進計數請求。`country` 是這個語言頁的服務篩選（`TW`、`VN`、`ID`、`TH`、`PH` 或 `all`），不是詢問表裡填的國籍。GoatCounter 的原始查詢字串欄位不寫入資料庫；頁面上的 `strict-origin-when-cross-origin` 讓跨站請求的 Referer 只帶網站來源，不帶路徑與查詢字串。
 
-自訂事件用 GoatCounter 的 `count({ event: true })`。名稱只有下面三種，沒有表單欄位：
+自訂事件用 GoatCounter 的 `count({ event: true })`。名稱只有下面三種，沒有表單欄位。最後一段是進站平台，用來在後台把同一個服務的點擊拆開。平台只允許 `facebook`、`instagram`、`threads`、`tiktok`、`youtube`、`line`。網址沒有 `utm_source`，或 `utm_source` 不是這六個字時，用 `direct`。不會送空白，也不會把其他來源字串接進事件名稱，所以事件集合停在「語言 × 服務 × 這七個來源」。
 
 | 事件路徑 | 何時送出 |
 | --- | --- |
-| `service-open:語言:服務id` | 打開服務說明，或點進同一服務的第二張入口卡 |
-| `inquiry-open:語言:服務id` | 打開 LINE 詢問表。只送服務 id，不送草稿 |
-| `line-click:語言` | 點已經寫在頁面上的 LINE 官方帳號 `https://lin.ee/SQbAREU`（`@681ydjcz`）。社群群組連結不算 |
+| `service-open:語言:服務id:來源` | 打開服務說明，或點進同一服務的第二張入口卡 |
+| `inquiry-open:語言:服務id:來源` | 打開 LINE 詢問表。只送服務 id 與來源，不送草稿 |
+| `line-click:語言:服務id或none:來源` | 點已經寫在頁面上的 LINE 官方帳號 `https://lin.ee/SQbAREU`（`@681ydjcz`）。點擊落在某張服務卡裡，或落在該服務的詢問表的 LINE 按鈕，服務 id 就是那張卡。頁首、主視覺、頁尾、浮動按鈕與手機底欄沒有對應服務，用 `none`。社群群組連結不算 |
 
 語言只會是 `zh`、`en`、`vi`、`id`、`th`、`fil`。服務 id 必須是頁面設定裡既有的 id。複製詢問草稿不會另送事件。
+
+統計有打開時，進站網址若帶著通過檢查的 `utm_source`（必須是上面六個平台之一）與 `utm_campaign`，會寫進這個分頁的 `sessionStorage`（鍵名 `cp-utm-source`、`cp-utm-campaign`）。不寫 cookie，不寫 `localStorage`，不造訪客編號。分頁關掉就沒有了。同一個分頁之後若開了沒有 UTM 的語言頁，點擊事件仍用這組來源。`utm_campaign` 只留在這個分頁，不接進事件名稱；GoatCounter 的頁面瀏覽仍從當下網址讀活動名稱。`site` 是空的時，這兩個鍵都不會寫。
 
 ## 經營者要貼上的值
 
@@ -84,10 +86,11 @@ GoatCounter 自己的說明認為，因為只存彙總、不存可識別個人�
 
 ## 限制
 
-- `utm_medium` 會留在網址上，GoatCounter 的 Campaigns 不會單獨畫出 medium。若要在報表裡分開「個人檔案」和「單篇貼文」，把活動名稱寫成 `repositioning-2026-12-profile` 或 `repositioning-2026-12-post`。連結做法見 `docs/utm-links.md`。
+- `utm_medium` 固定為 `social`。個人檔案、貼文與 LINE 圖文選單的差別寫在 `utm_campaign`，不寫在 medium。GoatCounter 的 Campaigns 看得到活動名稱與 `utm_source`，不會單獨畫出 medium。連結做法見 `docs/utm-links.md`。
 - 同一個路徑在約 8 小時內不會重複計成新的瀏覽。點擊事件有設成每次都計。
-- 廣告阻擋會讓部分瀏覽與點擊消失。
-- 沒有填 `site` 時，程式不會請求 GoatCounter。
+- 機器人：GoatCounter 預設不把 bot 算進彙總。`count.js` 在送出前會把 PhantomJS、Nightmare、Selenium，以及帶 `navigator.webdriver` 的無頭瀏覽器標成 bot，註解寫明伺服器還會再過濾。標成 bot 的請求不會寫進彙總統計。這是計數程式的預設行為，不是這個站另外打開的開關。它沒有保證擋下每一種機器人。
+- 廣告阻擋會少算。GoatCounter 入門說明寫明，擋廣告的瀏覽器常會擋住 `goatcounter.com` 或 `gc.zgo.at`。被擋住的人不會出現在後台，所以人數低於實際開頁人數。請用沒有擋廣告的瀏覽器做啟用後的第一次確認。
+- 沒有填 `site` 時，程式不會請求 GoatCounter，也不會把 UTM 寫進 `sessionStorage`。
 
 ## 這次讀過的頁面
 
@@ -97,6 +100,8 @@ GoatCounter 自己的說明認為，因為只存彙總、不存可識別個人�
 - <https://www.goatcounter.com/help/campaigns>
 - <https://www.goatcounter.com/help/events>
 - <https://www.goatcounter.com/help/sessions>
+- <https://www.goatcounter.com/help>（入門頁寫明廣告阻擋會讓瀏覽看不到）
+- <https://github.com/arp242/goatcounter/blob/main/public/count.js>（2026-11-27：無頭瀏覽器標成 bot，並註明伺服器還會再過濾）
 - <https://developers.cloudflare.com/web-analytics/faq/>
 - <https://developers.cloudflare.com/web-analytics/get-started/>
 - <https://umami.is/pricing>

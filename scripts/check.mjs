@@ -287,6 +287,14 @@ else {
   if (acceptedSite("sk-live-secret") !== "") errors.push("secret-shaped site code should be rejected");
 }
 if (siteJs.includes("sendBeacon")) errors.push("site.js must not send a beacon payload");
+if (!siteJs.includes('sessionStorage.setItem("cp-utm-source"')) errors.push("campaign source is not kept in sessionStorage");
+if (!siteJs.includes('sessionStorage.setItem("cp-utm-campaign"')) errors.push("campaign name is not kept in sessionStorage");
+if (/localStorage\.(set|get)Item\(["']cp-utm-/.test(siteJs)) errors.push("utm must not use localStorage");
+if (/document\.cookie\s*=/.test(siteJs)) errors.push("site.js must not set a cookie");
+for (const source of ["facebook", "instagram", "threads", "tiktok", "youtube", "line"]) {
+  if (!siteJs.includes(`"${source}"`)) errors.push(`analytics source missing ${source}`);
+}
+if (!siteJs.includes('return "direct"')) errors.push("missing direct source");
 if (siteJs.includes("inquiry_copy") || siteJs.includes("output.value")) {
   const trackStart = siteJs.indexOf("function track");
   const trackEnd = siteJs.indexOf("function loadAnalytics");

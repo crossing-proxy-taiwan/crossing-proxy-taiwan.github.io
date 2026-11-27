@@ -4,6 +4,7 @@ if (configNode) {
   const showPlannedServices = config.showPlannedServices === true;
   const allowed = new Set(["all", "TW", "VN", "ID", "TH", "PH"]);
   const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  const campaignSources = new Set(["facebook", "instagram", "threads", "tiktok", "youtube", "line"]);
   let analyticsSite = "";
   const pendingEvents = [];
 
@@ -217,7 +218,16 @@ if (configNode) {
 
   document.querySelectorAll("a[href]").forEach((link) => {
     if (!isOfficialLine(link.getAttribute("href"))) return;
-    link.addEventListener("click", () => track("line-click"));
+    link.addEventListener("click", () => {
+      const card = link.closest("[data-service]");
+      let service = "none";
+      if (card && Object.prototype.hasOwnProperty.call(config.services, card.dataset.service)) {
+        service = card.dataset.service;
+      } else if (link.id === "inquiry-line" && Object.prototype.hasOwnProperty.call(config.services, activeService)) {
+        service = activeService;
+      }
+      track("line-click", { service: service });
+    });
   });
 
   const dialog = document.getElementById("inquiry");
@@ -484,15 +494,46 @@ if (configNode) {
     if (pendingEvents.length < 20) pendingEvents.push(vars);
   }
 
+  function attributionSource() {
+    const params = new URL(location.href).searchParams;
+    if (params.has("utm_source")) {
+      const value = params.get("utm_source");
+      return campaignSources.has(value) ? value : "direct";
+    }
+    try {
+      const stored = sessionStorage.getItem("cp-utm-source");
+      if (campaignSources.has(stored)) return stored;
+    } catch (error) {
+      /* Private mode can block sessionStorage. */
+    }
+    return "direct";
+  }
+
+  function rememberCampaign() {
+    const current = new URL(location.href);
+    const source = current.searchParams.get("utm_source");
+    const campaign = current.searchParams.get("utm_campaign");
+    try {
+      if (campaignSources.has(source)) sessionStorage.setItem("cp-utm-source", source);
+      if (safeUtm(campaign)) sessionStorage.setItem("cp-utm-campaign", campaign);
+    } catch (error) {
+      /* Private mode can block sessionStorage. Events still use the URL. */
+    }
+  }
+
   function track(name, detail) {
     if (name !== "service-open" && name !== "inquiry-open" && name !== "line-click") return;
     if (!/^(zh|en|vi|id|th|fil)$/.test(config.lang)) return;
-    let path = `${name}:${config.lang}`;
-    if (name !== "line-click") {
-      const service = detail && detail.service ? String(detail.service) : "";
-      if (!Object.prototype.hasOwnProperty.call(config.services, service)) return;
-      path += `:${service}`;
+    const source = attributionSource();
+    if (!campaignSources.has(source) && source !== "direct") return;
+    let service = detail && detail.service ? String(detail.service) : "";
+    if (name === "line-click") {
+      if (service !== "none" && !Object.prototype.hasOwnProperty.call(config.services, service)) service = "none";
+      if (!service) service = "none";
+    } else if (!Object.prototype.hasOwnProperty.call(config.services, service)) {
+      return;
     }
+    const path = `${name}:${config.lang}:${service}:${source}`;
     sendEvent({ path, title: path, event: true, referrer: "", no_session: true });
   }
 
@@ -503,6 +544,7 @@ if (configNode) {
       document.documentElement.dataset.analytics = "off";
       return;
     }
+    rememberCampaign();
     if (document.querySelector("script[data-goatcounter]")) return;
     analyticsSite = site;
     const script = document.createElement("script");
