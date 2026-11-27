@@ -6,8 +6,8 @@
   "heroPoints": [
     "Who we are: CROSSING PROXY, an everyday-services partner for foreign residents in Taiwan.",
     "What you can ask about: documents, a driver's license, Chinese–Vietnamese translation, motorbike sales, SIM cards, shipping, and daily questions. Rentals and company plans are in preparation.",
-    "Language and country are separate. There are six language pages. A flag only filters services.",
-    "Where to start: choose a flag, open a service, read the status and limits, then ask on LINE.",
+    "Choose a language once. The menu also shows that nationality's services, plus services that apply to every nationality.",
+    "Where to start: choose a language, open a service, read the status and limits, then ask on LINE.",
     "How to reach us: LINE official account @681ydjcz. This site does not send the message for you."
   ],
   "nav": {
@@ -111,7 +111,7 @@
   "steps": [
     {
       "title": "Choose a service",
-      "body": "Use a flag or a quick entry. Language and country are set separately and are not tied together."
+      "body": "Use the language menu to set the language and which services you see, or open a quick entry."
     },
     {
       "title": "Read the scope",
@@ -150,7 +150,7 @@
   "faq": [
     {
       "q": "Can I read the site in English and still look at services for Vietnam?",
-      "a": "Yes. Choose English in the language menu, then select the Vietnam flag. The flag only filters services. It does not switch the site to Vietnamese."
+      "a": "Vietnam-specific services are on the Tiếng Việt page, together with services for every nationality. Choose Tiếng Việt in the language menu and both the language and the service filter change. English shows the shared services."
     },
     {
       "q": "Do you file visas, residence permits, or work permits?",

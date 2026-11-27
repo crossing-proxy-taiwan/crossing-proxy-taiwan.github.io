@@ -20,9 +20,11 @@
 
 若要再隱藏：把 `showPlannedServices` 改成 `false`，然後執行 `npm run build` 與 `npm run check`。卡片仍會留在 HTML 裡，只是不顯示，導覽也不會指過去。
 
-語言與國家是分開的。語言由網址 `/zh/`、`/en/`、`/vi/`、`/id/`、`/th/`、`/fil/` 決定，選單只顯示各語言的原生名稱，不加國旗。國家由頁面上的國旗按鈕決定，並記在 `localStorage` 的 `cp-country` 與 `?country=`。選項是 `all`、`TW`、`VN`、`ID`、`TH`、`PH`。選國旗不會切換語言。問句內容不會放進網址。
+語言選單在頁首，選一次就同時切換整站語言與服務國家。對應寫在 `catalog.json` 的 `langs`：`zh` → `TW`、`en` → `all`、`vi` → `VN`、`id` → `ID`、`th` → `TH`、`fil` → `PH`。網址是 `/zh/?country=TW`、`/en/?country=all`、`/vi/?country=VN`、`/id/?country=ID`、`/th/?country=TH`、`/fil/?country=PH`。`all` 只顯示 `countries` 含 `*` 的共同服務。其他語言顯示該國代碼的專屬服務，再加上共同服務。頁面下方不再另有國旗篩選。
 
-國旗圖檔在 `assets/flags/`，建置時會內嵌。新增國家時要補一張 SVG，並把代碼加進 `catalog.json` 的 `countryChoices`。服務適用國家仍用 `countries` 陣列，`*` 代表不限國家。
+若網址的 `country` 和該語言不一致，載入時會改成語言自己的國家。例如 `/vi/?country=TH` 會變成 `/vi/?country=VN`。`localStorage` 的 `cp-country` 只會被寫成目前語言的國家，不會再拿別的語言留下的值來改篩選。問句內容不會放進網址。canonical、hreflang 與 sitemap 仍不含 `country` 查詢字串。
+
+國旗圖檔在 `assets/flags/`，建置時會內嵌到語言選單。English 用 `us.svg`，不是 emoji。新增介面語言時要在 `langs` 指定 `country` 與 `flag`。服務適用國家仍用 `countries` 陣列，`*` 代表不限國家。服務資料不要為了篩選而刪除；不符合的卡片留在 HTML，由 `data-country` 隱藏。
 
 服務分組在 `catalog.json` 的 `groups`。同一項服務可以出現在兩個分組，頁面只建立一筆完整卡片，第二處是連到同一筆的入口。駕照文件代辦的 id 是 `driving-license-assistance`，詢問表單用 `driving`。表單只在瀏覽器裡組成文字。所在縣市是台灣 22 個縣市加上「其他」，只記住選項代碼，不保存自由輸入。複製或開啟 LINE 前要勾選確認，而且連續數字若像證件號碼會被擋住。一般日期與 LINE 帳號 `@681ydjcz` 不會被當成證件號碼。
 

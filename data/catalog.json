@@ -40,12 +40,12 @@
     }
   ],
   "langs": [
-    { "id": "zh", "html": "zh-Hant", "og": "zh_TW", "native": "繁體中文" },
-    { "id": "en", "html": "en", "og": "en_US", "native": "English" },
-    { "id": "vi", "html": "vi", "og": "vi_VN", "native": "Tiếng Việt" },
-    { "id": "id", "html": "id", "og": "id_ID", "native": "Bahasa Indonesia" },
-    { "id": "th", "html": "th", "og": "th_TH", "native": "ไทย" },
-    { "id": "fil", "html": "fil", "og": "fil_PH", "native": "Filipino" }
+    { "id": "zh", "html": "zh-Hant", "og": "zh_TW", "native": "繁體中文", "country": "TW", "flag": "tw" },
+    { "id": "en", "html": "en", "og": "en_US", "native": "English", "country": "all", "flag": "us" },
+    { "id": "vi", "html": "vi", "og": "vi_VN", "native": "Tiếng Việt", "country": "VN", "flag": "vn" },
+    { "id": "id", "html": "id", "og": "id_ID", "native": "Bahasa Indonesia", "country": "ID", "flag": "id" },
+    { "id": "th", "html": "th", "og": "th_TH", "native": "ไทย", "country": "TH", "flag": "th" },
+    { "id": "fil", "html": "fil", "og": "fil_PH", "native": "Filipino", "country": "PH", "flag": "ph" }
   ],
   "countries": ["VN", "ID", "TH", "PH"],
   "countryChoices": ["all", "TW", "VN", "ID", "TH", "PH"],

@@ -6,8 +6,8 @@
   "heroPoints": [
     "Chúng tôi là CROSSING PROXY, đối tác dịch vụ đời sống cho người nước ngoài tại Đài Loan.",
     "Có thể hỏi: giấy tờ, bằng lái, dịch Trung–Việt, mua bán xe máy, SIM, gửi hàng và việc hằng ngày. Thuê xe và gói doanh nghiệp đang chuẩn bị.",
-    "Ngôn ngữ và quốc gia tách riêng. Có sáu trang ngôn ngữ. Cờ chỉ lọc dịch vụ.",
-    "Bắt đầu: chọn cờ, mở dịch vụ, đọc trạng thái và giới hạn, rồi hỏi trên LINE.",
+    "Chọn ngôn ngữ một lần. Menu cũng hiện dịch vụ riêng của quốc tịch đó, cùng các dịch vụ dùng cho mọi quốc tịch.",
+    "Bắt đầu: chọn ngôn ngữ, mở dịch vụ, đọc trạng thái và giới hạn, rồi hỏi trên LINE.",
     "Liên hệ: LINE @681ydjcz. Website không gửi tin thay bạn."
   ],
   "nav": {
@@ -111,7 +111,7 @@
   "steps": [
     {
       "title": "Chọn dịch vụ",
-      "body": "Dùng cờ hoặc lối vào nhanh. Ngôn ngữ và quốc gia đặt riêng, không buộc với nhau."
+      "body": "Dùng menu ngôn ngữ để đổi ngôn ngữ và phạm vi dịch vụ, hoặc mở lối vào nhanh."
     },
     {
       "title": "Đọc phạm vi",
@@ -150,7 +150,7 @@
   "faq": [
     {
       "q": "Đọc trang bằng tiếng Anh thì vẫn xem dịch vụ cho Việt Nam được không?",
-      "a": "Được. Chọn English trong menu ngôn ngữ, rồi bấm cờ Việt Nam. Cờ chỉ lọc dịch vụ, không đổi trang sang tiếng Việt."
+      "a": "Dịch vụ riêng của Việt Nam nằm ở trang Tiếng Việt, cùng các dịch vụ dùng cho mọi quốc tịch. Chọn Tiếng Việt ở menu ngôn ngữ sẽ đổi cả ngôn ngữ lẫn bộ lọc. Trang English hiện dịch vụ chung."
     },
     {
       "q": "Các bạn làm visa, thẻ cư trú hoặc giấy phép làm việc giúp không?",

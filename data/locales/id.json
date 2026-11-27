@@ -6,8 +6,8 @@
   "heroPoints": [
     "Kami adalah CROSSING PROXY, mitra layanan sehari-hari bagi warga asing di Taiwan.",
     "Yang bisa ditanyakan: dokumen, SIM, terjemahan Mandarin–Vietnam, jual beli motor, nomor ponsel, pengiriman, dan urusan harian. Sewa dan paket perusahaan masih disiapkan.",
-    "Bahasa dan negara terpisah. Ada enam halaman bahasa. Bendera hanya menyaring layanan.",
-    "Mulai dari: pilih bendera, buka layanan, baca status dan batasan, lalu tanya di LINE.",
+    "Pilih bahasa sekali. Menu juga menampilkan layanan khusus kewarganegaraan itu, plus layanan untuk semua kewarganegaraan.",
+    "Mulai dari: pilih bahasa, buka layanan, baca status dan batasan, lalu tanya di LINE.",
     "Kontak: LINE @681ydjcz. Situs ini tidak mengirim pesan untuk Anda."
   ],
   "nav": {
@@ -111,7 +111,7 @@
   "steps": [
     {
       "title": "Pilih layanan",
-      "body": "Pakai bendera atau pintasan. Bahasa dan negara diatur terpisah dan tidak diikat jadi satu."
+      "body": "Pakai menu bahasa untuk mengatur bahasa dan layanan yang tampil, atau buka pintasan."
     },
     {
       "title": "Baca cakupan",
@@ -150,7 +150,7 @@
   "faq": [
     {
       "q": "Kalau situs dibaca dalam bahasa Inggris, layanan untuk Vietnam tetap bisa dilihat?",
-      "a": "Bisa. Pilih English di menu bahasa, lalu pilih bendera Vietnam. Bendera hanya menyaring layanan dan tidak mengubah situs menjadi bahasa Vietnam."
+      "a": "Layanan khusus Vietnam ada di halaman Tiếng Việt, bersama layanan untuk semua kewarganegaraan. Pilih Tiếng Việt di menu bahasa agar bahasa dan saringan layanan berubah bersama. Halaman English menampilkan layanan bersama."
     },
     {
       "q": "Apakah kalian mengurus visa, izin tinggal, atau izin kerja?",
