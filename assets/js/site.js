@@ -5,6 +5,9 @@ if (configNode) {
   const allowed = new Set(["all", "TW", "VN", "ID", "TH", "PH"]);
   const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
   const campaignSources = new Set(["facebook", "instagram", "threads", "tiktok", "youtube", "line"]);
+  const landingUtmSource = new URL(location.href).searchParams.has("utm_source")
+    ? new URL(location.href).searchParams.get("utm_source")
+    : null;
   let analyticsSite = "";
   const pendingEvents = [];
 
@@ -510,10 +513,15 @@ if (configNode) {
   }
 
   function rememberCampaign() {
-    const current = new URL(location.href);
-    const source = current.searchParams.get("utm_source");
-    const campaign = current.searchParams.get("utm_campaign");
     try {
+      if (landingUtmSource !== null && !campaignSources.has(landingUtmSource)) {
+        sessionStorage.removeItem("cp-utm-source");
+        sessionStorage.removeItem("cp-utm-campaign");
+        return;
+      }
+      const current = new URL(location.href);
+      const source = current.searchParams.get("utm_source");
+      const campaign = current.searchParams.get("utm_campaign");
       if (campaignSources.has(source)) sessionStorage.setItem("cp-utm-source", source);
       if (safeUtm(campaign)) sessionStorage.setItem("cp-utm-campaign", campaign);
     } catch (error) {

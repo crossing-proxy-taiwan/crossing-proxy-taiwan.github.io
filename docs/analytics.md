@@ -54,7 +54,7 @@ GoatCounter 自己的說明認為，因為只存彙總、不存可識別個人�
 
 語言只會是 `zh`、`en`、`vi`、`id`、`th`、`fil`。服務 id 必須是頁面設定裡既有的 id。複製詢問草稿不會另送事件。
 
-統計有打開時，進站網址若帶著通過檢查的 `utm_source`（必須是上面六個平台之一）與 `utm_campaign`，會寫進這個分頁的 `sessionStorage`（鍵名 `cp-utm-source`、`cp-utm-campaign`）。不寫 cookie，不寫 `localStorage`，不造訪客編號。分頁關掉就沒有了。同一個分頁之後若開了沒有 UTM 的語言頁，點擊事件仍用這組來源。`utm_campaign` 只留在這個分頁，不接進事件名稱；GoatCounter 的頁面瀏覽仍從當下網址讀活動名稱。`site` 是空的時，這兩個鍵都不會寫。
+統計有打開時，進站網址若帶著通過檢查的 `utm_source`（必須是上面六個平台之一）與 `utm_campaign`，會寫進這個分頁的 `sessionStorage`（鍵名 `cp-utm-source`、`cp-utm-campaign`）。不寫 cookie，不寫 `localStorage`，不造訪客編號。分頁關掉就沒有了。同一個分頁之後若開了沒有 UTM 的語言頁，點擊事件仍用這組來源。若後來開到的網址帶了不在這六個平台裡的 `utm_source`，這一頁記成 `direct`，並清掉先前存的來源與活動名稱，再往後沒有 UTM 的頁面也是 `direct`。`utm_campaign` 只留在這個分頁，不接進事件名稱；GoatCounter 的頁面瀏覽仍從當下網址讀活動名稱。`site` 是空的時，這兩個鍵都不會寫。
 
 ## 經營者要貼上的值
 

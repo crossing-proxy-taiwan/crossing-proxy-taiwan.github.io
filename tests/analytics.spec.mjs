@@ -221,13 +221,47 @@ test("unknown utm source is not stored and events use direct", async ({ page }) 
   await expect(page.locator("html")).toHaveAttribute("data-analytics", "on");
   await page.waitForFunction(() => window.goatcounter && typeof window.goatcounter.count === "function");
   expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-source"))).toBeNull();
-  expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-campaign"))).toBe(
-    "repositioning-2026-12-profile",
-  );
+  expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-campaign"))).toBeNull();
   await page.locator('[data-service="documents"] [data-toggle-more]').click();
   const paths = await page.evaluate(() => window.__gcCalls.filter((call) => call && call.event).map((call) => call.path));
   expect(paths).toEqual(["service-open:zh:documents:direct"]);
   expect(JSON.stringify(paths)).not.toContain("newsletter");
+});
+
+test("a rejected utm source clears the stored source and campaign", async ({ page }) => {
+  await mockGoatCounter(page, "example");
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(
+    "/zh/?country=TW&utm_source=facebook&utm_medium=social&utm_campaign=repositioning-2026-12-post-r143-b1",
+  );
+  await expect(page.locator("html")).toHaveAttribute("data-analytics", "on");
+  expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-source"))).toBe("facebook");
+  expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-campaign"))).toBe(
+    "repositioning-2026-12-post-r143-b1",
+  );
+
+  await page.goto(
+    "/en/?country=all&utm_source=newsletter&utm_medium=social&utm_campaign=repositioning-2026-12-profile",
+  );
+  await expect(page.locator("html")).toHaveAttribute("data-analytics", "on");
+  expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-source"))).toBeNull();
+  expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-campaign"))).toBeNull();
+  expect(await page.evaluate(() => localStorage.getItem("cp-utm-source"))).toBeNull();
+  expect(await page.evaluate(() => document.cookie)).toBe("");
+
+  await page.goto("/vi/?country=VN");
+  await expect(page.locator("html")).toHaveAttribute("data-analytics", "on");
+  await expect(page).toHaveURL(/\/vi\/\?country=VN$/);
+  await page.waitForFunction(() => window.goatcounter && typeof window.goatcounter.count === "function");
+  const [popup] = await Promise.all([page.waitForEvent("popup"), page.locator("a.line-link").click()]);
+  await popup.close();
+  const paths = await page.evaluate(() =>
+    window.__gcCalls.filter((call) => call && call.event).map((call) => call.path),
+  );
+  expect(paths).toContain("line-click:vi:none:direct");
+  expect(paths.join(" ")).not.toContain("facebook");
+  expect(paths.join(" ")).not.toContain("newsletter");
+  expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-source"))).toBeNull();
 });
 
 test("a campaign with a six-digit run is dropped", async ({ page }) => {

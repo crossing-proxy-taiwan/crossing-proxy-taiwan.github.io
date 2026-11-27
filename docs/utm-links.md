@@ -48,7 +48,7 @@ YouTube 目前沒有放在網站頁尾，仍然可以拿這裡的連結去貼影
 
 換列只改數字：每日文案第 144 列的 b2 是 `repositioning-2026-12-post-r144-b2`。Threads 的 t2、t3 是 `repositioning-2026-12-post-rt12-t2`、`repositioning-2026-12-post-rt12-t3`。
 
-每日文案、IG 內容、Threads 內容這三個分頁沒有 YouTube。YouTube 用 `repositioning-2026-12-profile`，或用不帶列號的 `repositioning-2026-12-post`。
+YouTube 影片若對得到每日文案的某一列，活動名稱用 `repositioning-2026-12-post-r{列號}-b{版位}`。`{列號}`、`{版位}` 要換成那支影片的列和版位，不要整批貼同一組。例如第 143 列、版位 b4 是 `repositioning-2026-12-post-r143-b4`。對不到列的影片不要用沒有列號的 `post`，改用 `repositioning-2026-12-profile`。`utm_medium` 仍是 `social`。
 
 不要把日期或電話寫成連續 6 位以上的數字。`20261201`、`r100000` 會被網站拿掉，GoatCounter 就看不到這次活動。`2026-12` 中間有減號，可以使用。`r143`、`ri12`、`rt12` 的位數都少於 6，可以使用。
 
@@ -126,7 +126,7 @@ YouTube 目前沒有放在網站頁尾，仍然可以拿這裡的連結去貼影
 
 ## 貼文與 LINE 圖文選單
 
-每個平台一條可直接貼的例子。`utm_medium` 仍是 `social`。Facebook 用每日文案 `r143` 的 `b1`。Instagram 用 IG 內容 `ri12` 的 `i1`。Threads 用 Threads 內容 `rt12` 的 `t1`。TikTok 用每日文案 `r170` 的 `b4` 短片。YouTube 沒有列號。LINE 用圖文選單 `menu`。
+每個平台一條可直接貼的例子。`utm_medium` 仍是 `social`。Facebook 用每日文案 `r143` 的 `b1`。Instagram 用 IG 內容 `ri12` 的 `i1`。Threads 用 Threads 內容 `rt12` 的 `t1`。TikTok 用每日文案 `r170` 的 `b4` 短片。YouTube 的 `r143-b4` 只是占位：它代表「對得到每日文案第 143 列、版位 b4」的那一支影片，其他影片要改列號與版位。對不到列的 YouTube 影片改用上一節的個人檔案連結。LINE 用圖文選單 `menu`。
 
 ### 繁體中文 `/zh/`
 
@@ -136,7 +136,7 @@ YouTube 目前沒有放在網站頁尾，仍然可以拿這裡的連結去貼影
 | Instagram | https://crossing-proxy-taiwan.github.io/zh/?country=TW&utm_source=instagram&utm_medium=social&utm_campaign=repositioning-2026-12-post-ri12-i1 |
 | Threads | https://crossing-proxy-taiwan.github.io/zh/?country=TW&utm_source=threads&utm_medium=social&utm_campaign=repositioning-2026-12-post-rt12-t1 |
 | TikTok | https://crossing-proxy-taiwan.github.io/zh/?country=TW&utm_source=tiktok&utm_medium=social&utm_campaign=repositioning-2026-12-post-r170-b4-reel |
-| YouTube | https://crossing-proxy-taiwan.github.io/zh/?country=TW&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post |
+| YouTube | https://crossing-proxy-taiwan.github.io/zh/?country=TW&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post-r143-b4 |
 | LINE 圖文選單 | https://crossing-proxy-taiwan.github.io/zh/?country=TW&utm_source=line&utm_medium=social&utm_campaign=repositioning-2026-12-menu |
 
 ### Tiếng Việt `/vi/`
@@ -147,7 +147,7 @@ YouTube 目前沒有放在網站頁尾，仍然可以拿這裡的連結去貼影
 | Instagram | https://crossing-proxy-taiwan.github.io/vi/?country=VN&utm_source=instagram&utm_medium=social&utm_campaign=repositioning-2026-12-post-ri12-i1 |
 | Threads | https://crossing-proxy-taiwan.github.io/vi/?country=VN&utm_source=threads&utm_medium=social&utm_campaign=repositioning-2026-12-post-rt12-t1 |
 | TikTok | https://crossing-proxy-taiwan.github.io/vi/?country=VN&utm_source=tiktok&utm_medium=social&utm_campaign=repositioning-2026-12-post-r170-b4-reel |
-| YouTube | https://crossing-proxy-taiwan.github.io/vi/?country=VN&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post |
+| YouTube | https://crossing-proxy-taiwan.github.io/vi/?country=VN&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post-r143-b4 |
 | LINE 圖文選單 | https://crossing-proxy-taiwan.github.io/vi/?country=VN&utm_source=line&utm_medium=social&utm_campaign=repositioning-2026-12-menu |
 
 ### English `/en/`
@@ -158,7 +158,7 @@ YouTube 目前沒有放在網站頁尾，仍然可以拿這裡的連結去貼影
 | Instagram | https://crossing-proxy-taiwan.github.io/en/?country=all&utm_source=instagram&utm_medium=social&utm_campaign=repositioning-2026-12-post-ri12-i1 |
 | Threads | https://crossing-proxy-taiwan.github.io/en/?country=all&utm_source=threads&utm_medium=social&utm_campaign=repositioning-2026-12-post-rt12-t1 |
 | TikTok | https://crossing-proxy-taiwan.github.io/en/?country=all&utm_source=tiktok&utm_medium=social&utm_campaign=repositioning-2026-12-post-r170-b4-reel |
-| YouTube | https://crossing-proxy-taiwan.github.io/en/?country=all&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post |
+| YouTube | https://crossing-proxy-taiwan.github.io/en/?country=all&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post-r143-b4 |
 | LINE 圖文選單 | https://crossing-proxy-taiwan.github.io/en/?country=all&utm_source=line&utm_medium=social&utm_campaign=repositioning-2026-12-menu |
 
 ### Bahasa Indonesia `/id/`
@@ -169,7 +169,7 @@ YouTube 目前沒有放在網站頁尾，仍然可以拿這裡的連結去貼影
 | Instagram | https://crossing-proxy-taiwan.github.io/id/?country=ID&utm_source=instagram&utm_medium=social&utm_campaign=repositioning-2026-12-post-ri12-i1 |
 | Threads | https://crossing-proxy-taiwan.github.io/id/?country=ID&utm_source=threads&utm_medium=social&utm_campaign=repositioning-2026-12-post-rt12-t1 |
 | TikTok | https://crossing-proxy-taiwan.github.io/id/?country=ID&utm_source=tiktok&utm_medium=social&utm_campaign=repositioning-2026-12-post-r170-b4-reel |
-| YouTube | https://crossing-proxy-taiwan.github.io/id/?country=ID&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post |
+| YouTube | https://crossing-proxy-taiwan.github.io/id/?country=ID&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post-r143-b4 |
 | LINE 圖文選單 | https://crossing-proxy-taiwan.github.io/id/?country=ID&utm_source=line&utm_medium=social&utm_campaign=repositioning-2026-12-menu |
 
 ### ไทย `/th/`
@@ -180,7 +180,7 @@ YouTube 目前沒有放在網站頁尾，仍然可以拿這裡的連結去貼影
 | Instagram | https://crossing-proxy-taiwan.github.io/th/?country=TH&utm_source=instagram&utm_medium=social&utm_campaign=repositioning-2026-12-post-ri12-i1 |
 | Threads | https://crossing-proxy-taiwan.github.io/th/?country=TH&utm_source=threads&utm_medium=social&utm_campaign=repositioning-2026-12-post-rt12-t1 |
 | TikTok | https://crossing-proxy-taiwan.github.io/th/?country=TH&utm_source=tiktok&utm_medium=social&utm_campaign=repositioning-2026-12-post-r170-b4-reel |
-| YouTube | https://crossing-proxy-taiwan.github.io/th/?country=TH&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post |
+| YouTube | https://crossing-proxy-taiwan.github.io/th/?country=TH&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post-r143-b4 |
 | LINE 圖文選單 | https://crossing-proxy-taiwan.github.io/th/?country=TH&utm_source=line&utm_medium=social&utm_campaign=repositioning-2026-12-menu |
 
 ### Filipino `/fil/`
@@ -191,7 +191,7 @@ YouTube 目前沒有放在網站頁尾，仍然可以拿這裡的連結去貼影
 | Instagram | https://crossing-proxy-taiwan.github.io/fil/?country=PH&utm_source=instagram&utm_medium=social&utm_campaign=repositioning-2026-12-post-ri12-i1 |
 | Threads | https://crossing-proxy-taiwan.github.io/fil/?country=PH&utm_source=threads&utm_medium=social&utm_campaign=repositioning-2026-12-post-rt12-t1 |
 | TikTok | https://crossing-proxy-taiwan.github.io/fil/?country=PH&utm_source=tiktok&utm_medium=social&utm_campaign=repositioning-2026-12-post-r170-b4-reel |
-| YouTube | https://crossing-proxy-taiwan.github.io/fil/?country=PH&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post |
+| YouTube | https://crossing-proxy-taiwan.github.io/fil/?country=PH&utm_source=youtube&utm_medium=social&utm_campaign=repositioning-2026-12-post-r143-b4 |
 | LINE 圖文選單 | https://crossing-proxy-taiwan.github.io/fil/?country=PH&utm_source=line&utm_medium=social&utm_campaign=repositioning-2026-12-menu |
 
 其他版位沿用同一條，只改結尾。繁中 Facebook 的 b2、b3，以及 Threads 的 t2、t3：
