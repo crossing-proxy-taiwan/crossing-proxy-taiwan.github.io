@@ -2,7 +2,7 @@
 
 決定用 **GoatCounter 託管版**（goatcounter.com）。比較依據是 2026-11-27 讀到的官方說明，費用與條款之後可能改，啟用前請再看一次原頁。
 
-`data/analytics.json` 的 `site` 現在是空字串。空字串不會載入任何統計程式，合併這個變更也不會開始收集。不要自己發明一組網站代碼。
+經營者已在 2026-11-27 註冊 GoatCounter。後台是 <https://crossingproxy.goatcounter.com/>。`data/analytics.json` 的 `site` 是公開網站代碼 `crossingproxy`，不是 API 金鑰。把 `site` 改回空字串就不會載入任何統計程式。
 
 ## 為什麼是 GoatCounter
 
@@ -61,8 +61,8 @@ GoatCounter 自己的說明認為，因為只存彙總、不存可識別個人�
 1. 打開 <https://www.goatcounter.com/signup>，用電子郵件註冊。這是經營者的後台帳號。
 2. 建立網站。網站代碼是你取的小寫代號，成為 `https://代號.goatcounter.com`。代號只能用小寫英數與連字號，最長 30 字，不要用一長串十六進位。
 3. 到 Settings → Data collection，確認沒有打開個別瀏覽（individual pageviews）。預設是關的，請維持關閉。瀏覽器、國家、語言、螢幕寬度可以在同一頁逐項關閉。
-4. 複製網站代碼本身，例如 `crossingproxy`。不要複製 API token、密碼或腳本以外的密鑰。GoatCounter 給這個站的腳本位址是公開的，不是密鑰。
-5. 貼到 `data/analytics.json` 的 `site`。`provider` 維持 `goatcounter`：
+4. 複製網站代碼本身。不要複製 API 金鑰或密碼。GoatCounter 給這個站的腳本位址是公開的，不是密鑰。
+5. 貼到 `data/analytics.json` 的 `site`。`provider` 維持 `goatcounter`。經營者已貼上 `crossingproxy`：
 
 ```json
 {
@@ -71,8 +71,7 @@ GoatCounter 自己的說明認為，因為只存彙總、不存可識別個人�
 }
 ```
 
-上面的 `crossingproxy` 只是格式範例，不是已註冊的帳號。這個儲存庫現在的值是 `""`。
-6. 提交後合併到 `main`，GitHub Pages 才會更新正式站。不要把 Pages 的來源改到工作分支。
+6. 合併到 `main` 之後，GitHub Pages 才會把這份設定發到正式站。不要把 Pages 的來源改到工作分支。
 7. 用沒有擋廣告的瀏覽器打開正式站，到 GoatCounter 後台確認有瀏覽。擋廣告的瀏覽器常會擋住 `gc.zgo.at`，數字會少於實際人數。本機預覽不會送出。
 8. 若不希望把自己的瀏覽算進去，在正式站網址加上 `#toggle-goatcounter` 再開一次。這只寫入那個瀏覽器的 localStorage。
 

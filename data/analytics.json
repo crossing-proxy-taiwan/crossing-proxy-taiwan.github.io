@@ -1,5 +1,5 @@
 {
   "provider": "goatcounter",
-  "site": "",
-  "note": "Public GoatCounter site code only, such as crossingproxy. Leave site empty to load nothing. See docs/analytics.md. Never put an API key or password in this file."
+  "site": "crossingproxy",
+  "note": "Public site code for https://crossingproxy.goatcounter.com/. Not an API key. Set site to an empty string to load nothing."
 }

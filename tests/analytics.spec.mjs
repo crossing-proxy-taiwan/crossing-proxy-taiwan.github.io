@@ -10,6 +10,16 @@ function watchThirdParties(page) {
   return urls;
 }
 
+async function mockDisabled(page) {
+  await page.route("**/data/analytics.json", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ provider: "goatcounter", site: "" }),
+    }),
+  );
+}
+
 async function mockGoatCounter(page, site) {
   await page.route("**/data/analytics.json", (route) =>
     route.fulfill({
@@ -34,6 +44,7 @@ window.goatcounter.filter = function () { return false; };
 
 test("analytics stays unloaded when the site code is empty", async ({ page }) => {
   const urls = watchThirdParties(page);
+  await mockDisabled(page);
   await page.goto(
     "/zh/?country=TW&passport=A123456789&phone=0912345678&utm_source=facebook&utm_medium=social&utm_campaign=repositioning-2026-12-post-r143-b1",
   );
@@ -165,6 +176,7 @@ test("mobile LINE button is tracked when configured", async ({ page }) => {
 });
 
 test("language switch keeps a safe campaign and drops the old country", async ({ page }) => {
+  await mockDisabled(page);
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(
     "/zh/?country=TW&utm_source=threads&utm_medium=social&utm_campaign=repositioning-2026-12-post-rt12-t2",
@@ -262,6 +274,24 @@ test("a rejected utm source clears the stored source and campaign", async ({ pag
   expect(paths.join(" ")).not.toContain("facebook");
   expect(paths.join(" ")).not.toContain("newsletter");
   expect(await page.evaluate(() => sessionStorage.getItem("cp-utm-source"))).toBeNull();
+});
+
+test("the registered site code is the one the page loads", async ({ page }) => {
+  const urls = watchThirdParties(page);
+  await page.route("**/gc.zgo.at/count.js", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/javascript",
+      body: "window.goatcounter = window.goatcounter || {}; window.goatcounter.count = function () {}; window.goatcounter.filter = function () { return false; };",
+    }),
+  );
+  await page.goto("/zh/");
+  await expect(page.locator("html")).toHaveAttribute("data-analytics", "on");
+  await expect(page.locator("script[data-goatcounter]")).toHaveAttribute(
+    "data-goatcounter",
+    "https://crossingproxy.goatcounter.com/count",
+  );
+  expect(urls.some((url) => url.includes("crossingproxy.goatcounter.com"))).toBe(false);
 });
 
 test("a campaign with a six-digit run is dropped", async ({ page }) => {

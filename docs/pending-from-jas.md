@@ -14,7 +14,7 @@
 - 經客戶授權、可公開的案例照片與故事。
 - 舊網站「寄回越南禁寄清單」的原文。現有提醒只沿用 JAS 已用於對外說明的原則：不收肉品與肉製品；電池與行動電源有限制；液體與藥品通常有限制；寄出前再確認。這不是從停權帳號找回的原文。
 - 社群帳號是否仍為：Facebook `profile.php?id=61595889143256`、Instagram `@crossing_proxy`、Threads `@crossing_proxy`、TikTok `@crossingproxy`。LINE `@681ydjcz` 已由 `https://lin.ee/SQbAREU` 轉址到 `line.me` 的 `@681ydjcz` 核對。
-- 若要啟用瀏覽與點擊統計，到 GoatCounter 註冊並把網站代碼貼進 `data/analytics.json` 的 `site`。步驟在 `docs/analytics.md`。代碼留空時不會載入。不要貼 API key 或密碼。
+- 瀏覽與點擊統計用 GoatCounter。經營者已註冊，`data/analytics.json` 的 `site` 是 `crossingproxy`。代碼留空時不會載入。不要把 API 金鑰貼進這個檔。步驟在 `docs/analytics.md`。
 - 表單若要改成真正送進後台，需另接已設定的安全服務。現在只提供複製到 LINE，不把內容寫進網址或這個儲存庫。
 
 已沿用、沒有另造的資料：
