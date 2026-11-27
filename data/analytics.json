@@ -1,5 +1,5 @@
 {
-  "enabled": false,
-  "endpoint": "",
-  "note": "Leave enabled false until JAS configures a privacy-reviewed collector. The site never sends inquiry text, names, or document numbers."
+  "provider": "goatcounter",
+  "site": "",
+  "note": "Public GoatCounter site code only, such as crossingproxy. Leave site empty to load nothing. See docs/analytics.md. Never put an API key or password in this file."
 }

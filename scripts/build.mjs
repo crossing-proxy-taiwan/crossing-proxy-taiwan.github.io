@@ -362,6 +362,7 @@ function page(lang) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="cp-translation-review" content="not-yet-native-reviewed">
 <title>${esc(ui.metaTitle)}</title>
 <meta name="description" content="${esc(ui.metaDescription)}">
@@ -573,6 +574,7 @@ function gate(notFound) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="cp-translation-review" content="not-yet-native-reviewed">
 ${notFound ? "" : `<meta name="google-site-verification" content="O5v_Vbt6Z-JsQgCpghEn8o48Yh4prPGLoE3jebFfKPs">\n`}<title>${esc(title)}</title>
 <meta name="description" content="${esc(ui.root.lead)}">
