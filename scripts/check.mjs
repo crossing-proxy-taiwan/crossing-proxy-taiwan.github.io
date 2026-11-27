@@ -106,14 +106,38 @@ for (const lang of catalog.langs) {
   }
   if (!html.includes(ui.services["driving-license-assistance"].title)) errors.push(`${lang.id} missing driving title`);
   if (!html.includes('data-entry="true"')) errors.push(`${lang.id} missing shared driving entry`);
-  if (!html.includes('role="radiogroup"')) errors.push(`${lang.id} missing flag radiogroup`);
+  if (
+    html.includes('role="radiogroup"') ||
+    html.includes('class="flag-grid"') ||
+    html.includes('class="flag-btn"') ||
+    html.includes('id="countries"') ||
+    html.includes('class="country-jump"') ||
+    html.includes('id="country-help"')
+  ) {
+    errors.push(`${lang.id} still has the secondary country filter`);
+  }
+  if (!html.includes('class="lang-toggle"') || !html.includes('id="lang-menu"')) {
+    errors.push(`${lang.id} missing unified language control`);
+  }
+  if (!html.includes(`data-lang="${lang.id}" data-country="${lang.country}"`)) {
+    errors.push(`${lang.id} country is not tied to the language`);
+  }
   for (const code of catalog.countryChoices) {
     if (!html.includes(`data-country="${code}"`)) errors.push(`${lang.id} missing country ${code}`);
   }
+  for (const item of catalog.langs) {
+    if (!html.includes(`href="/${item.id}/?country=${item.country}"`)) {
+      errors.push(`${lang.id} missing ${item.id} country link`);
+    }
+  }
   const langMenu = html.split('class="lang-menu"')[1]?.split("</div>")[0] || "";
-  if (langMenu.includes("flag-svg")) errors.push(`${lang.id} language menu contains a flag`);
+  const menuFlags = langMenu.split("flag-svg").length - 1;
+  if (menuFlags !== catalog.langs.length) errors.push(`${lang.id} language menu flags ${menuFlags}`);
   if (!langMenu.includes("English") || !langMenu.includes("繁體中文") || !langMenu.includes("Filipino")) {
     errors.push(`${lang.id} language menu lost a native name`);
+  }
+  for (const service of catalog.services) {
+    if (!html.includes(`data-service="${service.id}"`)) errors.push(`${lang.id} dropped service ${service.id}`);
   }
   if (!html.includes('"@type":"FAQPage"') || !html.includes('"@type":"Organization"') || !html.includes('"@type":"Service"')) {
     errors.push(`${lang.id} structured data`);
@@ -199,6 +223,10 @@ if (!gate.includes('name="google-site-verification" content="O5v_Vbt6Z-JsQgCpghE
 const notFoundPage = readFileSync(join(root, "404.html"), "utf8");
 if (notFoundPage.includes("google-site-verification")) errors.push("404 should not carry the homepage verification tag");
 if (!gate.includes(`<link rel="canonical" href="${catalog.siteUrl}/">`)) errors.push("gate canonical");
+for (const lang of catalog.langs) {
+  if (!lang.country || !lang.flag) errors.push(`lang ${lang.id} missing country or flag`);
+  if (!gate.includes(`href="/${lang.id}/?country=${lang.country}"`)) errors.push(`gate missing ${lang.id} country link`);
+}
 const rollback = readFileSync(join(root, "docs/ROLLBACK.md"), "utf8");
 if (!rollback.includes("v1-before-v2.0") || !rollback.includes("1d640b9cf55a0381c74841ab4f476e55202b7c4f")) {
   errors.push("rollback doc");
@@ -215,6 +243,7 @@ const flagSpec = {
   th: { box: "0 0 9 6", colors: ["#A51931", "#2D2A4A", "#FFFFFF"] },
   ph: { box: "0 0 200 100", colors: ["#0038A8", "#CE1126", "#FCD116"] },
   all: { box: "0 0 60 40", colors: ["#0F2742"] },
+  us: { box: "0 0 190 100", colors: ["#BF0A30", "#FFFFFF", "#002868"] },
 };
 for (const [code, spec] of Object.entries(flagSpec)) {
   const svg = readFileSync(join(root, "assets/flags", `${code}.svg`), "utf8");

@@ -26,24 +26,15 @@ if (configNode) {
     });
   }
 
-  const radios = [...document.querySelectorAll(".flag-btn")];
   const cards = [...document.querySelectorAll(".card")];
   const groups = [...document.querySelectorAll("[data-group]")];
   const openEmpty = document.getElementById("open-empty");
   const plannedEmpty = document.getElementById("planned-empty");
   const live = document.getElementById("filter-live");
-  const countryJump = document.getElementById("country-jump");
 
-  function readCountry() {
-    const fromUrl = new URL(location.href).searchParams.get("country");
-    let stored = "";
-    try {
-      stored = localStorage.getItem("cp-country") || "";
-    } catch (error) {
-      stored = "";
-    }
-    const value = fromUrl || stored || "all";
-    return allowed.has(value) ? value : "all";
+  function pageCountry() {
+    const fromPage = document.documentElement.dataset.country || config.country || "all";
+    return allowed.has(fromPage) ? fromPage : "all";
   }
 
   function countryName(code) {
@@ -52,14 +43,13 @@ if (configNode) {
 
   function matchesCountry(card, country) {
     if (!showPlannedServices && card.dataset.status === "planned") return false;
-    if (country === "all") return true;
-    const list = card.dataset.countries.split(",");
+    const list = (card.dataset.countries || "").split(",");
+    if (country === "all") return list.includes("*");
     return list.includes("*") || list.includes(country);
   }
 
-  function applyFilters(persistCountry) {
-    const selected = document.querySelector('.flag-btn[aria-checked="true"]');
-    const country = selected ? selected.dataset.country : "all";
+  function applyFilters() {
+    const country = pageCountry();
     cards.forEach((card) => {
       card.hidden = !matchesCountry(card, country);
     });
@@ -72,30 +62,18 @@ if (configNode) {
     if (openEmpty) openEmpty.hidden = openVisible;
     if (plannedEmpty) plannedEmpty.hidden = plannedVisible;
     syncQuickLinks();
-    if (country === "all") document.documentElement.removeAttribute("data-country");
-    else document.documentElement.setAttribute("data-country", country);
-    const name = countryName(country);
-    if (countryJump) {
-      countryJump.textContent = name;
-      countryJump.setAttribute("aria-label", config.countryNow.replace("{name}", name));
-    }
-    if (live) live.textContent = config.filterLive.replace("{name}", name);
-    radios.forEach((radio) => {
-      const on = radio.dataset.country === country;
-      radio.setAttribute("aria-checked", on ? "true" : "false");
-      radio.tabIndex = on ? 0 : -1;
-    });
-    if (!persistCountry) return;
+    document.documentElement.setAttribute("data-country", country);
+    if (live) live.textContent = config.filterLive.replace("{name}", countryName(country));
     try {
       localStorage.setItem("cp-country", country);
     } catch (error) {
       /* Ignore storage failures. */
     }
     const url = new URL(location.href);
-    if (country === "all") url.searchParams.delete("country");
-    else url.searchParams.set("country", country);
-    history.replaceState(null, "", url.pathname + url.search + url.hash);
-    track("country_change", { country });
+    if (url.searchParams.get("country") !== country) {
+      url.searchParams.set("country", country);
+      history.replaceState(null, "", url.pathname + url.search + url.hash);
+    }
   }
 
   function syncQuickLinks() {
@@ -118,36 +96,60 @@ if (configNode) {
     });
   }
 
-  function selectCountry(code, persist) {
-    const match = radios.find((radio) => radio.dataset.country === code) || radios[0];
-    radios.forEach((radio) => radio.setAttribute("aria-checked", radio === match ? "true" : "false"));
-    applyFilters(persist);
-  }
+  applyFilters();
 
-  if (radios.length) {
-    selectCountry(readCountry(), false);
-    radios.forEach((radio, index) => {
-      radio.addEventListener("click", () => selectCountry(radio.dataset.country, true));
-      radio.addEventListener("keydown", (event) => {
-        const key = event.key;
-        if (!["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", "Home", "End"].includes(key)) return;
+  const langRoot = document.querySelector(".lang");
+  const langToggle = document.querySelector(".lang-toggle");
+  const langMenu = document.getElementById("lang-menu");
+  if (langRoot && langToggle && langMenu) {
+    const options = [...langMenu.querySelectorAll("[data-lang-switch]")];
+    function setLangOpen(open) {
+      langToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      langMenu.hidden = !open;
+    }
+    langToggle.addEventListener("click", () => {
+      setLangOpen(langToggle.getAttribute("aria-expanded") !== "true");
+    });
+    langToggle.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && langToggle.getAttribute("aria-expanded") === "true") {
         event.preventDefault();
-        let next = index;
-        if (key === "ArrowRight" || key === "ArrowDown") next = (index + 1) % radios.length;
-        if (key === "ArrowLeft" || key === "ArrowUp") next = (index - 1 + radios.length) % radios.length;
-        if (key === "Home") next = 0;
-        if (key === "End") next = radios.length - 1;
-        radios[next].focus();
-        selectCountry(radios[next].dataset.country, true);
-      });
+        setLangOpen(false);
+        return;
+      }
+      if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+      event.preventDefault();
+      setLangOpen(true);
+      const target = event.key === "ArrowUp" ? options[options.length - 1] : options[0];
+      if (target) target.focus();
+    });
+    langMenu.addEventListener("keydown", (event) => {
+      const index = options.indexOf(document.activeElement);
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setLangOpen(false);
+        langToggle.focus();
+        return;
+      }
+      if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key) || index < 0) return;
+      event.preventDefault();
+      let next = index;
+      if (event.key === "ArrowDown") next = (index + 1) % options.length;
+      if (event.key === "ArrowUp") next = (index - 1 + options.length) % options.length;
+      if (event.key === "Home") next = 0;
+      if (event.key === "End") next = options.length - 1;
+      options[next].focus();
+    });
+    document.addEventListener("click", (event) => {
+      if (!langRoot.contains(event.target)) setLangOpen(false);
+    });
+    langRoot.addEventListener("focusout", (event) => {
+      if (!langRoot.contains(event.relatedTarget)) setLangOpen(false);
     });
   }
 
   document.querySelectorAll("[data-lang-switch]").forEach((link) => {
     link.addEventListener("click", () => {
       const url = new URL(link.getAttribute("href"), location.origin);
-      const country = new URL(location.href).searchParams.get("country");
-      if (country) url.searchParams.set("country", country);
       if (location.hash) url.hash = location.hash;
       link.href = url.pathname + url.search + url.hash;
       track("language_switch", { to: url.pathname });
@@ -183,8 +185,7 @@ if (configNode) {
   let activeService = "general";
 
   function currentCountry() {
-    const selected = document.querySelector('.flag-btn[aria-checked="true"]');
-    return selected ? selected.dataset.country : "all";
+    return pageCountry();
   }
 
   function profileFor(serviceId) {

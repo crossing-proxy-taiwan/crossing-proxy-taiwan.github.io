@@ -6,8 +6,8 @@
   "heroPoints": [
     "Kami ang CROSSING PROXY, kaagapay ng mga dayuhan sa Taiwan.",
     "Puwedeng itanong: dokumento, lisensya, pagsasaling Chinese–Vietnamese, bentahan ng motorsiklo, SIM at numero, padala, at usaping pang-araw-araw. Ang upa at planong pang-kumpanya ay inihahanda pa.",
-    "Hiwalay ang wika at bansa. May anim na pahina ng wika. Ang bandila ay pang-salà lang ng serbisyo; hindi nito pinapalitan ang wika ng site.",
-    "Simulan sa: pumili ng bandila, buksan ang serbisyo, basahin ang status at limitasyon, tapos magtanong sa LINE.",
+    "Pumili ng wika nang isang beses. Ipinapakita rin ng menu ang serbisyong partikular sa nasyonalidad na iyon, kasama ang serbisyong para sa lahat ng nasyonalidad.",
+    "Simulan sa: pumili ng wika, buksan ang serbisyo, basahin ang status at limitasyon, tapos magtanong sa LINE.",
     "Makipag-ugnayan: LINE @681ydjcz. Hindi ipinapadala ng site ang mensahe para sa iyo."
   ],
   "nav": {
@@ -111,7 +111,7 @@
   "steps": [
     {
       "title": "Pumili ng serbisyo",
-      "body": "Gumamit ng bandila o mabilis na pasukan. Hiwalay ang wika at bansa at hindi sila magkatali."
+      "body": "Gamitin ang menu ng wika para itakda ang wika at ang mga serbisyong makikita, o buksan ang mabilis na pasukan."
     },
     {
       "title": "Basahin ang saklaw",
@@ -150,7 +150,7 @@
   "faq": [
     {
       "q": "Kung English ang binabasa, makikita pa ba ang serbisyo para sa Vietnam?",
-      "a": "Oo. Piliin ang English sa menu ng wika, tapos ang bandila ng Vietnam. Ang bandila ay pang-salà lang ng serbisyo; hindi nito pinapalitan ang wika ng site."
+      "a": "Ang serbisyong partikular sa Vietnam ay nasa pahinang Tiếng Việt, kasama ang serbisyong para sa lahat ng nasyonalidad. Piliin ang Tiếng Việt sa menu ng wika at sabay na magbabago ang wika at ang salà ng serbisyo. Ipinapakita ng English ang pinagsasaluhang serbisyo."
     },
     {
       "q": "Naghahain ba kayo ng visa, residence permit, o work permit?",

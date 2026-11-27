@@ -61,13 +61,14 @@ function flagInline(code) {
 }
 
 function countryFilterCss() {
-  return catalog.countryChoices
+  const specific = catalog.countryChoices
     .filter((code) => code !== "all")
     .map(
       (code) =>
         `html[data-country="${code}"] .card:not([data-countries="*"]):not([data-countries*="${code}"]){display:none}`,
     )
     .join("");
+  return `${specific}html[data-country="all"] .card:not([data-countries*="*"]){display:none}`;
 }
 
 function countryLabel(ui, code) {
@@ -88,18 +89,26 @@ function hreflangLinks() {
   return lines.join("\n");
 }
 
+function langHref(lang) {
+  return `/${lang.id}/?country=${encodeURIComponent(lang.country)}`;
+}
+
+function caret() {
+  return `<svg class="lang-caret" viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+}
+
 function langMenu(currentId, ui) {
+  const current = catalog.langs.find((item) => item.id === currentId);
   const links = catalog.langs
     .map((lang) => {
-      const current = lang.id === currentId ? ' aria-current="page"' : "";
-      return `<a href="/${lang.id}/" hreflang="${esc(lang.html)}" lang="${esc(lang.html)}" data-lang-switch${current}>${esc(lang.native)}</a>`;
+      const selected = lang.id === currentId ? ' aria-current="page"' : "";
+      return `<a href="${langHref(lang)}" hreflang="${esc(lang.html)}" lang="${esc(lang.html)}" data-lang-switch data-country="${esc(lang.country)}"${selected}>${flagInline(lang.flag)}<span>${esc(lang.native)}</span></a>`;
     })
     .join("");
-  const native = catalog.langs.find((item) => item.id === currentId).native;
-  return `<details class="lang">
-    <summary aria-label="${esc(ui.langLabel)}: ${esc(native)}"><span>${esc(native)}</span></summary>
-    <div class="lang-menu">${links}</div>
-  </details>`;
+  return `<div class="lang">
+    <button type="button" class="lang-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu" aria-label="${esc(ui.langLabel)}: ${esc(current.native)}">${flagInline(current.flag)}<span class="lang-current">${esc(current.native)}</span>${caret()}</button>
+    <div class="lang-menu" id="lang-menu" aria-label="${esc(ui.langLabel)}" hidden>${links}</div>
+  </div>`;
 }
 
 const skipText = {
@@ -282,6 +291,7 @@ function page(lang) {
   const config = {
     lang: lang.id,
     langNative: lang.native,
+    country: lang.country,
     lineUrl: catalog.line.url,
     lineId: catalog.line.id,
     showPlannedServices,
@@ -336,16 +346,6 @@ function page(lang) {
       </article>`,
     )
     .join("");
-  const flags = catalog.countryChoices
-    .map((code) => {
-      const name = code === "all" ? ui.countries.all : ui.countries[code];
-      const selected = code === "all";
-      return `<button type="button" class="flag-btn" role="radio" data-country="${esc(code)}" aria-checked="${selected ? "true" : "false"}" tabindex="${selected ? "0" : "-1"}">
-        ${flagInline(code)}
-        <span class="flag-name">${esc(name)}</span>
-      </button>`;
-    })
-    .join("");
   const openShown = new Set();
   const plannedShown = new Set();
   const openGroups = catalog.groups.map((group) => groupBlock(ui, group, "open", openShown)).join("\n");
@@ -358,7 +358,7 @@ function page(lang) {
     .join("\n");
 
   return `<!DOCTYPE html>
-<html lang="${esc(lang.html)}" data-lang="${esc(lang.id)}" data-show-planned="${showPlannedServices ? "true" : "false"}">
+<html lang="${esc(lang.html)}" data-lang="${esc(lang.id)}" data-country="${esc(lang.country)}" data-show-planned="${showPlannedServices ? "true" : "false"}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -382,12 +382,15 @@ ${alternates}
 <script type="application/ld+json">${jsonScript(jsonLd)}</script>
 <script>
 try {
-  var countryQuery = new URLSearchParams(location.search).get("country");
-  var countryStored = localStorage.getItem("cp-country");
-  var countryValue = countryQuery || countryStored || "";
-  if (countryValue && countryValue !== "all" && ["TW","VN","ID","TH","PH"].indexOf(countryValue) !== -1) {
-    document.documentElement.setAttribute("data-country", countryValue);
+  var expected = document.documentElement.getAttribute("data-country") || "all";
+  var params = new URLSearchParams(location.search);
+  if (params.get("country") !== expected) {
+    var url = new URL(location.href);
+    url.searchParams.set("country", expected);
+    history.replaceState(null, "", url.pathname + url.search + url.hash);
   }
+  localStorage.setItem("cp-lang", document.documentElement.getAttribute("data-lang") || "");
+  localStorage.setItem("cp-country", expected);
 } catch (error) {}
 </script>
 </head>
@@ -404,9 +407,9 @@ try {
   <div id="menu" class="menu">
     ${nav(ui)}
     <div class="tools">
-      <a class="country-jump" id="country-jump" href="#countries" aria-label="${esc(ui.countryNow.replace("{name}", ui.countries.all))}">${esc(ui.countries.all)}</a>
       ${langMenu(lang.id, ui)}
       <a class="line-link" href="${esc(catalog.line.url)}" data-channel="line" target="_blank" rel="noopener noreferrer">LINE ${esc(catalog.line.id)}</a>
+      <p id="filter-live" class="visually-hidden" aria-live="polite"></p>
     </div>
   </div>
 </header>
@@ -422,14 +425,6 @@ try {
       </div>
     </div>
     <div class="hero-art">${heroArt()}</div>
-  </section>
-  <section id="countries" class="section">
-    <div class="section-head">
-      <h2>${esc(ui.sections.flags.title)}</h2>
-      <p id="country-help" class="country-help">${esc(ui.countryHelp)}</p>
-    </div>
-    <div class="flag-grid" role="radiogroup" aria-describedby="country-help" aria-label="${esc(ui.countryLabel)}">${flags}</div>
-    <p id="filter-live" class="visually-hidden" aria-live="polite"></p>
   </section>
   <section id="quick" class="section">
     <div class="section-head">
@@ -569,7 +564,7 @@ function gate(notFound) {
   const links = catalog.langs
     .map(
       (lang) =>
-        `<a class="gate-link" href="/${lang.id}/" hreflang="${esc(lang.html)}" lang="${esc(lang.html)}">${esc(lang.native)}</a>`,
+        `<a class="gate-link" href="${langHref(lang)}" hreflang="${esc(lang.html)}" lang="${esc(lang.html)}">${flagInline(lang.flag)}<span>${esc(lang.native)}</span></a>`,
     )
     .join("");
   const title = notFound ? `${ui.notFound}｜${catalog.brand.en}` : `${ui.root.title}｜${catalog.brand.en}`;
