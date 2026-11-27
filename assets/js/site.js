@@ -2,8 +2,14 @@ const configNode = document.getElementById("cp-config");
 if (configNode) {
   const config = JSON.parse(configNode.textContent);
   const showPlannedServices = config.showPlannedServices === true;
-  const analytics = { enabled: false, endpoint: "" };
   const allowed = new Set(["all", "TW", "VN", "ID", "TH", "PH"]);
+  const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
+  const campaignSources = new Set(["facebook", "instagram", "threads", "tiktok", "youtube", "line"]);
+  const landingUtmSource = new URL(location.href).searchParams.has("utm_source")
+    ? new URL(location.href).searchParams.get("utm_source")
+    : null;
+  let analyticsSite = "";
+  const pendingEvents = [];
 
   try {
     localStorage.setItem("cp-lang", config.lang);
@@ -48,6 +54,30 @@ if (configNode) {
     return list.includes("*") || list.includes(country);
   }
 
+  function safeUtm(value) {
+    return typeof value === "string" && /^[A-Za-z0-9._~-]{1,64}$/.test(value) && !/\d{6,}/.test(value);
+  }
+
+  function acceptedSite(site) {
+    if (typeof site !== "string") return "";
+    const code = site.trim();
+    if (!/^[a-z0-9](?:[a-z0-9-]{0,28}[a-z0-9])?$/.test(code)) return "";
+    if (/^[0-9a-f]{16,}$/.test(code)) return "";
+    if (code.startsWith("sk-") || code.includes("secret") || code.includes("token") || code.includes("password")) return "";
+    return code;
+  }
+
+  function publicSearch(country) {
+    const current = new URL(location.href);
+    const keep = new URLSearchParams();
+    keep.set("country", country);
+    utmKeys.forEach((key) => {
+      const value = current.searchParams.get(key);
+      if (safeUtm(value)) keep.set(key, value);
+    });
+    return keep.toString();
+  }
+
   function applyFilters() {
     const country = pageCountry();
     cards.forEach((card) => {
@@ -70,9 +100,9 @@ if (configNode) {
       /* Ignore storage failures. */
     }
     const url = new URL(location.href);
-    if (url.searchParams.get("country") !== country) {
-      url.searchParams.set("country", country);
-      history.replaceState(null, "", url.pathname + url.search + url.hash);
+    const next = `${url.pathname}?${publicSearch(country)}${url.hash}`;
+    if (`${url.pathname}${url.search}${url.hash}` !== next) {
+      history.replaceState(null, "", next);
     }
   }
 
@@ -151,8 +181,12 @@ if (configNode) {
     link.addEventListener("click", () => {
       const url = new URL(link.getAttribute("href"), location.origin);
       if (location.hash) url.hash = location.hash;
+      const current = new URL(location.href);
+      utmKeys.forEach((key) => {
+        const value = current.searchParams.get(key);
+        if (safeUtm(value)) url.searchParams.set(key, value);
+      });
       link.href = url.pathname + url.search + url.hash;
-      track("language_switch", { to: url.pathname });
     });
   });
 
@@ -165,12 +199,38 @@ if (configNode) {
       button.setAttribute("aria-expanded", open ? "true" : "false");
       if (!open) return;
       const card = button.closest("[data-service]");
-      track("service_open", { service: card ? card.dataset.service : "" });
+      track("service-open", { service: card ? card.dataset.service : "" });
     });
   });
 
-  document.querySelectorAll("[data-channel]").forEach((link) => {
-    link.addEventListener("click", () => track("contact_channel", { channel: link.dataset.channel }));
+  document.querySelectorAll('a[href^="#service-"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      track("service-open", { service: (link.getAttribute("href") || "").replace("#service-", "") });
+    });
+  });
+
+  function isOfficialLine(href) {
+    try {
+      const url = new URL(href, location.origin);
+      const official = new URL(config.lineUrl, location.origin);
+      return url.origin === official.origin && url.pathname === official.pathname;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  document.querySelectorAll("a[href]").forEach((link) => {
+    if (!isOfficialLine(link.getAttribute("href"))) return;
+    link.addEventListener("click", () => {
+      const card = link.closest("[data-service]");
+      let service = "none";
+      if (card && Object.prototype.hasOwnProperty.call(config.services, card.dataset.service)) {
+        service = card.dataset.service;
+      } else if (link.id === "inquiry-line" && Object.prototype.hasOwnProperty.call(config.services, activeService)) {
+        service = activeService;
+      }
+      track("line-click", { service: service });
+    });
   });
 
   const dialog = document.getElementById("inquiry");
@@ -374,7 +434,7 @@ if (configNode) {
     } else dialog.setAttribute("open", "");
     const first = fields.querySelector("input, select");
     if (first) first.focus();
-    track(serviceId === "b2b-life" ? "enterprise_inquiry" : "inquiry_open", { service: serviceId });
+    track("inquiry-open", { service: serviceId });
   }
 
   document.querySelectorAll("[data-open-inquiry]").forEach((button) => {
@@ -425,34 +485,92 @@ if (configNode) {
       }
       status.textContent = copied ? config.inquiry.copied : config.inquiry.copyFailed;
       status.scrollIntoView({ block: "nearest" });
-      if (copied) track("inquiry_copy", { service: activeService });
     });
   }
 
-  function track(name, detail) {
-    if (!analytics.enabled || !analytics.endpoint) return;
-    const payload = {
-      event: name,
-      lang: config.lang,
-      service: detail && detail.service ? detail.service : "",
-      country: currentCountry(),
-      channel: detail && detail.channel ? detail.channel : "",
-      to: detail && detail.to ? detail.to : "",
-    };
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(analytics.endpoint, new Blob([JSON.stringify(payload)], { type: "application/json" }));
+  function sendEvent(vars) {
+    if (document.documentElement.dataset.analytics === "off") return;
+    if (analyticsSite && window.goatcounter && typeof window.goatcounter.count === "function") {
+      window.goatcounter.count(vars);
+      return;
     }
+    if (pendingEvents.length < 20) pendingEvents.push(vars);
+  }
+
+  function attributionSource() {
+    const params = new URL(location.href).searchParams;
+    if (params.has("utm_source")) {
+      const value = params.get("utm_source");
+      return campaignSources.has(value) ? value : "direct";
+    }
+    try {
+      const stored = sessionStorage.getItem("cp-utm-source");
+      if (campaignSources.has(stored)) return stored;
+    } catch (error) {
+      /* Private mode can block sessionStorage. */
+    }
+    return "direct";
+  }
+
+  function rememberCampaign() {
+    try {
+      if (landingUtmSource !== null && !campaignSources.has(landingUtmSource)) {
+        sessionStorage.removeItem("cp-utm-source");
+        sessionStorage.removeItem("cp-utm-campaign");
+        return;
+      }
+      const current = new URL(location.href);
+      const source = current.searchParams.get("utm_source");
+      const campaign = current.searchParams.get("utm_campaign");
+      if (campaignSources.has(source)) sessionStorage.setItem("cp-utm-source", source);
+      if (safeUtm(campaign)) sessionStorage.setItem("cp-utm-campaign", campaign);
+    } catch (error) {
+      /* Private mode can block sessionStorage. Events still use the URL. */
+    }
+  }
+
+  function track(name, detail) {
+    if (name !== "service-open" && name !== "inquiry-open" && name !== "line-click") return;
+    if (!/^(zh|en|vi|id|th|fil)$/.test(config.lang)) return;
+    const source = attributionSource();
+    if (!campaignSources.has(source) && source !== "direct") return;
+    let service = detail && detail.service ? String(detail.service) : "";
+    if (name === "line-click") {
+      if (service !== "none" && !Object.prototype.hasOwnProperty.call(config.services, service)) service = "none";
+      if (!service) service = "none";
+    } else if (!Object.prototype.hasOwnProperty.call(config.services, service)) {
+      return;
+    }
+    const path = `${name}:${config.lang}:${service}:${source}`;
+    sendEvent({ path, title: path, event: true, referrer: "", no_session: true });
+  }
+
+  function loadAnalytics(data) {
+    const site = acceptedSite(data && data.site);
+    if (!data || data.provider !== "goatcounter" || !site) {
+      pendingEvents.length = 0;
+      document.documentElement.dataset.analytics = "off";
+      return;
+    }
+    rememberCampaign();
+    if (document.querySelector("script[data-goatcounter]")) return;
+    analyticsSite = site;
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://gc.zgo.at/count.js";
+    script.dataset.goatcounter = `https://${site}.goatcounter.com/count`;
+    script.addEventListener("load", () => {
+      if (!window.goatcounter || typeof window.goatcounter.count !== "function") return;
+      while (pendingEvents.length) window.goatcounter.count(pendingEvents.shift());
+    });
+    document.body.appendChild(script);
+    document.documentElement.dataset.analytics = "on";
   }
 
   fetch("/data/analytics.json")
     .then((response) => (response.ok ? response.json() : null))
-    .then((data) => {
-      if (!data || data.enabled !== true || !data.endpoint) return;
-      analytics.enabled = true;
-      analytics.endpoint = data.endpoint;
-      track("page_view");
-    })
+    .then((data) => loadAnalytics(data))
     .catch(() => {
-      /* Analytics stays off when it is not configured. */
+      document.documentElement.dataset.analytics = "off";
     });
 }

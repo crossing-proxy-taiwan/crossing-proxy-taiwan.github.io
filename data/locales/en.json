@@ -488,7 +488,8 @@
     "A first question does not ask for an ID card, passport, ARC, or other sensitive data. Do not put that data in a public URL or in this static form.",
     "Whether shipping and home pickup already have the required permits is pending. Until that is confirmed, the description is help with questions and the existing shipping flow. It is not a claim that we hold a particular transport license.",
     "Help with buying or selling a scooter does not replace registration, insurance, or traffic rules. Short- and medium-term rental is not open, so there is no rental contract to sign.",
-    "Driver's license assistance is an inquiry, help organizing papers, and translation or accompaniment only when confirmed case by case. It does not guarantee a passing result or a successful exchange. Eligibility and documents follow Taiwan's motor vehicle authority."
+    "Driver's license assistance is an inquiry, help organizing papers, and translation or accompaniment only when confirmed case by case. It does not guarantee a passing result or a successful exchange. Eligibility and documents follow Taiwan's motor vehicle authority.",
+    "If a GoatCounter site code is set, this site loads that tool to count page visits, referring links and utm campaign parameters, and clicks that open a service description, open the inquiry form, or open the official LINE account. It also aggregates browser, operating system, country, language, and screen width. The operator can turn each of those off in the GoatCounter dashboard. GoatCounter does not set a browser cookie and does not build a personal profile. An IP address stays only briefly in server memory to count a visit and is not written to the database. Statistics are stored in the European Union (Germany and Finland). Form text, names, phone numbers, and document data are not sent. Nothing is loaded when there is no site code."
   ],
   "root": {
     "title": "Choose a language",

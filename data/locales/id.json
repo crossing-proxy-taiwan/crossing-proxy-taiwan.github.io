@@ -488,7 +488,8 @@
     "Pertanyaan awal tidak meminta kartu identitas, paspor, ARC, atau data sensitif lain. Jangan menaruh data itu di URL publik atau formulir statis ini.",
     "Apakah pengiriman dan jemput di rumah sudah punya izin yang diperlukan masih menunggu konfirmasi. Sebelum itu, uraian ini adalah bantuan bertanya dan alur kirim yang sudah ada, bukan klaim memegang izin angkut tertentu.",
     "Bantuan jual-beli motor tidak menggantikan pendaftaran, asuransi, dan aturan lalu lintas. Sewa jangka pendek dan menengah belum dibuka, jadi tidak ada kontrak sewa untuk ditandatangani.",
-    "Bantuan SIM hanya berupa pertanyaan, merapikan dokumen, serta terjemahan atau pendampingan bila dikonfirmasi per kasus. Tidak menjamin lulus atau berhasil menukar SIM. Kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan."
+    "Bantuan SIM hanya berupa pertanyaan, merapikan dokumen, serta terjemahan atau pendampingan bila dikonfirmasi per kasus. Tidak menjamin lulus atau berhasil menukar SIM. Kelayakan dan dokumen mengikuti otoritas kendaraan Taiwan.",
+    "Jika kode situs GoatCounter diisi, situs ini memuat alat itu untuk menghitung kunjungan halaman, tautan asal, dan parameter utm, serta berapa kali deskripsi layanan dibuka, formulir pertanyaan dibuka, atau akun LINE resmi diklik. Alat ini juga menggabungkan peramban, sistem operasi, negara, bahasa, dan lebar layar. Pengelola dapat mematikan tiap butir itu di dasbor GoatCounter. GoatCounter tidak menaruh cookie di peramban dan tidak membuat profil pribadi. Alamat IP hanya sebentar ada di memori server untuk menghitung satu kunjungan dan tidak ditulis ke basis data. Data statistik disimpan di Uni Eropa (Jerman dan Finlandia). Isi formulir, nama, nomor telepon, dan data dokumen tidak dikirim. Jika tidak ada kode situs, alat ini tidak dimuat."
   ],
   "root": {
     "title": "Pilih bahasa",

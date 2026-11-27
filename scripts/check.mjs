@@ -95,6 +95,14 @@ const forbidden = [
   /🇻🇳|🇹🇼|🇮🇩|🇹🇭|🇵🇭|🇺🇸|🇬🇧/,
 ];
 
+const analytics = JSON.parse(readFileSync(join(root, "data/analytics.json"), "utf8"));
+if (analytics.provider !== "goatcounter") errors.push("analytics provider");
+if (typeof analytics.site !== "string") errors.push("analytics site must be a string");
+if ("endpoint" in analytics || "enabled" in analytics) errors.push("analytics.json must not use endpoint or enabled");
+if (/sk-|ghp_|xox[baprs]-|BEGIN |PRIVATE KEY/i.test(JSON.stringify(analytics))) {
+  errors.push("analytics.json contains a secret-like value");
+}
+
 for (const lang of catalog.langs) {
   const html = readFileSync(join(root, lang.id, "index.html"), "utf8");
   const ui = locales[lang.id];
@@ -164,6 +172,16 @@ for (const lang of catalog.langs) {
   if (!html.includes('name="cp-translation-review" content="not-yet-native-reviewed"')) {
     errors.push(`${lang.id} missing translation review metadata`);
   }
+  if (!html.includes('name="referrer" content="strict-origin-when-cross-origin"')) {
+    errors.push(`${lang.id} missing referrer policy`);
+  }
+  if (!html.includes("GoatCounter")) errors.push(`${lang.id} missing analytics notice`);
+  if (lang.id === "zh" && (!html.includes("不在瀏覽器放置 cookie") || !html.includes("沒有網站代碼時不會載入"))) {
+    errors.push("zh analytics notice");
+  }
+  if (analytics.site === "" && (html.includes("gc.zgo.at") || html.includes("goatcounter.com/count"))) {
+    errors.push(`${lang.id} loads analytics while the site code is empty`);
+  }
   if (!html.includes('id="inquiry-confirm"')) errors.push(`${lang.id} missing confirmation`);
   if (!html.includes('id="community"')) errors.push(`${lang.id} missing community`);
   if (!html.includes('href="https://line.me/ti/g2/c8um63-f3JUv4x643EFZShKNiDHQY1UplD-djg"')) errors.push(`${lang.id} line community`);
@@ -197,9 +215,6 @@ const css = readFileSync(join(root, "assets/css/site.css"), "utf8");
 if (!css.includes('html[data-show-planned="false"] .card.is-planned')) errors.push("css does not hide planned services");
 if (!css.includes("#06c755") && !css.includes("#06C755")) errors.push("LINE green missing");
 
-const analytics = JSON.parse(readFileSync(join(root, "data/analytics.json"), "utf8"));
-if (analytics.enabled !== false || analytics.endpoint) errors.push("analytics must stay disabled until configured");
-
 const robots = readFileSync(join(root, "robots.txt"), "utf8");
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
 if (!robots.includes(`Sitemap: ${catalog.siteUrl}/sitemap.xml`)) errors.push("robots sitemap");
@@ -217,11 +232,13 @@ for (const lang of catalog.langs) {
 if (!sitemap.includes('hreflang="x-default"')) errors.push("sitemap x-default");
 const gate = readFileSync(join(root, "index.html"), "utf8");
 if (!gate.includes('name="cp-translation-review" content="not-yet-native-reviewed"')) errors.push("gate metadata");
+if (!gate.includes('name="referrer" content="strict-origin-when-cross-origin"')) errors.push("gate referrer");
 if (!gate.includes('name="google-site-verification" content="O5v_Vbt6Z-JsQgCpghEn8o48Yh4prPGLoE3jebFfKPs"')) {
   errors.push("root homepage missing search console verification");
 }
 const notFoundPage = readFileSync(join(root, "404.html"), "utf8");
 if (notFoundPage.includes("google-site-verification")) errors.push("404 should not carry the homepage verification tag");
+if (!notFoundPage.includes('name="referrer" content="strict-origin-when-cross-origin"')) errors.push("404 referrer");
 if (!gate.includes(`<link rel="canonical" href="${catalog.siteUrl}/">`)) errors.push("gate canonical");
 for (const lang of catalog.langs) {
   if (!lang.country || !lang.flag) errors.push(`lang ${lang.id} missing country or flag`);
@@ -255,6 +272,37 @@ for (const [code, spec] of Object.entries(flagSpec)) {
 }
 
 const siteJs = readFileSync(join(root, "assets/js/site.js"), "utf8");
+const siteStart = siteJs.indexOf("function acceptedSite");
+const siteEnd = siteJs.indexOf("function publicSearch");
+if (siteStart < 0 || siteEnd < siteStart) errors.push("acceptedSite missing");
+else {
+  const acceptedSite = new Function(`${siteJs.slice(siteStart, siteEnd)}\nreturn acceptedSite;`)();
+  if (acceptedSite(analytics.site) !== analytics.site.trim()) errors.push("analytics site code is not a public GoatCounter code");
+  if (acceptedSite("") !== "" || acceptedSite("   ") !== "") errors.push("blank site code should stay off");
+  if (acceptedSite("example") !== "example") errors.push("example site code should be accepted");
+  if (acceptedSite("crossing-proxy") !== "crossing-proxy") errors.push("hyphenated site code should be accepted");
+  if (acceptedSite("CrossingProxy") !== "") errors.push("uppercase site code should be rejected");
+  if (acceptedSite("https://evil.example") !== "" || acceptedSite("../x") !== "") errors.push("site code path should be rejected");
+  if (acceptedSite("0123456789abcdef") !== "") errors.push("hex token should be rejected");
+  if (acceptedSite("sk-live-secret") !== "") errors.push("secret-shaped site code should be rejected");
+}
+if (siteJs.includes("sendBeacon")) errors.push("site.js must not send a beacon payload");
+if (!siteJs.includes('sessionStorage.setItem("cp-utm-source"')) errors.push("campaign source is not kept in sessionStorage");
+if (!siteJs.includes('sessionStorage.setItem("cp-utm-campaign"')) errors.push("campaign name is not kept in sessionStorage");
+if (/localStorage\.(set|get)Item\(["']cp-utm-/.test(siteJs)) errors.push("utm must not use localStorage");
+if (/document\.cookie\s*=/.test(siteJs)) errors.push("site.js must not set a cookie");
+for (const source of ["facebook", "instagram", "threads", "tiktok", "youtube", "line"]) {
+  if (!siteJs.includes(`"${source}"`)) errors.push(`analytics source missing ${source}`);
+}
+if (!siteJs.includes('return "direct"')) errors.push("missing direct source");
+if (siteJs.includes("inquiry_copy") || siteJs.includes("output.value")) {
+  const trackStart = siteJs.indexOf("function track");
+  const trackEnd = siteJs.indexOf("function loadAnalytics");
+  const trackBody = siteJs.slice(trackStart, trackEnd);
+  if (/output\.value|field\.value|sendBeacon|inquiry-fields/.test(trackBody)) {
+    errors.push("analytics track reads form contents");
+  }
+}
 const sensitiveStart = siteJs.indexOf("function looksSensitive");
 const sensitiveEnd = siteJs.indexOf("function enteredText");
 if (sensitiveStart < 0 || sensitiveEnd < sensitiveStart) errors.push("sensitive detector missing");
